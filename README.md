@@ -1,6 +1,6 @@
 # Diaporama
 
-[![Generic badge](https://img.shields.io/badge/Version-4.1.3-cornflowerblue.svg)](https://github.com/maucejo/bookly/releases/tag/4.1.3)
+[![Generic badge](https://img.shields.io/badge/Version-0.1.0-cornflowerblue.svg)](https://github.com/maucejo/bookly/releases/tag/4.1.3)
 [![MIT License](https://img.shields.io/badge/License-MIT-forestgreen)](https://github.com/maucejo/bookly/blob/main/LICENSE)
 [![User Manual](https://img.shields.io/badge/Manual-.pdf-mediumpurple)](https://github.com/maucejo/bookly/blob/main/docs/manual.pdf)
 
@@ -10,12 +10,6 @@
 
 
 ## Dependencies
-
-`bookly` relies on the following packages:
-
-* `marginalia:0.3.1`: for tufte layout.
-
-* `hydra:0.6.3` : for bibliography management.
 
 * `showybox:2.0.4` : for custom boxes.
 
