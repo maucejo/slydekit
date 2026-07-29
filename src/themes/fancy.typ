@@ -1,0 +1,265 @@
+#import "../slydekit-deps.typ": *
+#import "../slydekit-defaults.typ": *
+#import "../slydekit-utils.typ": *
+
+#let fancy-colors = (
+  primary: rgb("#c1002a"),
+  secondary: rgb("#405a68").lighten(50%),
+  background: rgb("#405a68").lighten(95%),
+  focus: rgb("#c1002a"),
+  header: rgb("#c1002a"),
+  footer: rgb("#c1002a"),
+)
+
+#let fancy-fonts = (
+  body: "Lato",
+  math: "Lete Sans Math",
+  raw: "Cascadia Code",
+)
+
+#let fancy-theme(colors: fancy-colors, body) = context {
+  let colors-theme = if colors != none {
+     fancy-colors + colors
+  } else {
+    fancy-colors
+  }
+  sk-states.colors.update(colors-theme)
+
+  // Page setup
+  let fancy-margin = if sk-states.navigation.get() == "minislide" {
+    (top: 3.25cm)
+  }
+  set page(fill: colors-theme.background, margin: margins + fancy-margin)
+
+  // Heading styles
+  set heading(numbering: (..nums) => {
+    if sk-states.appendix.get() {
+      numbering("A.1.", ..nums)
+    } else {
+      numbering("1.1.", ..nums)
+    }
+  })
+
+  // Heading styles
+  show heading.where(level: 1): it => {
+    set strong(delta: 0)
+    set page(header: none, footer: none)
+
+    set align(horizon)
+    show: pad.with(10%)
+    set text(size: 1.3em)
+    v(-0.7em)
+
+    stack(
+      dir: ttb,
+      spacing: 0.5em,
+      [*#it.body*],
+      block(
+        height: 2pt,
+        width: 100%,
+        spacing: 0pt,
+        section-progress-bar(colors-theme.primary, colors-theme.secondary)
+      ),
+    )
+  }
+
+  show heading.where(level: 2): it => slide(it.body)[]
+
+  // Tables
+  show table.cell.where(y: 0): set text(weight: "bold", fill: white)
+  set table(
+    fill: (_, y) => if y == 0 {colors-theme.primary} ,
+    stroke: (_, y) => if y == 0 {(bottom: 0pt)} else {(bottom: 01pt + colors-theme.secondary)},
+    inset: 0.5em
+  )
+  show table: it => block(
+    stroke: 1pt + colors-theme.primary,
+    radius: 0.75em,
+    clip: true
+  )[#it]
+
+  // Header and footer
+  let header = context if sk-states.navigation.get() == "topbar" {
+    let header-title = [#h(1em)*#sk-states.current-slide-title.get()*]
+    wideblock(fill: colors-theme.header, align(horizon, text(size: 1.2em, fill: white)[#header-title]))
+  } else if sk-states.navigation.get() == "minislide" {
+    let mini-content = [
+      #let pad-lr = 3.5%
+      #place(top, dy: -0.75em)[#cell(fill: gradient.linear(sk-states.colors.get().background.darken(10%), sk-states.colors.get().background, dir: ttb))
+      #line(length: 100%, stroke: 0.05em + colors-theme.primary)
+      ]
+      #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
+      #place(dx: 3.5%, dy: 1.25em)[#text(size: 1.25em, weight: "bold", fill: colors-theme.header, sk-states.current-slide-title.get())]
+    ]
+    wideblock(mini-content)
+  }
+
+  let footer = context {
+    let current-page = if sk-states.appendix.get() {
+      sk-states.app-count.get().first()
+    } else {
+      sk-states.slide-number.get().first()
+    }
+    let prefix = if sk-states.appendix.get() { "A." } else { "" }
+    [
+      #let footer-content = {
+        set align(bottom)
+        set text(size: 0.8em)
+
+        place(dy: -0.5em, {
+          grid(
+            columns: (1fr,)*3,
+            align: (left + horizon, center + horizon, right + horizon),
+            [
+              #v(-0.5em)
+              #set image(height: 1.75em)
+              #move(dx: -1.75em, sk-states.logo.get())
+            ],
+            [
+              #text(fill:colors-theme.footer, strong(sk-states.pres-info.get().short-title))
+            ],
+            [
+              #set text(fill:colors-theme.footer, weight: "bold")
+              #show: move.with(dx: 0.75em)
+              #if sk-states.appendix.get() {
+                context box(stroke: 1.75pt + colors-theme.primary, radius: 5pt, inset: -0.5em,outset: 1em)[A | #sk-states.app-count.get().first() / #sk-states.slide-number.final().first()]
+              } else {
+                context box(stroke: 1.75pt + colors-theme.primary, radius: 5pt, inset: -0.5em,outset: 1em)[#sk-states.slide-number.get().first() / #sk-states.slide-number.final().first()]
+              }
+            ]
+          )}
+        )
+      }
+      // #wideblock(footer-content)
+      #footer-content
+      #wideblock(anchor: bottom, progress-bar(colors-theme.primary, colors-theme.secondary, height: 2.5pt))
+    ]
+  }
+
+  // Lists and enumerations
+  set list(marker: ([#text(size: 0.9em, fill:colors-theme.primary)[#sym.circle.filled]], [#text(size: 0.9em, fill:colors-theme.primary)[#sym.triangle.filled.small.r]], [#text(size: 0.9em, fill:colors-theme.primary)[#sym.square.filled]]))
+
+  set enum(numbering: n => text(fill:colors-theme.primary)[#n.])
+
+  set page(
+    header: header,
+    footer: footer
+  )
+
+  body
+}
+
+// Title page
+#let fancy-title = context {
+  let fancy-margin = (left: 0.5cm, right: 0.5cm, top: 0.75cm, bottom: 0.75cm)
+
+  set page(header: none, footer: none, margin: margins + fancy-margin)
+
+  let title-info = sk-states.pres-info.get()
+
+  set align(center + horizon)
+
+  if title-info.logo != none {
+    place(top, row-img(title-info.logo))
+  }
+
+  let title-line = line(length: 110%, stroke: 2pt + sk-states.colors.get().primary)
+  block(width: 100%, inset: 2cm, {
+      title-line
+      text(size: 1.75em, strong(title-info.title))
+      title-line
+
+      if title-info.author != none {
+        v(0.5em)
+        set text(size: 1em)
+        block(spacing: 1em, strong(title-info.author))
+      }
+
+      if title-info.institution != none {
+        set text(size: 0.85em)
+        block(spacing: 1em, title-info.institution)
+      }
+
+      if title-info.date != none {
+        set text(size: 0.85em)
+        move(dy: 1em, block(spacing: 1em, title-info.date))
+      }
+    }
+  )
+}
+
+#let fancy-toc = context {
+  let header-color = none
+  let text-color = sk-states.colors.get().header
+  if sk-states.navigation.get() == "topbar" {
+    header-color = sk-states.colors.get().header
+    text-color = white
+  }
+  let header-content = {
+    let dy = if sk-states.navigation.get() == "topbar" { 0em } else { -0.2em }
+    [#move(dx: 1em, dy: dy)[*#sk-states.localization.get().toc*]]
+
+    if sk-states.navigation.get() == "minislide" {
+      place(dy: 0.5em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().primary))
+    }
+  }
+  let header = wideblock(fill: header-color, align(horizon, text(size: 1.2em, fill: text-color)[#header-content]))
+
+  set page(header: header, footer: none)
+
+  set outline.entry(fill: none)
+    show outline.entry: it => context {
+      show linebreak: none
+      let number = it.prefix()
+      let section = it.element.body
+      block(above: 1.5em, below: 0em)
+      [#text([#number], fill: sk-states.colors.get().primary)#sym.space.thin#section]
+    }
+
+    set align(horizon)
+    adaptive-columns(text(size: 1.2em, strong(outline(title:none, indent: 1em, depth: 1))))
+}
+
+#let fancy-focus-slide(body) = context {
+  set page(header:none, footer: none, fill: sk-states.colors.get().focus)
+  set align(center + horizon)
+  text(size: 2em, fill: white)[*#body*]
+  counter(page).update(n => n - 1)
+}
+
+#let fancy-link-box(location, name) = {
+  block(fill: sk-states.colors.get().primary, radius: 1em, inset: 0.5em)[
+    #set text(size: 0.8em, weight: "bold")
+    #show link: set text(fill: white)
+    #link(location, name)
+  ]
+}
+
+#let fancy-boxeq(body) = context{
+  set align(center)
+  box(
+    stroke: 1.5pt + sk-states.colors.get().primary,
+    radius: 5pt,
+    inset: 0.5em,
+  )[#body]
+}
+
+#let fancy-custom-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = {
+  set text(size: 0.8em)
+  showybox(
+    title: box-title(color-svg("resources/images/icons/" + icon + ".svg", color, width: 1em), [*#title*]),
+    title-style: (
+      color: color,
+      sep-thickness: 0pt,
+    ),
+    frame: (
+      title-color: color.lighten(80%),
+      border-color: color,
+      body-color: none,
+      thickness: (left: 2pt),
+      radius: (top-left: 0pt, bottom-right: 1em, top-right: 1em),
+    )
+  )[#body]
+}
+
+#let fancy = (theme: fancy-theme, title: fancy-title, toc: fancy-toc, focus-slide: fancy-focus-slide, link-box: fancy-link-box, boxeq: fancy-boxeq, box: fancy-custom-box)
