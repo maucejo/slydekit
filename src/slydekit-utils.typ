@@ -63,9 +63,9 @@
 }
 
 // Hide new section slide
-#let hide-new-section-slide(doc) = {
-  show heading.where(level: 1): it => none
-  doc
+#let hide-new-section-slide(body) = {
+  show heading.where(level: 1): none
+  body
 }
 
 // Conditional set-show
@@ -343,4 +343,52 @@
 ) = {
   let data = colorize(read(path), color)
   return image(bytes(data), ..args)
+}
+
+#let progressive-outline(
+  it,
+  active-color,
+  inactive-color,
+  entry-size: 0.8575em,
+  max-count: 3,
+  gutter: 4%,
+  section-numbering: "1.1.",
+  appendix-numbering: "A.1.",
+) = context {
+  set text(size: entry-size)
+
+  let it-hides-toc = it.has("label") and it.label == <hide-toc>
+
+  let sections = if it-hides-toc {
+    (it,)
+  } else {
+    query(heading.where(level: 1, outlined: true))
+      .filter(s => not (s.has("label") and s.label == <hide-toc>))
+  }
+
+  let current-idx = sections.position(s => s.location() == it.location())
+
+  let entries = sections.enumerate().map(((idx, s)) => {
+    let s-is-appendix = sk-states.appendix.at(s.location())
+    let format = if s-is-appendix { appendix-numbering } else { section-numbering }
+
+    let count = counter(heading).at(s.location())
+    let num = numbering(format, ..count)
+    let is-current = idx == current-idx
+    let color = if is-current { active-color } else { inactive-color }
+
+    let entry = [
+      #text(fill: color, weight: "bold")[#num]#sym.space.thin#s.body
+    ]
+
+    block(below: 1.5em)[
+      #if is-current {
+        text(weight: "bold")[#entry]
+      } else {
+        text(fill: inactive-color)[#entry]
+      }
+    ]
+  })
+
+  adaptive-columns(gutter: gutter, max-count: max-count, entries.join())
 }

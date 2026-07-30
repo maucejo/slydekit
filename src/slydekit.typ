@@ -61,9 +61,7 @@
   show selector(<hide-toc>): set heading(outlined: false)
 
   show selector(<hide>): {
-    show heading.where(level: 1): it => {
-      none
-    }
+    show heading.where(level: 1): none
   }
 
   body

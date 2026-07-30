@@ -189,11 +189,10 @@
 }
 
 #let fancy-toc = context {
-  let header-color = none
-  let text-color = sk-states.colors.get().header
-  if sk-states.navigation.get() == "topbar" {
-    header-color = sk-states.colors.get().header
-    text-color = white
+  let (header-color, text-color) = if sk-states.navigation.get() == "topbar" {
+    (sk-states.colors.get().header, white)
+  } else {
+    (none, sk-states.colors.get().header)
   }
   let header-content = {
     let dy = if sk-states.navigation.get() == "topbar" { 0em } else { -0.2em }
@@ -208,16 +207,16 @@
   set page(header: header, footer: none)
 
   set outline.entry(fill: none)
-    show outline.entry: it => context {
-      show linebreak: none
-      let number = it.prefix()
-      let section = it.element.body
-      block(above: 1.5em, below: 0em)
-      [#text([#number], fill: sk-states.colors.get().primary)#sym.space.thin#section]
-    }
+  show outline.entry: it => context {
+    show linebreak: none
+    let number = it.prefix()
+    let section = it.element.body
+    block(above: 1.5em, below: 0em)
+    [#text([#number], fill: sk-states.colors.get().primary)#sym.space.thin#section]
+  }
 
-    set align(horizon)
-    adaptive-columns(text(size: 1.2em, strong(outline(title:none, indent: 1em, depth: 1))))
+  set align(horizon)
+  adaptive-columns(text(size: 1.2em, strong(outline(title:none, indent: 1em, depth: 1))))
 }
 
 #let fancy-focus-slide(body) = context {

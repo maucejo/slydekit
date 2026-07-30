@@ -115,7 +115,7 @@
 
 // Reproduit la logique de visibilité de reveal(), mais renvoie un booléen
 // au lieu de content, utilisable dans du code Typst ordinaire (cetz, etc.)
-#let reveal(..explicit-or-range, body) = {
+#let reveal(..explicit-or-range, body, hide-fn: none) = {
   let step = sk-states.subslide-step.get().first()
   let explicit = explicit-or-range.pos()
   let from = explicit-or-range.named().at("from", default: 1)
@@ -130,6 +130,8 @@
   if visible {
     body
   } else {
-    none
+    if hide-fn != none {
+      hide-fn(body)
+    }
   }
 }

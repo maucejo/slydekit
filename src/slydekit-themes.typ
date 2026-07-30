@@ -1,6 +1,7 @@
 #import "slydekit-defaults.typ": *
 #import "themes/metropolis.typ": metropolis, metropolis-fonts, metropolis-colors
 #import "themes/fancy.typ": fancy, fancy-fonts, fancy-colors
+#import "themes/simple.typ": simple, simple-fonts, simple-colors
 
 #let title-slide = context sk-states.theme.get().title
 
