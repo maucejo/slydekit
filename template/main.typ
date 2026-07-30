@@ -189,6 +189,6 @@
 
 == Second appendix
 
-#lorem(250)
+#lorem(25)
 
 #title-slide
