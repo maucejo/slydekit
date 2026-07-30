@@ -83,7 +83,7 @@
       #place(top, dy: -0.75em)[#cell(fill: sk-states.colors.get().secondary.lighten(60%))
       ]
       #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
-      #place(dx: 3.5%, dy: 1.25em)[#box(width: 100%, outset: (left: 2em, right: 1em, rest: 0.75em), fill: sk-states.colors.get().secondary.lighten(40%), text(size: 1.25em, weight: "bold", fill: colors-theme.primary, sk-states.current-slide-title.get()))]
+      #place(dx: 3.5%, dy: 1em)[#box(width: 100%, outset: (left: 2em, right: 1em, rest: 0.5em), fill: sk-states.colors.get().secondary.lighten(45%), text(size: 1.25em, weight: "bold", fill: colors-theme.primary, sk-states.current-slide-title.get()))]
     ]
     full-width(mini-content)
   }

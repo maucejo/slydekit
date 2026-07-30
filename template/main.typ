@@ -15,7 +15,7 @@
   theme: cambfurt,
   fonts: cambfurt-fonts,
   lang: "en",
-  // navigation: "minislide",
+  navigation: "minislide",
   title-logo: (image("images/typst-logo.svg", height: 2.5cm),),
   slide-logo: image("images/typst-logo.svg", height: 1.5cm),
 )
