@@ -102,7 +102,7 @@
 )
 
 // Full-width block helper (page bleed)
-#let wideblock(fill: none, anchor: top, body) = context {
+#let full-width(fill: none, anchor: top, body) = context {
   let margin = page.margin
   let margin-left = if type(margin) == dictionary {
     margin.at("left", default: margin.at("x", default: 0pt))

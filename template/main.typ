@@ -11,8 +11,9 @@
   contact: "john.doe@univ.typst.fr",
   // theme: metropolis,
   // theme: fancy,
-  theme: simple,
-  fonts: fancy-fonts,
+  // theme: simple,
+  theme: cambfurt,
+  fonts: cambfurt-fonts,
   lang: "en",
   // navigation: "minislide",
   title-logo: (image("images/typst-logo.svg", height: 2.5cm),),
@@ -188,6 +189,6 @@
 
 == Second appendix
 
-#lorem(25)
+#lorem(250)
 
 #title-slide

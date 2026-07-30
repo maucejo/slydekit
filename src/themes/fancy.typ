@@ -81,7 +81,7 @@
   // Header and footer
   let header = context if sk-states.navigation.get() == "topbar" {
     let header-title = [#h(1em)*#sk-states.current-slide-title.get()*]
-    wideblock(fill: colors-theme.header, align(horizon, text(size: 1.2em, fill: white)[#header-title]))
+    full-width(fill: colors-theme.header, align(horizon, text(size: 1.2em, fill: white)[#header-title]))
   } else if sk-states.navigation.get() == "minislide" {
     let mini-content = [
       #let pad-lr = 3.5%
@@ -91,7 +91,7 @@
       #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
       #place(dx: 3.5%, dy: 1.25em)[#text(size: 1.25em, weight: "bold", fill: colors-theme.header, sk-states.current-slide-title.get())]
     ]
-    wideblock(mini-content)
+    full-width(mini-content)
   }
 
   let footer = context {
@@ -130,9 +130,8 @@
           )}
         )
       }
-      // #wideblock(footer-content)
-      #footer-content
-      #wideblock(anchor: bottom, progress-bar(colors-theme.primary, colors-theme.secondary, height: 2.5pt))
+      #move(dy: 0.35em,footer-content)
+      #full-width(anchor: bottom, progress-bar(colors-theme.primary, colors-theme.secondary, height: 2.5pt))
     ]
   }
 
@@ -202,7 +201,7 @@
       place(dy: 0.5em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().primary))
     }
   }
-  let header = wideblock(fill: header-color, align(horizon, text(size: 1.2em, fill: text-color)[#header-content]))
+  let header = full-width(fill: header-color, align(horizon, text(size: 1.2em, fill: text-color)[#header-content]))
 
   set page(header: header, footer: none)
 
