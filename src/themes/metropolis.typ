@@ -121,6 +121,12 @@
     inset: 0.5em
   )
 
+  // Reference
+  show ref: set text(fill: colors-theme.primary)
+
+  // Links
+  show link: set text(fill: colors-theme.primary)
+
   body
 }
 

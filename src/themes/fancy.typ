@@ -65,19 +65,6 @@
 
   show heading.where(level: 2): it => slide(it.body)[]
 
-  // Tables
-  show table.cell.where(y: 0): set text(weight: "bold", fill: white)
-  set table(
-    fill: (_, y) => if y == 0 {colors-theme.primary} ,
-    stroke: (_, y) => if y == 0 {(bottom: 0pt)} else {(bottom: 01pt + colors-theme.secondary)},
-    inset: 0.5em
-  )
-  show table: it => block(
-    stroke: 1pt + colors-theme.primary,
-    radius: 0.75em,
-    clip: true
-  )[#it]
-
   // Header and footer
   let header = context if sk-states.navigation.get() == "topbar" {
     let header-title = [#h(1em)*#sk-states.current-slide-title.get()*]
@@ -135,15 +122,34 @@
     ]
   }
 
+  set page(
+    header: header,
+    footer: footer
+  )
+
   // Lists and enumerations
   set list(marker: ([#text(size: 0.9em, fill:colors-theme.primary)[#sym.circle.filled]], [#text(size: 0.9em, fill:colors-theme.primary)[#sym.triangle.filled.small.r]], [#text(size: 0.9em, fill:colors-theme.primary)[#sym.square.filled]]))
 
   set enum(numbering: n => text(fill:colors-theme.primary)[#n.])
 
-  set page(
-    header: header,
-    footer: footer
+  // Tables
+  show table.cell.where(y: 0): set text(weight: "bold", fill: white)
+  set table(
+    fill: (_, y) => if y == 0 {colors-theme.primary} ,
+    stroke: (_, y) => if y == 0 {(bottom: 0pt)} else {(bottom: 01pt + colors-theme.secondary)},
+    inset: 0.5em
   )
+  show table: it => block(
+    stroke: 1pt + colors-theme.primary,
+    radius: 0.75em,
+    clip: true
+  )[#it]
+
+  // Reference
+  show ref: set text(fill: colors-theme.primary)
+
+  // Links
+  show link: set text(fill: colors-theme.primary)
 
   body
 }
