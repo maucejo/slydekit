@@ -33,7 +33,7 @@
     let number = it.prefix()
     let section = it.element.body
     block(above: 1.5em, below: 0em)
-    [#text([#number], fill: sk-states.colors.get().primary)#sym.space.thin#section]
+    [#text([#number], fill: sk-states.colors.get().primary) #section]
   }
 
   set align(horizon)
@@ -201,7 +201,7 @@
     let color = if is-current { active-color } else { inactive-color }
 
     let entry = [
-      #text(fill: color, weight: "bold")[#num]#sym.space.thin#s.body
+      #text(fill: color, weight: "bold")[#num] #s.body
     ]
 
     block(below: 1.5em)[

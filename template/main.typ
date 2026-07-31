@@ -11,7 +11,7 @@
   contact: "john.doe@univ.typst.fr",
   // theme: metropolis,
   // theme: fancy,
-  // theme: simple,
+  theme: simple,
   // theme: cambfurt,
   // theme: chalkboard,
   fonts: metropolis-fonts,
