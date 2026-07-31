@@ -11,3 +11,4 @@
 .gitignore
 docs
 .edist
+publish-docs.sh
