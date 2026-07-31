@@ -1,6 +1,7 @@
 #import "../slydekit-deps.typ": *
 #import "../slydekit-defaults.typ": *
 #import "../slydekit-utils.typ": *
+#import "../slydekit-outline.typ": *
 
 #let cambfurt-colors = (
   primary: rgb("#a30100"),
@@ -42,7 +43,7 @@
 
   // Heading styles
   show heading.where(level: 1): it => {
-    let dy = if sk-states.navigation.get() == "topbar" { -2pt } else { -0.2em }
+    let dy = if sk-states.navigation.get() == "topbar" { -2pt } else { -0.5em }
     let header-content = if sk-states.navigation.get() == "topbar" {
       let topbar = grid(
         columns: (1fr, 1fr),
@@ -53,7 +54,7 @@
       )
       move(dy: dy)[#topbar]
     } else {
-      move(dx: 1em, dy: dy)[*#sk-states.localization.get().toc*]
+      move(dx: 1em, dy: dy)[#box(width: 100%, fill: sk-states.colors.get().secondary, outset: (left: 1em, rest: 0.5em))[*#sk-states.localization.get().toc*]]
     }
     let header = full-width(align(horizon, text(size: 1.399em, fill: sk-states.colors.get().primary)[#header-content]))
 
@@ -153,6 +154,7 @@
 
   // References
   show ref: set text(fill: colors-theme.primary)
+  show ref: it => show-ref(it)
 
   // Links
   show link: set text(fill: colors-theme.primary)
@@ -208,7 +210,6 @@
 }
 
 #let cambfurt-toc = context {
-  let dy = if sk-states.navigation.get() == "topbar" { -2pt } else { -0.2em }
   let header-content = if sk-states.navigation.get() == "topbar" {
       let topbar = grid(
         columns: (1fr, 1fr),
@@ -219,7 +220,7 @@
       )
       move(dy: -2pt)[#topbar]
     } else {
-      move(dx: 1em, dy: dy)[*#sk-states.localization.get().toc*]
+      move(dx: 1em, dy: -0.5em)[#box(width: 100%, fill: sk-states.colors.get().secondary, outset: (left: 1em, rest: 0.5em))[*#sk-states.localization.get().toc*]]
     }
     let header = full-width(fill: none, align(horizon, text(size: 1.2em, fill: sk-states.colors.get().primary)[#header-content]))
 

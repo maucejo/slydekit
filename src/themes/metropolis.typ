@@ -1,5 +1,6 @@
 #import "../slydekit-defaults.typ": *
 #import "../slydekit-utils.typ": *
+#import "../slydekit-outline.typ": *
 
 #let metropolis-colors = (
   primary: rgb("#eb811b"),
@@ -123,6 +124,7 @@
 
   // Reference
   show ref: set text(fill: colors-theme.primary)
+  show ref: it => show-ref(it)
 
   // Links
   show link: set text(fill: colors-theme.primary)

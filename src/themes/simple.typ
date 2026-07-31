@@ -1,5 +1,6 @@
 #import "../slydekit-defaults.typ": *
 #import "../slydekit-utils.typ": *
+#import "../slydekit-outline.typ": *
 
 #let simple-colors = (
   primary: rgb("#014682"),
@@ -117,6 +118,7 @@
 
   // References
   show ref: set text(fill: colors-theme.primary)
+  show ref: it => show-ref(it)
 
   // Links
   show link: set text(fill: colors-theme.primary)

@@ -44,6 +44,21 @@
   // Page alignment
   set align(horizon)
 
+  // Footnote style
+  set footnote.entry(separator: none, clearance: 0.25em)
+  show footnote.entry: it => context {
+    set text(size: 0.75em)
+    if sk-states.is-footcite.at(it.note.location()) {
+      it.note.body
+    } else {
+      it
+    }
+  }
+
+  // Bibliography style
+  set bibliography(title: none)
+  show bibliography: set text(size: 0.85em)
+
   // Theme
   let sk-theme = metropolis + theme
   show: sk-theme.theme.with(colors: colors)

@@ -1,6 +1,7 @@
 #import "../slydekit-deps.typ": *
 #import "../slydekit-defaults.typ": *
 #import "../slydekit-utils.typ": *
+#import "../slydekit-outline.typ": *
 
 #let fancy-colors = (
   primary: rgb("#c1002a"),
@@ -147,6 +148,7 @@
 
   // Reference
   show ref: set text(fill: colors-theme.primary)
+  show ref: it => show-ref(it)
 
   // Links
   show link: set text(fill: colors-theme.primary)
@@ -156,7 +158,7 @@
 
 // Title page
 #let fancy-title = context {
-  let fancy-margin = (left: 0.5cm, right: 0.5cm, top: 0.75cm, bottom: 0.75cm)
+  let fancy-margin = (left: 0.75cm, right: 0.75cm, top: 0.75cm, bottom: 0.75cm)
 
   set page(header: none, footer: none, margin: margins + fancy-margin)
 
@@ -168,7 +170,7 @@
     place(top, row-img(title-info.logo))
   }
 
-  let title-line = line(length: 110%, stroke: 2pt + sk-states.colors.get().primary)
+  let title-line = line(length: 115%, stroke: 2pt + sk-states.colors.get().primary)
   block(width: 100%, inset: 2cm, {
       title-line
       text(size: 1.75em, strong(title-info.title))

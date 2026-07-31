@@ -12,12 +12,12 @@
   // theme: metropolis,
   // theme: fancy,
   // theme: simple,
-  theme: cambfurt,
-  fonts: cambfurt-fonts,
+  // theme: cambfurt,
+  fonts: metropolis-fonts,
   lang: "en",
   navigation: "minislide",
-  title-logo: (image("images/typst-logo.svg", height: 2.5cm),),
-  slide-logo: image("images/typst-logo.svg", height: 1.5cm),
+  title-logo: (image("../src/resources/images/slydekit-full.svg", height: 2.5cm),),
+  slide-logo: image("../src/resources/images/slydekit-mini.svg", height: 1.25cm),
 )
 
 #title-slide
@@ -79,7 +79,7 @@
 
 == Section <s:section>
 
-#lorem(10)
+#lorem(10)#footcite(<knuth>)
 
 - zefzef
   - zezef
@@ -88,7 +88,11 @@
 + ezef
 + zefzef
 
-#place(bottom + right, link-box(<s:test>, "Go to Test slide"))
+Slide @s:section, slide @s:test
+
+#lorem(10)
+
+#place(bottom + right, dy: 1.5em, link-box(<s:test>, "Go to Test slide"))
 
 #slide("Math")[
   $
@@ -162,11 +166,14 @@
   #lorem(10)
 ]
 
+== Bibliography
+#bibliography("ref.bib") <hide-toc>
+
 #show: appendix
 
 = Annexes <hide-toc>
 
-== Table
+== Table <s:table>
 
 #align(center)[
   #table(
