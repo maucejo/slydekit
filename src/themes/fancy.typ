@@ -74,7 +74,7 @@
     let mini-content = [
       #let pad-lr = 3.5%
       #place(top, dy: -0.75em)[#cell(fill: gradient.linear(sk-states.colors.get().background.darken(10%), sk-states.colors.get().background, dir: ttb))
-      #line(length: 100%, stroke: 0.05em + colors-theme.primary)
+      #line(length: 100%, stroke: 0.05em + colors-theme.header)
       ]
       #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
       #place(dx: 3.5%, dy: 1.25em)[#text(size: 1.25em, weight: "bold", fill: colors-theme.header, sk-states.current-slide-title.get())]
@@ -110,9 +110,9 @@
               #set text(fill:colors-theme.footer, weight: "bold")
               #show: move.with(dx: 0.75em)
               #if sk-states.appendix.get() {
-                context box(stroke: 1.75pt + colors-theme.primary, radius: 5pt, inset: -0.5em,outset: 1em)[A | #sk-states.app-count.get().first() / #sk-states.slide-number.final().first()]
+                context box(stroke: 1.75pt + colors-theme.footer, radius: 5pt, inset: -0.5em,outset: 1em)[A | #sk-states.app-count.get().first() / #sk-states.slide-number.final().first()]
               } else {
-                context box(stroke: 1.75pt + colors-theme.primary, radius: 5pt, inset: -0.5em,outset: 1em)[#sk-states.slide-number.get().first() / #sk-states.slide-number.final().first()]
+                context box(stroke: 1.75pt + colors-theme.footer, radius: 5pt, inset: -0.5em,outset: 1em)[#sk-states.slide-number.get().first() / #sk-states.slide-number.final().first()]
               }
             ]
           )}
@@ -206,7 +206,7 @@
     [#move(dx: 1em, dy: dy)[*#sk-states.localization.get().toc*]]
 
     if sk-states.navigation.get() == "minislide" {
-      place(dy: 0.5em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().primary))
+      place(dy: 0.5em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().header))
     }
   }
   let header = full-width(fill: header-color, align(horizon, text(size: 1.2em, fill: text-color)[#header-content]))

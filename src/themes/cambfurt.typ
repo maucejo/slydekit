@@ -49,7 +49,7 @@
         columns: (1fr, 1fr),
         align: right + horizon,
         rows: 1.5em,
-        grid.cell(fill: sk-states.colors.get().primary)[#text(fill: white)[*#sk-states.localization.get().toc* #h(0.75em)]],
+        grid.cell(fill: sk-states.colors.get().header)[#text(fill: white)[*#sk-states.localization.get().toc* #h(0.75em)]],
         cell(fill: sk-states.colors.get().secondary),
       )
       move(dy: dy)[#topbar]
@@ -74,7 +74,7 @@
         columns: (1fr, 1fr),
         align: (right + horizon, left + horizon),
         rows: 1.5em,
-        grid.cell(fill: sk-states.colors.get().primary)[#text(fill: white)[*#current-section* #h(0.75em)]],
+        grid.cell(fill: sk-states.colors.get().header)[#text(fill: white)[*#current-section* #h(0.75em)]],
         grid.cell(fill: sk-states.colors.get().secondary)[#text(fill: sk-states.colors.get().primary)[#h(0.75em) *#sk-states.current-slide-title.get()*]],
       )
       full-width(move(dy: -2pt)[#topbar])
@@ -84,7 +84,7 @@
       #place(top, dy: -0.75em)[#cell(fill: sk-states.colors.get().secondary.lighten(60%))
       ]
       #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
-      #place(dx: 3.5%, dy: 1em)[#box(width: 100%, outset: (left: 2em, right: 1em, rest: 0.5em), fill: sk-states.colors.get().secondary.lighten(45%), text(size: 1.25em, weight: "bold", fill: colors-theme.primary, sk-states.current-slide-title.get()))]
+      #place(dx: 3.5%, dy: 1em)[#box(width: 100%, outset: (left: 2em, right: 1em, rest: 0.5em), fill: sk-states.colors.get().secondary.lighten(45%), text(size: 1.25em, weight: "bold", fill: colors-theme.header, sk-states.current-slide-title.get()))]
     ]
     full-width(mini-content)
   }
@@ -111,9 +111,9 @@
           columns: (1fr, 2fr, 1fr),
           rows: 1.5em,
           align: (center + horizon, center + horizon, right + horizon),
-          grid.cell(fill: sk-states.colors.get().primary)[#text(fill: white)[*#sk-states.pres-info.get().author* #h(0.75em)]],
-          grid.cell(fill: sk-states.colors.get().secondary)[#text(fill: sk-states.colors.get().primary)[#h(0.75em) *#sk-states.pres-info.get().short-title*]],
-          grid.cell(fill: sk-states.colors.get().primary)[#text(fill: white)[*#slide-number* #h(1em)]],
+          grid.cell(fill: sk-states.colors.get().footer)[#text(fill: white)[*#sk-states.pres-info.get().author* #h(0.75em)]],
+          grid.cell(fill: sk-states.colors.get().secondary)[#text(fill: sk-states.colors.get().footer)[#h(0.75em) *#sk-states.pres-info.get().short-title*]],
+          grid.cell(fill: sk-states.colors.get().footer)[#text(fill: white)[*#slide-number* #h(1em)]],
         )
 
         place(bottom, dx: 0.1em, dy: -2.7em, sk-states.logo.get())

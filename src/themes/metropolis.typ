@@ -72,7 +72,7 @@
     let mini-content = [
       #let pad-lr = 3.5%
       #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
-      #place(dy: 0.5em, line(length: 100%, stroke: 0.05em + colors-theme.primary))
+      #place(dy: 0.5em, line(length: 100%, stroke: 0.05em + colors-theme.header))
 
       #place(dx: 3.5%, dy: 1.25em)[#text(size: 1.25em, weight: "bold", fill: colors-theme.header, sk-states.current-slide-title.get())]
     ]
@@ -185,7 +185,7 @@
     [#move(dx: 1em, dy: dy)[*#sk-states.localization.get().toc*]]
 
     if sk-states.navigation.get() == "minislide" {
-      place(dy: 0.5em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().primary))
+      place(dy: 0.5em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().header))
     }
   }
   let header = full-width(fill: header-color, align(horizon, text(size: 1.2em, fill: text-color)[#header-content]))

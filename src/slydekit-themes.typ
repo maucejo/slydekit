@@ -3,6 +3,7 @@
 #import "themes/fancy.typ": fancy, fancy-fonts, fancy-colors
 #import "themes/simple.typ": simple, simple-fonts, simple-colors
 #import "themes/cambfurt.typ": cambfurt, cambfurt-fonts, cambfurt-colors
+#import "themes/chalkboard.typ": chalkboard, chalkboard-fonts, chalkboard-colors, chalkboard-colors-variant
 
 #let title-slide = context sk-states.theme.get().title
 

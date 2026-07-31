@@ -206,7 +206,7 @@
 
     block(below: 1.5em)[
       #if is-current {
-        text(weight: "bold")[#entry]
+        entry
       } else {
         text(fill: inactive-color)[#entry]
       }
