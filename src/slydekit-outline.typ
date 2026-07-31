@@ -26,6 +26,20 @@
   end
 })
 
+#let toc = {
+  set outline.entry(fill: none)
+  show outline.entry: it => context {
+    show linebreak: none
+    let number = it.prefix()
+    let section = it.element.body
+    block(above: 1.5em, below: 0em)
+    [#text([#number], fill: sk-states.colors.get().primary)#sym.space.thin#section]
+  }
+
+  set align(horizon)
+  adaptive-columns(text(size: 1.2em, strong(outline(title:none, indent: 1em, depth: 1))))
+}
+
 /// Affiche une barre de navigation (mini-slides) en haut de page.
 ///
 /// - fill (color, none): Couleur du texte principal. Si `none`, utilise la couleur du thème.

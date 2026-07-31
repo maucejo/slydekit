@@ -12,7 +12,7 @@
   // theme: metropolis,
   // theme: fancy,
   // theme: simple,
-  // theme: cambfurt,
+  theme: cambfurt,
   fonts: metropolis-fonts,
   lang: "en",
   navigation: "minislide",
@@ -30,29 +30,31 @@
 
 #slide("CeTZ integration", steps: 5)[
   #context {
-    cetz.canvas({
-      import cetz.draw: *
-      let reveal-cetz = reveal.with(hide-fn: cetz.draw.hide.with(bounds: true))
+    align(center)[
+      #cetz.canvas({
+        import cetz.draw: *
+        let reveal-cetz = reveal.with(hide-fn: cetz.draw.hide.with(bounds: true))
 
-      // Toujours visible
-      circle((0, 0))
+        // Toujours visible
+        circle((0, 0))
 
-      // Visible uniquement à l'étape 2
-      reveal-cetz(2, line((0, 0), (2, 1)))
+        // Visible uniquement à l'étape 2
+        reveal-cetz(2, line((0, 0), (2, 1)))
 
-      // Visible à partir de l'étape 3, simule uncover(from: 3)
-      reveal-cetz(from: 3, rect((3, 0), (4, 1)))
+        // Visible à partir de l'étape 3, simule uncover(from: 3)
+        reveal-cetz(from: 3, rect((3, 0), (4, 1)))
 
-      // Visible entre les étapes 3 et 5 inclus, simule uncover(from: 3, to: 5)
-      reveal-cetz(from: 3, to: 5, {
-        circle((5, 0), radius: 0.5, fill: blue)
-        circle((6.5, 0), radius: 0.5, fill: green)
-        }
-      )
+        // Visible entre les étapes 3 et 5 inclus, simule uncover(from: 3, to: 5)
+        reveal-cetz(from: 3, to: 5, {
+          circle((5, 0), radius: 0.5, fill: blue)
+          circle((6.5, 0), radius: 0.5, fill: green)
+          }
+        )
 
-      // Visible seulement aux étapes 2 et 4, simule uncover(2, 4)
-      reveal-cetz(2, 4, line((0, 2), (2, 3)))
-    })
+        // Visible seulement aux étapes 2 et 4, simule uncover(2, 4)
+        reveal-cetz(2, 4, line((0, 2), (2, 3)))
+      })
+    ]
   }
 ]
 

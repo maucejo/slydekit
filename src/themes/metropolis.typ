@@ -192,17 +192,7 @@
 
   set page(header: header, footer: none)
 
-  set outline.entry(fill: none)
-  show outline.entry: it => context {
-    show linebreak: none
-    let number = it.prefix()
-    let section = it.element.body
-    block(above: 1.5em, below: 0em)
-    [#text([#number], fill: sk-states.colors.get().primary)#sym.space.thin#section]
-  }
-
-  set align(horizon)
-  adaptive-columns(text(size: 1.2em, strong(outline(title:none, indent: 1em, depth: 1))))
+  toc
 }
 
 #let metropolis-focus-slide(body) = context {
