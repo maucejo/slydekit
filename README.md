@@ -1,12 +1,12 @@
-# Diaporama
+# Slydekit
 
-[![Generic badge](https://img.shields.io/badge/Version-0.1.0-cornflowerblue.svg)](https://github.com/maucejo/bookly/releases/tag/4.1.3)
-[![MIT License](https://img.shields.io/badge/License-MIT-forestgreen)](https://github.com/maucejo/bookly/blob/main/LICENSE)
-[![User Manual](https://img.shields.io/badge/Manual-.pdf-mediumpurple)](https://github.com/maucejo/bookly/blob/main/docs/manual.pdf)
+[![Generic badge](https://img.shields.io/badge/Version-0.1.0-cornflowerblue.svg)](https://github.com/maucejo/slidekit/releases/tag/0.1.0)
+[![MIT License](https://img.shields.io/badge/License-MIT-forestgreen)](https://github.com/maucejo/slydekit/blob/main/LICENSE)
+[![User Manual](https://img.shields.io/badge/Manual-.pdf-mediumpurple)](https://github.com/maucejo/slidekit/blob/main/docs/manual.pdf)
 
-<!-- <p align="center">
-<img src="docs/manual-images/bookly-logo.png" alt="drawing" width="200"/>
-</p> -->
+<p align="center">
+<img src="../slydekit/src/resources/images/slydekit-full.svg" alt="drawing" width="200"/>
+</p>
 
 
 ## Dependencies
