@@ -237,6 +237,7 @@
     stroke: 1.5pt + sk-states.colors.get().primary,
     radius: 5pt,
     inset: 0.5em,
+    fill: sk-states.colors.get().secondary.lighten(70%),
   )[#body]
 }
 
