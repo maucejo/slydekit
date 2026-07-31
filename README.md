@@ -8,7 +8,7 @@
 <img src="./src/resources/images/slydekit-full.svg" alt="drawing" width="200"/>
 </p>
 
-Slydekit is a Typst template for building academic and scientific presentations. It generates slides directly from document headings, ships with five ready-made themes, and provides a small but complete toolkit for incremental reveals, navigation, boxed content, and citation handling, all built on top of Typst's native state and query system rather than a foreign templating layer.
+Slydekit is a Typst template for building academic and scientific presentations. It generates slides directly from document headings, ships with five ready-made themes, and provides a small but complete toolkit for incremental reveals, navigation, boxed content, and citation handling, all built on top of Typst native state and query system rather than a foreign templating layer.
 
 ## Import and initialization
 
