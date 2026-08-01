@@ -1,5 +1,5 @@
 #import "slydekit-defaults.typ": *
-#import "slydekit-animation.typ": split-at-pause, analyze-max-step
+#import "slydekit-animation.typ": split-at-pause, analyze-max-step, analyze-local-max-step
 
 // Slides
 #let slide(title, steps: none, label:none, body) = {
@@ -10,9 +10,16 @@
   // 1. Découpage aux emplacements <pause>
   let chunks = split-at-pause(body)
 
-  // 2. Calcul du nombre d'étapes (maximum entre les <pause> et les uncover/only)
+  // 2. Calcul du nombre d'étapes (maximum entre les <pause>, les uncover/only et les local-reveal)
   let max-reveal-step = analyze-max-step(body)
-  let total = calc.max(chunks.len(), max-reveal-step)
+  let max-local-reveal-step = 1
+  for (idx, chunk) in chunks.enumerate() {
+    let local-max = analyze-local-max-step(chunk)
+    // idx est base-0, les étapes sont base-1
+    max-local-reveal-step = calc.max(max-local-reveal-step, idx + local-max)
+  }
+
+  let total = calc.max(chunks.len(), max-reveal-step, max-local-reveal-step)
   if steps != none {
     total = calc.max(total, steps)
   }
@@ -45,6 +52,7 @@
 
       for (idx, chunk) in chunks.enumerate() {
         if idx < i {
+          sk-states.pause-index.update(idx + 1)
           chunk
         } else {
           hide(chunk)
