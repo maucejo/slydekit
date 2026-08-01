@@ -18,13 +18,20 @@
   raw: "Cascadia Code",
 )
 
-#let fancy-theme(colors: fancy-colors, body) = context {
+#let fancy-theme(colors: fancy-colors, fonts: fancy-fonts, body) = context {
   let colors-theme = if colors != none {
      fancy-colors + colors
   } else {
     fancy-colors
   }
   sk-states.colors.update(colors-theme)
+
+  let fonts-theme = if fonts != none {
+     fancy-fonts + fonts
+  } else {
+    fancy-fonts
+  }
+  sk-states.fonts.update(fonts-theme)
 
   // Page setup
   let fancy-margin = if sk-states.navigation.get() == "minislide" {

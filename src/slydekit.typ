@@ -12,7 +12,7 @@
   date: "Date",
   institution: "Institution",
   contact: none,
-  theme: metropolis,
+  theme: simple,
   fonts: default-fonts,
   colors: none,
   lang: "fr",
@@ -21,19 +21,12 @@
   title-logo: (),
   slide-logo: none,
   body
-) = {
+) = context {
   // Page setup
   set page(
     paper: "presentation-" + aspect-ratio,
     margin: margins,
   )
-
-  // Fonts
-  let sk-fonts = default-fonts + fonts
-  set text(font: sk-fonts.body, size: sk-fonts.size, lang: lang, region: lang)
-  show math.equation: set text(font: sk-fonts.math, size: sk-fonts.size)
-  show raw: set text(font: sk-fonts.raw, size: sk-fonts.size)
-
 
   // Localization
   let sk-lang = if default-language.contains(lang) {lang} else {"en"}
@@ -61,7 +54,7 @@
 
   // Theme
   let sk-theme = metropolis + theme
-  show: sk-theme.theme.with(colors: colors)
+  show: sk-theme.theme.with(colors: colors, fonts: fonts)
 
   // Title page
   let sk-pres-info = (title: title, subtitle: subtitle, short-title: short-title, author: author, date: date, institution: institution, contact: contact, logo: title-logo)
@@ -78,6 +71,9 @@
   show selector(<hide>): {
     show heading.where(level: 1): none
   }
+
+  // Fonts
+  show: set-text.with(lang: lang)
 
   body
 }

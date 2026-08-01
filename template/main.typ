@@ -136,6 +136,32 @@ Slide @s:section, slide @s:test
   C
 ]
 
+// == Synchronized columns
+
+// #grid(columns: (1fr, 1fr), column-gutter: 1em,
+//   track[
+//     First point #pause
+//     Second point #pause
+//     Third point
+//   ],
+//   track[
+//     First parallel #pause
+//     Second parallel
+//   ]
+// )
+
+// == Successive choices
+
+// #alternatives[Hypothèse A][Hypothèse B][Hypothèse C]
+
+// == Automatic list
+
+// #item-by-item[
+//   - First argument
+//   - Second argument
+//   - Third argument
+// ]
+
 #focus-slide[It is important!]
 
 = Second section

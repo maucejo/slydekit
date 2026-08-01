@@ -6,6 +6,7 @@
   current-slide-title: state("current-slide-title", []),
   fonts: state("fonts"),
   is-footcite: state("is-footcite", false),
+  // item-step: counter("item-step"),
   logo: state("logo"),
   localization: state("localization"),
   navigation: state("navigation", "topbar"),
@@ -44,14 +45,5 @@
   header-footer-logo: none
 )
 
-#let default-colors = (
-  primary: white,
-  primary-light: white,
-  secondary: white,
-  background: white,
-  neutral-dark: white,
-  neutral-darkest: white,
-)
-
-#let default-language = ("en", "de", "fr",  "es", "it", "pt", "zh")
+#let default-language = ("en", "fr")
 

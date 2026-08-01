@@ -40,16 +40,15 @@
   adaptive-columns(text(size: 1.2em, strong(outline(title:none, indent: 1em, depth: 1))))
 }
 
-/// Affiche une barre de navigation (mini-slides) en haut de page.
-///
-/// - fill (color, none): Couleur du texte principal. Si `none`, utilise la couleur du thème.
-/// - alpha (ratio): Transparence appliquée aux sections inactives (défaut: 50%).
-/// - display-subsection (boolean): Affiche des puces (cercles) pour chaque diapositive sous les sections.
-/// - linebreaks (boolean): Si `true`, place les puces sur une nouvelle ligne sous le titre de section.
-/// - display-appendix (string, boolean):
-///     - `"auto"` : Affiche les sections principales pendant la présentation, et bascule sur l'annexe pendant l'annexe.
-///     - `true`   : Affiche toujours tout (principal + annexe).
-///     - `false`  : Ne montre jamais les sections d'annexe.
+// Display a progress bar at the bottom of the slide, showing the current section progress
+// fill: color of the progress bar (default: primary color of the theme)
+// alpha: transparency applied to inactive sections (default: 50%)
+// display-subsection: whether to display bullets for each slide under the sections (default: true)
+// linebreaks: whether to place the bullets on a new line under the section title (default: true)
+// display-appendix: whether to display appendix sections (default: "auto", which shows main sections during the main presentation and switches to appendix during the appendix)
+// - "auto" : Displays main sections during the main presentation and switches to appendix during the appendix.
+// - true   : Always displays everything (main + appendix).
+// - false  : Never displays appendix sections.
 #let mini-slides(
   fill: none,
   alpha: 50%,
@@ -57,7 +56,7 @@
   linebreaks: true,
   display-appendix: "auto",
 ) = context {
-  // 1. Récupération de la couleur principale
+  // Retrieving the main color
   let theme-colors = sk-states.colors.get()
   let main-fill = if fill != none {
     fill
@@ -67,7 +66,7 @@
 
   let faded-fill = if type(main-fill) == color { main-fill.lighten(alpha) } else { main-fill }
 
-  // 2. Détection du contexte courant (sommes-nous dans l'annexe ?)
+  // Detection of the current slide number and the total number of slides
   let current-is-appendix = sk-states.appendix.get()
 
   let is-visible(h) = {
@@ -82,18 +81,18 @@
     }
   }
 
-  // 3. Sections : toujours de vrais headings de niveau 1
+  // Sections : always real level 1 headings
   let sections = query(heading.where(level: 1)).filter(is-visible)
   if sections.len() == 0 {
     return []
   }
 
-  // 4. Diapositives : le marqueur posé par slide(), indépendant de == ou #slide(...)
+  // Slides : the marker placed by slide(), independent of == or #slide(...)
   let all-slides = query(<sk-slide>).filter(is-visible)
 
   let current-page = here().page()
 
-  // Index de la section active
+  // Index of the current section
   let current-sec-idx = sections.filter(s => s.location().page() <= current-page).len() - 1
 
   let cols = ()
@@ -115,7 +114,7 @@
     let is-current-sec = (sec-idx == current-sec-idx)
     let sec-color = if is-current-sec { main-fill } else { faded-fill }
 
-    // Diapositives rattachées à cette section, via le marqueur <sk-slide>
+    // Slides attached to this section, via the <sk-slide> marker
     let slides = all-slides.filter(h => (
       h.location().page() >= sec-page
       and h.location().page() < next-sec-page

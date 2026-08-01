@@ -1,5 +1,5 @@
 #import "slydekit-defaults.typ": *
-#import "slydekit-animation.typ": split-at-pause, analyze-max-step
+#import "slydekit-animation.typ": split-at-pause, analyze-max-step, analyze-local-max-step
 
 // Slides
 #let slide(title, steps: none, label:none, body) = {
@@ -7,12 +7,19 @@
     sk-states.current-slide-title.update(title)
   }
 
-  // 1. Découpage aux emplacements <pause>
+  // Split the body into chunks at <pause> labels and determine the total number of steps
   let chunks = split-at-pause(body)
 
-  // 2. Calcul du nombre d'étapes (maximum entre les <pause> et les uncover/only)
+  // Determine the maximum step requested by uncover/only
   let max-reveal-step = analyze-max-step(body)
-  let total = calc.max(chunks.len(), max-reveal-step)
+  let max-local-reveal-step = 1
+  for (idx, chunk) in chunks.enumerate() {
+    let local-max = analyze-local-max-step(chunk)
+    // idx is zero-based, while steps are one-based.
+    max-local-reveal-step = calc.max(max-local-reveal-step, idx + local-max)
+  }
+
+  let total = calc.max(chunks.len(), max-reveal-step, max-local-reveal-step)
   if steps != none {
     total = calc.max(total, steps)
   }
@@ -21,7 +28,7 @@
 
   pagebreak(weak: true)
 
-  // Marqueur invisible, posé à chaque appel, indépendamment du titre
+  // Invisible marker, placed at each call, independent of the title
   [#metadata(title)<sk-slide>]
 
   context {
@@ -31,12 +38,12 @@
       sk-states.slide-number.step()
     }
 
-    // Metadonnées pour attacher un label à la diapositive, si demandé
+    // Metadata for attaching a label to the slide, if requested
     if label != none {
       [#metadata((kind: "slide"))#label]
     }
 
-    // 3. Génération directe des sous-diapositives
+    // Direct generation of the first chunk
     for i in range(1, total + 1) {
       sk-states.subslide-step.update(i)
       if i > 1 {
@@ -45,6 +52,7 @@
 
       for (idx, chunk) in chunks.enumerate() {
         if idx < i {
+          sk-states.pause-index.update(idx + 1)
           chunk
         } else {
           hide(chunk)
@@ -196,14 +204,14 @@
 let el = it.element
   if el == none { return it }
 
-  // 1. Détection des diapositives créées via #slide(..., label: <...>)
+  // Detect slides created via #slide(..., label: <...>)
   let is-metadata-slide = (
     el.func() == metadata
     and type(el.value) == dictionary
     and el.value.at("kind", default: none) == "slide"
   )
 
-  // 2. Détection des diapositives créées via == Titre <...>
+  // Detect slides created via == Title <...>
   let is-heading-slide = (
     el.func() == heading
     and el.has("level")
@@ -220,8 +228,7 @@ let el = it.element
       sk-states.slide-number.at(loc).first()
     }
 
-    // Un heading se trouvant juste avant le .step(), on lui ajoute +1.
-    // Pour un metadata, le .step() ayant déjà eu lieu, on garde base-num.
+    // A heading just before the .step(), we add +1. For a metadata, the .step() has already occurred, we keep base-num.
     let num = if is-heading-slide { base-num + 1 } else { base-num }
     let prefix = if is-app { "A." } else { "" }
 
@@ -241,4 +248,13 @@ let el = it.element
   } else {
     panic("No bibliography found. Please add a bibliography to use notecite.")
   }
+}
+
+#let set-text(lang: "en", body) = context {
+  let sk-fonts = sk-states.fonts.get()
+  set text(font: sk-fonts.at("body", default: default-fonts.body), size: sk-fonts.at("size", default: default-fonts.size), lang: lang, region: lang)
+  show math.equation: set text(font: sk-fonts.at("math", default: default-fonts.math), size: sk-fonts.at("size", default: default-fonts.size))
+  show raw: set text(font: sk-fonts.at("raw", default: default-fonts.raw), size: sk-fonts.at("size", default: default-fonts.size))
+
+  body
 }
