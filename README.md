@@ -12,7 +12,9 @@
 <b><em>Simple yet powerful slides</em></b>
 </p>
 
-Slydekit is a Typst template for building academic and scientific presentations. It generates slides directly from document headings, ships with five ready-made themes, and provides a small but complete toolkit for incremental reveals, navigation, boxed content, and citation handling, all built on top of Typst native state and query system rather than a foreign templating layer.
+Slydekit is a Typst presentation template designed to make slide creation simple and flexible. Its theme system, inspired by Bookly, makes it straightforward to design and integrate new themes.
+
+Presentations are built directly from document headings, with five predefined themes included out of the box. Slydekit offers a lightweight but complete set of tools for incremental content reveals, slide navigation, styled boxes, and citation handling. The entire framework relies on Typst’s native state and query system, avoiding the need for an additional templating layer.
 
 ## Import and initialization
 
@@ -50,7 +52,7 @@ Every argument to `slydekit(..)` is optional and falls back to a sensible defaul
 | Argument | Purpose |
 |---|---|
 | `title`, `subtitle`, `short-title`, `author`, `date`, `institution`, `contact` | Front-matter shown on the title slide |
-| `theme` | One of `metropolis`, `simple`, `fancy`, `cambfurt`, `chalkboard` |
+| `theme` | `metropolis`, `simple`, `fancy`, `cambfurt`, `chalkboard` |
 | `fonts` | Dictionary overriding `body`, `math`, `raw` fonts |
 | `colors` | Dictionary overriding any of the theme's colors |
 | `lang` | `"fr"`, `"en"` — drives both `set text` and the built-in localization strings |
@@ -101,14 +103,20 @@ Touying and Polylux are the two most established presentation packages in the Ty
 |---|---|---|---|
 | Slide creation | Heading-driven (`=`, `==`), plus explicit `#slide(..)` for overrides | Heading-driven, plus a richer `#slide[..]` API (waypoints, callback-style animations, cover mode) | Explicit `#slide[..]` calls; headings are not slides by themselves |
 | Animation primitives | `#pause`, `#uncover`, `#only` (with a `cover-fn` hook), plus `one-by-one`, `item-by-item`, `alternatives`/`alternatives-match`, `track` for parallel pause chains, and a boolean `reveal()` for CeTZ/Fletcher | `#pause`, `#meanwhile`, `#uncover`, `#only`, `#alternatives`, math-equation animations, native CeTZ/Fletcher integration | `#pause`, `#uncover`, `#only`, plus a lower-level overlay API that most themes build on |
-| Built-in themes | 5 (`metropolis`, `simple`, `fancy`, `cambfurt`, `chalkboard`), sharing one merge-onto-`metropolis` contract | 6 built-in (`simple`, `metropolis`, `dewdrop`, `university`, `aqua`, `stargazer`) plus a large third-party catalogue on Typst Universe | 1 minimal `simple` theme in core; most visual variety comes from independent community packages (e.g. `metropolis-polylux`, `rectangles-polylux`, `helios-polylux`) |
+| Built-in themes | 5 (`metropolis`, `simple`, `fancy`, `cambfurt`, `chalkboard`), sharing one merge-onto-`simple` contract | 6 built-in (`simple`, `metropolis`, `dewdrop`, `university`, `aqua`, `stargazer`) plus a large third-party catalogue on Typst Universe | 1 minimal `simple` theme in core; most visual variety comes from independent community packages (e.g. `metropolis-polylux`, `rectangles-polylux`, `helios-polylux`) |
 | Navigation / outline | `topbar` or `minislide`, both auto-generated from headings; `progressive-outline` for per-slide mini-TOC | Rich navigation and progress components as part of its component library, theme-dependent | Left to individual themes; core Polylux stays low-level |
 | Appendix handling | First-class `#appendix[..]` with independent numbering and appendix-aware navigation | Supported via slide recall / appendix patterns, more manual | Not built in; left to the user or a theme |
 | Speaker notes, PPTX/HTML export | Through external packages like presio | Yes — dual-screen speaker notes, PDF/PPTX/HTML export via companion tools | Yes — pdfpc integration for speaker notes and timers |
-| Theming model | One fixed six-function contract (`theme`, `title`, `toc`, `focus-slide`, `link-box`, `boxeq`, `box`) per theme, merged onto `metropolis` as a base | A broader, configuration-object-driven theme API supporting many independent styles | No shared contract in core; themes are separate community packages |
+| Theming model | Fixed functions contract (`theme`, `title`, `toc`, `focus-slide`, `link-box`, `boxeq`, `box`) per theme, merged onto `simple` as a base | A broader, configuration-object-driven theme API supporting many independent styles | No shared contract in core; themes are separate community packages |
 | Scope | Academic-presentation features pre-wired: citations, appendix, boxes, bilingual localization | Broad, general-purpose slide framework, largest feature surface of the three | Minimal core, intentionally low-level, designed to be built upon |
 
-In short, Polylux stays a low-level toolkit meant to be built upon, not a finished template. Touying and Slydekit both aim to be complete, ready-to-use frameworks, but they reach that completeness through different theming philosophies. Touying's theme API is broad and configuration-object-driven, built to accommodate almost any presentation style. Slydekit trades that breadth for one fixed six-function contract per theme, so writing or adapting a theme means implementing a handful of functions rather than learning a wider API. On animation specifically, the two are close. `#pause`, `#uncover`, `#only`, `one-by-one`, `item-by-item`, `alternatives`, and `track` cover the same ground as Touying's core vocabulary, including the synchronized-column case that `#meanwhile` addresses in Touying, and the math-equation case that Touying handles with dedicated syntax but Slydekit already covers through plain `uncover`/`only`. What Slydekit doesn't attempt is Touying's export tooling (PPTX, HTML) and speaker-note infrastructure. The trade is architectural simplicity, not reduced animation or theming power.
+In short, Polylux remains a low-level toolkit designed to be extended rather than a complete presentation framework. Touying and Slydekit, on the other hand, both aim to provide full-featured, ready-to-use solutions, but they achieve this goal through different approaches to theming.
+
+Touying offers a comprehensive and highly configurable theme API based on configuration objects, allowing it to support a wide range of presentation styles. Slydekit takes a more constrained approach, since each theme follows a fixed function interface, meaning that creating or adapting a theme only requires implementing a small, well-defined set of functions rather than learning a broader API.
+
+Regarding animations, however, the two frameworks are largely comparable. Slydekit’s `#pause`, `#uncover`, `#only`, `item-by-item`, `alternatives`, and `track` features cover the main use cases addressed by Touying’s animation system. This includes synchronized column reveals, handled in Touying through `#meanwhile`, as well as incremental mathematical equation displays, which Touying supports through `pause` syntax but Slydekit can already achieve using `uncover` and `only` mechanisms.
+
+The main features Slydekit does not aim to reproduce are Touying’s export capabilities (such as PPTX and HTML generation) and its speaker-note system. The difference is therefore one of architectural design: Slydekit prioritizes simplicity and a minimal interface, without sacrificing animation or theming capabilities.
 
 ## Themes at a glance
 
