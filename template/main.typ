@@ -155,12 +155,10 @@ Slide @s:section, slide @s:test
 ]
 
 #slide("Successive choices")[
-  #alternatives(
-  repeat-last: false,
-  [Hypothèse A],
-  [Hypothèse B],
-  [Hypothèse C],
-)
+#alternatives[Ann][Bob][Christopher]
+likes
+#alternatives[chocolate][strawberry][vanilla]
+ice cream.
 ]
 
 #slide("Automatic list")[

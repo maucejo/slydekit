@@ -2,8 +2,20 @@
 #import "slydekit-animation.typ": split-at-pause, analyze-max-step
 
 // Slides
-#let slide(title, steps: none, label: none, body) = {
-  if title != [] {
+#let slide(..args, steps: none, label: none) = {
+  // Extraction and analysis of the positional arguments: title and body. If no title is provided, the first argument is the body. If two arguments are provided, the first is the title and the second is the body.
+  let pos = args.pos()
+  let (title, body) = if pos.len() == 0 {
+    (none, [])
+  } else if pos.len() == 1 {
+    // Case : #slide[...] (no title, the only argument is the content)
+    (none, pos.at(0))
+  } else {
+    // Case : #slide("Title")[...] (2 arguments : title then content)
+    (pos.at(0), pos.at(1))
+  }
+
+  if title != none and title != [] {
     sk-states.current-slide-title.update(title)
   }
 
