@@ -52,17 +52,26 @@
     }
 
     // Direct generation of the slide content, without subslides
-    for i in range(1, total + 1) {
-      sk-states.subslide-step.update(i)
-      if i > 1 {
-        pagebreak(weak: true)
-      }
+    if sk-states.handout.get() {
+      // Handout mode: a single page per slide, in its fully revealed
+      // state. Content gated on one exact step (only(2)[..], not
+      // uncover(from: 2)[..]) never appears here, since intermediate
+      // steps are never rendered.
+      sk-states.subslide-step.update(total)
+      chunks.join()
+    } else {
+      for i in range(1, total + 1) {
+        sk-states.subslide-step.update(i)
+        if i > 1 {
+          pagebreak(weak: true)
+        }
 
-      for (idx, chunk) in chunks.enumerate() {
-        if idx < i {
-          chunk
-        } else {
-          hide(chunk)
+        for (idx, chunk) in chunks.enumerate() {
+          if idx < i {
+            chunk
+          } else {
+            hide(chunk)
+          }
         }
       }
     }

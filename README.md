@@ -59,6 +59,7 @@ Every argument to `slydekit(..)` is optional and falls back to a sensible defaul
 | `aspect-ratio` | `"16-9"` or `"4-3"` |
 | `navigation` | `"topbar"` or `"minislide"` |
 | `title-logo`, `slide-logo` | Logo(s) for the title page and the running footer |
+| `handout` | Handout mode |
 
 Structuring content is purely heading-driven:
 
