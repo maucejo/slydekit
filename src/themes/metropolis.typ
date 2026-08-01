@@ -17,13 +17,20 @@
   raw: "Fira Code",
 )
 
-#let metropolis-theme(colors: metropolis-colors, body) = context{
+#let metropolis-theme(colors: metropolis-colors, fonts: metropolis-fonts, body) = context{
   let colors-theme = if colors != none {
      metropolis-colors + colors
   } else {
     metropolis-colors
   }
   sk-states.colors.update(colors-theme)
+
+  let fonts-theme = if fonts != none {
+     metropolis-fonts + fonts
+  } else {
+    metropolis-fonts
+  }
+  sk-states.fonts.update(fonts-theme)
 
   // Page setup
   let metropolis-margin = if sk-states.navigation.get() == "minislide" {

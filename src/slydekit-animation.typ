@@ -70,50 +70,6 @@
   rec(body)
 }
 
-// Recursive traversal of the AST to determine the maximum local step
-// requested by helpers anchored to their current chunk.
-#let analyze-local-max-step(body) = {
-  let rec(it) = {
-    if type(it) == content {
-      let current-max = 1
-
-      if it.has("label") and it.label == <sk-local-reveal> and it.has("value") {
-        let val = it.value
-        let upper = if val.explicit.len() > 0 {
-          calc.max(..val.explicit)
-        } else if val.to != none {
-          val.to
-        } else { val.from }
-        current-max = calc.max(current-max, upper)
-      }
-
-      for (key, val) in it.fields() {
-        current-max = calc.max(current-max, rec(val))
-      }
-      return current-max
-
-    } else if type(it) == array {
-      let current-max = 1
-      for item in it {
-        current-max = calc.max(current-max, rec(item))
-      }
-      return current-max
-
-    } else if type(it) == dictionary {
-      let current-max = 1
-      for (key, val) in it {
-        current-max = calc.max(current-max, rec(val))
-      }
-      return current-max
-
-    } else {
-      return 1
-    }
-  }
-
-  rec(body)
-}
-
 #let _reveal(..args) = {
   let pos = args.pos()
   let body = pos.last()
@@ -157,75 +113,9 @@
   ))<sk-reveal>#anim-content]
 }
 
-// #let _local-reveal(..args) = {
-//   let pos = args.pos()
-//   let body = pos.last()
-//   let explicit = pos.slice(0, -1)
-//   let from = args.named().at("from", default: 1)
-//   let to = args.named().at("to", default: none)
-//   let hide-color = args.named().at("hide-color", default: none)
-//   let reserved = args.named().at("reserved", default: true)
-//   let cover-fn = args.named().at("cover-fn", default: none)
-
-//   let anim-content = context {
-//     let step = sk-states.subslide-step.get().first()
-//     let chunk-start = sk-states.pause-index.get().first()
-//     let local-step = step - chunk-start + 1
-
-//     let visible = if explicit.len() > 0 {
-//         local-step in explicit
-//       } else {
-//         local-step >= from and (to == none or local-step <= to)
-//       }
-
-//     if visible {
-//       body
-//     } else if cover-fn != none {
-//       cover-fn(body)
-//     } else if reserved {
-//       if hide-color != none {
-//         text(fill: hide-color, body)
-//       } else {
-//         hide(body)
-//       }
-//     } else {
-//       none
-//     }
-//   }
-
-//   [#metadata((
-//     explicit: explicit,
-//     from: from,
-//     to: to,
-//   ))<sk-local-reveal>#anim-content]
-// }
-
 #let pause = <pause>
 #let uncover = _reveal
 #let only = _reveal.with(reserved: false)
-
-// // Displays an alternative among several, one per step, without breaking the layout (sizing based on the largest option)
-// #let alternatives(start: 1, ..options) = {
-//   let opts = options.pos()
-//   let n = opts.len()
-
-//   if n == 0 { return none }
-
-//   let anim-content = context {
-//     let sizes = opts.map(o => measure(o))
-//     let w = calc.max(..sizes.map(s => s.width))
-//     let h = calc.max(..sizes.map(s => s.height))
-
-//     let step = sk-states.subslide-step.get().first()
-//     let chunk-start = sk-states.pause-index.get().first()
-//     let local-step = step - chunk-start + 1
-//     let idx = calc.min(calc.max(local-step - start + 1, 1), n)
-
-//     box(width: w, height: h, opts.at(idx - 1))
-//   }
-
-//   [#metadata((explicit: (), from: start, to: start + n - 1))<sk-local-reveal>#anim-content]
-// }
 
 // Reproduces the visibility logic of reveal(), but returns a boolean instead of content, usable in ordinary Typst code (cetz, etc.)
 #let reveal(..explicit-or-range, body, hide-fn: none) = {
@@ -249,51 +139,66 @@
   }
 }
 
-// // // Reveals each item of a list, enumeration, or term list on its own step, without needing to insert a #pause manually
-// // #let item-by-item(start: 1, body) = {
-// //   let target = body
+// Reveals each provided element on its own step, starting from start. Based on Polylux's one-by-one.
+#let one-by-one(start: 1, ..children) = {
+  for (idx, child) in children.pos().enumerate() {
+    uncover(from: start + idx, child)
+  }
+}
 
-// //   if target.func() == [].func() {
-// //     let found = none
-// //     for child in target.children {
-// //       if child.func() in (list, enum, terms) {
-// //         found = child
-// //         break
-// //       }
-// //     }
-// //     if found == none { return body }
-// //     target = found
-// //   }
+// Adapts a descriptor (integer = single step, dictionary (beginning: n) = open from n) to a call to only(), the only vocabulary whose alternatives needs adaptation
+#let _only-for(descriptor, body) = {
+  if type(descriptor) == dictionary {
+    only(from: descriptor.beginning, body)
+  } else {
+    only(descriptor, body)
+  }
+}
 
-// //   if target.func() not in (list, enum, terms) {
-// //     return body
-// //   }
+// Displays different content per step, reserving the space of the largest among them. Based on Polylux's alternatives-match/alternatives: each option is revealed by a separate only(..) call, so each declares its own <sk-reveal> metadata, without manual declaration of the number of steps.
+#let alternatives-match(subslides-contents, position: bottom + left) = {
+  let pairs = if type(subslides-contents) == dictionary {
+    subslides-contents.pairs()
+  } else {
+    subslides-contents
+  }
 
-// //   let wrapped = target.children.enumerate().map(((i, it)) => _local-reveal(from: start + i, it.body))
+  let contents = pairs.map(it => it.last())
 
-// //   if target.func() == list {
-// //     list(..wrapped)
-// //   } else if target.func() == enum {
-// //     enum(..wrapped)
-// //   } else {
-// //     terms(..wrapped)
-// //   }
-// // }
+  context {
+    let sizes = contents.map(c => measure(c))
+    let w = calc.max(..sizes.map(s => s.width))
+    let h = calc.max(..sizes.map(s => s.height))
 
-// // Parallel track: local split by <pause>, counted independently of the main flow, but synchronized on the same subslide clock. Replaces the use of #meanwhile from Touying: instead of a marker inserted in the flow, we wrap each parallel branch in track(..).
-// #let track(body) = {
-//   let chunks = split-at-pause(body)
-//   let n = chunks.len()
+    for (descriptor, content) in pairs {
+      _only-for(descriptor, box(width: w, height: h, align(position, content)))
+    }
+  }
+}
 
-//   let anim-content = context {
-//     let step = sk-states.subslide-step.get().first()
-//     let chunk-start = sk-states.pause-index.get().first()
-//     let local-step = step - chunk-start + 1
-//     let idx = calc.min(calc.max(local-step, 1), n)
-//     chunks.slice(0, idx).join()
-//   }
+#let alternatives(start: 1, repeat-last: false, position: bottom + left, ..options) = {
+  let contents = options.pos()
+  let n = contents.len()
 
-//   [#metadata((explicit: (), from: 1, to: n))<sk-local-reveal>#anim-content]
-// }
+  if n == 0 { return none }
 
-// #let meanwhile = []
+  let subslides = range(start, start + n)
+  let descriptors = subslides.enumerate().map(((i, s)) => {
+    if repeat-last and i == n - 1 { (beginning: s) } else { s }
+  })
+
+  alternatives-match(descriptors.zip(contents), position: position)
+}
+
+// Reveals each element of a list, enumeration, or terms list on its own step. Based on Polylux's item-by-item: we never reconstruct list(..)/enum(..)/terms(..), we simply filter the direct children of body that are list.item/enum.item/terms.item and reveal them one by one via one-by-one. Typst then visually groups these adjacent items, regardless of whether they are each wrapped in an uncover.
+#let item-by-item(start: 1, body) = {
+  let is-item(it) = type(it) == content and it.func() in (
+    list.item, enum.item, terms.item
+  )
+  let children = if type(body) == content and body.has("children") {
+    body.children
+  } else {
+    body
+  }
+  one-by-one(start: start, ..children.filter(is-item))
+}

@@ -17,13 +17,20 @@
   raw: "Fira Code",
 )
 
-#let simple-theme(colors: simple-colors, body) = context{
+#let simple-theme(colors: simple-colors, fonts: simple-fonts, body) = context{
   let colors-theme = if colors != none {
      simple-colors + colors
   } else {
     simple-colors
   }
   sk-states.colors.update(colors-theme)
+
+  let fonts-theme = if fonts != none {
+     simple-fonts + fonts
+  } else {
+    simple-fonts
+  }
+  sk-states.fonts.update(fonts-theme)
 
   // Page setup
   let simple-margin = if sk-states.navigation.get() == "minislide" {

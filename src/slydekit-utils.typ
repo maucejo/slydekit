@@ -1,5 +1,5 @@
 #import "slydekit-defaults.typ": *
-#import "slydekit-animation.typ": split-at-pause, analyze-max-step, analyze-local-max-step
+#import "slydekit-animation.typ": split-at-pause, analyze-max-step
 
 // Slides
 #let slide(title, steps: none, label:none, body) = {
@@ -7,19 +7,12 @@
     sk-states.current-slide-title.update(title)
   }
 
-  // Split the body into chunks at <pause> labels and determine the total number of steps
+  // Split the body into chunks at <pause> labels, and determine the total number of steps
   let chunks = split-at-pause(body)
 
-  // Determine the maximum step requested by uncover/only
+  // Compute the total number of steps requested by uncover/only and <pause> labels
   let max-reveal-step = analyze-max-step(body)
-  let max-local-reveal-step = 1
-  for (idx, chunk) in chunks.enumerate() {
-    let local-max = analyze-local-max-step(chunk)
-    // idx is zero-based, while steps are one-based.
-    max-local-reveal-step = calc.max(max-local-reveal-step, idx + local-max)
-  }
-
-  let total = calc.max(chunks.len(), max-reveal-step, max-local-reveal-step)
+  let total = calc.max(chunks.len(), max-reveal-step)
   if steps != none {
     total = calc.max(total, steps)
   }
@@ -28,7 +21,7 @@
 
   pagebreak(weak: true)
 
-  // Invisible marker, placed at each call, independent of the title
+  // Invisible marker, placed at each call, regardless of the title
   [#metadata(title)<sk-slide>]
 
   context {
@@ -38,12 +31,12 @@
       sk-states.slide-number.step()
     }
 
-    // Metadata for attaching a label to the slide, if requested
+    // Metadata to attach a label to the slide, if requested
     if label != none {
       [#metadata((kind: "slide"))#label]
     }
 
-    // Direct generation of the first chunk
+    // Direct generation of the slide content, without subslides
     for i in range(1, total + 1) {
       sk-states.subslide-step.update(i)
       if i > 1 {
@@ -52,7 +45,6 @@
 
       for (idx, chunk) in chunks.enumerate() {
         if idx < i {
-          sk-states.pause-index.update(idx + 1)
           chunk
         } else {
           hide(chunk)
@@ -61,6 +53,7 @@
     }
   }
 }
+
 
 // Appendix
 #let appendix(body) = context {

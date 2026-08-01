@@ -150,17 +150,17 @@ Slide @s:section, slide @s:test
 //   ]
 // )
 
-// == Successive choices
+== Successive choices
 
-// #alternatives[Hypothèse A][Hypothèse B][Hypothèse C]
+#alternatives[Hypothèse A][Hypothèse B][Hypothèse C]
 
-// == Automatic list
+== Automatic list
 
-// #item-by-item[
-//   - First argument
-//   - Second argument
-//   - Third argument
-// ]
+#item-by-item[
+  - First argument
+  - Second argument
+  - Third argument
+]
 
 #focus-slide[It is important!]
 

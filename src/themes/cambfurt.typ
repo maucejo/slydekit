@@ -18,13 +18,20 @@
   raw: "Cascadia Code",
 )
 
-#let cambfurt-theme(colors: cambfurt-colors, body) = context{
+#let cambfurt-theme(colors: cambfurt-colors, fonts: cambfurt-fonts, body) = context{
   let colors-theme = if colors != none {
      cambfurt-colors + colors
   } else {
     cambfurt-colors
   }
   sk-states.colors.update(colors-theme)
+
+  let fonts-theme = if fonts != none {
+     cambfurt-fonts + fonts
+  } else {
+    cambfurt-fonts
+  }
+  sk-states.fonts.update(fonts-theme)
 
   // Page setup
   let cambfurt-margin = if sk-states.navigation.get() == "minislide" {
