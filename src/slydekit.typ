@@ -20,6 +20,7 @@
   navigation: "topbar",
   title-logo: (),
   slide-logo: none,
+  handout: false,
   body
 ) = context {
   // Page setup
@@ -65,6 +66,7 @@
   sk-states.localization.update(json("resources/i18n/" + sk-lang + ".json"))
   sk-states.theme.update(sk-theme)
   sk-states.logo.update(slide-logo)
+  sk-states.handout.update(handout)
 
   show selector(<hide-toc>): set heading(outlined: false)
 

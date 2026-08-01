@@ -5,6 +5,7 @@
   colors: state("colors"),
   current-slide-title: state("current-slide-title", []),
   fonts: state("fonts"),
+  handout: state("handout", false),
   is-footcite: state("is-footcite", false),
   logo: state("logo"),
   localization: state("localization"),

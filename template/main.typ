@@ -20,6 +20,7 @@
   navigation: "minislide",
   title-logo: (image("../src/resources/images/slydekit-full.svg", height: 2.5cm),),
   slide-logo: image("../src/resources/images/slydekit-mini.svg", height: 1.25cm),
+  handout: true
 )
 
 #title-slide

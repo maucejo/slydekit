@@ -29,6 +29,9 @@
     total = calc.max(total, steps)
   }
 
+  // let handout = sk-states.handout.get()
+  // sk-states.subslide-total.update(if handout { 1 } else { total })
+
   sk-states.subslide-total.update(total)
 
   pagebreak(weak: true)
