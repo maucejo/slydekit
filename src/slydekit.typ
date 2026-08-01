@@ -13,7 +13,7 @@
   institution: "Institution",
   contact: none,
   theme: simple,
-  fonts: default-fonts,
+  fonts: none,
   colors: none,
   lang: "fr",
   aspect-ratio: "16-9",
@@ -73,7 +73,7 @@
   }
 
   // Fonts
-  show: set-text.with(lang: lang)
+  show: set-text.with(lang: sk-lang)
 
   body
 }

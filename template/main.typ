@@ -10,15 +10,11 @@
   institution: "Université de Typst",
   contact: "john.doe@univ.typst.fr",
   // theme: metropolis,
-  theme: fancy,
+  // theme: fancy,
   // theme: simple,
   // theme: cambfurt,
   // theme: chalkboard,
   // fonts: metropolis-fonts,
-  fonts: fancy-fonts,
-  // fonts: simple-fonts,
-  // fonts: cambfurt-fonts,
-  // fonts: chalkboard-fonts,
   // colors: chalkboard-colors-variant,
   lang: "en",
   navigation: "minislide",
@@ -138,28 +134,41 @@ Slide @s:section, slide @s:test
 
 // == Synchronized columns
 
-// #grid(columns: (1fr, 1fr), column-gutter: 1em,
-//   track[
-//     First point #pause
-//     Second point #pause
-//     Third point
-//   ],
-//   track[
-//     First parallel #pause
-//     Second parallel
-//   ]
-// )
+#slide("Synchronized columns")[
+  #grid(
+    columns: (1fr, 1fr),
+    align: top,
+    column-gutter: 1em,
+    track[
+      First point #pause
 
-== Successive choices
+      Second point #pause
 
-#alternatives[Hypothèse A][Hypothèse B][Hypothèse C]
+      Third point
+    ],
+    track[
+      First parallel #pause
 
-== Automatic list
+      Second parallel
+    ]
+  )
+]
 
-#item-by-item[
-  - First argument
-  - Second argument
-  - Third argument
+#slide("Successive choices")[
+  #alternatives(
+  repeat-last: false,
+  [Hypothèse A],
+  [Hypothèse B],
+  [Hypothèse C],
+)
+]
+
+#slide("Automatic list")[
+  #item-by-item[
+    - First argument
+    - Second argument
+    - Third argument
+  ]
 ]
 
 #focus-slide[It is important!]

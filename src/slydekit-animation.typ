@@ -139,14 +139,15 @@
   }
 }
 
-// Reveals each provided element on its own step, starting from start. Based on Polylux's one-by-one.
+//////////////////////////////
+// Reveals each element of a list, enumeration, or terms on its own step. On the model of Polylux's item-by-item: we never reconstruct list(..)/enum(..)/terms(..), we simply filter the direct children of body that are list.item/enum.item/terms.item and reveal them one by one via one-by-one. Typst then visually groups these adjacent items, regardless of whether they are each wrapped in an uncover.
 #let one-by-one(start: 1, ..children) = {
   for (idx, child) in children.pos().enumerate() {
     uncover(from: start + idx, child)
   }
 }
 
-// Adapts a descriptor (integer = single step, dictionary (beginning: n) = open from n) to a call to only(), the only vocabulary whose alternatives needs adaptation
+// Adapts a descriptor (integer = single step, dictionary (beginning: n) = open from n) to a call to only, the only vocabulary that alternatives needs
 #let _only-for(descriptor, body) = {
   if type(descriptor) == dictionary {
     only(from: descriptor.beginning, body)
@@ -155,7 +156,7 @@
   }
 }
 
-// Displays different content per step, reserving the space of the largest among them. Based on Polylux's alternatives-match/alternatives: each option is revealed by a separate only(..) call, so each declares its own <sk-reveal> metadata, without manual declaration of the number of steps.
+// Displays different content per step, reserving the space of the largest among them. On the model of Polylux's alternatives-match/alternatives: each option is revealed by a separate only(..) call, so each declares its own <sk-reveal> metadata, without manual declaration of the number of steps.
 #let alternatives-match(subslides-contents, position: bottom + left) = {
   let pairs = if type(subslides-contents) == dictionary {
     subslides-contents.pairs()
@@ -187,10 +188,13 @@
     if repeat-last and i == n - 1 { (beginning: s) } else { s }
   })
 
-  alternatives-match(descriptors.zip(contents), position: position)
+  [
+    #metadata((explicit: (), from: start, to: start + n - 1))<sk-reveal>
+    #alternatives-match(descriptors.zip(contents), position: position)
+  ]
 }
 
-// Reveals each element of a list, enumeration, or terms list on its own step. Based on Polylux's item-by-item: we never reconstruct list(..)/enum(..)/terms(..), we simply filter the direct children of body that are list.item/enum.item/terms.item and reveal them one by one via one-by-one. Typst then visually groups these adjacent items, regardless of whether they are each wrapped in an uncover.
+// Reveals each element of a list, enumeration, or terms on its own step. On the model of Polylux's item-by-item: we never reconstruct list(..)/enum(..)/terms(..), we simply filter the direct children of body that are list.item/enum.item/terms.item and reveal them one by one via one-by-one. Typst then visually groups these adjacent items, regardless of whether they are each wrapped in an uncover.
 #let item-by-item(start: 1, body) = {
   let is-item(it) = type(it) == content and it.func() in (
     list.item, enum.item, terms.item
@@ -201,4 +205,18 @@
     body
   }
   one-by-one(start: start, ..children.filter(is-item))
+}
+
+// Parallel track: local split by <pause>, counted independently of the main flow, but synchronized on the same subslide clock. Replaces the use of #meanwhile from Touying: instead of a marker inserted in the flow, we wrap each parallel branch in track(..).
+#let track(body) = {
+  let chunks = split-at-pause(body)
+  let n = chunks.len()
+
+  let anim-content = context {
+    let step = sk-states.subslide-step.get().first()
+    let idx = calc.min(calc.max(step, 1), n)
+    chunks.slice(0, idx).join()
+  }
+
+  [#metadata((explicit: (), from: 1, to: n))<sk-reveal>#anim-content]
 }

@@ -2,7 +2,7 @@
 #import "slydekit-animation.typ": split-at-pause, analyze-max-step
 
 // Slides
-#let slide(title, steps: none, label:none, body) = {
+#let slide(title, steps: none, label: none, body) = {
   if title != [] {
     sk-states.current-slide-title.update(title)
   }
@@ -53,7 +53,6 @@
     }
   }
 }
-
 
 // Appendix
 #let appendix(body) = context {
