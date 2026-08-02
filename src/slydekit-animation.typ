@@ -187,7 +187,7 @@
 }
 
 // Displays different content per step, reserving the space of the largest among them. On the model of Polylux's alternatives-match/alternatives: each option is revealed by a separate only(..) call, so each declares its own <sk-reveal> metadata, without manual declaration of the number of steps.
-#let alternatives-match(subslides-contents, position: bottom + left) = {
+#let alternatives-match(subslides-contents) = {
   let pairs = if type(subslides-contents) == dictionary {
     subslides-contents.pairs()
   } else {
@@ -201,7 +201,7 @@
   }
 }
 
-#let alternatives(start: 1, repeat-last: false, position: bottom + left, ..options) = {
+#let alternatives(start: 1, repeat-last: false, ..options) = {
   let contents = options.pos()
   let n = contents.len()
 
@@ -214,7 +214,7 @@
 
   [
     #metadata((explicit: (), from: start, to: start + n - 1))<sk-reveal>
-    #alternatives-match(descriptors.zip(contents), position: position)
+    #alternatives-match(descriptors.zip(contents))
   ]
 }
 
