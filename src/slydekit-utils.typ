@@ -1,5 +1,5 @@
 #import "slydekit-defaults.typ": *
-#import "slydekit-animation.typ": split-at-pause, analyze-max-step
+#import "slydekit-animation.typ": split-at-pause, split-at-meanwhile, analyze-max-step
 
 // Slides
 #let slide(..args, steps: none, label: none) = {
@@ -19,18 +19,17 @@
     sk-states.current-slide-title.update(title)
   }
 
-  // Split the body into chunks at <pause> labels, and determine the total number of steps
-  let chunks = split-at-pause(body)
+  // Split the body into parallel tracks at <meanwhile> boundaries, then
+  // each track into chunks at <pause> labels. With no <meanwhile> at all, this is a single track equal to the previous flat chunk list, so existing slides are unaffected.
+  let tracks = split-at-meanwhile(body).map(split-at-pause)
 
   // Compute the total number of steps requested by uncover/only and <pause> labels
   let max-reveal-step = analyze-max-step(body)
-  let total = calc.max(chunks.len(), max-reveal-step)
+  let max-track-length = calc.max(..tracks.map(t => t.len()))
+  let total = calc.max(max-track-length, max-reveal-step)
   if steps != none {
     total = calc.max(total, steps)
   }
-
-  // let handout = sk-states.handout.get()
-  // sk-states.subslide-total.update(if handout { 1 } else { total })
 
   sk-states.subslide-total.update(total)
 
@@ -53,12 +52,11 @@
 
     // Direct generation of the slide content, without subslides
     if sk-states.handout.get() {
-      // Handout mode: a single page per slide, in its fully revealed
-      // state. Content gated on one exact step (only(2)[..], not
-      // uncover(from: 2)[..]) never appears here, since intermediate
-      // steps are never rendered.
+      // Handout mode: a single page per slide, in its fully revealed state. Content gated on one exact step (only(2)[..], not uncover(from: 2)[..]) never appears here, since intermediate steps are never rendered. Each track is joined on its own: tracks is an array of arrays of chunks (one array per parallel track), so tracks.join() would try to join arrays together instead of content, this joins the chunks inside each track first.
       sk-states.subslide-step.update(total)
-      chunks.join()
+      for chunks in tracks {
+        chunks.join()
+      }
     } else {
       for i in range(1, total + 1) {
         sk-states.subslide-step.update(i)
@@ -66,11 +64,13 @@
           pagebreak(weak: true)
         }
 
-        for (idx, chunk) in chunks.enumerate() {
-          if idx < i {
-            chunk
-          } else {
-            hide(chunk)
+        for chunks in tracks {
+          for (idx, chunk) in chunks.enumerate() {
+            if idx < i {
+              chunk
+            } else {
+              hide(chunk)
+            }
           }
         }
       }
