@@ -67,6 +67,14 @@ Structuring content is purely heading-driven:
 - a level-2 heading (`== Slide title`) opens a new slide, equivalent to calling `#slide[...]` directly;
 - `#slide(steps: n)[...]` can be used explicitly when a slide needs a manual override on its number of reveal steps, or a `label:` for cross-referencing with `@ref`.
 
+## Disclaimer
+
+Slydekit borrows or adapts some of the codes provided by Polylux and Touying for implementing some slide elements. This covers:
+
+- animation: Slydekit slightly adapts the `item-by-item` and `alternatives` functions from Polylux.
+
+- outline: Slydekit adapts and extends the `progressive-outline` and `mini-slides` and borrows `adaptive-columns` from Touying.
+
 ## Main features
 
 **Automatic, document-first slide creation.** Slides come from headings, so a talk reads like a normal Typst document. `#slide` is still available for explicit control (custom step counts, labels).
