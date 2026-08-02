@@ -71,8 +71,6 @@
     )
   }
 
-  show heading.where(level: 2): it => slide(it.body)[]
-
   // Header and footer
   let header = context if sk-states.navigation.get() == "topbar" {
     let header-title = [#h(1em)*#sk-states.current-slide-title.get()*]

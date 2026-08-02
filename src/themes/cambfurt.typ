@@ -71,8 +71,6 @@
     progressive-outline(it, colors-theme.primary, colors-theme.secondary.lighten(60%))
   }
 
-  show heading.where(level: 2): it => slide(it.body)[]
-
   let header = context if sk-states.navigation.get() == "topbar" {
     let sections = query(heading.where(level: 1).before(here()))
     let current-section = if sections.len() > 0 { sections.last().body } else { none }

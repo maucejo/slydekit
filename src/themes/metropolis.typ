@@ -70,8 +70,6 @@
     )
   }
 
-  show heading.where(level: 2): it => slide(it.body)[]
-
   let header = context if sk-states.navigation.get() == "topbar" {
     let header-title = [#h(1em)*#sk-states.current-slide-title.get()*]
     full-width(fill: colors-theme.header, align(horizon, text(size: 1.2em, fill: white)[#header-title]))

@@ -32,6 +32,15 @@
   // Localization
   let sk-lang = if default-language.contains(lang) {lang} else {"en"}
 
+  // Theme
+  let sk-theme = metropolis + theme
+  show: sk-theme.theme.with(colors: colors, fonts: fonts)
+
+  // Rules common to all themes
+
+  // Level 2 headings are slides, defined with == Title
+  show heading.where(level: 2): it => slide(it.body)[]
+
   // Paragraph styles
   set par(justify: true)
 
@@ -52,10 +61,6 @@
   // Bibliography style
   set bibliography(title: none)
   show bibliography: set text(size: 0.85em)
-
-  // Theme
-  let sk-theme = metropolis + theme
-  show: sk-theme.theme.with(colors: colors, fonts: fonts)
 
   // Title page
   let sk-pres-info = (title: title, subtitle: subtitle, short-title: short-title, author: author, date: date, institution: institution, contact: contact, logo: title-logo)
