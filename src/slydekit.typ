@@ -15,7 +15,7 @@
   theme: simple,
   fonts: none,
   colors: none,
-  lang: "fr",
+  lang: "en",
   aspect-ratio: "16-9",
   navigation: "topbar",
   title-logo: (),

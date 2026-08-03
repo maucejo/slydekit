@@ -1,0 +1,34 @@
+[
+  {
+    "href": "getting-started.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "getting started",
+        "import",
+        "basic usage"
+      ]
+    },
+    "path": "getting-started.typ",
+    "pdf": null,
+    "title": "Getting started",
+    "translation_key": "getting-started",
+    "translations": {}
+  },
+  {
+    "href": "index.html",
+    "language": null,
+    "meta": {
+      "layout": "layouts/site-landing.html",
+      "tags": [
+        "overview",
+        "getting started"
+      ]
+    },
+    "path": "index.typ",
+    "pdf": null,
+    "title": "Slydekit Documentation",
+    "translation_key": "index",
+    "translations": {}
+  }
+]

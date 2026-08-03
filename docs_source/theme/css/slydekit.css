@@ -1,0 +1,40 @@
+:root{
+  --calepin-font-body: "Lato", system-ui, sans-serif;
+  --calepin-font-heading: "Lato", "Space Grotesk", sans-serif;
+  --calepin-font-mono: "Cascadia Code", ui-monospace, monospace;
+  --calepin-color-link: #654ca3;
+  --calepin-color-link-hover: #8172a5;
+}
+
+.calepin-website-view-mode-item {
+    display: none;
+}
+
+.calepin-website-theme-item {
+    display: none;
+}
+
+.calepin-website-sidebar-link {
+    color:#654ca3;
+}
+
+.calepin-website-sidebar-link a.active{
+  background-color: #e3d8fa;
+  padding: 0.5rem 1rem;
+}
+
+.calepin-website-toc-title {
+    color:#654ca3;
+}
+
+.calepin-website-toc a:hover,
+.calepin-website-toc a.hover {
+  color: #654ca3;
+  background-color: #f0eafd;
+  border-radius: 0.35rem;
+}
+
+.calepin-website-toc a.active{
+  color:#654ca3;
+  background-color: #e3d8fa;
+}

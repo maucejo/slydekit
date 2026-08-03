@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "images": {
+    "/assets/flowers_01.jpg": {
+      "path": "assets/flowers_01.jpg",
+      "xxh3": "69358cbce0a9ceaa",
+      "bytes": 2983404,
+      "width": 5184,
+      "height": 3456
+    },
+    "/assets/portrait.jpg": {
+      "path": "assets/portrait.jpg",
+      "xxh3": "46c2764d46bdc289",
+      "bytes": 169842,
+      "width": 1280,
+      "height": 1920
+    },
+    "assets/flowers_01.jpg": {
+      "path": "assets/flowers_01.jpg",
+      "xxh3": "69358cbce0a9ceaa",
+      "bytes": 2983404,
+      "width": 5184,
+      "height": 3456
+    },
+    "assets/portrait.jpg": {
+      "path": "assets/portrait.jpg",
+      "xxh3": "46c2764d46bdc289",
+      "bytes": 169842,
+      "width": 1280,
+      "height": 1920
+    }
+  }
+}

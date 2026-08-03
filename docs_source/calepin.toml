@@ -1,0 +1,63 @@
+title = "Slydekit"
+description = "Simple yet powerful presentation framework for Typst."
+base_url = "https://maucejo.github.io/slydekit"
+logo = "assets/slydekit-mini.svg"
+logo_alt = "Slydekit logo"
+theme = "./theme"
+pdf = false
+minify = true
+search = "pagefind"
+favicon = "assets/slydekit-mini.svg"
+
+[toc]
+enabled = true
+depth = 2
+floating = true
+
+[static]
+include = ["assets/**"]
+
+[menus]
+
+  [[menus.main]]
+  target = "./getting-started.typ"
+  label = "Documentation"
+
+  [[menus.social]]
+  target = "https://github.com/maucejo/slydekit"
+  label = "{icon:github}"
+  aria-label = "GitHub"
+
+[footer]
+
+  [[footer.item]]
+  label = "© 2026 Mathieu Aucejo"
+
+  [[footer.item]]
+  label = "Made with Calepin."
+  target = "https://vincentarelbundock.github.io/calepin"
+
+[sidebar]
+fold = true
+
+[[sidebar.section]]
+    [[sidebar.section.item]]
+    target = "./getting-started.typ"
+
+[[sidebar.section]]
+title = "Theming"
+
+[[sidebar.section]]
+title = "Animations"
+
+[[sidebar.section]]
+title = "Navigation"
+
+[[sidebar.section]]
+title = "Callouts and citations"
+
+[[sidebar.section]]
+title = "Localization"
+
+[[sidebar.section]]
+title = "Handout mode"
