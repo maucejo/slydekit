@@ -21,7 +21,7 @@ set -euo pipefail
 REMOTE="${REMOTE:-origin}"
 BRANCH="${BRANCH:-gh-pages}"
 # Dossier ou fichier source à publier. Par défaut : le README à la racine.
-SOURCE="${SOURCE:-README.md}"
+SOURCE="${SOURCE:-docs}"
 WORKTREE_DIR="${WORKTREE_DIR:-.gh-pages-worktree}"
 COMMIT_MESSAGE="${COMMIT_MESSAGE:-docs: mise à jour de la documentation ($(date -u +%Y-%m-%dT%H:%M:%SZ))}"
 
@@ -66,7 +66,7 @@ fi
 
 if [ -d "$SOURCE" ]; then
   # Cas dossier : on synchronise le contenu, en préservant le .git du worktree.
-  rsync -a --delete --exclude='.git' "$SOURCE"/ "$WORKTREE_DIR"/
+  rsync -a --delete --exclude='.git' --exclude='*.typ' "$SOURCE"/ "$WORKTREE_DIR"/
 else
   # Cas fichier unique (ex. README.md) : publié comme index.md pour que
   # GitHub Pages (Jekyll) le rende automatiquement en page d'accueil.
