@@ -6,5 +6,5 @@
   "image-meta": path("image-meta.json"),
   "source-dir": "",
   source: "getting-started.typ",
-  "raw-langs": ("Typst", "d2", "dot", "mermaid", "python", "r", "tikz"),
+  "raw-langs": ("d2", "dot", "mermaid", "python", "r", "tikz"),
 )

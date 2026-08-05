@@ -8,6 +8,10 @@ pdf = false
 minify = true
 search = "pagefind"
 favicon = "assets/slydekit-mini.svg"
+highlight-light = "assets/Catppuccin Latte.tmTheme"
+
+[executables]
+typst = "typst"
 
 [toc]
 enabled = true
@@ -46,6 +50,8 @@ fold = true
 
 [[sidebar.section]]
 title = "Theming"
+    [[sidebar.section.item]]
+      target = "theming/built-in-themes.typ"
 
 [[sidebar.section]]
 title = "Animations"

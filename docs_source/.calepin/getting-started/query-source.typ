@@ -1,26 +1,5 @@
 #import "/.calepin/calepin.typ" as calepin
-#import "@preview/zebraw:0.6.3": *
-
-#show: zebraw-init
-
-#let argument-callout(name, type, default, body) = html.elem("div", attrs: (
-  style: "position: relative; margin: 1.2em 0; padding: 1.1rem 1.1rem 0rem 1.1rem; border: 1px solid #d7ccff; border-left: 4px solid #7b61d1; border-radius: 0.9rem; background: linear-gradient(135deg, #faf7ff, #f3eeff); box-shadow: 0 6px 18px rgba(101, 76, 163, 0.08); margin-bottom: 2.5em;"
-))[
-  #html.elem("div", attrs: (
-    style: "position: absolute; top: -0.8rem; left: 0.8rem; padding: 0.2rem 0.55rem; font-weight: 700; font-size: 0.8rem; color: #654ca3; background: #f3eeff; border: 1px solid #d7ccff; border-radius: 999px;"
-  ))[Argument]
-
-  #html.elem("div", attrs: (style: "margin-top: 0.4rem; display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; font-family: ui-monospace, monospace;"))[
-    #html.elem("div", attrs: (style: "display: inline-block;"))[
-      #html.elem("code", attrs: (style: "color: #654ca3; font-weight: 700;"))[#name -- default: #default]
-    ]
-    #html.elem("div", attrs: (style: "margin-left: auto; display: inline-block;"))[
-      #html.elem("span", attrs: (style: "color: #7a7a7a;"))[#type]
-    ]
-  ]
-
-  #body
-]
+#import "doc-utils.typ": argument-callout
 
 #set document(title: [Getting started])
 #metadata((tags: ("getting started", "import", "basic usage"))) <website-metadata>
@@ -33,20 +12,15 @@ This section introduces the basic workflow for creating presentations with Slyde
 
 To use the `slydekit` template, you need to include the following line at the beginning of your `typ` file:
 
-#zebraw(
-  numbering: false,
-```Typst
+```typ
 #import "@preview/slydekit:0.1.0": *
 ```
-)
 
 = Template initialization
 
 After importing the template, you have to initialize the template by a show rule with the `#slydekit` command. This function takes a set of optional arguments that allow you to customize the presentation's appearance and behavior.
 
-#zebraw(
-  numbering: false,
-```Typst
+```typ
 #show: slydekit.with(
   title: "Title",
   subtitle: "Subtitle",
@@ -66,7 +40,6 @@ After importing the template, you have to initialize the template by a show rule
   handout: false,
 )
 ```
-)
 
 #html.elem("div", attrs: (style: "margin-top: 2.5em;"))[]
 
@@ -135,3 +108,44 @@ Whether to generate a handout version of the presentation. If set to `true`, the
 ]
 
 = Basic usage
+
+```typ
+#import "@preview/slydekit:0.1.0": *
+
+#show: slydekit.with(
+  title: "Slydekit",
+  subtitle: "An example of a presentation template using Typst",
+  author: "John Doe",
+  date: "2024-06-01",
+  institution: "Université de Typst",
+  contact: "john.doe@univ.typst.fr",
+  title-logo: (image("slydekit-logo-full.svg", height: 2.5cm),),
+  slide-logo: image("slydekit-logo-mini.svg", height: 1.25cm),
+)
+
+#title-slide
+
+= First section
+
+== First slide
+
+#slide("Second slide")[
+  I am #pause an animated slide
+
+  $
+    #uncover(2)[$y = f(x)$]
+  $
+]
+```
+
+#calepin.elements.gallery(
+  (
+    ("../assets/getting-started/basic-usage1.png", "Title slide", [Title slide]),
+    ("../assets/getting-started/basic-usage2.png", "Toc slide", [Toc slide]),
+    ("../assets/getting-started/basic-usage3.png", "First slide", [First slide]),
+    ("../assets/getting-started/basic-usage4.png", "Second slide", [Second slide - part 1]),
+    ("../assets/getting-started/basic-usage5.png", "Second slide", [Second slide - part 2]),
+  ),
+  columns: 2,
+  max-width: 100%,
+)

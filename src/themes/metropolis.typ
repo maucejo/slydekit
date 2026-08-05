@@ -50,7 +50,7 @@
   // Heading styles
   show heading.where(level: 1): it => {
     set strong(delta: 0)
-    set page(header: none, footer: none)
+    set page(header: none, footer: none, margin: margins)
 
     set align(horizon)
     show: pad.with(10%)

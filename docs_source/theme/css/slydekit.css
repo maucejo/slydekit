@@ -4,25 +4,109 @@
   --calepin-font-mono: "Cascadia Code", ui-monospace, monospace;
   --calepin-color-link: #654ca3;
   --calepin-color-link-hover: #8172a5;
+  --pf-border-radius: 0.35rem;
 }
 
+.calepin-site-nav li {
+    color: #654ca3;
+}
+
+/* Website theme customizations */
 .calepin-website-view-mode-item {
     display: none;
+}
+
+input[type = "search"]:focus {
+    border-color: #654ca3;
+    box-shadow: 0 0 0 1px #654ca3;
 }
 
 .calepin-website-theme-item {
     display: none;
 }
 
+/* Arrondi du tiroir de la barre de recherche */
+[role=search]>:last-child {
+    border-radius: 1rem;
+    /* border-top-right-radius: 0rem;
+    border-bottom-right-radius: 0rem; */
+}
+
+/* Sidebar styles */
+/* Cibler le texte au survol du summary */
+aside nav summary:hover {
+  color: #654ca3; /* Couleur au survol */
+  /* padding: 0rem 0rem 0em 0.25rem; */
+}
+
+/* aside nav details[open] summary {
+  padding: 0rem 0rem 0em 0.5rem;
+} */
+
+/* Couleur du lien actif/sélectionné */
+aside nav details a[aria-current="page"] {
+  color: #654ca3;
+  padding: 0rem 0rem 0em 0.25rem;
+} */
+
 .calepin-website-sidebar-link {
-    color:#654ca3;
+    color: #654ca3;
+}
+
+.calepin-website-sidebar-link a {
+  padding: 0.5rem 1rem 0em 1rem;
 }
 
 .calepin-website-sidebar-link a.active{
   background-color: #e3d8fa;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem 0em 1rem;
 }
 
+.calepin-website-sidebar-link a:hover,
+.calepin-website-sidebar-link a.hover{
+  background-color: #e3d8fa;
+  padding: 0.5rem 1rem 0em 1rem;
+}
+
+/* aside nav details.calepin-website-sidebar-section summary{
+  color: #654ca3;
+  padding: 0rem 0rem 0em 0.5rem;
+} */
+
+aside nav details.calepin-website-sidebar-section[open] summary{
+  color: #654ca3;
+  padding: 0rem 0rem 0em 0.5rem;
+}
+
+aside nav details.calepin-website-sidebar-section:not([open]) summary {
+  color: #654ca3;
+  padding: 0rem 0rem 0em 0.5rem;
+}
+
+.calepin-website-sidebar-section {
+  color: #654ca3;
+  padding: 0rem 1rem 0em 1rem;
+}
+
+.calepin-website-sidebar-section a {
+  color: #654ca3;
+  padding: 0rem 0rem 0em 1rem;
+}
+
+.calepin-website-sidebar-section a.active{
+  color: #654ca3;
+  background-color: #e3d8fa;
+  padding: 0rem 0rem 0em 1rem;
+}
+
+.calepin-website-sidebar-section a:hover,
+.calepin-website-sidebar-section a.hover{
+  color: #654ca3;
+  background-color: #e3d8fa;
+  padding: 0rem 0rem 0em 1rem;
+}
+
+/* Table of contents styles */
 .calepin-website-toc-title {
     color:#654ca3;
 }
@@ -30,11 +114,25 @@
 .calepin-website-toc a:hover,
 .calepin-website-toc a.hover {
   color: #654ca3;
-  background-color: #f0eafd;
+  background-color: #e3d8fa;
   border-radius: 0.35rem;
 }
 
 .calepin-website-toc a.active{
   color:#654ca3;
   background-color: #e3d8fa;
+}
+
+/* Item styles */
+.calepin-website-main ul {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.calepin-website-main ul > li {
+  list-style-type: disc;
+}
+
+li::marker {
+  color: #7b6e9c;
 }

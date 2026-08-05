@@ -50,7 +50,7 @@
 
   // Heading styles
   show heading.where(level: 1): it => {
-    let dy = if sk-states.navigation.get() == "topbar" { -2pt } else { -0.5em }
+    let dy = 2pt
     let header-content = if sk-states.navigation.get() == "topbar" {
       let topbar = grid(
         columns: (1fr, 1fr),
@@ -61,11 +61,11 @@
       )
       move(dy: dy)[#topbar]
     } else {
-      move(dx: 1em, dy: dy)[#box(width: 100%, fill: sk-states.colors.get().secondary, outset: (left: 1em, rest: 0.5em))[*#sk-states.localization.get().toc*]]
+      move(dx: 1em, dy: dy)[#box(width: 100%, fill: sk-states.colors.get().secondary.lighten(45%), outset: (left: 1em, rest: 0.5em))[*#sk-states.localization.get().toc*]]
     }
-    let header = full-width(align(horizon, text(size: 1.399em, fill: sk-states.colors.get().primary)[#header-content]))
+    let header = full-width(align(horizon, text(size: 1.399em, fill: sk-states.colors.get().header)[#header-content]))
 
-    set page(header: header, footer: none)
+    set page(header: header, footer: none, margin: margins)
     set align(horizon)
 
     progressive-outline(it, colors-theme.primary, colors-theme.secondary.lighten(60%))
