@@ -18,7 +18,7 @@
   raw: "Cascadia Code",
 )
 
-#let fancy-theme(colors: fancy-colors, fonts: fancy-fonts, body) = context {
+#let fancy-theme(colors: fancy-colors, body) = context {
   let colors-theme = if colors != none {
      fancy-colors + colors
   } else {
@@ -26,8 +26,8 @@
   }
   sk-states.colors.update(colors-theme)
 
-  let fonts-theme = if fonts != none {
-     fancy-fonts + fonts
+  let fonts-theme = if sk-states.fonts.get() != none {
+     fancy-fonts + sk-states.fonts.get()
   } else {
     fancy-fonts
   }

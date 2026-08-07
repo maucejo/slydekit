@@ -1,18 +1,23 @@
 #import "slydekit-defaults.typ": *
-#import "themes/metropolis.typ": metropolis, metropolis-fonts, metropolis-colors
-#import "themes/fancy.typ": fancy, fancy-fonts, fancy-colors
-#import "themes/simple.typ": simple, simple-fonts, simple-colors
-#import "themes/cambfurt.typ": cambfurt, cambfurt-fonts, cambfurt-colors
-#import "themes/chalkboard.typ": chalkboard, chalkboard-fonts, chalkboard-colors, chalkboard-colors-variant
+#import "themes/metropolis.typ": *
+#import "themes/fancy.typ": *
+#import "themes/simple.typ": *
+#import "themes/cambfurt.typ": *
+#import "themes/chalkboard.typ": *
 
+// Title slide
 #let title-slide = context sk-states.theme.get().title
 
+// Table of contents
 #let tableofcontents = context sk-states.theme.get().toc
 
+// Focus slide
 #let focus-slide(body) = context (sk-states.theme.get().focus-slide)(body)
 
+// Link box
 #let link-box(..args) = context (sk-states.theme.get().link-box)(..args)
 
+// Box equation
 #let boxeq(body) = context (sk-states.theme.get().boxeq)(body)
 
 // Custom box

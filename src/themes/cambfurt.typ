@@ -18,7 +18,7 @@
   raw: "Cascadia Code",
 )
 
-#let cambfurt-theme(colors: cambfurt-colors, fonts: cambfurt-fonts, body) = context{
+#let cambfurt-theme(colors: cambfurt-colors, body) = context{
   let colors-theme = if colors != none {
      cambfurt-colors + colors
   } else {
@@ -26,8 +26,8 @@
   }
   sk-states.colors.update(colors-theme)
 
-  let fonts-theme = if fonts != none {
-     cambfurt-fonts + fonts
+  let fonts-theme = if sk-states.fonts.get() != none {
+     cambfurt-fonts + sk-states.fonts.get()
   } else {
     cambfurt-fonts
   }

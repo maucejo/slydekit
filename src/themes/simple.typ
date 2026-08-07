@@ -17,7 +17,7 @@
   raw: "Fira Code",
 )
 
-#let simple-theme(colors: simple-colors, fonts: simple-fonts, body) = context{
+#let simple-theme(colors: simple-colors, body) = context{
   let colors-theme = if colors != none {
      simple-colors + colors
   } else {
@@ -25,8 +25,8 @@
   }
   sk-states.colors.update(colors-theme)
 
-  let fonts-theme = if fonts != none {
-     simple-fonts + fonts
+  let fonts-theme = if sk-states.fonts.get() != none {
+     simple-fonts + sk-states.fonts.get()
   } else {
     simple-fonts
   }
@@ -144,6 +144,7 @@
     place(top, row-img(title-info.logo))
   }
 
+  v(-1em)
   if title-info.title != none {
     smallcaps(text(size: 1.5em, fill: sk-states.colors.get().primary)[*#title-info.title*])
   }

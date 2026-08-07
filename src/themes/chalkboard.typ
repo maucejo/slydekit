@@ -26,7 +26,7 @@
   raw: "Fantasque Sans Mono",
 )
 
-#let chalkboard-theme(colors: chalkboard-colors, fonts: chalkboard-fonts, body) = context{
+#let chalkboard-theme(colors: chalkboard-colors, body) = context{
   let colors-theme = if colors != none {
      chalkboard-colors + colors
   } else {
@@ -34,8 +34,8 @@
   }
   sk-states.colors.update(colors-theme)
 
-  let fonts-theme = if fonts != none {
-     chalkboard-fonts + fonts
+  let fonts-theme = if sk-states.fonts.get() != none {
+     chalkboard-fonts + sk-states.fonts.get()
   } else {
     chalkboard-fonts
   }

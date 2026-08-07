@@ -5,6 +5,7 @@ logo = "assets/slydekit-mini.svg"
 logo_alt = "Slydekit logo"
 theme = "./theme"
 pdf = false
+typ = false
 minify = true
 search = "pagefind"
 favicon = "assets/slydekit-mini.svg"
@@ -52,6 +53,9 @@ fold = true
 title = "Theming"
     [[sidebar.section.item]]
       target = "theming/built-in-themes.typ"
+
+    [[sidebar.section.item]]
+      target = "theming/custom-themes.typ"
 
 [[sidebar.section]]
 title = "Animations"

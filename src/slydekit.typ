@@ -32,9 +32,12 @@
   // Localization
   let sk-lang = if default-language.contains(lang) {lang} else {"en"}
 
+  // Fonts
+  sk-states.fonts.update(fonts)
+
   // Theme
   let sk-theme = metropolis + theme
-  show: sk-theme.theme.with(colors: colors, fonts: fonts)
+  show: sk-theme.theme.with(colors: colors)
 
   // Rules common to all themes
 

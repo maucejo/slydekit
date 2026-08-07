@@ -45,5 +45,20 @@
     "title": "Built-in themes",
     "translation_key": "theming/built-in-themes",
     "translations": {}
+  },
+  {
+    "href": "theming/custom-themes.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "theming",
+        "custom themes"
+      ]
+    },
+    "path": "theming/custom-themes.typ",
+    "pdf": null,
+    "title": "Custom themes",
+    "translation_key": "theming/custom-themes",
+    "translations": {}
   }
 ]

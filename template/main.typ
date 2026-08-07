@@ -13,7 +13,7 @@
   // theme: fancy,
   // theme: simple,
   // theme: cambfurt,
-  // theme: chalkboard,
+  theme: chalkboard,
   // fonts: metropolis-fonts,
   // colors: chalkboard-colors-variant,
   lang: "en",
