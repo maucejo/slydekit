@@ -40,7 +40,7 @@
 
   context {
     if sk-states.appendix.get() {
-      sk-states.app-count.step()
+      sk-states.app-slide-number.step()
     } else {
       sk-states.slide-number.step()
     }
@@ -92,9 +92,6 @@
   show heading.where(level: 1): none
   body
 }
-
-// Conditional set-show
-#let show-if(cond, func) = body => if cond { func(body) } else { body }
 
 // Row images
 #let row-img(logo) = {
@@ -239,7 +236,7 @@ let el = it.element
     let is-app = sk-states.appendix.at(loc)
 
     let base-num = if is-app {
-      sk-states.app-count.at(loc).first()
+      sk-states.app-slide-number.at(loc).first()
     } else {
       sk-states.slide-number.at(loc).first()
     }

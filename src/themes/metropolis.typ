@@ -17,9 +17,9 @@
   raw: "Fira Code",
 )
 
-#let metropolis-theme(colors: metropolis-colors, body) = context{
-  let colors-theme = if colors != none {
-     metropolis-colors + colors
+#let metropolis-theme(body) = context{
+  let colors-theme = if sk-states.colors.get() != none {
+     metropolis-colors + sk-states.colors.get()
   } else {
     metropolis-colors
   }
@@ -86,7 +86,7 @@
 
   let footer = context {
     let current-page = if sk-states.appendix.get() {
-      sk-states.app-count.get().first()
+      sk-states.app-slide-number.get().first()
     } else {
       sk-states.slide-number.get().first()
     }

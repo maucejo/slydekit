@@ -1,6 +1,6 @@
 // States
 #let sk-states = (
-  app-count: counter("appendix"),
+  app-slide-number: counter("appendix"),
   appendix: state("appendix", false),
   colors: state("colors"),
   current-slide-title: state("current-slide-title", []),
@@ -45,5 +45,5 @@
   header-footer-logo: none
 )
 
-#let default-language = ("en", "fr")
+#let default-language = ("en", "de", "fr",  "es", "it", "pt", "zh")
 

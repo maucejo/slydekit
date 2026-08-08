@@ -55,19 +55,50 @@ title = "Theming"
       target = "theming/built-in-themes.typ"
 
     [[sidebar.section.item]]
+      target = "theming/fonts-colors.typ"
+
+    [[sidebar.section.item]]
       target = "theming/custom-themes.typ"
 
 [[sidebar.section]]
 title = "Animations"
+  [[sidebar.section.item]]
+      target = "animations/pause.typ"
+
+  [[sidebar.section.item]]
+  target = "animations/meanwhile.typ"
+
+  [[sidebar.section.item]]
+        target = "animations/item.typ"
+
+  [[sidebar.section.item]]
+        target = "animations/alternatives.typ"
+
+  [[sidebar.section.item]]
+      target = "animations/reveal.typ"
 
 [[sidebar.section]]
 title = "Navigation"
+  [[sidebar.section.item]]
+    target = "navigation/topbar.typ"
+
+  [[sidebar.section.item]]
+    target = "navigation/toc.typ"
+
+  [[sidebar.section.item]]
+    target = "navigation/appendix.typ"
 
 [[sidebar.section]]
-title = "Callouts and citations"
+title = "More"
 
-[[sidebar.section]]
-title = "Localization"
+  [[sidebar.section.item]]
+      target = "more/localization.typ"
 
-[[sidebar.section]]
-title = "Handout mode"
+  [[sidebar.section.item]]
+    target = "more/callout-boxes.typ"
+
+  [[sidebar.section.item]]
+    target = "more/handout.typ"
+
+  [[sidebar.section.item]]
+    target = "more/bibliography.typ"

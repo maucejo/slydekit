@@ -26,9 +26,9 @@
   raw: "Fantasque Sans Mono",
 )
 
-#let chalkboard-theme(colors: chalkboard-colors, body) = context{
-  let colors-theme = if colors != none {
-     chalkboard-colors + colors
+#let chalkboard-theme(body) = context{
+  let colors-theme = if sk-states.colors.get() != none {
+     chalkboard-colors + sk-states.colors.get()
   } else {
     chalkboard-colors
   }
@@ -99,7 +99,7 @@
 
   let footer = context {
     let current-page = if sk-states.appendix.get() {
-      sk-states.app-count.get().first()
+      sk-states.app-slide-number.get().first()
     } else {
       sk-states.slide-number.get().first()
     }

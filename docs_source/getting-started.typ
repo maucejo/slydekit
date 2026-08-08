@@ -43,67 +43,102 @@ After importing the template, you have to initialize the template by a show rule
 
 #html.elem("div", attrs: (style: "margin-top: 2.5em;"))[]
 
-#argument-callout("title", [string | content], ["Title"])[
+#argument-callout("title", [string | content], default: ["Title"])[
 Main title of the presentation
 ]
 
-#argument-callout("subtitle", [string | content], ["Subtitle"])[
+#argument-callout("subtitle", [string | content], default: ["Subtitle"])[
 Optional subtitle for the presentation
 ]
 
-#argument-callout("short-title", [string | content], ["Short title"])[
+#argument-callout("short-title", [string | content], default: ["Short title"])[
 Shorter version of the title for use in headers or footers
 ]
 
-#argument-callout("author", [string | content], ["Author"])[
+#argument-callout("author", [string | content], default: ["Author"])[
 Name of the author(s) or presenter(s)
 ]
 
-#argument-callout("date", [string | content], ["Date"])[
+#argument-callout("date", [string | content], default: ["Date"])[
 Date of the presentation
 ]
 
-#argument-callout("institution", [string | content], ["Institution"])[
+#argument-callout("institution", [string | content], default: ["Institution"])[
 Name of the institution or organization associated with the presentation
 ]
 
-#argument-callout("contact", [string | content], [none])[
+#argument-callout("contact", [string | content], default: [none])[
 Contact information for the author(s) or presenter(s), such as an email address or website (optional)
 ]
 
-#argument-callout("theme", [theme], [simple])[
+#argument-callout("theme", [theme], default: [simple])[
 The theme to be used for the presentation. Available themes include `simple`, `fancy`, `metropolis`, `cambfurt`, and `chalkboard`. You can also create your own custom theme by defining a new theme in your Typst document.
 ]
 
-#argument-callout("fonts", [dictionary], [none])[
+#argument-callout("fonts", [dictionary], default: [none])[
 Custom fonts to be used in the presentation. You can specify a set of fonts to override the default fonts provided by the selected theme. If not specified, the theme's default fonts will be used.
+
+The dictionary should have the following structure:
+```typ
+#let fonts = (
+  size: "Font Size for body text",
+  body: "Font Name for body text",
+  math: "Font Name for math text",
+  raw: "Font Name for raw text",
+)
+```
 ]
 
-#argument-callout("colors", [dictionary], [none])[
+#argument-callout("colors", [dictionary], default: [none])[
 Custom colors to be used in the presentation. You can specify a set of colors to override the default colors provided by the selected theme. If not specified, the theme's default colors will be used.
+
+The dictionary should have the following structure:
+```typ
+#let colors = (
+  primary: "Primary color for the presentation",
+  secondary: "Secondary color for the presentation",
+  background: "Background color for the slides",
+  header: "Color for headers and titles",
+  footer: "Color for footer text",
+)
+```
 ]
 
-#argument-callout("lang", [string], ["en"])[
-Language of the presentation. This can be set to any valid language code (e.g., "en" for English, "fr" for French, etc.). The language setting affects the localization of certain elements in the presentation, such as the table of contents and navigation labels.
+#argument-callout("lang", [string], default: ["en"])[
+Language of the presentation. This can be set to any valid language code (e.g., `"en"` for English, `"fr"` for French, etc.). The language setting affects the localization of certain elements in the presentation, such as the table of contents and navigation labels.
+
+Available languages include:
+- `"en"`: English
+- `"fr"`: French
+- `"es"`: Spanish
+- `"de"`: German
+- `"it"`: Italian
+- `"zh"`: Chinese
+- `"pt"`: Portuguese
 ]
 
-#argument-callout("aspect-ratio", [string], ["16-9"])[
+#argument-callout("aspect-ratio", [string], default: ["16-9"])[
 Aspect ratio of the slides. Common values include "16-9" for widescreen presentations and "4-3" for standard presentations. This setting determines the dimensions of the slides and how they will be displayed on different screens and devices.
 ]
 
-#argument-callout("navigation", [string], ["topbar"])[
+#argument-callout("navigation", [string], default: ["topbar"])[
 Navigation style for the presentation. Available options include "topbar" for a top navigation bar, "minislide" for a mini slide navigation, and other custom navigation styles that can be defined in your Typst document. This setting affects how users can navigate through the slides during the presentation.
 ]
 
-#argument-callout("title-logo", [array], [()])[
+#argument-callout("title-logo", [array], default: [()])[
 Logo to be displayed on the title slide. You can provide an image file (e.g., PNG, SVG) to be displayed alongside the title and subtitle on the first slide of the presentation.
+
+The array can contain one or more images. For example, if you need to display two logos on the title slide, the array can be defined as follows:
+```typ
+title-logo: (image("logo1.svg", height: 2.5cm), image("logo2.svg", height: 2.5cm))
+```
 ]
 
-#argument-callout("slide-logo", [image], [none])[
+#argument-callout("slide-logo", [image], default: [none])[
 Logo to be displayed on each slide. You can provide an image file (e.g., PNG, SVG) to be displayed in a consistent location on every slide of the presentation. This is useful for branding or to include a small logo throughout the presentation.
 ]
 
-#argument-callout("handout", [bool], [false])[
+#argument-callout("handout", [bool], default: [false])[
 Whether to generate a handout version of the presentation. If set to `true`, the presentation will be formatted for printing or distribution as a handout, which may include additional notes or a different layout suitable for paper or PDF distribution. If set to `false`, the presentation will be formatted for on-screen viewing.
 ]
 

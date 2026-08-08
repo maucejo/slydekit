@@ -18,9 +18,9 @@
   raw: "Cascadia Code",
 )
 
-#let cambfurt-theme(colors: cambfurt-colors, body) = context{
-  let colors-theme = if colors != none {
-     cambfurt-colors + colors
+#let cambfurt-theme(body) = context{
+  let colors-theme = if sk-states.colors.get() != none {
+     cambfurt-colors + sk-states.colors.get()
   } else {
     cambfurt-colors
   }
@@ -96,14 +96,14 @@
 
   let footer = context {
     let current-page = if sk-states.appendix.get() {
-      sk-states.app-count.get().first()
+      sk-states.app-slide-number.get().first()
     } else {
       sk-states.slide-number.get().first()
     }
     let prefix = if sk-states.appendix.get() { "A." } else { "" }
     [
       #let slide-number = if sk-states.appendix.get() {
-        [#prefix#sk-states.app-count.get().first() / #sk-states.app-count.final().first()]
+        [#prefix#sk-states.app-slide-number.get().first() / #sk-states.app-slide-number.final().first()]
       } else {
         [#sk-states.slide-number.get().first() / #sk-states.slide-number.final().first()]
       }

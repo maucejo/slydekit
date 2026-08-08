@@ -17,9 +17,9 @@
   raw: "Fira Code",
 )
 
-#let simple-theme(colors: simple-colors, body) = context{
-  let colors-theme = if colors != none {
-     simple-colors + colors
+#let simple-theme(body) = context {
+  let colors-theme = if sk-states.colors.get() != none {
+     simple-colors + sk-states.colors.get()
   } else {
     simple-colors
   }
@@ -81,7 +81,7 @@
 
   let footer = context {
     let current-page = if sk-states.appendix.get() {
-      sk-states.app-count.get().first()
+      sk-states.app-slide-number.get().first()
     } else {
       sk-states.slide-number.get().first()
     }
@@ -123,7 +123,6 @@
 
   // References
   show ref: set text(fill: colors-theme.primary)
-  show ref: it => show-ref(it)
 
   // Links
   show link: set text(fill: colors-theme.primary)

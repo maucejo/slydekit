@@ -18,9 +18,9 @@
   raw: "Cascadia Code",
 )
 
-#let fancy-theme(colors: fancy-colors, body) = context {
-  let colors-theme = if colors != none {
-     fancy-colors + colors
+#let fancy-theme(body) = context {
+  let colors-theme = if sk-states.colors.get() != none {
+     fancy-colors + sk-states.colors.get()
   } else {
     fancy-colors
   }
@@ -89,7 +89,7 @@
 
   let footer = context {
     let current-page = if sk-states.appendix.get() {
-      sk-states.app-count.get().first()
+      sk-states.app-slide-number.get().first()
     } else {
       sk-states.slide-number.get().first()
     }
@@ -115,7 +115,7 @@
               #set text(fill:colors-theme.footer, weight: "bold")
               #show: move.with(dx: 0.75em)
               #if sk-states.appendix.get() {
-                context box(stroke: 1.75pt + colors-theme.footer, radius: 5pt, inset: -0.5em,outset: 1em)[A | #sk-states.app-count.get().first() / #sk-states.slide-number.final().first()]
+                context box(stroke: 1.75pt + colors-theme.footer, radius: 5pt, inset: -0.5em,outset: 1em)[A | #sk-states.app-slide-number.get().first() / #sk-states.slide-number.final().first()]
               } else {
                 context box(stroke: 1.75pt + colors-theme.footer, radius: 5pt, inset: -0.5em,outset: 1em)[#sk-states.slide-number.get().first() / #sk-states.slide-number.final().first()]
               }

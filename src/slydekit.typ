@@ -35,9 +35,12 @@
   // Fonts
   sk-states.fonts.update(fonts)
 
+  // Colors
+  sk-states.colors.update(colors)
+
   // Theme
-  let sk-theme = metropolis + theme
-  show: sk-theme.theme.with(colors: colors)
+  let sk-theme = simple + theme
+  show: sk-theme.theme
 
   // Rules common to all themes
 
@@ -60,6 +63,9 @@
       it
     }
   }
+
+  // References
+  show ref: it => show-ref(it)
 
   // Bibliography style
   set bibliography(title: none)

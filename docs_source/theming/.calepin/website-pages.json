@@ -1,5 +1,85 @@
 [
   {
+    "href": "animations/alternatives.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "animations",
+        "alternatives"
+      ]
+    },
+    "path": "animations/alternatives.typ",
+    "pdf": null,
+    "title": "Alternatives",
+    "translation_key": "animations/alternatives",
+    "translations": {}
+  },
+  {
+    "href": "animations/item.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "animations",
+        "item-by-item"
+      ]
+    },
+    "path": "animations/item.typ",
+    "pdf": null,
+    "title": "Item by item",
+    "translation_key": "animations/item",
+    "translations": {}
+  },
+  {
+    "href": "animations/meanwhile.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "animations",
+        "meanwhile",
+        "track"
+      ]
+    },
+    "path": "animations/meanwhile.typ",
+    "pdf": null,
+    "title": "Meanwhile and track",
+    "translation_key": "animations/meanwhile",
+    "translations": {}
+  },
+  {
+    "href": "animations/pause.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "animations",
+        "pause",
+        "uncover",
+        "only"
+      ]
+    },
+    "path": "animations/pause.typ",
+    "pdf": null,
+    "title": "Pause, uncover and only",
+    "translation_key": "animations/pause",
+    "translations": {}
+  },
+  {
+    "href": "animations/reveal.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "animations",
+        "reveal",
+        "cetz",
+        "fletcher"
+      ]
+    },
+    "path": "animations/reveal.typ",
+    "pdf": null,
+    "title": "Reveal",
+    "translation_key": "animations/reveal",
+    "translations": {}
+  },
+  {
     "href": "getting-started.html",
     "language": null,
     "meta": {
@@ -32,6 +112,107 @@
     "translations": {}
   },
   {
+    "href": "more/bibliography.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "bibliography",
+        "citations"
+      ]
+    },
+    "path": "more/bibliography.typ",
+    "pdf": null,
+    "title": "Bibliography",
+    "translation_key": "more/bibliography",
+    "translations": {}
+  },
+  {
+    "href": "more/callout-boxes.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "callouts",
+        "boxes"
+      ]
+    },
+    "path": "more/callout-boxes.typ",
+    "pdf": null,
+    "title": "Callout boxes",
+    "translation_key": "more/callout-boxes",
+    "translations": {}
+  },
+  {
+    "href": "more/handout.html",
+    "language": null,
+    "meta": {
+      "tags": "handout"
+    },
+    "path": "more/handout.typ",
+    "pdf": null,
+    "title": "Handout mode",
+    "translation_key": "more/handout",
+    "translations": {}
+  },
+  {
+    "href": "more/localization.html",
+    "language": null,
+    "meta": {
+      "tags": "localization"
+    },
+    "path": "more/localization.typ",
+    "pdf": null,
+    "title": "Localization",
+    "translation_key": "more/localization",
+    "translations": {}
+  },
+  {
+    "href": "navigation/appendix.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "animations",
+        "appendix"
+      ]
+    },
+    "path": "navigation/appendix.typ",
+    "pdf": null,
+    "title": "Appendix",
+    "translation_key": "navigation/appendix",
+    "translations": {}
+  },
+  {
+    "href": "navigation/toc.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "animations",
+        "toc",
+        "progressive outline"
+      ]
+    },
+    "path": "navigation/toc.typ",
+    "pdf": null,
+    "title": "Table of Contents",
+    "translation_key": "navigation/toc",
+    "translations": {}
+  },
+  {
+    "href": "navigation/topbar.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "animations",
+        "topbar",
+        "minislide"
+      ]
+    },
+    "path": "navigation/topbar.typ",
+    "pdf": null,
+    "title": "Topbar/Minislide",
+    "translation_key": "navigation/topbar",
+    "translations": {}
+  },
+  {
     "href": "theming/built-in-themes.html",
     "language": null,
     "meta": {
@@ -59,6 +240,22 @@
     "pdf": null,
     "title": "Custom themes",
     "translation_key": "theming/custom-themes",
+    "translations": {}
+  },
+  {
+    "href": "theming/fonts-colors.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "theming",
+        "fonts",
+        "colors"
+      ]
+    },
+    "path": "theming/fonts-colors.typ",
+    "pdf": null,
+    "title": "Fonts and colors",
+    "translation_key": "theming/fonts-colors",
     "translations": {}
   }
 ]

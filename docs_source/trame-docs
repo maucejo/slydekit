@@ -1,0 +1,23 @@
+1. Getting started
+   ok 1.1. Installation
+   ok 1.2. Import et initialisation (slydekit.with(..))
+   ok 1.3. Premier exemple
+2. Thèmes
+   ok 2.1. Les cinq thèmes intégrés
+    2.2. Personnaliser les couleurs et les polices
+   ok 2.3. Écrire un thème (le contrat à six fonctions)
+3. Animations
+   4.1. pause, uncover, only
+   4.2. meanwhile et track (pistes parallèles)
+   4.3. one-by-one, item-by-item
+   4.4. alternatives / alternatives-match
+   4.5. reveal() pour CeTZ/Fletcher, cover-fn
+4. Navigation et progression
+   5.1. topbar / minislide
+   5.2. progressive-outline, toc
+   5.3. Appendice
+5. Boîtes et citations
+   6.1. info-box, tip-box, warning-box, ...
+   6.2. footcite
+6. Localisation
+7. Mode handout
