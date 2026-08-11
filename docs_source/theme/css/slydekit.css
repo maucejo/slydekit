@@ -4,10 +4,20 @@
   --calepin-font-mono: "Cascadia Code", ui-monospace, monospace;
   --calepin-color-link: #654ca3;
   --calepin-color-link-hover: #8172a5;
+  --bg-color: #e3d8fa;
+  --li-color: #75659e;
+}
+
+h2 {
+  color: var(--calepin-color-link);
+}
+
+h3 {
+  color: var(--calepin-color-link);
 }
 
 .calepin-site-nav li {
-    color: #654ca3;
+    color: var(--calepin-color-link);
 }
 
 /* Website theme customizations */
@@ -16,8 +26,8 @@
 } */
 
 input[type = "search"]:focus {
-    border-color: #654ca3;
-    box-shadow: 0 0 0 1px #654ca3;
+    border-color: var(--calepin-color-link);
+    box-shadow: 0 0 0 1px var(--calepin-color-link);
 }
 
 .calepin-website-theme-item {
@@ -34,25 +44,26 @@ input[type = "search"]:focus {
 /* Sidebar styles */
 /* Cibler le texte au survol du summary */
 aside nav summary:hover {
-  color: #654ca3; /* Couleur au survol */
+  color: var(--calepin-color-link); /* Couleur au survol */
 }
 
 /* Couleur du lien actif/sélectionné */
 aside nav details a[aria-current="page"] {
-  color: #654ca3;
+  color: var(--calepin-color-link);
   padding: 0rem 0rem 0em 0.25rem;
 } */
 
 .calepin-website-sidebar-link {
-    color: #654ca3;
+    color: var(--calepin-color-link);
 }
 
 .calepin-website-sidebar-link a {
   padding: 0.5rem 1rem 0em 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .calepin-website-sidebar-link a.active{
-  background-color: #e3d8fa;
+  background-color: var(--bg-color);
   padding: 0.5rem 1rem 0em 1rem;
 }
 
@@ -63,53 +74,57 @@ aside nav details a[aria-current="page"] {
 }
 
 aside nav details.calepin-website-sidebar-section[open] summary{
-  color: #654ca3;
+  color: var(--calepin-color-link);
   padding: 0rem 0rem 0em 0.5rem;
+  text-transform: none;
+  font-size: 0.9rem;
 }
 
 aside nav details.calepin-website-sidebar-section:not([open]) summary {
-  color: #654ca3;
+  color: var(--calepin-color-link);
   padding: 0rem 0rem 0em 0.5rem;
+  text-transform: none;
+  font-size: 0.9rem;
 }
 
 .calepin-website-sidebar-section {
-  color: #654ca3;
+  color: var(--calepin-color-link);
   padding: 0rem 1rem 0em 1rem;
 }
 
 .calepin-website-sidebar-section a {
-  color: #654ca3;
+  color: var(--calepin-color-link);
   padding: 0rem 0rem 0em 1rem;
 }
 
 .calepin-website-sidebar-section a.active{
-  color: #654ca3;
-  background-color: #e3d8fa;
+  color: var(--calepin-color-link);
+  background-color: var(--bg-color);
   padding: 0rem 0rem 0em 1rem;
 }
 
 .calepin-website-sidebar-section a:hover,
 .calepin-website-sidebar-section a.hover{
-  color: #654ca3;
+  color: var(--calepin-color-link);
   background-color: #e3d8fa;
   padding: 0rem 0rem 0em 1rem;
 }
 
 /* Table of contents styles */
 .calepin-website-toc-title {
-    color:#654ca3;
+    color: var(--calepin-color-link);
 }
 
 .calepin-website-toc a:hover,
 .calepin-website-toc a.hover {
-  color: #654ca3;
-  background-color: #e3d8fa;
+  color: var(--calepin-color-link);
+  background-color: var(--bg-color);
   border-radius: 0.35rem;
 }
 
 .calepin-website-toc a.active{
-  color:#654ca3;
-  background-color: #e3d8fa;
+  color: var(--calepin-color-link);
+  background-color: var(--bg-color);
 }
 
 /* Item styles */
@@ -123,5 +138,5 @@ aside nav details.calepin-website-sidebar-section:not([open]) summary {
 }
 
 li::marker {
-  color: #75659e;
+  color: var(--li-color);
 }

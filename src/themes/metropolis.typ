@@ -33,7 +33,7 @@
   sk-states.fonts.update(fonts-theme)
 
   // Page setup
-  let metropolis-margin = if sk-states.navigation.get() == "minislide" {
+  let metropolis-margin = if sk-states.navigation-style.get() == "minislide" {
     (top: 3.25cm)
   }
   set page(fill: colors-theme.background, margin: margins + metropolis-margin)
@@ -70,10 +70,10 @@
     )
   }
 
-  let header = context if sk-states.navigation.get() == "topbar" {
+  let header = context if sk-states.navigation-style.get() == "topbar" {
     let header-title = [#h(1em)*#sk-states.current-slide-title.get()*]
     full-width(fill: colors-theme.header, align(horizon, text(size: 1.2em, fill: white)[#header-title]))
-  } else if sk-states.navigation.get() == "minislide" {
+  } else if sk-states.navigation-style.get() == "minislide" {
     let mini-content = [
       #let pad-lr = 3.5%
       #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
@@ -139,7 +139,7 @@
 
 // Title page
 #let metropolis-title = context {
-  let metropolis-margin = if sk-states.navigation.get() == "minislide" {
+  let metropolis-margin = if sk-states.navigation-style.get() == "minislide" {
     (top: 2cm)
   }
   set page(header: none, footer: none, margin: margins + metropolis-margin)
@@ -179,17 +179,17 @@
   }
 }
 
-#let metropolis-toc = context {
-  let (header-color, text-color) = if sk-states.navigation.get() == "topbar" {
+#let metropolis-outline = context {
+  let (header-color, text-color) = if sk-states.navigation-style.get() == "topbar" {
     (sk-states.colors.get().header, white)
   } else {
     (none, sk-states.colors.get().header)
   }
   let header-content = {
-    let dy = if sk-states.navigation.get() == "topbar" { 0em } else { -0.2em }
-    [#move(dx: 1em, dy: dy)[*#sk-states.localization.get().toc*]]
+    let dy = if sk-states.navigation-style.get() == "topbar" { 0em } else { -0.2em }
+    [#move(dx: 1em, dy: dy)[*#sk-states.localization.get().outline*]]
 
-    if sk-states.navigation.get() == "minislide" {
+    if sk-states.navigation-style.get() == "minislide" {
       place(dy: 0.5em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().header))
     }
   }
@@ -197,7 +197,7 @@
 
   set page(header: header, footer: none)
 
-  toc
+  outline
 }
 
 #let metropolis-focus-slide(body) = context {
@@ -244,4 +244,4 @@
   )
 }
 
-#let metropolis = (theme: metropolis-theme, title: metropolis-title, toc: metropolis-toc, focus-slide: metropolis-focus-slide, link-box: metropolis-link-box, boxeq: metropolis-boxeq, box: metropolis-custom-box)
+#let metropolis = (theme: metropolis-theme, title: metropolis-title, outline: metropolis-outline, focus-slide: metropolis-focus-slide, link-box: metropolis-link-box, boxeq: metropolis-boxeq, box: metropolis-custom-box)

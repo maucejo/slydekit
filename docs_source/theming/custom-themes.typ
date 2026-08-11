@@ -5,7 +5,7 @@
 #metadata((tags: ("theming", "custom themes"))) <website-metadata>
 
 
-#html.elem("p", attrs: (style: "font-size: 2em; font-weight: bold;"))[Custom themes]
+#html.elem("p", attrs: (style: "color: var(--calepin-color-link); font-size: 2em; font-weight: bold;"))[Custom themes]
 
 Using one of the built-in themes, presented in #link("/theming/built-in-themes.html")[Built-in Themes] is a great way to get started with Slydekit, but you may want to create your own custom theme to match your branding or personal style. This section will guide you through the process of creating a custom theme and applying it to your presentation.
 
@@ -22,7 +22,7 @@ Basically, any theme exposes the same conceptual interface, which is a dictionar
 #let custom = (
   theme: custom-theme,
   title: custom-title,
-  toc: custom-toc,
+  outline: custom-outline,
   focus-slide: custom-focus-slide,
   link-box: custom-link-box,
   boxeq: custom-boxeq,
@@ -33,7 +33,7 @@ Basically, any theme exposes the same conceptual interface, which is a dictionar
 The elements of the dictionary are:
 - `theme`: A function that defines the overall theme of the presentation, including colors, fonts, and other visual elements.
 - `title`: A function that defines the appearance of the title slide.
-- `toc`: A function that defines the appearance of the table of contents slide.
+- `outline`: A function that defines the appearance of the outline slide.
 - `focus-slide`: A function that defines the appearance of a focus slide, which is used to highlight important content.
 - `link-box`: A function that defines the appearance of a link box, which is used to display links to other slides.
 - `boxeq`: A function that defines the appearance of a box equation.
@@ -164,9 +164,9 @@ To implement a custom theme, you have to define a function that includes the `sh
   ...
 }
 
-// Table of contents slide
-#let my-theme-toc = context {
-  // Define the style of the table of contents slide
+// Outline slide
+#let my-theme-outline = context {
+  // Define the style of the outline slide
   ...
 }
 
@@ -192,7 +192,7 @@ To implement a custom theme, you have to define a function that includes the `sh
 #let my-theme = (
   theme: my-theme,
   title: my-theme-title,
-  toc: my-theme-toc,
+  outline: my-theme-outline,
   focus-slide: my-theme-focus-slide,
   link-box: my-theme-link-box,
   boxeq: my-theme-boxeq,

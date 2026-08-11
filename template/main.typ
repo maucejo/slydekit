@@ -25,7 +25,7 @@
 
 #title-slide
 
-#tableofcontents
+#outline
 
 // #show: hide-new-section-slide
 
@@ -86,12 +86,12 @@
 
 #lorem(10)#footcite(<knuth>)
 
-- zefzef
-  - zezef
-    - ererg
+- First point
+  - A nested point
+    - A deeply nested point
 
-+ ezef
-+ zefzef
++ First point
++ Second point
 
 Slide @s:section, slide @s:test
 
@@ -229,7 +229,7 @@ ice cream.
 
 #show: appendix
 
-= Annexes <hide-toc>
+= Appendix <hide-toc>
 
 == Table <s:table>
 

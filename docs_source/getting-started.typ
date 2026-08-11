@@ -4,7 +4,7 @@
 #set document(title: [Getting started])
 #metadata((tags: ("getting started", "import", "basic usage"))) <website-metadata>
 
-#html.elem("p", attrs: (style: "font-size: 2em; font-weight: bold;"))[Getting started]
+#html.elem("p", attrs: (style: "color: var(--calepin-color-link); font-size: 2em; font-weight: bold;"))[Getting started]
 
 This section introduces the basic workflow for creating presentations with Slydekit. You will first learn how to import the template and configure the main presentation settings. Then, a minimal example will demonstrate the core structure of a Slydekit document, including how to create slides and organize content.
 

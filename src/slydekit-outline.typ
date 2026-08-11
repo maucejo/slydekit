@@ -26,7 +26,7 @@
   end
 })
 
-#let toc = {
+#let outline = {
   set outline.entry(fill: none)
   show outline.entry: it => context {
     show linebreak: none

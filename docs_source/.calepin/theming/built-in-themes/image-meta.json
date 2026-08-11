@@ -421,6 +421,48 @@
       "width": 1684,
       "height": 947
     },
+    "/assets/animations/pause1.png": {
+      "path": "assets/animations/pause1.png",
+      "xxh3": "b34936ba7c49e207",
+      "bytes": 22580,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/pause2.png": {
+      "path": "assets/animations/pause2.png",
+      "xxh3": "76196978424ca96e",
+      "bytes": 35205,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/pause3.png": {
+      "path": "assets/animations/pause3.png",
+      "xxh3": "e004ed8cd284dd95",
+      "bytes": 48365,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/uncover-only1.png": {
+      "path": "assets/animations/uncover-only1.png",
+      "xxh3": "e15c759578e96174",
+      "bytes": 51920,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/uncover-only2.png": {
+      "path": "assets/animations/uncover-only2.png",
+      "xxh3": "9b870a1276bdc495",
+      "bytes": 38228,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/uncover-only3.png": {
+      "path": "assets/animations/uncover-only3.png",
+      "xxh3": "dabc63ac3f696d8f",
+      "bytes": 40405,
+      "width": 1684,
+      "height": 947
+    },
     "/assets/getting-started/basic-usage1.png": {
       "path": "assets/getting-started/basic-usage1.png",
       "xxh3": "3813cdbb92a55224",
@@ -873,6 +915,48 @@
       "path": "assets/theming/simple/SimpleTheme_minislide_Page6.png",
       "xxh3": "89008cb9540d473a",
       "bytes": 49388,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/pause1.png": {
+      "path": "assets/animations/pause1.png",
+      "xxh3": "b34936ba7c49e207",
+      "bytes": 22580,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/pause2.png": {
+      "path": "assets/animations/pause2.png",
+      "xxh3": "76196978424ca96e",
+      "bytes": 35205,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/pause3.png": {
+      "path": "assets/animations/pause3.png",
+      "xxh3": "e004ed8cd284dd95",
+      "bytes": 48365,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/uncover-only1.png": {
+      "path": "assets/animations/uncover-only1.png",
+      "xxh3": "e15c759578e96174",
+      "bytes": 51920,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/uncover-only2.png": {
+      "path": "assets/animations/uncover-only2.png",
+      "xxh3": "9b870a1276bdc495",
+      "bytes": 38228,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/uncover-only3.png": {
+      "path": "assets/animations/uncover-only3.png",
+      "xxh3": "dabc63ac3f696d8f",
+      "bytes": 40405,
       "width": 1684,
       "height": 947
     },

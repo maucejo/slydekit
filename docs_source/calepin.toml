@@ -63,19 +63,22 @@ title = "Theming"
 [[sidebar.section]]
 title = "Animations"
   [[sidebar.section.item]]
-      target = "animations/pause.typ"
+    target = "animations/anim.typ"
 
   [[sidebar.section.item]]
-  target = "animations/meanwhile.typ"
+    target = "animations/pause.typ"
 
   [[sidebar.section.item]]
-        target = "animations/item.typ"
+    target = "animations/item.typ"
 
   [[sidebar.section.item]]
-        target = "animations/alternatives.typ"
+    target = "animations/meanwhile.typ"
 
   [[sidebar.section.item]]
-      target = "animations/reveal.typ"
+    target = "animations/alternatives.typ"
+
+  [[sidebar.section.item]]
+    target = "animations/reveal.typ"
 
 [[sidebar.section]]
 title = "Navigation"
@@ -89,16 +92,19 @@ title = "Navigation"
     target = "navigation/appendix.typ"
 
 [[sidebar.section]]
-title = "More"
+title = "Components"
 
   [[sidebar.section.item]]
-      target = "more/localization.typ"
+    target = "components/slide.typ"
 
   [[sidebar.section.item]]
-    target = "more/callout-boxes.typ"
+    target = "components/localization.typ"
 
   [[sidebar.section.item]]
-    target = "more/handout.typ"
+    target = "components/callout-boxes.typ"
 
   [[sidebar.section.item]]
-    target = "more/bibliography.typ"
+    target = "components/handout.typ"
+
+  [[sidebar.section.item]]
+    target = "components/bibliography.typ"

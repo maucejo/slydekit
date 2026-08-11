@@ -4,4 +4,4 @@
 #set document(title: [Meanwhile and track])
 #metadata((tags: ("animations", "meanwhile", "track"))) <website-metadata>
 
-#html.elem("p", attrs: (style: "font-size: 2em; font-weight: bold;"))[Meanwhile and track]
+#html.elem("p", attrs: (style: "color: var(--calepin-color-link); font-size: 2em; font-weight: bold;"))[Meanwhile and track]

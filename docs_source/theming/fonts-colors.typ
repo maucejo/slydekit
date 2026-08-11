@@ -5,7 +5,7 @@
 #metadata((tags: ("theming", "fonts", "colors"))) <website-metadata>
 
 
-#html.elem("p", attrs: (style: "font-size: 2em; font-weight: bold;"))[Fonts and colors customization]
+#html.elem("p", attrs: (style: "color: var(--calepin-color-link); font-size: 2em; font-weight: bold;"))[Fonts and colors customization]
 
 Sometimes, you may want to use a built-in theme, but customize the fonts and colors used in your presentation to match your branding or personal preferences. Slydekit allows you to easily override the default fonts and colors by providing your own definitions.
 

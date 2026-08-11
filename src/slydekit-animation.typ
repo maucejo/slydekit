@@ -64,8 +64,8 @@
       // If the element is our animation metadata
       if it.has("label") and it.label == <sk-reveal> and it.has("value") {
         let val = it.value
-        let upper = if val.explicit.len() > 0 {
-          calc.max(..val.explicit)
+        let upper = if val.int-or-range.len() > 0 {
+          calc.max(..val.int-or-range)
         } else if val.to != none {
           val.to
         } else { val.from }
@@ -103,27 +103,27 @@
 #let _reveal(..args) = {
   let pos = args.pos()
   let body = pos.last()
-  let explicit = pos.slice(0, -1)
+  let int-or-range = pos.slice(0, -1)
   let from = args.named().at("from", default: 1)
   let to = args.named().at("to", default: none)
   let hide-color = args.named().at("hide-color", default: none)
   let reserved = args.named().at("reserved", default: true)
-  let cover-fn = args.named().at("cover-fn", default: none)
+  let hide-fn = args.named().at("hide-fn", default: none)
 
   // Dynamic rendering of the element according to the current step
   let anim-content = context {
     let step = sk-states.subslide-step.get().first()
-    let visible = if explicit.len() > 0 {
-        step in explicit
+    let visible = if int-or-range.len() > 0 {
+        step in int-or-range
       } else {
         step >= from and (to == none or step <= to)
       }
 
     if visible {
       body
-    } else if cover-fn != none {
+    } else if hide-fn != none {
       // Allows a third-party package (Fletcher, CeTZ...) to provide its own masking
-      cover-fn(body)
+      hide-fn(body)
     } else if reserved {
       if hide-color != none {
         text(fill: hide-color, body)
@@ -137,7 +137,7 @@
 
   // Metadata for the animation, to be used by the reveal() function
   [#metadata((
-    explicit: explicit,
+    int-or-range: int-or-range,
     from: from,
     to: to,
   ))<sk-reveal>#anim-content]
@@ -148,15 +148,15 @@
 #let uncover = _reveal
 #let only = _reveal.with(reserved: false)
 
-// Reproduces the visibility logic of reveal(), but returns a boolean instead of content, usable in ordinary Typst code (cetz, etc.)
-#let reveal(..explicit-or-range, body, hide-fn: none) = {
+// Reproduces the visibility logic of reveal(), but allows a third-party package (Fletcher, CeTZ...) to provide its own masking via the hide-fn argument. This is useful for packages that use their own visibility logic and own context, which are not compatible with uncover/only.
+#let reveal(..args, body, hide-fn: none) = {
   let step = sk-states.subslide-step.get().first()
-  let explicit = explicit-or-range.pos()
-  let from = explicit-or-range.named().at("from", default: 1)
-  let to = explicit-or-range.named().at("to", default: none)
+  let int-or-range = args.pos()
+  let from = args.named().at("from", default: 1)
+  let to = args.named().at("to", default: none)
 
-  let visible = if explicit.len() > 0 {
-    step in explicit
+  let visible = if int-or-range.len() > 0 {
+    step in int-or-range
   } else {
     step >= from and (to == none or step <= to)
   }
@@ -171,9 +171,9 @@
 }
 
 // Reveals each element of a list, enumeration, or terms on its own step. On the model of Polylux's item-by-item: we never reconstruct list(..)/enum(..)/terms(..), we simply filter the direct children of body that are list.item/enum.item/terms.item and reveal them one by one via one-by-one. Typst then visually groups these adjacent items, regardless of whether they are each wrapped in an uncover.
-#let one-by-one(start: 1, hide-color: none, cover-fn: none, ..children) = {
+#let one-by-one(start: 1, hide-color: none, hide-fn: none, ..children) = {
   for (idx, child) in children.pos().enumerate() {
-    uncover(from: start + idx, hide-color: hide-color, cover-fn: cover-fn, child)
+    uncover(from: start + idx, hide-color: hide-color, hide-fn: hide-fn, child)
   }
 }
 
@@ -213,13 +213,13 @@
   })
 
   [
-    #metadata((explicit: (), from: start, to: start + n - 1))<sk-reveal>
+    #metadata((int-or-range: (), from: start, to: start + n - 1))<sk-reveal>
     #alternatives-match(descriptors.zip(contents))
   ]
 }
 
 // Reveals each element of a list, enumeration, or terms on its own step. On the model of Polylux's item-by-item: we never reconstruct list(..)/enum(..)/terms(..), we simply filter the direct children of body that are list.item/enum.item/terms.item and reveal them one by one via one-by-one. Typst then visually groups these adjacent items, regardless of whether they are each wrapped in an uncover.
-#let item-by-item(start: 1, hide-color: none, cover-fn: none, body) = {
+#let item-by-item(start: 1, hide-color: none, hide-fn: none, body) = {
   let is-item(it) = type(it) == content and it.func() in (
     list.item, enum.item, terms.item
   )
@@ -228,7 +228,7 @@
   } else {
     body
   }
-  one-by-one(start: start, hide-color: hide-color, cover-fn: cover-fn, ..children.filter(is-item))
+  one-by-one(start: start, hide-color: hide-color, hide-fn: hide-fn, ..children.filter(is-item))
 }
 
 // Parallel track: local split by <pause>, counted independently of the main flow, but synchronized on the same subslide clock. Replaces the use of #meanwhile from Touying: instead of a marker inserted in the flow, we wrap each parallel branch in track(..).
@@ -242,5 +242,5 @@
     chunks.slice(0, idx).join()
   }
 
-  [#metadata((explicit: (), from: 1, to: n))<sk-reveal>#anim-content]
+  [#metadata((int-or-range: (), from: 1, to: n))<sk-reveal>#anim-content]
 }

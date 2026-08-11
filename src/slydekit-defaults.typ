@@ -9,7 +9,7 @@
   is-footcite: state("is-footcite", false),
   logo: state("logo"),
   localization: state("localization"),
-  navigation: state("navigation", "topbar"),
+  navigation-style: state("navigation-style", "topbar"),
   pause-index: counter("pause-index"),
   pres-info: state("pres-info"),
   slide-number: counter("slide-number"),

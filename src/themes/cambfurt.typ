@@ -34,7 +34,7 @@
   sk-states.fonts.update(fonts-theme)
 
   // Page setup
-  let cambfurt-margin = if sk-states.navigation.get() == "minislide" {
+  let cambfurt-margin = if sk-states.navigation-style.get() == "minislide" {
     (top: 3.25cm)
   }
   set page(fill: colors-theme.background, margin: margins + cambfurt-margin)
@@ -51,17 +51,17 @@
   // Heading styles
   show heading.where(level: 1): it => {
     let dy = 2pt
-    let header-content = if sk-states.navigation.get() == "topbar" {
+    let header-content = if sk-states.navigation-style.get() == "topbar" {
       let topbar = grid(
         columns: (1fr, 1fr),
         align: right + horizon,
         rows: 1.5em,
-        grid.cell(fill: sk-states.colors.get().header)[#text(fill: white)[*#sk-states.localization.get().toc* #h(0.75em)]],
+        grid.cell(fill: sk-states.colors.get().header)[#text(fill: white)[*#sk-states.localization.get().outline* #h(0.75em)]],
         cell(fill: sk-states.colors.get().secondary),
       )
       move(dy: dy)[#topbar]
     } else {
-      move(dx: 1em, dy: dy)[#box(width: 100%, fill: sk-states.colors.get().secondary.lighten(45%), outset: (left: 1em, rest: 0.5em))[*#sk-states.localization.get().toc*]]
+      move(dx: 1em, dy: dy)[#box(width: 100%, fill: sk-states.colors.get().secondary.lighten(45%), outset: (left: 1em, rest: 0.5em))[*#sk-states.localization.get().outline*]]
     }
     let header = full-width(align(horizon, text(size: 1.399em, fill: sk-states.colors.get().header)[#header-content]))
 
@@ -71,7 +71,7 @@
     progressive-outline(it, colors-theme.primary, colors-theme.secondary.lighten(60%))
   }
 
-  let header = context if sk-states.navigation.get() == "topbar" {
+  let header = context if sk-states.navigation-style.get() == "topbar" {
     let sections = query(heading.where(level: 1).before(here()))
     let current-section = if sections.len() > 0 { sections.last().body } else { none }
 
@@ -83,7 +83,7 @@
         grid.cell(fill: sk-states.colors.get().secondary)[#text(fill: sk-states.colors.get().primary)[#h(0.75em) *#sk-states.current-slide-title.get()*]],
       )
       full-width(move(dy: -2pt)[#topbar])
-  } else if sk-states.navigation.get() == "minislide" {
+  } else if sk-states.navigation-style.get() == "minislide" {
     let mini-content = [
       #let pad-lr = 3.5%
       #place(top, dy: -0.75em)[#cell(fill: sk-states.colors.get().secondary.lighten(60%))
@@ -109,7 +109,7 @@
       }
 
       #let dy
-      #let footer-content = if sk-states.navigation.get() == "topbar" {
+      #let footer-content = if sk-states.navigation-style.get() == "topbar" {
         set text(size: 0.8em)
         dy = 0.8em
         grid(
@@ -214,24 +214,24 @@
   ]
 }
 
-#let cambfurt-toc = context {
-  let header-content = if sk-states.navigation.get() == "topbar" {
+#let cambfurt-outline = context {
+  let header-content = if sk-states.navigation-style.get() == "topbar" {
       let topbar = grid(
         columns: (1fr, 1fr),
         align: right + horizon,
         rows: 1.5em,
-        grid.cell(fill: sk-states.colors.get().primary)[#text(fill: white)[*#sk-states.localization.get().toc* #h(0.75em)]],
+        grid.cell(fill: sk-states.colors.get().primary)[#text(fill: white)[*#sk-states.localization.get().outline* #h(0.75em)]],
         cell(fill: sk-states.colors.get().secondary),
       )
       move(dy: -2pt)[#topbar]
     } else {
-      move(dx: 1em, dy: -0.5em)[#box(width: 100%, fill: sk-states.colors.get().secondary, outset: (left: 1em, rest: 0.5em))[*#sk-states.localization.get().toc*]]
+      move(dx: 1em, dy: -0.5em)[#box(width: 100%, fill: sk-states.colors.get().secondary, outset: (left: 1em, rest: 0.5em))[*#sk-states.localization.get().outline*]]
     }
     let header = full-width(fill: none, align(horizon, text(size: 1.2em, fill: sk-states.colors.get().primary)[#header-content]))
 
   set page(header: header, footer: none)
 
-  toc
+  outline
 }
 
 #let cambfurt-focus-slide(body) = context {
@@ -277,4 +277,4 @@
   )[#body]
 }
 
-#let cambfurt = (theme: cambfurt-theme, title: cambfurt-title, toc: cambfurt-toc, focus-slide: cambfurt-focus-slide, link-box: cambfurt-link-box, boxeq: cambfurt-boxeq, box: cambfurt-custom-box)
+#let cambfurt = (theme: cambfurt-theme, title: cambfurt-title, outline: cambfurt-outline, focus-slide: cambfurt-focus-slide, link-box: cambfurt-link-box, boxeq: cambfurt-boxeq, box: cambfurt-custom-box)

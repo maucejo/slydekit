@@ -44,7 +44,7 @@
   set text(fill: rgb("#f2f1ea"))
 
   // Page setup
-  let chalkboard-margin = if sk-states.navigation.get() == "minislide" {
+  let chalkboard-margin = if sk-states.navigation-style.get() == "minislide" {
     (top: 3.25cm)
   }
   set page(fill: colors-theme.background, margin: margins + chalkboard-margin)
@@ -81,12 +81,12 @@
     )
   }
 
-  let header = context if sk-states.navigation.get() == "topbar" {
+  let header = context if sk-states.navigation-style.get() == "topbar" {
     let header-title = [#h(1em)*#sk-states.current-slide-title.get()*]
     full-width(fill: none, align(horizon, text(size: 1.2em, fill: sk-states.colors.get().primary)[#header-title]))
 
     full-width(place(dy: 2em, line(length: 100%, stroke: 0.05em + colors-theme.header)))
-  } else if sk-states.navigation.get() == "minislide" {
+  } else if sk-states.navigation-style.get() == "minislide" {
     let mini-content = [
       #let pad-lr = 3.5%
       #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
@@ -152,7 +152,7 @@
 
 // Title page
 #let chalkboard-title = context {
-  let chalkboard-margin = if sk-states.navigation.get() == "minislide" {
+  let chalkboard-margin = if sk-states.navigation-style.get() == "minislide" {
     (top: 2cm)
   }
   set page(header: none, footer: none, margin: margins + chalkboard-margin)
@@ -195,21 +195,19 @@
   ]
 }
 
-#let chalkboard-toc = context {
+#let chalkboard-outline = context {
   let header-content = {
-    let dy = if sk-states.navigation.get() == "topbar" { 0em } else { 0.5em }
-
-    let dy2 = if sk-states.navigation.get() == "topbar" { 0em } else { 0.5em }
+    let dy = if sk-states.navigation-style.get() == "topbar" { 0em } else { 0.5em }
     [
-      #move(dx: 1em, dy: -dy)[*#sk-states.localization.get().toc*]
-      #place(dy: 0.5em - dy2, line(length: 100%, stroke: 0.05em + sk-states.colors.get().header))
+      #move(dx: 1em, dy: -dy)[*#sk-states.localization.get().outline*]
+      #place(dy: 0.5em - dy, line(length: 100%, stroke: 0.05em + sk-states.colors.get().header))
     ]
   }
   let header = full-width(fill: none, align(horizon, text(size: 1.2em, fill: sk-states.colors.get().primary)[#header-content]))
 
   set page(header: header, footer: none)
 
-  toc
+  outline
 }
 
 #let chalkboard-focus-slide(body) = context {
@@ -249,4 +247,4 @@
   )
 }
 
-#let chalkboard = (theme: chalkboard-theme, title: chalkboard-title, toc: chalkboard-toc, focus-slide: chalkboard-focus-slide, link-box: chalkboard-link-box, boxeq: chalkboard-boxeq, box: chalkboard-custom-box)
+#let chalkboard = (theme: chalkboard-theme, title: chalkboard-title, outline: chalkboard-outline, focus-slide: chalkboard-focus-slide, link-box: chalkboard-link-box, boxeq: chalkboard-boxeq, box: chalkboard-custom-box)

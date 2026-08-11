@@ -5,4 +5,4 @@
 #metadata((tags: ("handout"))) <website-metadata>
 
 
-#html.elem("p", attrs: (style: "font-size: 2em; font-weight: bold;"))[Handout mode]
+#html.elem("p", attrs: (style: "color: var(--calepin-color-link); font-size: 2em; font-weight: bold;"))[Handout mode]

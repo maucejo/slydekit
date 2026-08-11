@@ -5,7 +5,7 @@
 #metadata((tags: ("localization"))) <website-metadata>
 
 
-#html.elem("p", attrs: (style: "font-size: 2em; font-weight: bold;"))[Localization]
+#html.elem("p", attrs: (style: "color: var(--calepin-color-link); font-size: 2em; font-weight: bold;"))[Localization]
 
 The localization feature in Slydekit allows you to create presentations in different languages. You can specify the language of your presentation using the `lang` parameter in the `slydekit` function. The default language is English (`"en"`), but you can change it to any supported language by providing the appropriate language code.
 
@@ -24,7 +24,7 @@ To use a language that is not supported by default, you can modify the `states.l
     "note": "Note",
     "proof": "Proof",
     "tip": "Tip",
-    "toc": "Outline",
+    "outline": "Outline",
     "warning": "Warning"
 }
 ```

@@ -34,7 +34,7 @@
   sk-states.fonts.update(fonts-theme)
 
   // Page setup
-  let fancy-margin = if sk-states.navigation.get() == "minislide" {
+  let fancy-margin = if sk-states.navigation-style.get() == "minislide" {
     (top: 3.25cm)
   }
   set page(fill: colors-theme.background, margin: margins + fancy-margin)
@@ -72,10 +72,10 @@
   }
 
   // Header and footer
-  let header = context if sk-states.navigation.get() == "topbar" {
+  let header = context if sk-states.navigation-style.get() == "topbar" {
     let header-title = [#h(1em)*#sk-states.current-slide-title.get()*]
     full-width(fill: colors-theme.header, align(horizon, text(size: 1.2em, fill: white)[#header-title]))
-  } else if sk-states.navigation.get() == "minislide" {
+  } else if sk-states.navigation-style.get() == "minislide" {
     let mini-content = [
       #let pad-lr = 3.5%
       #place(top, dy: -0.75em)[#cell(fill: gradient.linear(sk-states.colors.get().background.darken(10%), sk-states.colors.get().background, dir: ttb))
@@ -200,17 +200,17 @@
   )
 }
 
-#let fancy-toc = context {
-  let (header-color, text-color) = if sk-states.navigation.get() == "topbar" {
+#let fancy-outline = context {
+  let (header-color, text-color) = if sk-states.navigation-style.get() == "topbar" {
     (sk-states.colors.get().header, white)
   } else {
     (none, sk-states.colors.get().header)
   }
   let header-content = {
-    let dy = if sk-states.navigation.get() == "topbar" { 0em } else { -0.2em }
-    [#move(dx: 1em, dy: dy)[*#sk-states.localization.get().toc*]]
+    let dy = if sk-states.navigation-style.get() == "topbar" { 0em } else { -0.2em }
+    [#move(dx: 1em, dy: dy)[*#sk-states.localization.get().outline*]]
 
-    if sk-states.navigation.get() == "minislide" {
+    if sk-states.navigation-style.get() == "minislide" {
       place(dy: 0.5em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().header))
     }
   }
@@ -218,7 +218,7 @@
 
   set page(header: header, footer: none)
 
-  toc
+  outline
 }
 
 #let fancy-focus-slide(body) = context {
@@ -264,4 +264,4 @@
   )[#body]
 }
 
-#let fancy = (theme: fancy-theme, title: fancy-title, toc: fancy-toc, focus-slide: fancy-focus-slide, link-box: fancy-link-box, boxeq: fancy-boxeq, box: fancy-custom-box)
+#let fancy = (theme: fancy-theme, title: fancy-title, outline: fancy-outline, focus-slide: fancy-focus-slide, link-box: fancy-link-box, boxeq: fancy-boxeq, box: fancy-custom-box)

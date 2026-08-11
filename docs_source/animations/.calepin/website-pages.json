@@ -15,6 +15,18 @@
     "translations": {}
   },
   {
+    "href": "animations/anim.html",
+    "language": null,
+    "meta": {
+      "tags": "animations"
+    },
+    "path": "animations/anim.typ",
+    "pdf": null,
+    "title": "Animation system",
+    "translation_key": "animations/anim",
+    "translations": {}
+  },
+  {
     "href": "animations/item.html",
     "language": null,
     "meta": {
@@ -25,7 +37,7 @@
     },
     "path": "animations/item.typ",
     "pdf": null,
-    "title": "Item by item",
+    "title": "One by one/Item by item",
     "translation_key": "animations/item",
     "translations": {}
   },
@@ -75,8 +87,74 @@
     },
     "path": "animations/reveal.typ",
     "pdf": null,
-    "title": "Reveal",
+    "title": "CeTZ/Fletcher integration",
     "translation_key": "animations/reveal",
+    "translations": {}
+  },
+  {
+    "href": "components/bibliography.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "bibliography",
+        "citations"
+      ]
+    },
+    "path": "components/bibliography.typ",
+    "pdf": null,
+    "title": "Bibliography",
+    "translation_key": "components/bibliography",
+    "translations": {}
+  },
+  {
+    "href": "components/callout-boxes.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "callouts",
+        "boxes"
+      ]
+    },
+    "path": "components/callout-boxes.typ",
+    "pdf": null,
+    "title": "Callout boxes",
+    "translation_key": "components/callout-boxes",
+    "translations": {}
+  },
+  {
+    "href": "components/handout.html",
+    "language": null,
+    "meta": {
+      "tags": "handout"
+    },
+    "path": "components/handout.typ",
+    "pdf": null,
+    "title": "Handout mode",
+    "translation_key": "components/handout",
+    "translations": {}
+  },
+  {
+    "href": "components/localization.html",
+    "language": null,
+    "meta": {
+      "tags": "localization"
+    },
+    "path": "components/localization.typ",
+    "pdf": null,
+    "title": "Localization",
+    "translation_key": "components/localization",
+    "translations": {}
+  },
+  {
+    "href": "components/slide.html",
+    "language": null,
+    "meta": {
+      "tags": "slide"
+    },
+    "path": "components/slide.typ",
+    "pdf": null,
+    "title": "Slide",
+    "translation_key": "components/slide",
     "translations": {}
   },
   {
@@ -109,60 +187,6 @@
     "pdf": null,
     "title": "Slydekit Documentation",
     "translation_key": "index",
-    "translations": {}
-  },
-  {
-    "href": "more/bibliography.html",
-    "language": null,
-    "meta": {
-      "tags": [
-        "bibliography",
-        "citations"
-      ]
-    },
-    "path": "more/bibliography.typ",
-    "pdf": null,
-    "title": "Bibliography",
-    "translation_key": "more/bibliography",
-    "translations": {}
-  },
-  {
-    "href": "more/callout-boxes.html",
-    "language": null,
-    "meta": {
-      "tags": [
-        "callouts",
-        "boxes"
-      ]
-    },
-    "path": "more/callout-boxes.typ",
-    "pdf": null,
-    "title": "Callout boxes",
-    "translation_key": "more/callout-boxes",
-    "translations": {}
-  },
-  {
-    "href": "more/handout.html",
-    "language": null,
-    "meta": {
-      "tags": "handout"
-    },
-    "path": "more/handout.typ",
-    "pdf": null,
-    "title": "Handout mode",
-    "translation_key": "more/handout",
-    "translations": {}
-  },
-  {
-    "href": "more/localization.html",
-    "language": null,
-    "meta": {
-      "tags": "localization"
-    },
-    "path": "more/localization.typ",
-    "pdf": null,
-    "title": "Localization",
-    "translation_key": "more/localization",
     "translations": {}
   },
   {

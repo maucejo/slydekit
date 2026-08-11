@@ -1,4 +1,4 @@
-#import "slydekit-animation.typ": *
+#import "slydekit-animation.typ": pause, uncover, only, meanwhile, alternatives, one-by-one, item-by-item, reveal, track
 #import "slydekit-deps.typ": *
 #import "slydekit-defaults.typ": *
 #import "slydekit-themes.typ": *
@@ -17,7 +17,7 @@
   colors: none,
   lang: "en",
   aspect-ratio: "16-9",
-  navigation: "topbar",
+  navigation-style: "topbar",
   title-logo: (),
   slide-logo: none,
   handout: false,
@@ -75,7 +75,7 @@
   let sk-pres-info = (title: title, subtitle: subtitle, short-title: short-title, author: author, date: date, institution: institution, contact: contact, logo: title-logo)
 
   // Update states
-  sk-states.navigation.update(navigation)
+  sk-states.navigation-style.update(navigation-style)
   sk-states.pres-info.update(sk-pres-info)
   sk-states.localization.update(json("resources/i18n/" + sk-lang + ".json"))
   sk-states.theme.update(sk-theme)
