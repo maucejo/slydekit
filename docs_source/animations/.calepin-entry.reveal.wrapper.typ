@@ -90,7 +90,7 @@ As mentioned in #link("animations/pause.html", "Pause, uncover and only"), `unco
 To integrate with these packages, you can use the `reveal` function, which reproduces the visibility logic of `uncover` and `only`, without opening a new `context`. This allows third-party packages to provide their own masking via the `hide-fn` argument.
 
 ```typ
-reveal(
+#let reveal(
   int-or-range,
   from: 1,
   to: none,
