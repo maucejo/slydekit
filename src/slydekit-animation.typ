@@ -55,7 +55,7 @@
   return tracks
 }
 
-// Recursive traversal of the AST to determine the maximum step requested by uncover/only
+// Recursive traversal of the AST (Abstract Syntax Tree) to determine the maximum step requested by uncover/only
 #let analyze-max-step(body) = {
   let rec(it) = {
     if type(it) == content {
