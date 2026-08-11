@@ -81,12 +81,12 @@ title = "Animations"
     target = "animations/reveal.typ"
 
 [[sidebar.section]]
-title = "Navigation"
+title = "Navigation, Progress"
   [[sidebar.section.item]]
     target = "navigation/topbar.typ"
 
   [[sidebar.section.item]]
-    target = "navigation/toc.typ"
+    target = "navigation/outline.typ"
 
   [[sidebar.section.item]]
     target = "navigation/appendix.typ"

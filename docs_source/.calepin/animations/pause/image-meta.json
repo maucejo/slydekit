@@ -43,6 +43,83 @@
       "width": 1684,
       "height": 947
     },
+    "/assets/animations/alternatives1.png": {
+      "path": "assets/animations/alternatives1.png",
+      "xxh3": "ee2d7b7fc8d4782c",
+      "bytes": 34793,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/alternatives2.png": {
+      "path": "assets/animations/alternatives2.png",
+      "xxh3": "65669e9d9294f050",
+      "bytes": 36483,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/alternatives3.png": {
+      "path": "assets/animations/alternatives3.png",
+      "xxh3": "ed4684399154a74f",
+      "bytes": 36754,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/item-by-item1.png": {
+      "path": "assets/animations/item-by-item1.png",
+      "xxh3": "eeedd2916a6a3e5f",
+      "bytes": 39461,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/item-by-item2.png": {
+      "path": "assets/animations/item-by-item2.png",
+      "xxh3": "b48c413ef5c72492",
+      "bytes": 54557,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/item-by-item3.png": {
+      "path": "assets/animations/item-by-item3.png",
+      "xxh3": "10316aaf2889a55e",
+      "bytes": 66784,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/meanwhile1.png": {
+      "path": "assets/animations/meanwhile1.png",
+      "xxh3": "e85c5e403f6f8e54",
+      "bytes": 26037,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/meanwhile2.png": {
+      "path": "assets/animations/meanwhile2.png",
+      "xxh3": "8e720c6fdcd0f4e8",
+      "bytes": 32060,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/one-by-one1.png": {
+      "path": "assets/animations/one-by-one1.png",
+      "xxh3": "a6a7cf65c33226f9",
+      "bytes": 24692,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/one-by-one2.png": {
+      "path": "assets/animations/one-by-one2.png",
+      "xxh3": "9f6ea1a63cdc9afb",
+      "bytes": 26648,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/one-by-one3.png": {
+      "path": "assets/animations/one-by-one3.png",
+      "xxh3": "bb23e94a8ad48a62",
+      "bytes": 28181,
+      "width": 1684,
+      "height": 947
+    },
     "/assets/animations/pause1.png": {
       "path": "assets/animations/pause1.png",
       "xxh3": "b34936ba7c49e207",
@@ -61,6 +138,27 @@
       "path": "assets/animations/pause3.png",
       "xxh3": "e004ed8cd284dd95",
       "bytes": 48365,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/track1.png": {
+      "path": "assets/animations/track1.png",
+      "xxh3": "2f85d355c8d18cfd",
+      "bytes": 29367,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/track2.png": {
+      "path": "assets/animations/track2.png",
+      "xxh3": "3679c99f50272396",
+      "bytes": 39888,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/track3.png": {
+      "path": "assets/animations/track3.png",
+      "xxh3": "db15725dbf647c40",
+      "bytes": 42637,
       "width": 1684,
       "height": 947
     },
@@ -540,6 +638,83 @@
       "width": 1684,
       "height": 947
     },
+    "assets/animations/alternatives1.png": {
+      "path": "assets/animations/alternatives1.png",
+      "xxh3": "ee2d7b7fc8d4782c",
+      "bytes": 34793,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/alternatives2.png": {
+      "path": "assets/animations/alternatives2.png",
+      "xxh3": "65669e9d9294f050",
+      "bytes": 36483,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/alternatives3.png": {
+      "path": "assets/animations/alternatives3.png",
+      "xxh3": "ed4684399154a74f",
+      "bytes": 36754,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/item-by-item1.png": {
+      "path": "assets/animations/item-by-item1.png",
+      "xxh3": "eeedd2916a6a3e5f",
+      "bytes": 39461,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/item-by-item2.png": {
+      "path": "assets/animations/item-by-item2.png",
+      "xxh3": "b48c413ef5c72492",
+      "bytes": 54557,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/item-by-item3.png": {
+      "path": "assets/animations/item-by-item3.png",
+      "xxh3": "10316aaf2889a55e",
+      "bytes": 66784,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/meanwhile1.png": {
+      "path": "assets/animations/meanwhile1.png",
+      "xxh3": "e85c5e403f6f8e54",
+      "bytes": 26037,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/meanwhile2.png": {
+      "path": "assets/animations/meanwhile2.png",
+      "xxh3": "8e720c6fdcd0f4e8",
+      "bytes": 32060,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/one-by-one1.png": {
+      "path": "assets/animations/one-by-one1.png",
+      "xxh3": "a6a7cf65c33226f9",
+      "bytes": 24692,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/one-by-one2.png": {
+      "path": "assets/animations/one-by-one2.png",
+      "xxh3": "9f6ea1a63cdc9afb",
+      "bytes": 26648,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/one-by-one3.png": {
+      "path": "assets/animations/one-by-one3.png",
+      "xxh3": "bb23e94a8ad48a62",
+      "bytes": 28181,
+      "width": 1684,
+      "height": 947
+    },
     "assets/animations/pause1.png": {
       "path": "assets/animations/pause1.png",
       "xxh3": "b34936ba7c49e207",
@@ -558,6 +733,27 @@
       "path": "assets/animations/pause3.png",
       "xxh3": "e004ed8cd284dd95",
       "bytes": 48365,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/track1.png": {
+      "path": "assets/animations/track1.png",
+      "xxh3": "2f85d355c8d18cfd",
+      "bytes": 29367,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/track2.png": {
+      "path": "assets/animations/track2.png",
+      "xxh3": "3679c99f50272396",
+      "bytes": 39888,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/track3.png": {
+      "path": "assets/animations/track3.png",
+      "xxh3": "db15725dbf647c40",
+      "bytes": 42637,
       "width": 1684,
       "height": 947
     },

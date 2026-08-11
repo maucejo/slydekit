@@ -205,19 +205,20 @@
     "translations": {}
   },
   {
-    "href": "navigation/toc.html",
+    "href": "navigation/outline.html",
     "language": null,
     "meta": {
       "tags": [
         "animations",
+        "outline",
         "toc",
         "progressive outline"
       ]
     },
-    "path": "navigation/toc.typ",
+    "path": "navigation/outline.typ",
     "pdf": null,
-    "title": "Table of Contents",
-    "translation_key": "navigation/toc",
+    "title": "Outlines",
+    "translation_key": "navigation/outline",
     "translations": {}
   },
   {

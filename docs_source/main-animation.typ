@@ -32,15 +32,61 @@
 // ]
 
 // One-by-one
-#slide[`#one-by-one` example][
-  #one-by-one[I am ][not a ][ robot]
-]
+// #slide[`#one-by-one` example][
+//   #one-by-one[I am ][not a ][ robot]
+// ]
 
 // Item-by-item
-#slide[`#item-by-item` example][
-  #item-by-item[
-    - I am the first item, visible on the first subslide
-    - I am the second item, visible on the second subslide
-    - I am the third item, visible on the third subslide
-  ]
+// #slide[`#item-by-item` example][
+//   #item-by-item[
+//     - I am the first item, visible on the first subslide
+//     - I am the second item, visible on the second subslide
+//     - I am the third item, visible on the third subslide
+//   ]
+// ]
+
+// Meanwhile
+// #slide[`#meanwhile` example][
+//   First
+
+//   #pause
+
+//   Second
+
+//   #meanwhile
+
+//   Third
+
+//   #pause
+
+//   Fourth
+// ]
+
+// Track
+// #slide[`#track` example][
+//   #grid(
+//     columns: (1fr, 1fr),
+//     align: top,
+//     column-gutter: 1em,
+//     track[
+//       First point #pause
+
+//       Second point #pause
+
+//       Third point
+//     ],
+//     track[
+//       First parallel #pause
+
+//       Second parallel
+//     ]
+//   )
+// ]
+
+// Alternatives
+#slide[`#alternatives` example][
+  #alternatives[Ann][Bob][Christopher]
+  likes
+  #alternatives[chocolate][strawberry][vanilla]
+  ice cream.
 ]

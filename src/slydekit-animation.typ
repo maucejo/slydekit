@@ -177,6 +177,19 @@
   }
 }
 
+// Reveals each element of a list, enumeration, or terms on its own step. On the model of Polylux's item-by-item: we never reconstruct list(..)/enum(..)/terms(..), we simply filter the direct children of body that are list.item/enum.item/terms.item and reveal them one by one via one-by-one. Typst then visually groups these adjacent items, regardless of whether they are each wrapped in an uncover.
+#let item-by-item(start: 1, hide-color: none, hide-fn: none, body) = {
+  let is-item(it) = type(it) == content and it.func() in (
+    list.item, enum.item, terms.item
+  )
+  let children = if type(body) == content and body.has("children") {
+    body.children
+  } else {
+    body
+  }
+  one-by-one(start: start, hide-color: hide-color, hide-fn: hide-fn, ..children.filter(is-item))
+}
+
 // Adapts a descriptor (integer = single step, dictionary (beginning: n) = open from n) to a call to only, the only vocabulary that alternatives needs
 #let _only-for(descriptor, body) = {
   if type(descriptor) == dictionary {
@@ -216,19 +229,6 @@
     #metadata((int-or-range: (), from: start, to: start + n - 1))<sk-reveal>
     #alternatives-match(descriptors.zip(contents))
   ]
-}
-
-// Reveals each element of a list, enumeration, or terms on its own step. On the model of Polylux's item-by-item: we never reconstruct list(..)/enum(..)/terms(..), we simply filter the direct children of body that are list.item/enum.item/terms.item and reveal them one by one via one-by-one. Typst then visually groups these adjacent items, regardless of whether they are each wrapped in an uncover.
-#let item-by-item(start: 1, hide-color: none, hide-fn: none, body) = {
-  let is-item(it) = type(it) == content and it.func() in (
-    list.item, enum.item, terms.item
-  )
-  let children = if type(body) == content and body.has("children") {
-    body.children
-  } else {
-    body
-  }
-  one-by-one(start: start, hide-color: hide-color, hide-fn: hide-fn, ..children.filter(is-item))
 }
 
 // Parallel track: local split by <pause>, counted independently of the main flow, but synchronized on the same subslide clock. Replaces the use of #meanwhile from Touying: instead of a marker inserted in the flow, we wrap each parallel branch in track(..).
