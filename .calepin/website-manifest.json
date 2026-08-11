@@ -9,6 +9,7 @@
     "animations/reveal.html",
     "assets/.DS_Store",
     "assets/Catppuccin Latte.tmTheme",
+    "assets/animations/.DS_Store",
     "assets/animations/alternatives1.png",
     "assets/animations/alternatives2.png",
     "assets/animations/alternatives3.png",
@@ -42,6 +43,7 @@
     "assets/getting-started/basic-usage4.png",
     "assets/getting-started/basic-usage5.png",
     "assets/slydekit-full.svg",
+    "assets/slydekit-icon.svg",
     "assets/slydekit-mini.svg",
     "assets/theming/.DS_Store",
     "assets/theming/cambfurt/CambfurtTheme_Page1.png",
@@ -155,7 +157,7 @@
     "theming/fonts-colors.html"
   ],
   "pagefind": {
-    "signature": 11728686197666996416,
+    "signature": 16620106769199131514,
     "outputs": [
       "pagefind/fragment/en_11813ac.pf_fragment",
       "pagefind/fragment/en_129320c.pf_fragment",
