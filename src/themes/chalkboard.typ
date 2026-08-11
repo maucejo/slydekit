@@ -195,11 +195,11 @@
   ]
 }
 
-#let chalkboard-outline = context {
+#let chalkboard-toc = context {
   let header-content = {
     let dy = if sk-states.navigation-style.get() == "topbar" { 0em } else { 0.5em }
     [
-      #move(dx: 1em, dy: -dy)[*#sk-states.localization.get().outline*]
+      #move(dx: 1em, dy: -dy)[*#sk-states.localization.get().toc*]
       #place(dy: 0.5em - dy, line(length: 100%, stroke: 0.05em + sk-states.colors.get().header))
     ]
   }
@@ -207,7 +207,7 @@
 
   set page(header: header, footer: none)
 
-  outline
+  toc
 }
 
 #let chalkboard-focus-slide(body) = context {
@@ -247,4 +247,4 @@
   )
 }
 
-#let chalkboard = (theme: chalkboard-theme, title: chalkboard-title, outline: chalkboard-outline, focus-slide: chalkboard-focus-slide, link-box: chalkboard-link-box, boxeq: chalkboard-boxeq, box: chalkboard-custom-box)
+#let chalkboard = (theme: chalkboard-theme, title: chalkboard-title, toc: chalkboard-toc, focus-slide: chalkboard-focus-slide, link-box: chalkboard-link-box, boxeq: chalkboard-boxeq, box: chalkboard-custom-box)

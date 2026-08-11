@@ -200,7 +200,7 @@
   )
 }
 
-#let fancy-outline = context {
+#let fancy-toc = context {
   let (header-color, text-color) = if sk-states.navigation-style.get() == "topbar" {
     (sk-states.colors.get().header, white)
   } else {
@@ -208,7 +208,7 @@
   }
   let header-content = {
     let dy = if sk-states.navigation-style.get() == "topbar" { 0em } else { -0.2em }
-    [#move(dx: 1em, dy: dy)[*#sk-states.localization.get().outline*]]
+    [#move(dx: 1em, dy: dy)[*#sk-states.localization.get().toc*]]
 
     if sk-states.navigation-style.get() == "minislide" {
       place(dy: 0.5em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().header))
@@ -218,7 +218,7 @@
 
   set page(header: header, footer: none)
 
-  outline
+  toc
 }
 
 #let fancy-focus-slide(body) = context {
@@ -264,4 +264,4 @@
   )[#body]
 }
 
-#let fancy = (theme: fancy-theme, title: fancy-title, outline: fancy-outline, focus-slide: fancy-focus-slide, link-box: fancy-link-box, boxeq: fancy-boxeq, box: fancy-custom-box)
+#let fancy = (theme: fancy-theme, title: fancy-title, toc: fancy-toc, focus-slide: fancy-focus-slide, link-box: fancy-link-box, boxeq: fancy-boxeq, box: fancy-custom-box)

@@ -51,7 +51,7 @@
   show heading.where(level: 1): it => {
     let header-content = {
       let dy = if sk-states.navigation-style.get() == "topbar" { 0em } else { -0.2em }
-      [#move(dx: 1em, dy: dy)[*#sk-states.localization.get().outline*]]
+      [#move(dx: 1em, dy: dy)[*#sk-states.localization.get().toc*]]
 
       if sk-states.navigation-style.get() == "minislide" {
         place(dy: 0.5em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().primary))
@@ -176,10 +176,10 @@
   ]
 }
 
-#let simple-outline = context {
+#let simple-toc = context {
   let header-content = {
     let dy = if sk-states.navigation-style.get() == "topbar" { 0em } else { -0.2em }
-    [#move(dx: 1em, dy: dy)[*#sk-states.localization.get().outline*]]
+    [#move(dx: 1em, dy: dy)[*#sk-states.localization.get().toc*]]
 
     if sk-states.navigation-style.get() == "minislide" {
       place(dy: 0.5em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().primary))
@@ -189,7 +189,7 @@
 
   set page(header: header, footer: none)
 
-  outline
+  toc
 }
 
 #let simple-focus-slide(body) = context {
@@ -229,4 +229,4 @@
   )
 }
 
-#let simple = (theme: simple-theme, title: simple-title, outline: simple-outline, focus-slide: simple-focus-slide, link-box: simple-link-box, boxeq: simple-boxeq, box: simple-custom-box)
+#let simple = (theme: simple-theme, title: simple-title, toc: simple-toc, focus-slide: simple-focus-slide, link-box: simple-link-box, boxeq: simple-boxeq, box: simple-custom-box)

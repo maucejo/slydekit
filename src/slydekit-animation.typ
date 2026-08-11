@@ -100,6 +100,19 @@
   rec(body)
 }
 
+#let reveal-visible(
+  step,
+  int-or-range,
+  from,
+  to,
+) = {
+  if int-or-range.len() > 0 {
+    step in int-or-range
+  } else {
+    step >= from and (to == none or step <= to)
+  }
+}
+
 #let _reveal(..args) = {
   let pos = args.pos()
   let body = pos.last()
@@ -113,11 +126,7 @@
   // Dynamic rendering of the element according to the current step
   let anim-content = context {
     let step = sk-states.subslide-step.get().first()
-    let visible = if int-or-range.len() > 0 {
-        step in int-or-range
-      } else {
-        step >= from and (to == none or step <= to)
-      }
+    let visible = reveal-visible(step, int-or-range, from, to)
 
     if visible {
       body
@@ -155,11 +164,7 @@
   let from = args.named().at("from", default: 1)
   let to = args.named().at("to", default: none)
 
-  let visible = if int-or-range.len() > 0 {
-    step in int-or-range
-  } else {
-    step >= from and (to == none or step <= to)
-  }
+  let visible = reveal-visible(step, int-or-range, from, to)
 
   if visible {
     body

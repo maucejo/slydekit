@@ -9,7 +9,7 @@
 #let title-slide = context sk-states.theme.get().title
 
 // Table of contents
-#let outline = context sk-states.theme.get().outline
+#let tableofcontents = context sk-states.theme.get().toc
 
 // Focus slide
 #let focus-slide(body) = context (sk-states.theme.get().focus-slide)(body)

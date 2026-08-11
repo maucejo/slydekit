@@ -56,12 +56,12 @@
         columns: (1fr, 1fr),
         align: right + horizon,
         rows: 1.5em,
-        grid.cell(fill: sk-states.colors.get().header)[#text(fill: white)[*#sk-states.localization.get().outline* #h(0.75em)]],
+        grid.cell(fill: sk-states.colors.get().header)[#text(fill: white)[*#sk-states.localization.get().toc* #h(0.75em)]],
         cell(fill: sk-states.colors.get().secondary),
       )
       move(dy: dy)[#topbar]
     } else {
-      move(dx: 1em, dy: dy)[#box(width: 100%, fill: sk-states.colors.get().secondary.lighten(45%), outset: (left: 1em, rest: 0.5em))[*#sk-states.localization.get().outline*]]
+      move(dx: 1em, dy: dy)[#box(width: 100%, fill: sk-states.colors.get().secondary.lighten(45%), outset: (left: 1em, rest: 0.5em))[*#sk-states.localization.get().toc*]]
     }
     let header = full-width(align(horizon, text(size: 1.399em, fill: sk-states.colors.get().header)[#header-content]))
 
@@ -214,24 +214,24 @@
   ]
 }
 
-#let cambfurt-outline = context {
+#let cambfurt-toc = context {
   let header-content = if sk-states.navigation-style.get() == "topbar" {
       let topbar = grid(
         columns: (1fr, 1fr),
         align: right + horizon,
         rows: 1.5em,
-        grid.cell(fill: sk-states.colors.get().primary)[#text(fill: white)[*#sk-states.localization.get().outline* #h(0.75em)]],
+        grid.cell(fill: sk-states.colors.get().primary)[#text(fill: white)[*#sk-states.localization.get().toc* #h(0.75em)]],
         cell(fill: sk-states.colors.get().secondary),
       )
       move(dy: -2pt)[#topbar]
     } else {
-      move(dx: 1em, dy: -0.5em)[#box(width: 100%, fill: sk-states.colors.get().secondary, outset: (left: 1em, rest: 0.5em))[*#sk-states.localization.get().outline*]]
+      move(dx: 1em, dy: -0.5em)[#box(width: 100%, fill: sk-states.colors.get().secondary, outset: (left: 1em, rest: 0.5em))[*#sk-states.localization.get().toc*]]
     }
     let header = full-width(fill: none, align(horizon, text(size: 1.2em, fill: sk-states.colors.get().primary)[#header-content]))
 
   set page(header: header, footer: none)
 
-  outline
+  toc
 }
 
 #let cambfurt-focus-slide(body) = context {
@@ -277,4 +277,4 @@
   )[#body]
 }
 
-#let cambfurt = (theme: cambfurt-theme, title: cambfurt-title, outline: cambfurt-outline, focus-slide: cambfurt-focus-slide, link-box: cambfurt-link-box, boxeq: cambfurt-boxeq, box: cambfurt-custom-box)
+#let cambfurt = (theme: cambfurt-theme, title: cambfurt-title, toc: cambfurt-toc, focus-slide: cambfurt-focus-slide, link-box: cambfurt-link-box, boxeq: cambfurt-boxeq, box: cambfurt-custom-box)

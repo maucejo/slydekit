@@ -179,7 +179,7 @@
   }
 }
 
-#let metropolis-outline = context {
+#let metropolis-toc = context {
   let (header-color, text-color) = if sk-states.navigation-style.get() == "topbar" {
     (sk-states.colors.get().header, white)
   } else {
@@ -187,7 +187,7 @@
   }
   let header-content = {
     let dy = if sk-states.navigation-style.get() == "topbar" { 0em } else { -0.2em }
-    [#move(dx: 1em, dy: dy)[*#sk-states.localization.get().outline*]]
+    [#move(dx: 1em, dy: dy)[*#sk-states.localization.get().toc*]]
 
     if sk-states.navigation-style.get() == "minislide" {
       place(dy: 0.5em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().header))
@@ -197,7 +197,7 @@
 
   set page(header: header, footer: none)
 
-  outline
+  toc
 }
 
 #let metropolis-focus-slide(body) = context {
@@ -244,4 +244,4 @@
   )
 }
 
-#let metropolis = (theme: metropolis-theme, title: metropolis-title, outline: metropolis-outline, focus-slide: metropolis-focus-slide, link-box: metropolis-link-box, boxeq: metropolis-boxeq, box: metropolis-custom-box)
+#let metropolis = (theme: metropolis-theme, title: metropolis-title, toc: metropolis-toc, focus-slide: metropolis-focus-slide, link-box: metropolis-link-box, boxeq: metropolis-boxeq, box: metropolis-custom-box)

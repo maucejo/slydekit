@@ -1,5 +1,5 @@
 #import "../src/slydekit.typ": *
-// #import "@preview/cetz:0.5.2"
+#import "@preview/cetz:0.5.2"
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
 
 #show: slydekit.with(
@@ -16,105 +16,105 @@
 #show raw: set text(size: 1.18em)
 
 // Pause
-// #slide[`#pause` example][
-//   I am #pause an important point that requires attention.
+#slide[`#pause` example][
+  I am #pause an important point that requires attention.
 
-//   #pause
+  #pause
 
-//   I am not as important as the previous point.
-// ]
+  I am not as important as the previous point.
+]
 
 // Uncover / Only
-// #slide[`#uncover/#only` example][
-//   #only(1)[I am only visible on the first subslide]
+#slide[`#uncover/#only` example][
+  #only(1)[I am only visible on the first subslide]
 
-//   #uncover(2)[I am only visible on the second subslide]
+  #uncover(2)[I am only visible on the second subslide]
 
-//   #only(1, 3)[I am only visible on the first and third subslides]
-// ]
+  #only(1, 3)[I am only visible on the first and third subslides]
+]
 
 // One-by-one
-// #slide[`#one-by-one` example][
-//   #one-by-one[I am ][not a ][ robot]
-// ]
+#slide[`#one-by-one` example][
+  #one-by-one[I am ][not a ][ robot]
+]
 
 // Item-by-item
-// #slide[`#item-by-item` example][
-//   #item-by-item[
-//     - I am the first item, visible on the first subslide
-//     - I am the second item, visible on the second subslide
-//     - I am the third item, visible on the third subslide
-//   ]
-// ]
+#slide[`#item-by-item` example][
+  #item-by-item[
+    - I am the first item, visible on the first subslide
+    - I am the second item, visible on the second subslide
+    - I am the third item, visible on the third subslide
+  ]
+]
 
 // Meanwhile
-// #slide[`#meanwhile` example][
-//   First
+#slide[`#meanwhile` example][
+  First
 
-//   #pause
+  #pause
 
-//   Second
+  Second
 
-//   #meanwhile
+  #meanwhile
 
-//   Third
+  Third
 
-//   #pause
+  #pause
 
-//   Fourth
-// ]
+  Fourth
+]
 
 // Track
-// #slide[`#track` example][
-//   #grid(
-//     columns: (1fr, 1fr),
-//     align: top,
-//     column-gutter: 1em,
-//     track[
-//       First point #pause
+#slide[`#track` example][
+  #grid(
+    columns: (1fr, 1fr),
+    align: top,
+    column-gutter: 1em,
+    track[
+      First point #pause
 
-//       Second point #pause
+      Second point #pause
 
-//       Third point
-//     ],
-//     track[
-//       First parallel #pause
+      Third point
+    ],
+    track[
+      First parallel #pause
 
-//       Second parallel
-//     ]
-//   )
-// ]
+      Second parallel
+    ]
+  )
+]
 
 // Alternatives
-// #slide[`#alternatives` example][
-//   #alternatives[Ann][Bob][Christopher]
-//   likes
-//   #alternatives[chocolate][strawberry][vanilla]
-//   ice cream.
-// ]
+#slide[`#alternatives` example][
+  #alternatives[Ann][Bob][Christopher]
+  likes
+  #alternatives[chocolate][strawberry][vanilla]
+  ice cream.
+]
 
 // CeTZ integration
-// #slide("CeTZ integration", steps: 3)[
-//   #let reveal-cetz = reveal.with(hide-fn: cetz.draw.hide.with(bounds: true))
+#slide("CeTZ integration", steps: 3)[
+  #let reveal-cetz = reveal.with(hide-fn: cetz.draw.hide.with(bounds: true))
 
-//   #context {
-//     align(center)[
-//       #cetz.canvas({
-//         import cetz.draw: *
+  #context {
+    align(center)[
+      #cetz.canvas({
+        import cetz.draw: *
 
-//         scale(400%)
-//         grid((-1.5, -1.5), (1.5, 1.5), step: 0.5, stroke: gray + 0.2pt)
+        scale(400%)
+        grid((-1.5, -1.5), (1.5, 1.5), step: 0.5, stroke: gray + 0.2pt)
 
-//         reveal(from: 2, {
-//           line((-1.5, 0), (1.5, 0))
-//           line((0, -1.5), (0, 1.5))
-//         })
+        reveal(from: 2, {
+          line((-1.5, 0), (1.5, 0))
+          line((0, -1.5), (0, 1.5))
+        })
 
-//         reveal(3, circle((0, 0)))
-//       })
-//     ]
-//   }
-// ]
+        reveal(3, circle((0, 0)))
+      })
+    ]
+  }
+]
 
 // Fletcher integration
 #slide("Fletcher integration", steps: 3)[
