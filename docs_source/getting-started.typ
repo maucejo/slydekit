@@ -34,7 +34,7 @@ After importing the template, you have to initialize the template by a show rule
   colors: none,
   lang: "en",
   aspect-ratio: "16-9",
-  navigation: "topbar",
+  navigation-style: "topbar",
   title-logo: (),
   slide-logo: none,
   handout: false,
@@ -121,7 +121,7 @@ Available languages include:
 Aspect ratio of the slides. Common values include "16-9" for widescreen presentations and "4-3" for standard presentations. This setting determines the dimensions of the slides and how they will be displayed on different screens and devices.
 ]
 
-#argument-callout("navigation", [string], default: ["topbar"])[
+#argument-callout("navigation-style", [string], default: ["topbar"])[
 Navigation style for the presentation. Available options include "topbar" for a top navigation bar, "minislide" for a mini slide navigation, and other custom navigation styles that can be defined in your Typst document. This setting affects how users can navigate through the slides during the presentation.
 ]
 

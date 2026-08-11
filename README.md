@@ -33,7 +33,7 @@ Slydekit is used as a #show rule at the top of your document. Everything else in
   theme: metropolis,
   lang: "fr",
   aspect-ratio: "16-9",
-  navigation: "topbar",
+  navigation-style: "topbar",
 )
 
 #title-slide
@@ -57,7 +57,7 @@ Every argument to `slydekit(..)` is optional and falls back to a sensible defaul
 | `colors` | Dictionary overriding any of the theme's colors |
 | `lang` | `"fr"`, `"en"` — drives both `set text` and the built-in localization strings |
 | `aspect-ratio` | `"16-9"` or `"4-3"` |
-| `navigation` | `"topbar"` or `"minislide"` |
+| `navigation-style` | `"topbar"` or `"minislide"` |
 | `title-logo`, `slide-logo` | Logo(s) for the title page and the running footer |
 | `handout` | Handout mode |
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    version="1.1"
-   width="366.13449"
-   height="286.23502"
-   viewBox="0 0 366.13449 286.23501"
+   width="1270.322"
+   height="286.31256"
+   viewBox="0 0 1270.322 286.31256"
    id="svg27"
    sodipodi:docname="slydekit-mini.svg"
    inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
@@ -22,14 +22,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="1.1490485"
-     inkscape:cx="162.74335"
-     inkscape:cy="145.77278"
+     inkscape:cx="476.91634"
+     inkscape:cy="151.86478"
      inkscape:window-width="1728"
      inkscape:window-height="1056"
      inkscape:window-x="0"
      inkscape:window-y="33"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg27" />
+     inkscape:current-layer="svg27"
+     showguides="false" />
   <defs
      id="defs11">
     <!-- Dégradé de fond -->
@@ -189,7 +190,7 @@
   <!-- Fond arrondi du logo -->
   <!-- Groupe de l'Icône -->
   <g
-     transform="rotate(-10,414.47469,-153.73352)"
+     transform="rotate(-10,447.9449,-127.59194)"
      id="g12"
      style="filter:url(#dropShadow)">
     <rect
@@ -204,154 +205,171 @@
        style="fill:url(#slideBackGrad)" />
   </g>
   <g
-     transform="rotate(-4,1044.191,-538.40801)"
-     id="g16"
-     style="filter:url(#dropShadow)">
-    <rect
-       width="270"
-       height="168"
-       rx="14"
-       fill="url(#slideMidGrad)"
-       stroke="#475569"
-       stroke-width="2"
-       id="rect13"
-       x="0"
-       y="0"
-       style="fill:url(#slideMidGrad)" />
-    <rect
-       x="22"
-       y="26"
-       width="110"
-       height="9"
-       rx="4.5"
-       fill="#f8fafc"
-       opacity="0.8"
-       id="rect14" />
-    <rect
-       x="22"
-       y="46"
-       width="160"
-       height="7"
-       rx="3.5"
-       fill="#94a3b8"
-       opacity="0.5"
-       id="rect15" />
-    <rect
-       x="22"
-       y="60"
-       width="125"
-       height="7"
-       rx="3.5"
-       fill="#94a3b8"
-       opacity="0.5"
-       id="rect16" />
-  </g>
-  <g
-     transform="translate(45.70149,84.903372)"
-     filter="url(#glowOrange)"
-     id="g24">
-    <rect
-       width="270"
-       height="168"
-       rx="14"
-       fill="#ffffff"
-       id="rect17"
-       x="0"
-       y="0" />
-    <!-- Header de la slide -->
-    <path
-       d="M 0,14 C 0,6.27 6.27,0 14,0 h 242 c 7.73,0 14,6.27 14,14 V 38 H 0 Z"
-       fill="#f8fafc"
-       id="path17" />
-    <line
-       x1="0"
-       y1="38"
-       x2="270"
-       y2="38"
-       stroke="#e2e8f0"
-       stroke-width="1.5"
-       id="line17" />
-    <rect
-       x="18"
-       y="18"
-       width="70"
-       height="7"
-       rx="3.5"
-       fill="url(#slideFrontGrad)"
-       id="rect18"
-       style="fill:url(#linearGradient27)" />
-    <circle
-       cx="238"
-       cy="19"
-       r="3.5"
-       fill="#cbd5e1"
-       id="circle18" />
-    <circle
-       cx="249"
-       cy="19"
-       r="3.5"
-       fill="#cbd5e1"
-       id="circle19" />
-    <!-- Contenu : Colonnes + Bouton Play -->
-    <rect
-       x="18"
-       y="54"
-       width="112"
-       height="92"
-       rx="9"
-       fill="#f1f5f9"
-       id="rect19" />
-    <rect
-       x="30"
-       y="70"
-       width="85"
-       height="7"
-       rx="3.5"
-       fill="#0f172a"
-       id="rect20" />
-    <rect
-       x="30"
-       y="84"
-       width="65"
-       height="5"
-       rx="2.5"
-       fill="#64748b"
-       id="rect21" />
-    <rect
-       x="30"
-       y="95"
-       width="75"
-       height="5"
-       rx="2.5"
-       fill="#64748b"
-       id="rect22" />
-    <rect
-       x="30"
-       y="106"
-       width="50"
-       height="5"
-       rx="2.5"
-       fill="#64748b"
-       id="rect23" />
-    <rect
-       x="140"
-       y="54"
-       width="112"
-       height="92"
-       rx="9"
-       fill="#fff7ed"
-       id="rect24" />
-    <circle
-       cx="196"
-       cy="100"
-       r="22"
-       fill="url(#slideFrontGrad)"
-       id="circle24"
-       style="fill:url(#linearGradient28)" />
-    <path
-       d="m 190,90 16,10 -16,10 z"
-       fill="#ffffff"
-       id="path24" />
+     id="g1">
+    <g
+       transform="rotate(-4,1131.0795,-477.58776)"
+       id="g16"
+       style="filter:url(#dropShadow)">
+      <rect
+         width="270"
+         height="168"
+         rx="14"
+         fill="url(#slideMidGrad)"
+         stroke="#475569"
+         stroke-width="2"
+         id="rect13"
+         x="0"
+         y="0"
+         style="fill:url(#slideMidGrad)" />
+      <rect
+         x="22"
+         y="26"
+         width="110"
+         height="9"
+         rx="4.5"
+         fill="#f8fafc"
+         opacity="0.8"
+         id="rect14" />
+      <rect
+         x="22"
+         y="46"
+         width="160"
+         height="7"
+         rx="3.5"
+         fill="#94a3b8"
+         opacity="0.5"
+         id="rect15" />
+      <rect
+         x="22"
+         y="60"
+         width="125"
+         height="7"
+         rx="3.5"
+         fill="#94a3b8"
+         opacity="0.5"
+         id="rect16" />
+    </g>
+    <g
+       transform="translate(41.67054,91.112562)"
+       filter="url(#glowOrange)"
+       id="g24">
+      <rect
+         width="270"
+         height="168"
+         rx="14"
+         fill="#ffffff"
+         id="rect17"
+         x="0"
+         y="0" />
+      <!-- Header de la slide -->
+      <path
+         d="M 0,14 C 0,6.27 6.27,0 14,0 h 242 c 7.73,0 14,6.27 14,14 V 38 H 0 Z"
+         fill="#f8fafc"
+         id="path17" />
+      <line
+         x1="0"
+         y1="38"
+         x2="270"
+         y2="38"
+         stroke="#e2e8f0"
+         stroke-width="1.5"
+         id="line17" />
+      <rect
+         x="18"
+         y="18"
+         width="70"
+         height="7"
+         rx="3.5"
+         fill="url(#slideFrontGrad)"
+         id="rect18"
+         style="fill:url(#linearGradient27)" />
+      <circle
+         cx="238"
+         cy="19"
+         r="3.5"
+         fill="#cbd5e1"
+         id="circle18" />
+      <circle
+         cx="249"
+         cy="19"
+         r="3.5"
+         fill="#cbd5e1"
+         id="circle19" />
+      <!-- Contenu : Colonnes + Bouton Play -->
+      <rect
+         x="18"
+         y="54"
+         width="112"
+         height="92"
+         rx="9"
+         fill="#f1f5f9"
+         id="rect19" />
+      <rect
+         x="30"
+         y="70"
+         width="85"
+         height="7"
+         rx="3.5"
+         fill="#0f172a"
+         id="rect20" />
+      <rect
+         x="30"
+         y="84"
+         width="65"
+         height="5"
+         rx="2.5"
+         fill="#64748b"
+         id="rect21" />
+      <rect
+         x="30"
+         y="95"
+         width="75"
+         height="5"
+         rx="2.5"
+         fill="#64748b"
+         id="rect22" />
+      <rect
+         x="30"
+         y="106"
+         width="50"
+         height="5"
+         rx="2.5"
+         fill="#64748b"
+         id="rect23" />
+      <rect
+         x="140"
+         y="54"
+         width="112"
+         height="92"
+         rx="9"
+         fill="#fff7ed"
+         id="rect24" />
+      <circle
+         cx="196"
+         cy="100"
+         r="22"
+         fill="url(#slideFrontGrad)"
+         id="circle24"
+         style="fill:url(#linearGradient28)" />
+      <path
+         d="m 190,90 16,10 -16,10 z"
+         fill="#ffffff"
+         id="path24" />
+    </g>
   </g>
   <!-- Groupe Typographie : slydekit -->
+  <text
+     x="429.27347"
+     y="212.92986"
+     font-family="sans-serif"
+     font-size="192.139px"
+     font-weight="800"
+     letter-spacing="-0.5"
+     id="text26"
+     style="stroke-width:3.69498"><tspan
+       fill="#f8fafc"
+       id="tspan25"
+       style="fill:#c8c8c8;fill-opacity:1;stroke-width:3.69498">slyde</tspan><tspan
+       id="tspan28"
+       style="fill:#df7a00;fill-opacity:1;stroke-width:3.69498">kit</tspan></text>
 </svg>
