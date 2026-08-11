@@ -8,7 +8,7 @@ pdf = false
 typ = false
 minify = true
 search = "pagefind"
-favicon = "assets/slydekit-mini.svg"
+favicon = "assets/slydekit-icon.svg"
 highlight-light = "assets/Catppuccin Latte.tmTheme"
 
 [executables]
