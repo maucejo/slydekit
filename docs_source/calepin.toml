@@ -95,7 +95,7 @@ title = "Navigation, Progress"
 title = "Components"
 
   [[sidebar.section.item]]
-    target = "components/slide.typ"
+    target = "components/slides.typ"
 
   [[sidebar.section.item]]
     target = "components/localization.typ"

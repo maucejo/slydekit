@@ -146,15 +146,15 @@
     "translations": {}
   },
   {
-    "href": "components/slide.html",
+    "href": "components/slides.html",
     "language": null,
     "meta": {
-      "tags": "slide"
+      "tags": "slides"
     },
-    "path": "components/slide.typ",
+    "path": "components/slides.typ",
     "pdf": null,
-    "title": "Slide",
-    "translation_key": "components/slide",
+    "title": "Slides",
+    "translation_key": "components/slides",
     "translations": {}
   },
   {

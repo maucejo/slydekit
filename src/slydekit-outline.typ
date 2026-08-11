@@ -172,7 +172,6 @@
   active-color,
   inactive-color,
   entry-size: 0.8575em,
-  max-count: 3,
   gutter: 4%,
   section-numbering: "1.1.",
   appendix-numbering: "A.1.",
@@ -212,5 +211,5 @@
     ]
   })
 
-  adaptive-columns(gutter: gutter, max-count: max-count, entries.join())
+  adaptive-columns(gutter: gutter, entries.join())
 }

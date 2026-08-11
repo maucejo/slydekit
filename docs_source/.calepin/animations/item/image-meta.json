@@ -260,6 +260,55 @@
       "width": 1684,
       "height": 947
     },
+    "/assets/navigation/toc-progress-cambfurt1.png": {
+      "path": "assets/navigation/toc-progress-cambfurt1.png",
+      "xxh3": "8cbaf732703faf91",
+      "bytes": 27908,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/toc-progress-chalkboard1.png": {
+      "path": "assets/navigation/toc-progress-chalkboard1.png",
+      "xxh3": "f629c10b62c911b2",
+      "bytes": 2351490,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/toc-progress-fancy1.png": {
+      "path": "assets/navigation/toc-progress-fancy1.png",
+      "xxh3": "90175e94b8a57a17",
+      "bytes": 28194,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/toc-progress-metropolis1.png": {
+      "path": "assets/navigation/toc-progress-metropolis1.png",
+      "xxh3": "18038692c52907cf",
+      "bytes": 26851,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/toc-progress-metropolis2.png": {
+      "path": "assets/navigation/toc-progress-metropolis2.png",
+      "xxh3": "5c0ab9324d4070de",
+      "bytes": 16963,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/toc-progress-simple1.png": {
+      "path": "assets/navigation/toc-progress-simple1.png",
+      "xxh3": "06ed303354f78022",
+      "bytes": 28194,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/toc-progress-simple2.png": {
+      "path": "assets/navigation/toc-progress-simple2.png",
+      "xxh3": "c09b3081f35d915a",
+      "bytes": 26714,
+      "width": 1684,
+      "height": 947
+    },
     "/assets/theming/cambfurt/CambfurtTheme_Page1.png": {
       "path": "assets/theming/cambfurt/CambfurtTheme_Page1.png",
       "xxh3": "dd58c8bffacb437d",
@@ -894,6 +943,55 @@
       "path": "assets/getting-started/basic-usage5.png",
       "xxh3": "2a5ddf4fb0056ef3",
       "bytes": 33731,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/toc-progress-cambfurt1.png": {
+      "path": "assets/navigation/toc-progress-cambfurt1.png",
+      "xxh3": "8cbaf732703faf91",
+      "bytes": 27908,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/toc-progress-chalkboard1.png": {
+      "path": "assets/navigation/toc-progress-chalkboard1.png",
+      "xxh3": "f629c10b62c911b2",
+      "bytes": 2351490,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/toc-progress-fancy1.png": {
+      "path": "assets/navigation/toc-progress-fancy1.png",
+      "xxh3": "90175e94b8a57a17",
+      "bytes": 28194,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/toc-progress-metropolis1.png": {
+      "path": "assets/navigation/toc-progress-metropolis1.png",
+      "xxh3": "18038692c52907cf",
+      "bytes": 26851,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/toc-progress-metropolis2.png": {
+      "path": "assets/navigation/toc-progress-metropolis2.png",
+      "xxh3": "5c0ab9324d4070de",
+      "bytes": 16963,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/toc-progress-simple1.png": {
+      "path": "assets/navigation/toc-progress-simple1.png",
+      "xxh3": "06ed303354f78022",
+      "bytes": 28194,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/toc-progress-simple2.png": {
+      "path": "assets/navigation/toc-progress-simple2.png",
+      "xxh3": "c09b3081f35d915a",
+      "bytes": 26714,
       "width": 1684,
       "height": 947
     },
