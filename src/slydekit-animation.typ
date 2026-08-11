@@ -149,7 +149,7 @@
 #let only = _reveal.with(reserved: false)
 
 // Reproduces the visibility logic of reveal(), but allows a third-party package (Fletcher, CeTZ...) to provide its own masking via the hide-fn argument. This is useful for packages that use their own visibility logic and own context, which are not compatible with uncover/only.
-#let reveal(..args, body, hide-fn: none) = {
+#let reveal(..args, hide-fn: none, body) = {
   let step = sk-states.subslide-step.get().first()
   let int-or-range = args.pos()
   let from = args.named().at("from", default: 1)

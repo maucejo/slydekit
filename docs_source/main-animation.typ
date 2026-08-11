@@ -1,4 +1,6 @@
 #import "../src/slydekit.typ": *
+// #import "@preview/cetz:0.5.2"
+#import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
 
 #show: slydekit.with(
   title: "Slydekit",
@@ -84,9 +86,57 @@
 // ]
 
 // Alternatives
-#slide[`#alternatives` example][
-  #alternatives[Ann][Bob][Christopher]
-  likes
-  #alternatives[chocolate][strawberry][vanilla]
-  ice cream.
+// #slide[`#alternatives` example][
+//   #alternatives[Ann][Bob][Christopher]
+//   likes
+//   #alternatives[chocolate][strawberry][vanilla]
+//   ice cream.
+// ]
+
+// CeTZ integration
+// #slide("CeTZ integration", steps: 3)[
+//   #let reveal-cetz = reveal.with(hide-fn: cetz.draw.hide.with(bounds: true))
+
+//   #context {
+//     align(center)[
+//       #cetz.canvas({
+//         import cetz.draw: *
+
+//         scale(400%)
+//         grid((-1.5, -1.5), (1.5, 1.5), step: 0.5, stroke: gray + 0.2pt)
+
+//         reveal(from: 2, {
+//           line((-1.5, 0), (1.5, 0))
+//           line((0, -1.5), (0, 1.5))
+//         })
+
+//         reveal(3, circle((0, 0)))
+//       })
+//     ]
+//   }
+// ]
+
+// Fletcher integration
+#slide("Fletcher integration", steps: 3)[
+  #show raw: set text(size: 0.7em)
+  #let reveal-fletcher = reveal.with(hide-fn: fletcher.hide.with(bounds: true))
+
+  #context {
+    align(center)[
+    #diagram(
+      node-stroke: .1em,
+      node-fill: gradient.radial(blue.lighten(80%), blue, center: (30%, 20%), radius: 80%),
+      spacing: 4em,
+      edge((-1,0), "r", "-|>", `open(path)`, label-pos: 0, label-side: center),
+      node((0,0), `reading`, radius: 2em),
+      edge((0,0), (0,0), `read()`, "--|>", bend: 130deg),
+
+      reveal-fletcher(from: 2, edge(`read()`, "-|>")),
+
+      node((1,0), `eof`, radius: 2em),
+      reveal-fletcher(3, edge(`close()`, "-|>")),
+      node((2,0), `closed`, radius: 2em, extrude: (-2.5, 0)),
+      reveal-fletcher(3, edge((0,0), (2,0), `close()`, "-|>", bend: -40deg)),
+    )]
+  }
 ]

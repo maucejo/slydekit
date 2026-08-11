@@ -442,6 +442,48 @@
       "width": 1684,
       "height": 947
     },
+    "/assets/animations/cetz1.png": {
+      "path": "assets/animations/cetz1.png",
+      "xxh3": "11cf3be45ce63118",
+      "bytes": 22576,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/cetz2.png": {
+      "path": "assets/animations/cetz2.png",
+      "xxh3": "b579b8d234772d90",
+      "bytes": 22546,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/cetz3.png": {
+      "path": "assets/animations/cetz3.png",
+      "xxh3": "6aa11a820e18ec39",
+      "bytes": 34076,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/fletcher1.png": {
+      "path": "assets/animations/fletcher1.png",
+      "xxh3": "85b32f59278e0972",
+      "bytes": 70284,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/fletcher2.png": {
+      "path": "assets/animations/fletcher2.png",
+      "xxh3": "fd1ad3c7a387cd84",
+      "bytes": 73708,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/fletcher3.png": {
+      "path": "assets/animations/fletcher3.png",
+      "xxh3": "271eec745e6a36b7",
+      "bytes": 83411,
+      "width": 1684,
+      "height": 947
+    },
     "/assets/animations/item-by-item1.png": {
       "path": "assets/animations/item-by-item1.png",
       "xxh3": "eeedd2916a6a3e5f",
@@ -1034,6 +1076,48 @@
       "path": "assets/animations/alternatives3.png",
       "xxh3": "ed4684399154a74f",
       "bytes": 36754,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/cetz1.png": {
+      "path": "assets/animations/cetz1.png",
+      "xxh3": "11cf3be45ce63118",
+      "bytes": 22576,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/cetz2.png": {
+      "path": "assets/animations/cetz2.png",
+      "xxh3": "b579b8d234772d90",
+      "bytes": 22546,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/cetz3.png": {
+      "path": "assets/animations/cetz3.png",
+      "xxh3": "6aa11a820e18ec39",
+      "bytes": 34076,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/fletcher1.png": {
+      "path": "assets/animations/fletcher1.png",
+      "xxh3": "85b32f59278e0972",
+      "bytes": 70284,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/fletcher2.png": {
+      "path": "assets/animations/fletcher2.png",
+      "xxh3": "fd1ad3c7a387cd84",
+      "bytes": 73708,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/fletcher3.png": {
+      "path": "assets/animations/fletcher3.png",
+      "xxh3": "271eec745e6a36b7",
+      "bytes": 83411,
       "width": 1684,
       "height": 947
     },
