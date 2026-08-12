@@ -31,6 +31,8 @@ The `row-img`function allows you to display a set of images in a row. It is part
 
 = Full-width block
 
+The `full-width` function allows you to create a block that spans the entire width of the page. This can be useful for creating sections with a distinct background color or for highlighting important content.
+
 ```typ
 #let full-width(
   fill: none,
@@ -47,4 +49,33 @@ The `row-img`function allows you to display a set of images in a row. It is part
 
 ```typ
 #full-width(anchor: bottom, progress-bar(rgb("#eb811b"), rgb("#d6c6b7"), height: 2.5pt))
+```
+
+= Adaptive column layout
+
+The `adaptive-columns` function allows you to create a column layout that adapts to the available space. This function is borrowed from the #link("https://touying-typ.github.io/docs/reference/components/adaptive-columns", "Touying")
+
+```typ
+#let adaptive-columns(
+  gutter: 4%,
+  max-count: 3,
+  start: none,
+  end: none,
+  body,
+)
+```
+
+#argument-callout("gutter", "length", default: [4%])[The space between columns.]
+
+#argument-callout("max-count", "integer", default: [3])[The maximum number of columns.]
+
+#argument-callout("start", "content", default: [none])[Content to be displayed before the columns.]
+
+#argument-callout("end", "content", default: [none])[Content to be displayed after the columns.]
+
+#argument-callout("body", "content")[The content to be displayed in the columns.]
+
+```typ
+#set align(horizon)
+#adaptive-columns(text(size: 1.2em, strong(outline(title:none, indent: 1em, depth: 1))))
 ```
