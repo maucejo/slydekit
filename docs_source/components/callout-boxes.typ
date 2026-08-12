@@ -9,6 +9,10 @@
 
 Callout boxes are a way to highlight important information in your presentation. They can be used to draw attention to key points, provide additional context, or emphasize warnings and tips.
 
+#calepin.elements.callout[
+  Slydekit directly depends on `showybox: 2.0.4` to build the callout boxes used by its built-in themes.
+]
+
 = Types of callout boxes
 
 Slydekit provides several types of callout boxes, each with its own purpose and style. The available types are:
