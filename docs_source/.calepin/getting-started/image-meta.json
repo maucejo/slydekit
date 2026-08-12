@@ -1,6 +1,41 @@
 {
   "schema": 1,
   "images": {
+    "./assets/getting-started/basic-usage1.png": {
+      "path": "assets/getting-started/basic-usage1.png",
+      "xxh3": "3813cdbb92a55224",
+      "bytes": 228079,
+      "width": 3508,
+      "height": 1973
+    },
+    "./assets/getting-started/basic-usage2.png": {
+      "path": "assets/getting-started/basic-usage2.png",
+      "xxh3": "306297f92fced422",
+      "bytes": 71365,
+      "width": 3508,
+      "height": 1973
+    },
+    "./assets/getting-started/basic-usage3.png": {
+      "path": "assets/getting-started/basic-usage3.png",
+      "xxh3": "9208e7fac9e12294",
+      "bytes": 63277,
+      "width": 3508,
+      "height": 1973
+    },
+    "./assets/getting-started/basic-usage4.png": {
+      "path": "assets/getting-started/basic-usage4.png",
+      "xxh3": "e48d0d3e26289405",
+      "bytes": 62218,
+      "width": 3508,
+      "height": 1973
+    },
+    "./assets/getting-started/basic-usage5.png": {
+      "path": "assets/getting-started/basic-usage5.png",
+      "xxh3": "2a5ddf4fb0056ef3",
+      "bytes": 33731,
+      "width": 1684,
+      "height": 947
+    },
     "/assets/animations/alternatives1.png": {
       "path": "assets/animations/alternatives1.png",
       "xxh3": "ee2d7b7fc8d4782c",
