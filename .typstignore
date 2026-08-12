@@ -10,5 +10,9 @@
 .github
 .gitignore
 docs
+docs_source
 .edist
-publish-docs.sh
+scripts
+justfile
+src/resources/images/chalkboard_old.png
+.DS_Store
