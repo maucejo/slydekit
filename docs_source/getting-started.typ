@@ -81,7 +81,7 @@ Custom fonts to be used in the presentation. You can specify a set of fonts to o
 The dictionary should have the following structure:
 ```typ
 #let fonts = (
-  size: "Font Size for body text",
+  size: "Size for body text",
   body: "Font Name for body text",
   math: "Font Name for math text",
   raw: "Font Name for raw text",

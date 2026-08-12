@@ -17,8 +17,8 @@ Slydekit provides several types of callout boxes, each with its own purpose and 
 - `tip-box`: Used to provide helpful tips or suggestions.
 - `important-box`: Used to emphasize critical information that should not be overlooked.
 - `proof-box`: Used to present proofs or logical arguments.
-- ``question-box``: Used to pose questions or prompts for the audience.
--`code-box`: Used to display code snippets or programming-related content.
+- `question-box`: Used to pose questions or prompts for the audience.
+- `code-box`: Used to display code snippets or programming-related content.
 
 All of these callout boxes are variations of the `custom-box` function, which can be defined in the theme with the following signature:
 ```typ
@@ -73,33 +73,57 @@ Each built-in theme has its own visual style for the callout boxes, but they all
 
 #calepin.elements.gallery(
   (
-    ("../assets/components/callout-simple1.png", "Title slide", [Callout boxes - Simple theme, Part 1]),
-    ("../assets/components/callout-simple2.png", "Progressive outline 1", [Callout boxes - Simple theme, Part 2]),
-    ("../assets/components/callout-simple3.png", "First slide", [Callout boxes - Simple theme, Part 3]),
+    ("../assets/components/callout-simple1.png", "Callout boxes - Simple theme, Part 1", [Callout boxes - Simple theme, Part 1]),
+    ("../assets/components/callout-simple2.png", "Callout boxes - Simple theme, Part 2", [Callout boxes - Simple theme, Part 2]),
+    ("../assets/components/callout-simple3.png", "Callout boxes - Simple theme, Part 3", [Callout boxes - Simple theme, Part 3]),
   ),
   columns: 3,
   max-width: 100%,
 )
 
-= Metropolis
+== Metropolis
 
 #calepin.elements.gallery(
   (
-    ("../assets/components/callout-metropolis1.png", "Title slide", [Callout boxes - Metropolis theme, Part 1]),
-    ("../assets/components/callout-metropolis2.png", "Progressive outline 1", [Callout boxes - Metropolis theme, Part 2]),
-    ("../assets/components/callout-metropolis3.png", "First slide", [Callout boxes - Metropolis theme, Part 3]),
+    ("../assets/components/callout-metropolis1.png", "Callout boxes - Metropolis theme, Part 1", [Callout boxes - Metropolis theme, Part 1]),
+    ("../assets/components/callout-metropolis2.png", "Callout boxes - Metropolis theme, Part 2", [Callout boxes - Metropolis theme, Part 2]),
+    ("../assets/components/callout-metropolis3.png", "Callout boxes - Metropolis theme, Part 3", [Callout boxes - Metropolis theme, Part 3]),
   ),
   columns: 3,
   max-width: 100%,
 )
 
-= Fancy
+== Fancy
 
 #calepin.elements.gallery(
   (
-    ("../assets/components/callout-fancy1.png", "Title slide", [Callout boxes - Fancy theme, Part 1]),
-    ("../assets/components/callout-fancy2.png", "Progressive outline 1", [Callout boxes - Fancy theme, Part 2]),
-    ("../assets/components/callout-fancy3.png", "First slide", [Callout boxes - Fancy theme, Part 3]),
+    ("../assets/components/callout-fancy1.png", "Callout boxes - Fancy theme, Part 1", [Callout boxes - Fancy theme, Part 1]),
+    ("../assets/components/callout-fancy2.png", "Callout boxes - Fancy theme, Part 2", [Callout boxes - Fancy theme, Part 2]),
+    ("../assets/components/callout-fancy3.png", "Callout boxes - Fancy theme, Part 3", [Callout boxes - Fancy theme, Part 3]),
+  ),
+  columns: 3,
+  max-width: 100%,
+)
+
+== Cambfurt
+
+#calepin.elements.gallery(
+  (
+    ("../assets/components/callout-cambfurt1.png", "Callout boxes - Cambfurt theme, Part 1", [Callout boxes - Cambfurt theme, Part 1]),
+    ("../assets/components/callout-cambfurt2.png", "Callout boxes - Cambfurt theme, Part 2", [Callout boxes - Cambfurt theme, Part 2]),
+    ("../assets/components/callout-cambfurt3.png", "Callout boxes - Cambfurt theme, Part 3", [Callout boxes - Cambfurt theme, Part 3]),
+  ),
+  columns: 3,
+  max-width: 100%,
+)
+
+== Chalkboard
+
+#calepin.elements.gallery(
+  (
+    ("../assets/components/callout-chalkboard1.png", "Callout boxes - Chalkboard theme, Part 1", [Callout boxes - Chalkboard theme, Part 1]),
+    ("../assets/components/callout-chalkboard2.png", "Callout boxes - Chalkboard theme, Part 2", [Callout boxes - Chalkboard theme, Part 2]),
+    ("../assets/components/callout-chalkboard3.png", "Callout boxes - Chalkboard theme, Part 3", [Callout boxes - Chalkboard theme, Part 3]),
   ),
   columns: 3,
   max-width: 100%,

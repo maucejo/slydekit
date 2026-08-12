@@ -8,10 +8,10 @@
   institution: "Université de Typst",
   contact: "john.doe@univ.typst.fr",
   // theme: metropolis,
-  theme: fancy,
+  // theme: fancy,
   // theme: simple,
   // theme: cambfurt,
-  // theme: chalkboard
+  theme: chalkboard
 )
 
 == Callout boxes

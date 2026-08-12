@@ -51,6 +51,8 @@ trap cleanup_worktree EXIT
 git fetch "$REMOTE" "$BRANCH" > /dev/null 2>&1 || true
 
 # --- Préparation du worktree gh-pages --------------------------------------
+# Nettoie les éventuelles références vers des worktrees supprimés manuellement.
+git worktree prune
 
 if git show-ref --verify --quiet "refs/heads/$BRANCH"; then
   # La branche existe déjà localement : on l'attache dans le worktree.

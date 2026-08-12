@@ -1,6 +1,48 @@
 {
   "schema": 1,
   "images": {
+    "../assets/components/callout-cambfurt1.png": {
+      "path": "assets/components/callout-cambfurt1.png",
+      "xxh3": "ed6f7e41469e40c7",
+      "bytes": 77820,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/components/callout-cambfurt2.png": {
+      "path": "assets/components/callout-cambfurt2.png",
+      "xxh3": "925cec6d75619328",
+      "bytes": 60618,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/components/callout-cambfurt3.png": {
+      "path": "assets/components/callout-cambfurt3.png",
+      "xxh3": "0fecb47dc8865302",
+      "bytes": 62318,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/components/callout-chalkboard1.png": {
+      "path": "assets/components/callout-chalkboard1.png",
+      "xxh3": "4d4f979788174604",
+      "bytes": 1894994,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/components/callout-chalkboard2.png": {
+      "path": "assets/components/callout-chalkboard2.png",
+      "xxh3": "a9ccbebf640e2cde",
+      "bytes": 2036661,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/components/callout-chalkboard3.png": {
+      "path": "assets/components/callout-chalkboard3.png",
+      "xxh3": "dac6ac5b60012569",
+      "bytes": 2036820,
+      "width": 1684,
+      "height": 947
+    },
     "../assets/components/callout-fancy1.png": {
       "path": "assets/components/callout-fancy1.png",
       "xxh3": "a2b0513e618316ea",
@@ -369,6 +411,62 @@
       "path": "assets/components/basic-appendix4.png",
       "xxh3": "0aa3c43d4e497d6b",
       "bytes": 40251,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/bibliography1.png": {
+      "path": "assets/components/bibliography1.png",
+      "xxh3": "f07f2cbe2f628fe4",
+      "bytes": 50960,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/bibliography2.png": {
+      "path": "assets/components/bibliography2.png",
+      "xxh3": "ea86990508f0925a",
+      "bytes": 39122,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-cambfurt1.png": {
+      "path": "assets/components/callout-cambfurt1.png",
+      "xxh3": "ed6f7e41469e40c7",
+      "bytes": 77820,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-cambfurt2.png": {
+      "path": "assets/components/callout-cambfurt2.png",
+      "xxh3": "925cec6d75619328",
+      "bytes": 60618,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-cambfurt3.png": {
+      "path": "assets/components/callout-cambfurt3.png",
+      "xxh3": "0fecb47dc8865302",
+      "bytes": 62318,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-chalkboard1.png": {
+      "path": "assets/components/callout-chalkboard1.png",
+      "xxh3": "4d4f979788174604",
+      "bytes": 1894994,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-chalkboard2.png": {
+      "path": "assets/components/callout-chalkboard2.png",
+      "xxh3": "a9ccbebf640e2cde",
+      "bytes": 2036661,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-chalkboard3.png": {
+      "path": "assets/components/callout-chalkboard3.png",
+      "xxh3": "dac6ac5b60012569",
+      "bytes": 2036820,
       "width": 1684,
       "height": 947
     },
@@ -1300,6 +1398,62 @@
       "path": "assets/components/basic-appendix4.png",
       "xxh3": "0aa3c43d4e497d6b",
       "bytes": 40251,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/bibliography1.png": {
+      "path": "assets/components/bibliography1.png",
+      "xxh3": "f07f2cbe2f628fe4",
+      "bytes": 50960,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/bibliography2.png": {
+      "path": "assets/components/bibliography2.png",
+      "xxh3": "ea86990508f0925a",
+      "bytes": 39122,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-cambfurt1.png": {
+      "path": "assets/components/callout-cambfurt1.png",
+      "xxh3": "ed6f7e41469e40c7",
+      "bytes": 77820,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-cambfurt2.png": {
+      "path": "assets/components/callout-cambfurt2.png",
+      "xxh3": "925cec6d75619328",
+      "bytes": 60618,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-cambfurt3.png": {
+      "path": "assets/components/callout-cambfurt3.png",
+      "xxh3": "0fecb47dc8865302",
+      "bytes": 62318,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-chalkboard1.png": {
+      "path": "assets/components/callout-chalkboard1.png",
+      "xxh3": "4d4f979788174604",
+      "bytes": 1894994,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-chalkboard2.png": {
+      "path": "assets/components/callout-chalkboard2.png",
+      "xxh3": "a9ccbebf640e2cde",
+      "bytes": 2036661,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-chalkboard3.png": {
+      "path": "assets/components/callout-chalkboard3.png",
+      "xxh3": "dac6ac5b60012569",
+      "bytes": 2036820,
       "width": 1684,
       "height": 947
     },

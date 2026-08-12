@@ -94,12 +94,12 @@
 }
 
 // Row images
-#let row-img(logo) = {
-  let n = logo.len()
+#let row-img(logos) = {
+  let n = logos.len()
   grid(
     columns: (1fr,)*n,
     column-gutter: 1fr,
-    ..logo.enumerate().map(((i, item)) => {
+    ..logos.enumerate().map(((i, item)) => {
       if n == 1 {
         align(right + horizon)[#item]
       } else if i == 0 {
