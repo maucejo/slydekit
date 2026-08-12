@@ -309,6 +309,48 @@
       "width": 1684,
       "height": 947
     },
+    "/assets/components/callout-fancy1.png": {
+      "path": "assets/components/callout-fancy1.png",
+      "xxh3": "a2b0513e618316ea",
+      "bytes": 78629,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-fancy2.png": {
+      "path": "assets/components/callout-fancy2.png",
+      "xxh3": "3eecd0765ef58d6e",
+      "bytes": 60885,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-fancy3.png": {
+      "path": "assets/components/callout-fancy3.png",
+      "xxh3": "bf2950db6a1f3c24",
+      "bytes": 62932,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-metropolis1.png": {
+      "path": "assets/components/callout-metropolis1.png",
+      "xxh3": "ecb3cce629efc078",
+      "bytes": 72337,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-metropolis2.png": {
+      "path": "assets/components/callout-metropolis2.png",
+      "xxh3": "65e1523505d05b6c",
+      "bytes": 52432,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-metropolis3.png": {
+      "path": "assets/components/callout-metropolis3.png",
+      "xxh3": "e5935013d663475e",
+      "bytes": 55270,
+      "width": 1684,
+      "height": 947
+    },
     "/assets/components/callout-simple1.png": {
       "path": "assets/components/callout-simple1.png",
       "xxh3": "a233c3927c5b0ef0",
@@ -332,15 +374,15 @@
     },
     "/assets/components/my-focus-slide1.png": {
       "path": "assets/components/my-focus-slide1.png",
-      "xxh3": "7a1284b526d31815",
-      "bytes": 13638,
+      "xxh3": "b15dc395af076387",
+      "bytes": 16046,
       "width": 1684,
       "height": 947
     },
     "/assets/components/my-focus-slide2.png": {
       "path": "assets/components/my-focus-slide2.png",
-      "xxh3": "432e7c520c674a09",
-      "bytes": 16867,
+      "xxh3": "cc51ed848a1992b2",
+      "bytes": 19082,
       "width": 1684,
       "height": 947
     },
@@ -1198,6 +1240,48 @@
       "width": 1684,
       "height": 947
     },
+    "assets/components/callout-fancy1.png": {
+      "path": "assets/components/callout-fancy1.png",
+      "xxh3": "a2b0513e618316ea",
+      "bytes": 78629,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-fancy2.png": {
+      "path": "assets/components/callout-fancy2.png",
+      "xxh3": "3eecd0765ef58d6e",
+      "bytes": 60885,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-fancy3.png": {
+      "path": "assets/components/callout-fancy3.png",
+      "xxh3": "bf2950db6a1f3c24",
+      "bytes": 62932,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-metropolis1.png": {
+      "path": "assets/components/callout-metropolis1.png",
+      "xxh3": "ecb3cce629efc078",
+      "bytes": 72337,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-metropolis2.png": {
+      "path": "assets/components/callout-metropolis2.png",
+      "xxh3": "65e1523505d05b6c",
+      "bytes": 52432,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-metropolis3.png": {
+      "path": "assets/components/callout-metropolis3.png",
+      "xxh3": "e5935013d663475e",
+      "bytes": 55270,
+      "width": 1684,
+      "height": 947
+    },
     "assets/components/callout-simple1.png": {
       "path": "assets/components/callout-simple1.png",
       "xxh3": "a233c3927c5b0ef0",
@@ -1221,15 +1305,15 @@
     },
     "assets/components/my-focus-slide1.png": {
       "path": "assets/components/my-focus-slide1.png",
-      "xxh3": "7a1284b526d31815",
-      "bytes": 13638,
+      "xxh3": "b15dc395af076387",
+      "bytes": 16046,
       "width": 1684,
       "height": 947
     },
     "assets/components/my-focus-slide2.png": {
       "path": "assets/components/my-focus-slide2.png",
-      "xxh3": "432e7c520c674a09",
-      "bytes": 16867,
+      "xxh3": "cc51ed848a1992b2",
+      "bytes": 19082,
       "width": 1684,
       "height": 947
     },

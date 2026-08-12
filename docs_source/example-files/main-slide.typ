@@ -11,44 +11,44 @@
 )
 
 
-// #let my-focus-slide(..args) = {
-//   set align(center + horizon)
-//   set text(fill: white, size: 5em)
-//   set page(header: none, footer: none, fill: rgb("#5E8B65"))
+#let my-focus-slide(..args) = {
+  set align(center + horizon)
+  set text(fill: white, size: 5em)
+  set page(header: none, footer: none, fill: rgb("#5E8B65"))
 
-//   slide(..args)
+  slide(..args)
 
-//   // Freeze the slide number to avoid incrementing it for focus slides
-//   sk-states.slide-number.update(n => n - 1)
-// }
+  // Freeze the slide number to avoid incrementing it for focus slides
+  sk-states.slide-number.update(n => n - 1)
+}
 
 
-// #my-focus-slide[
-//   *Hey* #pause *ho!*
-// ]
+#my-focus-slide[
+  *Heigh* #pause *ho!*
+]
 
 // == Test
 
 // efefe
 
-#tableofcontents
+// #tableofcontents
 
-= First section
+// = First section
 
-== A subsection
+// == A subsection
 
-#lorem(10)
+// #lorem(10)
 
-= Second section
+// = Second section
 
-== Another subsection
+// == Another subsection
 
-#lorem(10)
+// #lorem(10)
 
-#show: appendix
+// #show: appendix
 
-= Appendix <hide-toc>
+// = Appendix <hide-toc>
 
-== A subsection in the appendix
+// == A subsection in the appendix
 
-#lorem(10)
+// #lorem(10)

@@ -40,6 +40,14 @@ fi
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 cd "$REPO_ROOT"
 
+# Supprime proprement le worktree temporaire à la fin du script.
+cleanup_worktree() {
+  if [ -d "$WORKTREE_DIR" ]; then
+    git worktree remove --force "$WORKTREE_DIR" > /dev/null 2>&1 || true
+  fi
+}
+trap cleanup_worktree EXIT
+
 git fetch "$REMOTE" "$BRANCH" > /dev/null 2>&1 || true
 
 # --- Préparation du worktree gh-pages --------------------------------------
