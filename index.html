@@ -8,6 +8,37 @@
   --li-color: #75659e;
 }
 
+/* Mobile drawer styles */
+button.calepin-site-theme-toggle {
+    display: none;
+    /* background-color: var(--bg-color); */
+}
+
+button.calepin-website-nav-toggle {
+    background-color: var(--bg-color);
+}
+
+button.calepin-website-nav-toggle[aria-expanded="false"] {
+  background-color: var(--bg-color);
+}
+
+button.calepin-website-nav-toggle[aria-expanded="true"] {
+  background-color: var(--bg-color);
+}
+
+.calepin-website-mobile-drawer-nav li {
+  color: var(--calepin-color-link);
+}
+
+.calepin-website-mobile-drawer-nav a.active {
+  background-color: var(--bg-color);
+}
+
+.calepin-website-mobile-drawer-nav a[aria-label="Documentation"] {
+  background-color: var(--bg-color);
+}
+
+/* General styles */
 h2 {
   color: var(--calepin-color-link);
 }
@@ -67,6 +98,7 @@ aside nav details a[aria-current="page"] {
 }
 
 .calepin-website-sidebar-link a.active{
+  color: var(--calepin-color-link);
   background-color: var(--bg-color);
   padding: 0.5rem 1rem 0em 1rem;
 }
