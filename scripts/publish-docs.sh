@@ -42,6 +42,7 @@ cd "$REPO_ROOT"
 
 # Supprime proprement le worktree temporaire à la fin du script.
 cleanup_worktree() {
+  cd "$REPO_ROOT" 2>/dev/null || true
   if [ -d "$WORKTREE_DIR" ]; then
     git worktree remove --force "$WORKTREE_DIR" > /dev/null 2>&1 || true
   fi
