@@ -1,6 +1,27 @@
 {
   "schema": 1,
   "images": {
+    "../assets/components/callout-simple1.png": {
+      "path": "assets/components/callout-simple1.png",
+      "xxh3": "a233c3927c5b0ef0",
+      "bytes": 83973,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/components/callout-simple2.png": {
+      "path": "assets/components/callout-simple2.png",
+      "xxh3": "d69adc0077c69211",
+      "bytes": 61980,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/components/callout-simple3.png": {
+      "path": "assets/components/callout-simple3.png",
+      "xxh3": "30722ed2f581f6ce",
+      "bytes": 64301,
+      "width": 1684,
+      "height": 947
+    },
     "/assets/animations/alternatives1.png": {
       "path": "assets/animations/alternatives1.png",
       "xxh3": "ee2d7b7fc8d4782c",
@@ -183,6 +204,167 @@
       "width": 1684,
       "height": 947
     },
+    "/assets/components/appendix-hide1.png": {
+      "path": "assets/components/appendix-hide1.png",
+      "xxh3": "46723e9a54e7eee8",
+      "bytes": 28195,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-hide2.png": {
+      "path": "assets/components/appendix-hide2.png",
+      "xxh3": "0979681d8d8fde54",
+      "bytes": 26715,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-hide3.png": {
+      "path": "assets/components/appendix-hide3.png",
+      "xxh3": "918cffa5018e3900",
+      "bytes": 39065,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-hide4.png": {
+      "path": "assets/components/appendix-hide4.png",
+      "xxh3": "bd08e6f48158b62c",
+      "bytes": 27358,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-hide5.png": {
+      "path": "assets/components/appendix-hide5.png",
+      "xxh3": "9d0dd1ada8f756f0",
+      "bytes": 41885,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-hide6.png": {
+      "path": "assets/components/appendix-hide6.png",
+      "xxh3": "30abede0c2e45f75",
+      "bytes": 18523,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-hide7.png": {
+      "path": "assets/components/appendix-hide7.png",
+      "xxh3": "b098a55d75e4d0ca",
+      "bytes": 46001,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-nohide1.png": {
+      "path": "assets/components/appendix-nohide1.png",
+      "xxh3": "352f523045e5e0c8",
+      "bytes": 33888,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-nohide2.png": {
+      "path": "assets/components/appendix-nohide2.png",
+      "xxh3": "f06645c80e462f9c",
+      "bytes": 31646,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-nohide3.png": {
+      "path": "assets/components/appendix-nohide3.png",
+      "xxh3": "68cc7c0fe34358e6",
+      "bytes": 39065,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-nohide4.png": {
+      "path": "assets/components/appendix-nohide4.png",
+      "xxh3": "a58e3a4f3896ddea",
+      "bytes": 32254,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-nohide5.png": {
+      "path": "assets/components/appendix-nohide5.png",
+      "xxh3": "5cd5ef524399f7f4",
+      "bytes": 41885,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-nohide6.png": {
+      "path": "assets/components/appendix-nohide6.png",
+      "xxh3": "6b74b2ad1d7271f5",
+      "bytes": 32206,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-nohide7.png": {
+      "path": "assets/components/appendix-nohide7.png",
+      "xxh3": "2ec9ed48b390b98f",
+      "bytes": 46001,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/basic-appendix1.png": {
+      "path": "assets/components/basic-appendix1.png",
+      "xxh3": "9642b14c29e01ad8",
+      "bytes": 23385,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/basic-appendix2.png": {
+      "path": "assets/components/basic-appendix2.png",
+      "xxh3": "dfe646a95d6e3c33",
+      "bytes": 33280,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/basic-appendix3.png": {
+      "path": "assets/components/basic-appendix3.png",
+      "xxh3": "6fc5d38696b6268a",
+      "bytes": 24169,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/basic-appendix4.png": {
+      "path": "assets/components/basic-appendix4.png",
+      "xxh3": "0aa3c43d4e497d6b",
+      "bytes": 40251,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-simple1.png": {
+      "path": "assets/components/callout-simple1.png",
+      "xxh3": "a233c3927c5b0ef0",
+      "bytes": 83973,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-simple2.png": {
+      "path": "assets/components/callout-simple2.png",
+      "xxh3": "d69adc0077c69211",
+      "bytes": 61980,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-simple3.png": {
+      "path": "assets/components/callout-simple3.png",
+      "xxh3": "30722ed2f581f6ce",
+      "bytes": 64301,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/my-focus-slide1.png": {
+      "path": "assets/components/my-focus-slide1.png",
+      "xxh3": "7a1284b526d31815",
+      "bytes": 13638,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/my-focus-slide2.png": {
+      "path": "assets/components/my-focus-slide2.png",
+      "xxh3": "432e7c520c674a09",
+      "bytes": 16867,
+      "width": 1684,
+      "height": 947
+    },
     "/assets/getting-started/basic-usage1.png": {
       "path": "assets/getting-started/basic-usage1.png",
       "xxh3": "3813cdbb92a55224",
@@ -215,6 +397,27 @@
       "path": "assets/getting-started/basic-usage5.png",
       "xxh3": "2a5ddf4fb0056ef3",
       "bytes": 33731,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/no-hide-toc1.png": {
+      "path": "assets/navigation/no-hide-toc1.png",
+      "xxh3": "10f494f9d947432b",
+      "bytes": 28193,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/no-hide-toc2.png": {
+      "path": "assets/navigation/no-hide-toc2.png",
+      "xxh3": "ef8339bea69b5546",
+      "bytes": 26713,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/no-hide-toc3.png": {
+      "path": "assets/navigation/no-hide-toc3.png",
+      "xxh3": "3a4196ddf461e992",
+      "bytes": 27356,
       "width": 1684,
       "height": 947
     },
@@ -264,6 +467,27 @@
       "path": "assets/navigation/toc-progress-simple2.png",
       "xxh3": "c09b3081f35d915a",
       "bytes": 26714,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/with-hide-toc1.png": {
+      "path": "assets/navigation/with-hide-toc1.png",
+      "xxh3": "8a909c93673bb9b1",
+      "bytes": 19047,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/with-hide-toc2.png": {
+      "path": "assets/navigation/with-hide-toc2.png",
+      "xxh3": "2ac3e91a592263d9",
+      "bytes": 19095,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/with-hide-toc3.png": {
+      "path": "assets/navigation/with-hide-toc3.png",
+      "xxh3": "17a75783f1e59029",
+      "bytes": 21438,
       "width": 1684,
       "height": 947
     },
@@ -869,6 +1093,167 @@
       "width": 1684,
       "height": 947
     },
+    "assets/components/appendix-hide1.png": {
+      "path": "assets/components/appendix-hide1.png",
+      "xxh3": "46723e9a54e7eee8",
+      "bytes": 28195,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-hide2.png": {
+      "path": "assets/components/appendix-hide2.png",
+      "xxh3": "0979681d8d8fde54",
+      "bytes": 26715,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-hide3.png": {
+      "path": "assets/components/appendix-hide3.png",
+      "xxh3": "918cffa5018e3900",
+      "bytes": 39065,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-hide4.png": {
+      "path": "assets/components/appendix-hide4.png",
+      "xxh3": "bd08e6f48158b62c",
+      "bytes": 27358,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-hide5.png": {
+      "path": "assets/components/appendix-hide5.png",
+      "xxh3": "9d0dd1ada8f756f0",
+      "bytes": 41885,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-hide6.png": {
+      "path": "assets/components/appendix-hide6.png",
+      "xxh3": "30abede0c2e45f75",
+      "bytes": 18523,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-hide7.png": {
+      "path": "assets/components/appendix-hide7.png",
+      "xxh3": "b098a55d75e4d0ca",
+      "bytes": 46001,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-nohide1.png": {
+      "path": "assets/components/appendix-nohide1.png",
+      "xxh3": "352f523045e5e0c8",
+      "bytes": 33888,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-nohide2.png": {
+      "path": "assets/components/appendix-nohide2.png",
+      "xxh3": "f06645c80e462f9c",
+      "bytes": 31646,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-nohide3.png": {
+      "path": "assets/components/appendix-nohide3.png",
+      "xxh3": "68cc7c0fe34358e6",
+      "bytes": 39065,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-nohide4.png": {
+      "path": "assets/components/appendix-nohide4.png",
+      "xxh3": "a58e3a4f3896ddea",
+      "bytes": 32254,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-nohide5.png": {
+      "path": "assets/components/appendix-nohide5.png",
+      "xxh3": "5cd5ef524399f7f4",
+      "bytes": 41885,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-nohide6.png": {
+      "path": "assets/components/appendix-nohide6.png",
+      "xxh3": "6b74b2ad1d7271f5",
+      "bytes": 32206,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-nohide7.png": {
+      "path": "assets/components/appendix-nohide7.png",
+      "xxh3": "2ec9ed48b390b98f",
+      "bytes": 46001,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/basic-appendix1.png": {
+      "path": "assets/components/basic-appendix1.png",
+      "xxh3": "9642b14c29e01ad8",
+      "bytes": 23385,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/basic-appendix2.png": {
+      "path": "assets/components/basic-appendix2.png",
+      "xxh3": "dfe646a95d6e3c33",
+      "bytes": 33280,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/basic-appendix3.png": {
+      "path": "assets/components/basic-appendix3.png",
+      "xxh3": "6fc5d38696b6268a",
+      "bytes": 24169,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/basic-appendix4.png": {
+      "path": "assets/components/basic-appendix4.png",
+      "xxh3": "0aa3c43d4e497d6b",
+      "bytes": 40251,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-simple1.png": {
+      "path": "assets/components/callout-simple1.png",
+      "xxh3": "a233c3927c5b0ef0",
+      "bytes": 83973,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-simple2.png": {
+      "path": "assets/components/callout-simple2.png",
+      "xxh3": "d69adc0077c69211",
+      "bytes": 61980,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-simple3.png": {
+      "path": "assets/components/callout-simple3.png",
+      "xxh3": "30722ed2f581f6ce",
+      "bytes": 64301,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/my-focus-slide1.png": {
+      "path": "assets/components/my-focus-slide1.png",
+      "xxh3": "7a1284b526d31815",
+      "bytes": 13638,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/my-focus-slide2.png": {
+      "path": "assets/components/my-focus-slide2.png",
+      "xxh3": "432e7c520c674a09",
+      "bytes": 16867,
+      "width": 1684,
+      "height": 947
+    },
     "assets/getting-started/basic-usage1.png": {
       "path": "assets/getting-started/basic-usage1.png",
       "xxh3": "3813cdbb92a55224",
@@ -901,6 +1286,27 @@
       "path": "assets/getting-started/basic-usage5.png",
       "xxh3": "2a5ddf4fb0056ef3",
       "bytes": 33731,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/no-hide-toc1.png": {
+      "path": "assets/navigation/no-hide-toc1.png",
+      "xxh3": "10f494f9d947432b",
+      "bytes": 28193,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/no-hide-toc2.png": {
+      "path": "assets/navigation/no-hide-toc2.png",
+      "xxh3": "ef8339bea69b5546",
+      "bytes": 26713,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/no-hide-toc3.png": {
+      "path": "assets/navigation/no-hide-toc3.png",
+      "xxh3": "3a4196ddf461e992",
+      "bytes": 27356,
       "width": 1684,
       "height": 947
     },
@@ -950,6 +1356,27 @@
       "path": "assets/navigation/toc-progress-simple2.png",
       "xxh3": "c09b3081f35d915a",
       "bytes": 26714,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/with-hide-toc1.png": {
+      "path": "assets/navigation/with-hide-toc1.png",
+      "xxh3": "8a909c93673bb9b1",
+      "bytes": 19047,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/with-hide-toc2.png": {
+      "path": "assets/navigation/with-hide-toc2.png",
+      "xxh3": "2ac3e91a592263d9",
+      "bytes": 19095,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/with-hide-toc3.png": {
+      "path": "assets/navigation/with-hide-toc3.png",
+      "xxh3": "17a75783f1e59029",
+      "bytes": 21438,
       "width": 1684,
       "height": 947
     },

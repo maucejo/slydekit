@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "fingerprint": 3030952703949007734,
-  "generation": "2a101b6cf1e3eb76-1349cde127705c16",
+  "fingerprint": 16877085432666576868,
+  "generation": "ea3773c84a02d7e4-1349cde127705c16",
   "completed_store": {},
   "stabilized_chunks": [
     {
       "label": "chunk-1",
       "engine": "json",
-      "code": "{\n    \"note\": \"Note\",\n    \"proof\": \"Proof\",\n    \"tip\": \"Tip\",\n    \"outline\": \"Outline\",\n    \"warning\": \"Warning\"\n}",
+      "code": "{\n    \"note\": \"Note\",\n    \"proof\": \"Proof\",\n    \"tip\": \"Tip\",\n    \"toc\": \"Outline\",\n    \"warning\": \"Warning\"\n}",
       "script": true,
       "exec_options": {
         "eval": true,

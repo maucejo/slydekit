@@ -2,13 +2,13 @@
   "schema": 2,
   "calepin_version": "0.0.43",
   "input": "components/localization.typ",
-  "generation": "2a101b6cf1e3eb76-1349cde127705c16",
+  "generation": "ea3773c84a02d7e4-1349cde127705c16",
   "store": {},
   "chunks": {
     "chunk-1": {
       "label": "chunk-1",
       "engine": "json",
-      "source": "{\n    \"note\": \"Note\",\n    \"proof\": \"Proof\",\n    \"tip\": \"Tip\",\n    \"outline\": \"Outline\",\n    \"warning\": \"Warning\"\n}",
+      "source": "{\n    \"note\": \"Note\",\n    \"proof\": \"Proof\",\n    \"tip\": \"Tip\",\n    \"toc\": \"Outline\",\n    \"warning\": \"Warning\"\n}",
       "status": "skipped",
       "options": {
         "echo": true,

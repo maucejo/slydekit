@@ -2,9 +2,9 @@
 #import "../doc-utils.typ": *
 
 #set document(title: [Topbar/Minislide])
-#metadata((tags: ("animations", "topbar", "minislide"))) <website-metadata>
+#metadata((tags: ("topbar", "minislide"))) <website-metadata>
 
-#html.elem("p", attrs: (style: "font-size: 2em; font-weight: bold;"))[Topbar and minislide]
+#html.elem("p", attrs: (style: "color: var(--calepin-color-link); font-size: 2em; font-weight: bold;"))[Topbar and minislide]
 
 Slydekit provides optional navigation elements to help structure and navigate presentations. The **topbar** displays the presentation’s content as a persistent navigation bar, highlighting the current section to provide a clear overview of the presentation structure. The **minislide** complements the topbar by displaying a compact visual representation of the slides within the current section, allowing the audience to quickly identify the current slide and its position in the presentation. Together, these components provide a lightweight navigation system that improves orientation without taking significant space away from the main slide content.
 

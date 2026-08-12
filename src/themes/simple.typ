@@ -196,7 +196,6 @@
   set page(header:none, footer: none, fill: sk-states.colors.get().focus)
   set align(center + horizon)
   text(size: 2em, fill: white)[*#body*]
-  counter(page).update(n => n - 1)
 }
 
 #let simple-link-box(location, name) = {

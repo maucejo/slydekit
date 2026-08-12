@@ -15,13 +15,16 @@ The `alternatives` function allows you to display different content per step.
 ```typ
 #let alternatives(
   start: 1,
-  repeat-last: false
+  repeat-last: false,
+  ..options
 )
 ```
 
 #argument-callout("start", "int", default: 1)[The starting step for the reveal. The first element will be revealed on this step.]
 
 #argument-callout("repeat-last", "bool", default: [false])[If set to `true`, the last element will be repeated for all subsequent steps. If set to `false`, the last element will only be shown on its designated step.]
+
+#argument-callout("..options", "list")[The list of options to be displayed.]
 
 ```typ
 #slide[`#alternatives` example][

@@ -150,7 +150,7 @@
 }
 
 // Section progress bar
-#let section-progress-bar(color1, color2) = context {
+#let section-progress-bar(active-color, inactive-color) = context {
   let current-sec = query(heading.where(level: 1)
     .before(here()))
     .filter(h => not sk-states.appendix.at(h.location()))
@@ -164,12 +164,12 @@
 
   grid(
     columns: (ratio*100%, 1fr),
-    cell(fill: color1),
-    cell(fill: color2)
+    cell(fill: active-color),
+    cell(fill: inactive-color)
   )
 }
 
-#let progress-bar(color1, color2, height: 2pt) = context {
+#let progress-bar(active-color, inactive-color, height: 2pt) = context {
   let current-page = sk-states.slide-number.get().first()
   let total-page = sk-states.slide-number.final().first()
 
@@ -181,8 +181,8 @@
       columns: (ratio*100%, 1fr),
       rows: height,
       gutter: 0pt,
-      cell(fill: color1),
-      cell(fill: color2)
+      cell(fill: active-color),
+      cell(fill: inactive-color)
     )
   )
 }

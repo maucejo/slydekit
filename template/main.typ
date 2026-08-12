@@ -190,7 +190,7 @@ ice cream.
 
 = Second section
 
-== Information boxes
+== Callout boxes
 
 #info-box[
   #lorem(10)

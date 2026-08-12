@@ -2,9 +2,11 @@
 #import "../doc-utils.typ": *
 
 #set document(title: [Outlines])
-#metadata((tags: ("animations", "outline", "toc", "progressive outline"))) <website-metadata>
+#metadata((tags: ("outline", "toc", "progressive outline"))) <website-metadata>
 
-#html.elem("p", attrs: (style: "font-size: 2em; font-weight: bold;"))[Outlines]
+#html.elem("p", attrs: (style: "color: var(--calepin-color-link); font-size: 2em; font-weight: bold;"))[Outlines]
+
+= Table of contents
 
 In Slydekit, you can create an outline using the `tableofcontents` command.
 
@@ -20,11 +22,7 @@ In Slydekit, you can create an outline using the `tableofcontents` command.
 #tableofcontents
 ```
 
-If you want to create a custom theme, Slydekit provides two helper functions to create a table of contents.
-
-= TOC command
-
-The `toc` command creates a simple table of contents with the current theme primary color. Actually, `tableofcontents` is just a wrapper around `toc`, that includes the title slide and the table of contents in a single slide.
+If you want to create a custom theme, Slydekit provides the `toc` command to create a simple table of contents with the current theme primary color. Actually, `tableofcontents` is just a wrapper around `toc`, that includes the title slide and the table of contents in a single slide.
 
 #calepin.elements.gallery(
   (
@@ -39,7 +37,6 @@ The `toc` command creates a simple table of contents with the current theme prim
 )
 
 You can see the #link("https://github.com/maucejo/slydekit/blob/main/src/slydekit-outline.typ#L29-L37", "source code") of the `toc` command to see implementation details.
-
 
 = Progressive outline
 
@@ -97,3 +94,40 @@ A typical implementation of the `progressive-outline` command when creating a th
   progressive-outline(it, active-color, inactive-color)
 }
 ```
+
+= Hide sections
+
+Slydekit provides the `hide-new-section-slide` function to hide the slide that introduces a new section, while keeping the section in the outline. This is useful when you want to keep the outline clean and concise, but still want to have the section in the outline. To use this function, simply add the following line to your presentation:
+```typ
+#show: hide-new-section-slide
+```
+
+#calepin.elements.callout(kind: "warning")[
+This function can't be used in conjunction with `progressive-outline`, since `hide-new-section-slide` hides level 1 heading slides. However, the section will still be present in the `tableofcontents`.
+]
+
+If you want to have a fine-grained control over which sections are hidden, you can use the label `hide-toc` command to hide specific sections.
+
+== Without `<hide-toc>`
+
+#calepin.elements.gallery(
+  (
+    ("../assets/navigation/no-hide-toc1.png", "No hide-toc - Outline slide", [No hide-toc - Outline slide]),
+    ("../assets/navigation/no-hide-toc2.png", "No hide-toc - Progressive outline - Step 1", [No hide-toc - Progressive outline]),
+    ("../assets/navigation/no-hide-toc3.png", "No hide-toc - Progressive outline - Step 2", [No hide-toc - Progressive outline]),
+  ),
+  columns: 3,
+  max-width: 100%,
+)
+
+== With `<hide-toc>`
+
+#calepin.elements.gallery(
+  (
+    ("../assets/navigation/with-hide-toc1.png", "Hide-toc - Outline slide", [Hide-toc - Outline slide]),
+    ("../assets/navigation/with-hide-toc2.png", "Hide-toc - Progressive outline - Step 1", [Hide-toc - Progressive outline]),
+    ("../assets/navigation/with-hide-toc3.png", "Hide-toc - Progressive outline - Step 2", [Hide-toc - Progressive outline]),
+  ),
+  columns: 3,
+  max-width: 100%,
+)

@@ -1,4 +1,4 @@
-#import "../src/slydekit.typ": *
+#import "../../src/slydekit.typ": *
 #import "@preview/cetz:0.5.2"
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
 
@@ -9,8 +9,6 @@
   date: "2024-06-01",
   institution: "Université de Typst",
   contact: "john.doe@univ.typst.fr",
-  title-logo: (image("../src/resources/images/slydekit-full.svg", height: 2.5cm),),
-  slide-logo: image("../src/resources/images/slydekit-mini.svg", height: 1.25cm),
 )
 
 #show raw: set text(size: 1.18em)

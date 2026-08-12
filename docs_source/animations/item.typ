@@ -20,7 +20,8 @@ Using `pause`can be tedious when you have a list of words or items  that you wan
 #let one-by-one(
   start: 1,
   hide-color: none,
-  hide-fn: none
+  hide-fn: none,
+  ..children
 )
 ```
 
@@ -29,6 +30,8 @@ Using `pause`can be tedious when you have a list of words or items  that you wan
 #argument-callout("hide-color", "color", default: none)[The color to use for hidden elements. If set to `none`, the hidden elements will be completely invisible.]
 
 #argument-callout("hide-fn", "function", default: none)[A function that can be used to provide custom masking for hidden elements. If set to `none`, the default hiding behavior will be used.]
+
+#argument-callout("..children", "list")[The list of words or phrases to be revealed one by one.]
 
 ```typ
 #slide[`#one-by-one` example][
@@ -63,7 +66,8 @@ Using `pause`can be tedious when you have a list of words or items  that you wan
 #let item-by-item(
   start: 1,
   hide-color: none,
-  hide-fn: none
+  hide-fn: none,
+  body
 )
 ```
 
@@ -72,6 +76,8 @@ Using `pause`can be tedious when you have a list of words or items  that you wan
 #argument-callout("hide-color", "color", default: none)[The color to use for hidden elements. If set to `none`, the hidden elements will be completely invisible.]
 
 #argument-callout("hide-fn", "function", default: none)[A function that can be used to provide custom masking for hidden elements. If set to `none`, the default hiding behavior will be used.]
+
+#argument-callout("body", "content")[The list of items to be revealed one by one. This can be a list, enumeration, or terms.]
 
 ```typ
 #slide[`#item-by-item` example][

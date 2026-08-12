@@ -1,4 +1,4 @@
-#import "../src/slydekit.typ": *
+#import "../../src/slydekit.typ": *
 
 #show: slydekit.with(
   title: "Slydekit",
@@ -7,8 +7,6 @@
   date: "2024-06-01",
   institution: "Université de Typst",
   contact: "john.doe@univ.typst.fr",
-  title-logo: (image("../src/resources/images/slydekit-full.svg", height: 2.5cm),),
-  slide-logo: image("../src/resources/images/slydekit-mini.svg", height: 1.25cm),
 )
 
 #title-slide

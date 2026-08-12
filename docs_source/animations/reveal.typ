@@ -15,7 +15,8 @@ To integrate with these packages, you can use the `reveal` function, which repro
   int-or-range,
   from: 1,
   to: none,
-  hide-fn: none
+  hide-fn: none,
+  body
 )
 ```
 
@@ -34,6 +35,9 @@ The subslide number until which the content will be revealed. If set to `none`, 
 #argument-callout("hide-fn", [function | none], default: [none])[
 A function that defines how the content should be hidden when it is not visible. If set to `none`, the content will be hidden using the default behavior. If a function is provided, it will be called with the content as an argument, allowing for custom hiding behavior.
 ]
+
+#argument-callout("body", [content])[
+The content to be revealed.]
 
 Contrary to the other animations commands, using the `reveal` function requires to open a new `context` that includes the CeTZ/Fletcher content to be revealed, as well as to provide the number of steps for th slide. This is because the `reveal` function needs to know the current subslide step in order to determine whether the content should be visible or hidden.
 

@@ -92,6 +92,18 @@
     "translations": {}
   },
   {
+    "href": "components/appendix.html",
+    "language": null,
+    "meta": {
+      "tags": "appendix"
+    },
+    "path": "components/appendix.typ",
+    "pdf": null,
+    "title": "Appendix",
+    "translation_key": "components/appendix",
+    "translations": {}
+  },
+  {
     "href": "components/bibliography.html",
     "language": null,
     "meta": {
@@ -125,7 +137,10 @@
     "href": "components/handout.html",
     "language": null,
     "meta": {
-      "tags": "handout"
+      "tags": [
+        "handout",
+        "mode"
+      ]
     },
     "path": "components/handout.typ",
     "pdf": null,
@@ -143,6 +158,21 @@
     "pdf": null,
     "title": "Localization",
     "translation_key": "components/localization",
+    "translations": {}
+  },
+  {
+    "href": "components/miscellaneous.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "misc",
+        "miscellaneous"
+      ]
+    },
+    "path": "components/miscellaneous.typ",
+    "pdf": null,
+    "title": "Miscellaneous",
+    "translation_key": "components/miscellaneous",
     "translations": {}
   },
   {
@@ -190,26 +220,10 @@
     "translations": {}
   },
   {
-    "href": "navigation/appendix.html",
-    "language": null,
-    "meta": {
-      "tags": [
-        "animations",
-        "appendix"
-      ]
-    },
-    "path": "navigation/appendix.typ",
-    "pdf": null,
-    "title": "Appendix",
-    "translation_key": "navigation/appendix",
-    "translations": {}
-  },
-  {
     "href": "navigation/outline.html",
     "language": null,
     "meta": {
       "tags": [
-        "animations",
         "outline",
         "toc",
         "progressive outline"
@@ -222,11 +236,26 @@
     "translations": {}
   },
   {
+    "href": "navigation/progress-bars.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "outline",
+        "toc",
+        "progressive outline"
+      ]
+    },
+    "path": "navigation/progress-bars.typ",
+    "pdf": null,
+    "title": "Progress bars",
+    "translation_key": "navigation/progress-bars",
+    "translations": {}
+  },
+  {
     "href": "navigation/topbar.html",
     "language": null,
     "meta": {
       "tags": [
-        "animations",
         "topbar",
         "minislide"
       ]

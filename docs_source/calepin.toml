@@ -89,13 +89,16 @@ title = "Navigation, Progress"
     target = "navigation/outline.typ"
 
   [[sidebar.section.item]]
-    target = "navigation/appendix.typ"
+    target = "navigation/progress-bars.typ"
 
 [[sidebar.section]]
 title = "Components"
 
   [[sidebar.section.item]]
     target = "components/slides.typ"
+
+  [[sidebar.section.item]]
+    target = "components/appendix.typ"
 
   [[sidebar.section.item]]
     target = "components/localization.typ"
@@ -108,3 +111,6 @@ title = "Components"
 
   [[sidebar.section.item]]
     target = "components/bibliography.typ"
+
+  [[sidebar.section.item]]
+    target = "components/miscellaneous.typ"

@@ -24,7 +24,7 @@ To use a language that is not supported by default, you can modify the `states.l
     "note": "Note",
     "proof": "Proof",
     "tip": "Tip",
-    "outline": "Outline",
+    "toc": "Outline",
     "warning": "Warning"
 }
 ```

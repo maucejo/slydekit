@@ -82,6 +82,9 @@ Some examples:
 ```
 ]
 
+#argument-callout("body", [content])[
+The content that will be revealed or hidden based on the specified subslide numbers.]
+
 ```typ
 #slide[`#uncover/#only` example][
   #only(1)[I am only visible on the first subslide.]
