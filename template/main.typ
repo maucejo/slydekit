@@ -1,5 +1,5 @@
-// #import "@preview/slydekit:0.1.0": *
-#import "../src/slydekit.typ": *
+#import "@preview/slydekit:0.1.0": *
+// #import "../src/slydekit.typ": *
 #import "@preview/cetz:0.5.2"
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
 
@@ -110,11 +110,11 @@ Slide @s:section, slide @s:test
 ]
 
 #slide("Uncover / only")[
-  Introduction, toujours visible.
+  Introduction, always visible.
 
-  #uncover(from: 2, to: 3)[Une remarque visible seulement pendant deux sous-diapositives.]
+  #uncover(from: 2, to: 3)[A point that is only visible on slides 2 and 3.]
 
-  #only(4)[Une note finale qui n'apparaît, sans réserver de place, qu'à la toute fin.]
+  #only(4)[A final note that appears, without reserving space, only at the very end.]
 ]
 
 #slide("Test slide", label: <s:test>)[

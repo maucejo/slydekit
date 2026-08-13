@@ -12,7 +12,7 @@
 <b><em>Simple yet powerful slides</em></b>
 </p>
 
-Slydekit is a Typst presentation template designed to make slide creation simple and flexible. Its theme system, inspired by Bookly, makes it straightforward to design and integrate new themes.
+Slydekit is a Typst presentation framework designed to make slide creation simple and flexible. Its theme system, inspired by Bookly, makes it straightforward to design and integrate new themes.
 
 Presentations are built directly from document headings, with five predefined themes included out of the box. Slydekit offers a lightweight but complete set of tools for incremental content reveals, slide navigation, styled boxes, and citation handling. The entire framework relies on Typst’s native state and query system, avoiding the need for an additional templating layer.
 
@@ -92,7 +92,7 @@ Slydekit borrows or adapts some of the codes provided by Polylux and Touying for
 
 **Two navigation styles, computed automatically.** `"topbar"` shows the current slide title in a running header; `"minislide"` shows a live, per-section mini-outline (`mini-slides()`) with dots tracking the active slide, built entirely from heading and slide queries, no manual bookkeeping.
 
-**Section-aware progress and outline tools.** `progress-bar`, `section-progress-bar`, `toc`, and `progressive-outline(..)` (a per-slide "you are here" outline with independent numbering for the appendix) all read directly from the document's heading tree.
+**Section-aware progress and outline tools.** `section-progress-bar`, `slide-progress-bar`, `tableofcontents`, and `progressive-outline(..)` (a per-slide "you are here" outline with independent numbering for the appendix) all read directly from the document's heading tree.
 
 **A first-class appendix.** `#appendix[...]` restarts slide numbering under an `A.1`-style scheme, and every navigation and outline helper (mini-slides, `show-ref`, `progressive-outline`) is aware of whether a given slide belongs to the main talk or to the appendix.
 
@@ -100,9 +100,9 @@ Slydekit borrows or adapts some of the codes provided by Polylux and Touying for
 
 **A consistent box library.** `info-box`, `tip-box`, `warning-box`, `important-box`, `proof-box`, `question-box`, `code-box`, and the generic `custom-box` share one visual language per theme, colored and iconized consistently.
 
-**Small layout utilities that solve real slide problems.** `adaptive-columns` chooses 1–3 columns depending on measured content height, `full-width` lets a block bleed to the page edge regardless of margin shape, and `row-img` lays out one to many logos with sensible left/center/right alignment.
+**Small layout utilities that solve real slide problems.** `adaptive-columns` chooses 1–3 columns depending on measured content height, `full-width` lets a block bleed to the page edge regardless of margin shape, `row-img` lays out one to many logos with sensible left/center/right alignment, and `short-or-long` displays long title in `tableofcontents` slides and the short version in the `minislide` navigation style.
 
-**Localization out of the box.** Strings such as "Table of contents", "Note", "Tip", or "Proof" are pulled from a JSON dictionary keyed by `lang`, currently covering Chinese, English, French, German, Italian, Spanish and Portuguese
+**Localization out of the box.** Strings such as "Outline", "Note", "Tip", or "Proof" are pulled from a JSON dictionary keyed by `lang`, currently covering Chinese, English, French, German, Italian, Spanish and Portuguese
 
 ## Comparison with Touying and Polylux
 
@@ -120,8 +120,6 @@ Touying and Polylux are the two most established presentation packages in the Ty
 | Speaker notes, PPTX/HTML export | Through external packages like presio | Yes — dual-screen speaker notes, PDF/PPTX/HTML export via companion tools | Yes — pdfpc integration for speaker notes and timers |
 | Theming model | Fixed functions contract (`theme`, `title`, `toc`, `focus-slide`, `link-box`, `boxeq`, `box`) per theme, merged onto `simple` as a base | A `self` dictionary threaded through the whole rendering pipeline (`utils.merge-dicts` of `config-colors`, `config-info`, `config-page`, `config-common`, ...). Any custom function that wants `self` must be wrapped in `touying-fn-wrapper`/`touying-slide-wrapper`, but in exchange, any new piece of shared config is just a new key in that dictionary, no plumbing required elsewhere | No shared contract in core; themes are separate community packages |
 | Scope | Academic-presentation features pre-wired: citations, appendix, boxes, bilingual localization | Broad, general-purpose slide framework, largest feature surface of the three | Minimal core, intentionally low-level, designed to be built upon |
-
-### Summary
 
 ### Summary
 
