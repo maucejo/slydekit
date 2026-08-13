@@ -213,9 +213,22 @@
   return image(bytes(data), ..args)
 }
 
+#let footcite(key, supplement: none) = context {
+  let elems = query(bibliography)
+  if elems.len() > 0 {
+    super(cite(key, supplement: supplement))
+    sk-states.is-footcite.update(true)
+    hide(footnote(cite(key, form: "full", style: "resources/short_ref.csl")))
+    sk-states.is-footcite.update(false)
+  } else {
+    panic("No bibliography found. Please add a bibliography to use notecite.")
+  }
+}
+
 #let show-ref(it) = {
-let el = it.element
-  if el == none { return it }
+  let el = it.element
+  // if el == none { return it }
+  if el == none { return footcite(it.target) }
 
   // Detect slides created via #slide(..., label: <...>)
   let is-metadata-slide = (
@@ -248,18 +261,6 @@ let el = it.element
     link(loc, [#prefix#num])
   } else {
     it
-  }
-}
-
-#let footcite(key, supplement: none) = context {
-  let elems = query(bibliography)
-  if elems.len() > 0 {
-    super(cite(key, supplement: supplement))
-    sk-states.is-footcite.update(true)
-    hide(footnote(cite(key, form: "full", style: "resources/short_ref.csl")))
-    sk-states.is-footcite.update(false)
-  } else {
-    panic("No bibliography found. Please add a bibliography to use notecite.")
   }
 }
 

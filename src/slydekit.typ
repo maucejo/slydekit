@@ -65,7 +65,7 @@
   }
 
   // References
-  show ref: it => show-ref(it)
+  show ref: show-ref
 
   // Bibliography style
   set bibliography(title: none)

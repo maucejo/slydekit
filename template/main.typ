@@ -84,7 +84,7 @@
 
 == Section <s:section>
 
-#lorem(10)#footcite(<knuth>)
+#lorem(10)@knuth
 
 - First point
   - A nested point

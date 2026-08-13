@@ -20,6 +20,8 @@ Slydekit provides a built-in bibliography feature that allows you to manage and 
 
 #argument-callout("supplement", "string", default: [none])[An optional supplement to the citation. See the documentation of the #link("https://typst.app/docs/reference/model/cite/", "Typst cite function") for more information.]
 
+This function can be used directly in your slides. Alternatively, you can use the `@` syntax to create a footnote for a citation. For example, `@knuth` creates a footnote for the reference with the citation key `knuth`. To call the function explicitly, use the `#footcite(<key>)` syntax, where `<key>` is the citation key.
+
 ```typ
 #import "@preview/slydekit:0.1.0": *
 
@@ -27,7 +29,7 @@ Slydekit provides a built-in bibliography feature that allows you to manage and 
 
 == Footcite example
 
-#lorem(10)#footcite(<knuth>)
+#lorem(10)@knuth
 
 == Bibliography
 #bibliography(
