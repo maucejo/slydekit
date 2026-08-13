@@ -124,7 +124,7 @@
         )
       }
       #move(dy: 0.35em,footer-content)
-      #full-width(anchor: bottom, progress-bar(colors-theme.primary, colors-theme.secondary, height: 2.5pt))
+      #full-width(anchor: bottom, slide-progress-bar(colors-theme.primary, colors-theme.secondary, height: 2.5pt))
     ]
   }
 

@@ -8,7 +8,35 @@
 
 Slydekit provides progress bars to indicate either the progress of the section or the progress of the entire presentation. These function are intended to be used in a custom theme.
 
+All the progress bars are built upon the `progress-bar` function, whose signature is:
+```typ
+#let progress-bar(
+  ratio,
+  active-color,
+  inactive-color,
+  row-height: (),
+  gutter: ()
+)
+```
+
+#argument-callout("ratio", [number])[
+The ratio of the progress bar, which is a number between 0 and 1. For example, a ratio of 0.5 means that the progress bar is half filled.]
+
+#argument-callout("active-color", [color])[
+The color used to fill the active part of the progress bar.]
+
+#argument-callout("inactive-color", [color])[
+The color used to fill the inactive part of the progress bar.]
+
+#argument-callout("row-height", [length], default: [()])[
+The height of the progress bar. If not specified, the height will be determined by the content]
+
+#argument-callout("gutter", [length], default: [()])[
+The gutter between the active and inactive parts of the progress bar. If not specified, the gutter will be determined by the content]
+
 = Section progress bar
+
+Section progress bar is a horizontal bar that indicates the progress of the current section in relation to the total number of sections in the presentation.
 
 ```typ
 #let section-progress-bar(active-color, inactive-color)
@@ -50,10 +78,12 @@ For example, in the `metropolis` theme, `section-progress-bar` is used as follow
   }
 ```
 
-= Presentation progress bar
+= Slide progress bar
+
+Slide progress bar is a horizontal bar that indicates the progress of the current slide in relation to the total number of slides in the presentation.
 
 ```typ
-#let progress-bar(active-color, inactive-color, height: 2pt)
+#let slide-progress-bar(active-color, inactive-color, height: 2pt)
 ```
 
 #argument-callout("active-color", [color])[
@@ -65,7 +95,7 @@ The color used to fill the inactive slide indicators.]
 #argument-callout("height", [number], default: [2pt])[
 The height of the progress bar. The default value is `2pt`.]
 
-For example, in the `metropolis` theme, `section-progress-bar` is used in the footer of the slide as follows:
+For example, in the `metropolis` theme, `slide-progress-bar` is used in the footer of the slide as follows:
 
 ```typ
 let footer = context {
@@ -73,7 +103,7 @@ let footer = context {
       ...
 
       // Progress bar
-      #full-width(anchor: bottom, progress-bar(colors-theme.primary, colors-theme.secondary, height: 2.5pt))
+      #full-width(anchor: bottom, slide-progress-bar(colors-theme.primary, colors-theme.secondary, height: 2.5pt))
     ]
   }
 ```

@@ -1,4 +1,5 @@
-#import "@preview/slydekit:0.1.0": *
+// #import "@preview/slydekit:0.1.0": *
+#import "../src/slydekit.typ": *
 #import "@preview/cetz:0.5.2"
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
 
@@ -9,7 +10,7 @@
   date: "2024-06-01",
   institution: "Université de Typst",
   contact: "john.doe@univ.typst.fr",
-  // theme: metropolis,
+  theme: metropolis,
   // theme: fancy,
   // theme: simple,
   // theme: cambfurt,

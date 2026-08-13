@@ -150,6 +150,16 @@
 }
 
 // Section progress bar
+#let progress-bar(ratio, active-color, inactive-color, row-height: (), gutter: ()) = {
+  grid(
+    columns: (ratio*100%, 1fr),
+    rows: row-height,
+    gutter: gutter,
+    cell(fill: active-color),
+    cell(fill: inactive-color)
+  )
+}
+
 #let section-progress-bar(active-color, inactive-color) = context {
   let current-sec = query(heading.where(level: 1)
     .before(here()))
@@ -162,14 +172,10 @@
 
   let ratio = if total-sec > 0 { current-sec / total-sec } else { 1 }
 
-  grid(
-    columns: (ratio*100%, 1fr),
-    cell(fill: active-color),
-    cell(fill: inactive-color)
-  )
+  progress-bar(ratio, active-color, inactive-color)
 }
 
-#let progress-bar(active-color, inactive-color, height: 2pt) = context {
+#let slide-progress-bar(active-color, inactive-color, height: 2pt) = context {
   let current-page = sk-states.slide-number.get().first()
   let total-page = sk-states.slide-number.final().first()
 
@@ -177,13 +183,7 @@
 
   block(
     width: 100%,
-    grid(
-      columns: (ratio*100%, 1fr),
-      rows: height,
-      gutter: 0pt,
-      cell(fill: active-color),
-      cell(fill: inactive-color)
-    )
+    progress-bar(ratio, active-color, inactive-color, row-height: height, gutter: 0pt)
   )
 }
 

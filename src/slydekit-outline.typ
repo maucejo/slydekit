@@ -123,7 +123,11 @@
     let col-content = {
       set text(fill: sec-color)
 
-      link(section.location(), section.body)
+      // Remove linebreaks when displaying subsections, to avoid double linebreaks
+      {
+        show linebreak: none
+        link(section.location(), section.body)
+      }
 
       if display-subsection and slides.len() > 0 {
         if linebreaks {
@@ -177,6 +181,7 @@
   appendix-numbering: "A.1.",
 ) = context {
   set text(size: entry-size)
+  show linebreak: none
 
   let it-hides-toc = it.has("label") and it.label == <hide-toc>
 
