@@ -271,3 +271,6 @@ let el = it.element
 
   body
 }
+
+// Short or long title
+#let short-or-long(short, long) = [#metadata((short: short, long: long))<sk-title>]

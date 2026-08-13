@@ -10,7 +10,7 @@
   date: "2024-06-01",
   institution: "Université de Typst",
   contact: "john.doe@univ.typst.fr",
-  theme: metropolis,
+  // theme: metropolis,
   // theme: fancy,
   // theme: simple,
   // theme: cambfurt,
@@ -29,6 +29,7 @@
 // #show: hide-new-section-slide
 
 = First section
+// = #short-or-long[Short title][Long title]
 
 #slide("CeTZ integration", steps: 5)[
   #context {

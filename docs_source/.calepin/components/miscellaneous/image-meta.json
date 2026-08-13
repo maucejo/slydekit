@@ -1,6 +1,20 @@
 {
   "schema": 1,
   "images": {
+    "../assets/components/short-long1.png": {
+      "path": "assets/components/short-long1.png",
+      "xxh3": "e3b287ac8b7c624c",
+      "bytes": 24518,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/components/short-long2.png": {
+      "path": "assets/components/short-long2.png",
+      "xxh3": "dda5325a23814a14",
+      "bytes": 38036,
+      "width": 1684,
+      "height": 947
+    },
     "/assets/animations/alternatives1.png": {
       "path": "assets/animations/alternatives1.png",
       "xxh3": "ee2d7b7fc8d4782c",
@@ -439,6 +453,20 @@
       "path": "assets/components/my-focus-slide2.png",
       "xxh3": "cc51ed848a1992b2",
       "bytes": 19082,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/short-long1.png": {
+      "path": "assets/components/short-long1.png",
+      "xxh3": "e3b287ac8b7c624c",
+      "bytes": 24518,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/short-long2.png": {
+      "path": "assets/components/short-long2.png",
+      "xxh3": "dda5325a23814a14",
+      "bytes": 38036,
       "width": 1684,
       "height": 947
     },
@@ -1426,6 +1454,20 @@
       "path": "assets/components/my-focus-slide2.png",
       "xxh3": "cc51ed848a1992b2",
       "bytes": 19082,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/short-long1.png": {
+      "path": "assets/components/short-long1.png",
+      "xxh3": "e3b287ac8b7c624c",
+      "bytes": 24518,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/short-long2.png": {
+      "path": "assets/components/short-long2.png",
+      "xxh3": "dda5325a23814a14",
+      "bytes": 38036,
       "width": 1684,
       "height": 947
     },

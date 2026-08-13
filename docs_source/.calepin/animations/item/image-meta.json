@@ -484,6 +484,20 @@
       "width": 1684,
       "height": 947
     },
+    "/assets/components/short-long1.png": {
+      "path": "assets/components/short-long1.png",
+      "xxh3": "e3b287ac8b7c624c",
+      "bytes": 24518,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/short-long2.png": {
+      "path": "assets/components/short-long2.png",
+      "xxh3": "dda5325a23814a14",
+      "bytes": 38036,
+      "width": 1684,
+      "height": 947
+    },
     "/assets/getting-started/basic-usage1.png": {
       "path": "assets/getting-started/basic-usage1.png",
       "xxh3": "3813cdbb92a55224",
@@ -1468,6 +1482,20 @@
       "path": "assets/components/my-focus-slide2.png",
       "xxh3": "cc51ed848a1992b2",
       "bytes": 19082,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/short-long1.png": {
+      "path": "assets/components/short-long1.png",
+      "xxh3": "e3b287ac8b7c624c",
+      "bytes": 24518,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/short-long2.png": {
+      "path": "assets/components/short-long2.png",
+      "xxh3": "dda5325a23814a14",
+      "bytes": 38036,
       "width": 1684,
       "height": 947
     },

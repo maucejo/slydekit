@@ -82,11 +82,11 @@
   sk-states.logo.update(slide-logo)
   sk-states.handout.update(handout)
 
-  show selector(<hide-toc>): set heading(outlined: false)
+  // Hide short titles by default
+  show metadata.where(label: <sk-title>): it => it.value.long
 
-  show selector(<hide>): {
-    show heading.where(level: 1): none
-  }
+  // Hide section titles from toc
+  show selector(<hide-toc>): set heading(outlined: false)
 
   // Fonts
   show: set-text.with(lang: sk-lang)

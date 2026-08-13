@@ -79,3 +79,41 @@ The `adaptive-columns` function allows you to create a column layout that adapts
 #set align(horizon)
 #adaptive-columns(text(size: 1.2em, strong(outline(title:none, indent: 1em, depth: 1))))
 ```
+
+= Short or long title
+
+Sometimes, you may want to provide both a short and a long title for your sections. For instance, you might want to display a long title on the `tableof contents` or `progressive-outline`, while using a shorter version in the mini-slides navigation style. The `short-or-long` function allows you to specify both versions of the title.
+
+```typ
+#let short-or-long(
+  short,
+  long
+)
+```
+
+#argument-callout("short", "string | content")[The short version of the title.]
+
+#argument-callout("long", "string | content")[The long version of the title.]
+
+```typ
+#import "@preview/slydekit:0.1.0": *
+
+#show: slydekit.with(
+  navigation-style: "minislide",
+)
+
+= #short-or-long[My short title][My long long long title]
+
+== First slide
+
+#lorem(10)
+```
+
+#calepin.elements.gallery(
+  (
+    ("../assets/components/short-long1.png", "Topbar navigation style - Simple theme", [Short-or-long example - Long title]),
+    ("../assets/components/short-long2.png", "Topbar navigation style - Metropolis theme", [Short-or-long example - Short title]),
+  ),
+  columns: 2,
+  max-width: 100%,
+)

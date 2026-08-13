@@ -1,4 +1,5 @@
 #import "slydekit-defaults.typ": *
+#import "slydekit-utils.typ": *
 
 #let adaptive-columns(
   gutter: 4%,
@@ -55,120 +56,126 @@
   display-subsection: true,
   linebreaks: true,
   display-appendix: "auto",
-) = context {
-  // Retrieving the main color
-  let theme-colors = sk-states.colors.get()
-  let main-fill = if fill != none {
-    fill
-  } else {
-    theme-colors.at("header", default: black)
-  }
+) = {
+  // Inside mini-slides: show short title, hide long title
+  // Override locally: render the short title inside mini-slides
+  show metadata.where(label: <sk-title>): it => it.value.short
 
-  let faded-fill = if type(main-fill) == color { main-fill.lighten(alpha) } else { main-fill }
-
-  // Detection of the current slide number and the total number of slides
-  let current-is-appendix = sk-states.appendix.get()
-
-  let is-visible(h) = {
-    let is-heading-appendix = sk-states.appendix.at(h.location())
-
-    if display-appendix == "auto" or display-appendix == auto {
-      is-heading-appendix == current-is-appendix
-    } else if display-appendix == true {
-      true
+  context {
+    // Retrieving the main color
+    let theme-colors = sk-states.colors.get()
+    let main-fill = if fill != none {
+      fill
     } else {
-      not is-heading-appendix
-    }
-  }
-
-  // Sections : always real level 1 headings
-  let sections = query(heading.where(level: 1)).filter(is-visible)
-  if sections.len() == 0 {
-    return []
-  }
-
-  // Slides : the marker placed by slide(), independent of == or #slide(...)
-  let all-slides = query(<sk-slide>).filter(is-visible)
-
-  let current-page = here().page()
-
-  // Index of the current section
-  let current-sec-idx = sections.filter(s => s.location().page() <= current-page).len() - 1
-
-  let cols = ()
-
-  for (sec-idx, section) in sections.enumerate() {
-    let next-section = if sec-idx + 1 < sections.len() {
-      sections.at(sec-idx + 1)
-    } else {
-      none
+      theme-colors.at("header", default: black)
     }
 
-    let sec-page = section.location().page()
-    let next-sec-page = if next-section != none {
-      next-section.location().page()
-    } else {
-      calc.inf
-    }
+    let faded-fill = if type(main-fill) == color { main-fill.lighten(alpha) } else { main-fill }
 
-    let is-current-sec = (sec-idx == current-sec-idx)
-    let sec-color = if is-current-sec { main-fill } else { faded-fill }
+    // Detection of the current slide number and the total number of slides
+    let current-is-appendix = sk-states.appendix.get()
 
-    // Slides attached to this section, via the <sk-slide> marker
-    let slides = all-slides.filter(h => (
-      h.location().page() >= sec-page
-      and h.location().page() < next-sec-page
-    ))
+    let is-visible(h) = {
+      let is-heading-appendix = sk-states.appendix.at(h.location())
 
-    let col-content = {
-      set text(fill: sec-color)
-
-      // Remove linebreaks when displaying subsections, to avoid double linebreaks
-      {
-        show linebreak: none
-        link(section.location(), section.body)
-      }
-
-      if display-subsection and slides.len() > 0 {
-        if linebreaks {
-          linebreak()
-        } else {
-          h(0.4em)
-        }
-
-        for (slide-idx, slide-h) in slides.enumerate() {
-          let next-slide-page = if slide-idx + 1 < slides.len() {
-            slides.at(slide-idx + 1).location().page()
-          } else {
-            next-sec-page
-          }
-
-          let slide-page = slide-h.location().page()
-          let is-active-slide = (current-page >= slide-page and current-page < next-slide-page)
-
-          let dot = if is-active-slide {
-            sym.circle.filled
-          } else {
-            sym.circle.small
-          }
-
-          link(slide-h.location(), dot)
-
-          if not linebreaks and slide-idx + 1 < slides.len() {
-            h(0.25em)
-          }
-        }
+      if display-appendix == "auto" or display-appendix == auto {
+        is-heading-appendix == current-is-appendix
+      } else if display-appendix == true {
+        true
+      } else {
+        not is-heading-appendix
       }
     }
 
-    cols.push(align(center + top, col-content))
-  }
+    // Sections : always real level 1 headings
+    let sections = query(heading.where(level: 1)).filter(is-visible)
+    if sections.len() == 0 {
+      return []
+    }
 
-  set text(size: 0.7em)
-  grid(
-    columns: cols.map(_ => auto).intersperse(1fr),
-    ..cols.intersperse([])
-  )
+    // Slides : the marker placed by slide(), independent of == or #slide(...)
+    let all-slides = query(<sk-slide>).filter(is-visible)
+
+    let current-page = here().page()
+
+    // Index of the current section
+    let current-sec-idx = sections.filter(s => s.location().page() <= current-page).len() - 1
+
+    let cols = ()
+
+    for (sec-idx, section) in sections.enumerate() {
+      let next-section = if sec-idx + 1 < sections.len() {
+        sections.at(sec-idx + 1)
+      } else {
+        none
+      }
+
+      let sec-page = section.location().page()
+      let next-sec-page = if next-section != none {
+        next-section.location().page()
+      } else {
+        calc.inf
+      }
+
+      let is-current-sec = (sec-idx == current-sec-idx)
+      let sec-color = if is-current-sec { main-fill } else { faded-fill }
+
+      // Slides attached to this section, via the <sk-slide> marker
+      let slides = all-slides.filter(h => (
+        h.location().page() >= sec-page
+        and h.location().page() < next-sec-page
+      ))
+
+      let col-content = {
+        set text(fill: sec-color)
+
+        // Remove linebreaks when displaying subsections, to avoid double linebreaks
+        {
+          show linebreak: none
+          link(section.location(), section.body)
+        }
+
+        if display-subsection and slides.len() > 0 {
+          if linebreaks {
+            linebreak()
+          } else {
+            h(0.4em)
+          }
+
+          for (slide-idx, slide-h) in slides.enumerate() {
+            let next-slide-page = if slide-idx + 1 < slides.len() {
+              slides.at(slide-idx + 1).location().page()
+            } else {
+              next-sec-page
+            }
+
+            let slide-page = slide-h.location().page()
+            let is-active-slide = (current-page >= slide-page and current-page < next-slide-page)
+
+            let dot = if is-active-slide {
+              sym.circle.filled
+            } else {
+              sym.circle.small
+            }
+
+            link(slide-h.location(), dot)
+
+            if not linebreaks and slide-idx + 1 < slides.len() {
+              h(0.25em)
+            }
+          }
+        }
+      }
+
+      cols.push(align(center + top, col-content))
+    }
+
+    set text(size: 0.7em)
+    grid(
+      columns: cols.map(_ => auto).intersperse(1fr),
+      ..cols.intersperse([])
+    )
+  }
 }
 
 #let progressive-outline(
