@@ -17,16 +17,16 @@
   raw: "Fira Code",
 )
 
-#let simple-theme(body) = context {
-  let colors-theme = if sk-states.colors.get() != none {
-     simple-colors + sk-states.colors.get()
+#let simple-theme(body, colors: none, fonts: none) = context {
+  let colors-theme = if colors != none {
+     simple-colors + colors
   } else {
     simple-colors
   }
   sk-states.colors.update(colors-theme)
 
-  let fonts-theme = if sk-states.fonts.get() != none {
-     simple-fonts + sk-states.fonts.get()
+  let fonts-theme = if fonts != none {
+     simple-fonts + fonts
   } else {
     simple-fonts
   }
@@ -228,4 +228,4 @@
   )
 }
 
-#let simple = (theme: simple-theme, title: simple-title, toc: simple-toc, focus-slide: simple-focus-slide, link-box: simple-link-box, boxeq: simple-boxeq, box: simple-custom-box)
+#let simple = (theme: simple-theme, title: simple-title, toc: simple-toc, focus-slide: simple-focus-slide, link-box: simple-link-box, boxeq: simple-boxeq, custom-box: simple-custom-box)

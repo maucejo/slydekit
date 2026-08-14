@@ -17,16 +17,16 @@
   raw: "Fira Code",
 )
 
-#let metropolis-theme(body) = context{
-  let colors-theme = if sk-states.colors.get() != none {
-     metropolis-colors + sk-states.colors.get()
+#let metropolis-theme(body, colors: none, fonts: none) = context{
+  let colors-theme = if colors != none {
+     metropolis-colors + colors
   } else {
     metropolis-colors
   }
   sk-states.colors.update(colors-theme)
 
-  let fonts-theme = if sk-states.fonts.get() != none {
-     metropolis-fonts + sk-states.fonts.get()
+  let fonts-theme = if fonts != none {
+     metropolis-fonts + fonts
   } else {
     metropolis-fonts
   }
@@ -243,4 +243,4 @@
   )
 }
 
-#let metropolis = (theme: metropolis-theme, title: metropolis-title, toc: metropolis-toc, focus-slide: metropolis-focus-slide, link-box: metropolis-link-box, boxeq: metropolis-boxeq, box: metropolis-custom-box)
+#let metropolis = (theme: metropolis-theme, title: metropolis-title, toc: metropolis-toc, focus-slide: metropolis-focus-slide, link-box: metropolis-link-box, boxeq: metropolis-boxeq, custom-box: metropolis-custom-box)

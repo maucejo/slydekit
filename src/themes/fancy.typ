@@ -18,16 +18,16 @@
   raw: "Cascadia Code",
 )
 
-#let fancy-theme(body) = context {
-  let colors-theme = if sk-states.colors.get() != none {
-     fancy-colors + sk-states.colors.get()
+#let fancy-theme(body, colors: none, fonts: none) = context {
+  let colors-theme = if colors != none {
+     fancy-colors + colors
   } else {
     fancy-colors
   }
   sk-states.colors.update(colors-theme)
 
-  let fonts-theme = if sk-states.fonts.get() != none {
-     fancy-fonts + sk-states.fonts.get()
+  let fonts-theme = if fonts != none {
+     fancy-fonts + fonts
   } else {
     fancy-fonts
   }
@@ -263,4 +263,4 @@
   )[#body]
 }
 
-#let fancy = (theme: fancy-theme, title: fancy-title, toc: fancy-toc, focus-slide: fancy-focus-slide, link-box: fancy-link-box, boxeq: fancy-boxeq, box: fancy-custom-box)
+#let fancy = (theme: fancy-theme, title: fancy-title, toc: fancy-toc, focus-slide: fancy-focus-slide, link-box: fancy-link-box, boxeq: fancy-boxeq, custom-box: fancy-custom-box)

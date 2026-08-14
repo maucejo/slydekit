@@ -96,7 +96,7 @@ Sometimes, you may want to provide both a short and a long title for your sectio
 #argument-callout("long", "string | content")[The long version of the title.]
 
 ```typ
-#import "@preview/slydekit:0.1.0": *
+#import "@preview/slydekit:0.2.0": *
 
 #show: slydekit.with(
   navigation-style: "minislide",

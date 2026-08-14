@@ -21,7 +21,7 @@
 #let boxeq(body) = context (sk-states.theme.get().boxeq)(body)
 
 // Custom box
-#let custom-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = context (sk-states.theme.get().box)(title: title, icon: icon, color: color, body)
+#let custom-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = context (sk-states.theme.get().custom-box)(title: title, icon: icon, color: color, body)
 
 // Information box
 #let info-box = custom-box.with(title: context sk-states.localization.get().note)

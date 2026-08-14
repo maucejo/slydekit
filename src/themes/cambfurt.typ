@@ -18,16 +18,16 @@
   raw: "Cascadia Code",
 )
 
-#let cambfurt-theme(body) = context{
-  let colors-theme = if sk-states.colors.get() != none {
-     cambfurt-colors + sk-states.colors.get()
+#let cambfurt-theme(body, colors: none, fonts: none) = context{
+  let colors-theme = if colors != none {
+     cambfurt-colors + colors
   } else {
     cambfurt-colors
   }
   sk-states.colors.update(colors-theme)
 
-  let fonts-theme = if sk-states.fonts.get() != none {
-     cambfurt-fonts + sk-states.fonts.get()
+  let fonts-theme = if fonts != none {
+     cambfurt-fonts + fonts
   } else {
     cambfurt-fonts
   }
@@ -276,4 +276,4 @@
   )[#body]
 }
 
-#let cambfurt = (theme: cambfurt-theme, title: cambfurt-title, toc: cambfurt-toc, focus-slide: cambfurt-focus-slide, link-box: cambfurt-link-box, boxeq: cambfurt-boxeq, box: cambfurt-custom-box)
+#let cambfurt = (theme: cambfurt-theme, title: cambfurt-title, toc: cambfurt-toc, focus-slide: cambfurt-focus-slide, link-box: cambfurt-link-box, boxeq: cambfurt-boxeq, custom-box: cambfurt-custom-box)

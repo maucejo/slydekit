@@ -1,5 +1,5 @@
-#import "@preview/slydekit:0.1.0": *
-// #import "../src/slydekit.typ": *
+// #import "@preview/slydekit:0.2.0": *
+#import "../src/slydekit.typ": *
 #import "@preview/cetz:0.5.2"
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
 
@@ -15,6 +15,8 @@
   // theme: simple,
   // theme: cambfurt,
   // theme: chalkboard,
+  // fonts: (body: "New Computer Modern"),
+  // colors: chalkboard-colors-variant,
   lang: "en",
   navigation-style: "minislide",
   title-logo: (image("images/slydekit-full.svg", height: 2.5cm),),

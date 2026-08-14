@@ -26,7 +26,7 @@ Basically, any theme exposes the same conceptual interface, which is a dictionar
   focus-slide: custom-focus-slide,
   link-box: custom-link-box,
   boxeq: custom-boxeq,
-  box: custom-custom-box,
+  custom-box: custom-custom-box,
 )
 ```
 
@@ -37,7 +37,7 @@ The elements of the dictionary are:
 - `focus-slide`: A function that defines the appearance of a focus slide, which is used to highlight important content.
 - `link-box`: A function that defines the appearance of a link box, which is used to display links to other slides.
 - `boxeq`: A function that defines the appearance of a box equation.
-- `box`: A function that defines the appearance of a custom callout box.
+- `custom-box`: A function that defines the appearance of a custom callout box.
 
 This design allows to define generic high-level functions that can be used whatever the theme is.
 
@@ -148,7 +148,7 @@ To implement a custom theme, you have to define a function that includes the `sh
 // my-theme.typ
 
 // Theme function
-#let my-theme(body) = context {
+#let my-theme(body, colors: none, fonts: none) = context {
   // Equivalent to new-section-slide in Touying
   show heading.where(level: 1): it => { ... }
 
@@ -205,7 +205,7 @@ To implement a custom theme, you have to define a function that includes the `sh
 
 Once the theme is defined, you can use it in your presentation by specifying it in the `#slydekit` function:
 ```typ
-#import "@preview/slydekit:0.1.0": *
+#import "@preview/slydekit:0.2.0": *
 #import "my-theme.typ": *
 
 #show: slydekit.with(
@@ -224,10 +224,10 @@ Once the theme is defined, you can use it in your presentation by specifying it 
   #let my-theme-colors = (...)
   #let my-theme-fonts = (...)
 
-  #let my-theme(body) = context {
+  #let my-theme(body, colors: none, fonts: none) = context {
     // Update the shared states with the colors and fonts of the theme for further use
-    sk-states.colors.update(colors-theme)
-    sk-states.fonts.update(fonts-theme)
+    sk-states.colors.update(my-colors-theme)
+    sk-states.fonts.update(my-fonts-theme)
 
   // The rest of the theme definition goes here...
   }
@@ -242,15 +242,15 @@ Themes can be composed by combining functions from different themes, allowing sp
 
 The functions of a theme are accessible using the following pattern `theme-name.function-name`, where `themename` is the name of the theme and `function-name` is the name of the function defined in the theme dictionary. For example, you can compose a custom theme by combining the `theme` function from one theme with the `title` function from another theme, as follows:
 ```typ
-#import "@preview/slydekit:0.1.0": *
+#import "@preview/slydekit:0.2.0": *
 
 #let my-theme = (
   theme: metropolis.theme,
   title: cambfurt.title,
-  toc: simple-toc,
+  toc: simple.toc,
   focus-slide: fancy-slide,
-  link-box: simple-link-box,
-  boxeq: fancy-boxeq,
+  link-box: simple.link-box,
+  boxeq: fancy.boxeq,
 )
 
 #show: slydekit.with(
@@ -264,10 +264,10 @@ A custom theme does not need to implement the complete theme contract. Functions
 
 For instance, if you want to create a custom theme that only changes the title slide and the table of contents slide, you can define your custom theme as follows:
 ```typ
-#import "@preview/slydekit:0.1.0": *
+#import "@preview/slydekit:0.2.0": *
 #let my-theme = (
   theme: fancy.theme,
-  toc: fancy-toc,
+  toc: fancy.toc,
 )
 
 #show: slydekit.with(

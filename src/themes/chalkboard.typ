@@ -26,16 +26,16 @@
   raw: "Fantasque Sans Mono",
 )
 
-#let chalkboard-theme(body) = context{
-  let colors-theme = if sk-states.colors.get() != none {
-     chalkboard-colors + sk-states.colors.get()
+#let chalkboard-theme(body, colors: none, fonts: none) = context{
+  let colors-theme = if colors != none {
+     chalkboard-colors + colors
   } else {
     chalkboard-colors
   }
   sk-states.colors.update(colors-theme)
 
-  let fonts-theme = if sk-states.fonts.get() != none {
-     chalkboard-fonts + sk-states.fonts.get()
+  let fonts-theme = if fonts != none {
+     chalkboard-fonts + fonts
   } else {
     chalkboard-fonts
   }
@@ -246,4 +246,4 @@
   )
 }
 
-#let chalkboard = (theme: chalkboard-theme, title: chalkboard-title, toc: chalkboard-toc, focus-slide: chalkboard-focus-slide, link-box: chalkboard-link-box, boxeq: chalkboard-boxeq, box: chalkboard-custom-box)
+#let chalkboard = (theme: chalkboard-theme, title: chalkboard-title, toc: chalkboard-toc, focus-slide: chalkboard-focus-slide, link-box: chalkboard-link-box, boxeq: chalkboard-boxeq, custom-box: chalkboard-custom-box)
