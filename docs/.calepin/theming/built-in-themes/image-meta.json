@@ -1,0 +1,4429 @@
+{
+  "schema": 1,
+  "images": {
+    "../assets/theming/cambfurt/CambfurtTheme_Page1.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_Page1.png",
+      "xxh3": "dd58c8bffacb437d",
+      "bytes": 67555,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/cambfurt/CambfurtTheme_Page2.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_Page2.png",
+      "xxh3": "a91722c667556543",
+      "bytes": 23305,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/cambfurt/CambfurtTheme_Page3.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_Page3.png",
+      "xxh3": "16ebf5f143385b5f",
+      "bytes": 78367,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/cambfurt/CambfurtTheme_Page4.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_Page4.png",
+      "xxh3": "2f07d5d9966847ac",
+      "bytes": 20787,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/cambfurt/CambfurtTheme_Page5.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_Page5.png",
+      "xxh3": "b9f28cb4ab39e0e3",
+      "bytes": 24918,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/cambfurt/CambfurtTheme_Page6.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_Page6.png",
+      "xxh3": "1e58a945dea5cd63",
+      "bytes": 51322,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/cambfurt/CambfurtTheme_minislide_Page1.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_minislide_Page1.png",
+      "xxh3": "8d6b1e5a26657656",
+      "bytes": 67555,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/cambfurt/CambfurtTheme_minislide_Page2.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_minislide_Page2.png",
+      "xxh3": "af8efc3c4896fefa",
+      "bytes": 23232,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/cambfurt/CambfurtTheme_minislide_Page3.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_minislide_Page3.png",
+      "xxh3": "67b94655193e532d",
+      "bytes": 77154,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/cambfurt/CambfurtTheme_minislide_Page4.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_minislide_Page4.png",
+      "xxh3": "4fdd04083c2638b9",
+      "bytes": 20680,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/cambfurt/CambfurtTheme_minislide_Page5.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_minislide_Page5.png",
+      "xxh3": "acc8d185df1483a4",
+      "bytes": 24824,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/cambfurt/CambfurtTheme_minislide_Page6.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_minislide_Page6.png",
+      "xxh3": "1fb963b4e90c7d99",
+      "bytes": 47465,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/chalkboard/ChalkboardTheme_Page1.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_Page1.png",
+      "xxh3": "7105059e45ee62a9",
+      "bytes": 2406139,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/chalkboard/ChalkboardTheme_Page2.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_Page2.png",
+      "xxh3": "5d447f706bbf6b45",
+      "bytes": 2333893,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/chalkboard/ChalkboardTheme_Page3.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_Page3.png",
+      "xxh3": "2c7abdab553c4da4",
+      "bytes": 2390757,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/chalkboard/ChalkboardTheme_Page4.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_Page4.png",
+      "xxh3": "5c1dde1c0c42bd5b",
+      "bytes": 2337049,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/chalkboard/ChalkboardTheme_Page5.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_Page5.png",
+      "xxh3": "43d1bd066ac2182d",
+      "bytes": 2330684,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/chalkboard/ChalkboardTheme_Page6.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_Page6.png",
+      "xxh3": "ada098d22bc6099e",
+      "bytes": 2358974,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/chalkboard/ChalkboardTheme_minislide_Page1.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_minislide_Page1.png",
+      "xxh3": "147f897d4a34dc79",
+      "bytes": 2403457,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/chalkboard/ChalkboardTheme_minislide_Page2.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_minislide_Page2.png",
+      "xxh3": "a7c40066300a617e",
+      "bytes": 2333896,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/chalkboard/ChalkboardTheme_minislide_Page3.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_minislide_Page3.png",
+      "xxh3": "b0bf579fd24b7b8e",
+      "bytes": 2406227,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/chalkboard/ChalkboardTheme_minislide_Page4.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_minislide_Page4.png",
+      "xxh3": "23e3eae0be8fee87",
+      "bytes": 2335819,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/chalkboard/ChalkboardTheme_minislide_Page5.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_minislide_Page5.png",
+      "xxh3": "5790406b6177d740",
+      "bytes": 2330679,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/chalkboard/ChalkboardTheme_minislide_Page6.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_minislide_Page6.png",
+      "xxh3": "cea36b3076db4d58",
+      "bytes": 2372254,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/fancy/FancyTheme_Page1.png": {
+      "path": "assets/theming/fancy/FancyTheme_Page1.png",
+      "xxh3": "833a3ca6a22f2835",
+      "bytes": 40713,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/fancy/FancyTheme_Page2.png": {
+      "path": "assets/theming/fancy/FancyTheme_Page2.png",
+      "xxh3": "e75d92c20074a528",
+      "bytes": 17402,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/fancy/FancyTheme_Page3.png": {
+      "path": "assets/theming/fancy/FancyTheme_Page3.png",
+      "xxh3": "22a85971886f9ef6",
+      "bytes": 73458,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/fancy/FancyTheme_Page4.png": {
+      "path": "assets/theming/fancy/FancyTheme_Page4.png",
+      "xxh3": "5af191c226edf971",
+      "bytes": 20885,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/fancy/FancyTheme_Page5.png": {
+      "path": "assets/theming/fancy/FancyTheme_Page5.png",
+      "xxh3": "079322334d69676a",
+      "bytes": 20636,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/fancy/FancyTheme_Page6.png": {
+      "path": "assets/theming/fancy/FancyTheme_Page6.png",
+      "xxh3": "12938ac34cd7d5e6",
+      "bytes": 44519,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/fancy/FancyTheme_minislide_Page1.png": {
+      "path": "assets/theming/fancy/FancyTheme_minislide_Page1.png",
+      "xxh3": "833a3ca6a22f2835",
+      "bytes": 40713,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/fancy/FancyTheme_minislide_Page2.png": {
+      "path": "assets/theming/fancy/FancyTheme_minislide_Page2.png",
+      "xxh3": "e75d92c20074a528",
+      "bytes": 17402,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/fancy/FancyTheme_minislide_Page3.png": {
+      "path": "assets/theming/fancy/FancyTheme_minislide_Page3.png",
+      "xxh3": "99f21ef900169775",
+      "bytes": 82765,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/fancy/FancyTheme_minislide_Page4.png": {
+      "path": "assets/theming/fancy/FancyTheme_minislide_Page4.png",
+      "xxh3": "6054daf64f0652fb",
+      "bytes": 20733,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/fancy/FancyTheme_minislide_Page5.png": {
+      "path": "assets/theming/fancy/FancyTheme_minislide_Page5.png",
+      "xxh3": "079322334d69676a",
+      "bytes": 20636,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/fancy/FancyTheme_minislide_Page6.png": {
+      "path": "assets/theming/fancy/FancyTheme_minislide_Page6.png",
+      "xxh3": "63a761e2406f7805",
+      "bytes": 53683,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/metropolis/MetropolisTheme_Page1.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_Page1.png",
+      "xxh3": "a7ad67b2d9410acc",
+      "bytes": 54601,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/metropolis/MetropolisTheme_Page2.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_Page2.png",
+      "xxh3": "5c0ab9324d4070de",
+      "bytes": 16963,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/metropolis/MetropolisTheme_Page3.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_Page3.png",
+      "xxh3": "14d59c3186e85614",
+      "bytes": 62174,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/metropolis/MetropolisTheme_Page4.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_Page4.png",
+      "xxh3": "8907c4f22419c8ee",
+      "bytes": 20979,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/metropolis/MetropolisTheme_Page5.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_Page5.png",
+      "xxh3": "ed48c7b7cdc3da57",
+      "bytes": 19316,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/metropolis/MetropolisTheme_Page6.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_Page6.png",
+      "xxh3": "d9dc9401663f1643",
+      "bytes": 37567,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/metropolis/MetropolisTheme_minislide_Page1.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_minislide_Page1.png",
+      "xxh3": "a7ad67b2d9410acc",
+      "bytes": 54601,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/metropolis/MetropolisTheme_minislide_Page2.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_minislide_Page2.png",
+      "xxh3": "5c0ab9324d4070de",
+      "bytes": 16963,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/metropolis/MetropolisTheme_minislide_Page3.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_minislide_Page3.png",
+      "xxh3": "401d2534ee34d89b",
+      "bytes": 72391,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/metropolis/MetropolisTheme_minislide_Page4.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_minislide_Page4.png",
+      "xxh3": "b112630626e953dc",
+      "bytes": 21111,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/metropolis/MetropolisTheme_minislide_Page5.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_minislide_Page5.png",
+      "xxh3": "ed48c7b7cdc3da57",
+      "bytes": 19316,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/metropolis/MetropolisTheme_minislide_Page6.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_minislide_Page6.png",
+      "xxh3": "a218ee37aaf8eebf",
+      "bytes": 46190,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/simple/SimpleTheme_Page1.png": {
+      "path": "assets/theming/simple/SimpleTheme_Page1.png",
+      "xxh3": "8329a252ee60c15c",
+      "bytes": 57647,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/simple/SimpleTheme_Page2.png": {
+      "path": "assets/theming/simple/SimpleTheme_Page2.png",
+      "xxh3": "0c0ad3066cb4d034",
+      "bytes": 26716,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/simple/SimpleTheme_Page3.png": {
+      "path": "assets/theming/simple/SimpleTheme_Page3.png",
+      "xxh3": "0bb6085cdb4988c3",
+      "bytes": 68254,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/simple/SimpleTheme_Page4.png": {
+      "path": "assets/theming/simple/SimpleTheme_Page4.png",
+      "xxh3": "aabee75c0ea6e4ea",
+      "bytes": 20757,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/simple/SimpleTheme_Page5.png": {
+      "path": "assets/theming/simple/SimpleTheme_Page5.png",
+      "xxh3": "ae55bfbf7db65ab0",
+      "bytes": 27359,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/simple/SimpleTheme_Page6.png": {
+      "path": "assets/theming/simple/SimpleTheme_Page6.png",
+      "xxh3": "07af82c604f160ef",
+      "bytes": 39848,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/simple/SimpleTheme_minislide_Page1.png": {
+      "path": "assets/theming/simple/SimpleTheme_minislide_Page1.png",
+      "xxh3": "8329a252ee60c15c",
+      "bytes": 57647,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/simple/SimpleTheme_minislide_Page2.png": {
+      "path": "assets/theming/simple/SimpleTheme_minislide_Page2.png",
+      "xxh3": "27eb849e844e6d57",
+      "bytes": 26767,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/simple/SimpleTheme_minislide_Page3.png": {
+      "path": "assets/theming/simple/SimpleTheme_minislide_Page3.png",
+      "xxh3": "289a7a91d3ea8fb2",
+      "bytes": 78322,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/simple/SimpleTheme_minislide_Page4.png": {
+      "path": "assets/theming/simple/SimpleTheme_minislide_Page4.png",
+      "xxh3": "a1beaf479a955e2f",
+      "bytes": 20890,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/simple/SimpleTheme_minislide_Page5.png": {
+      "path": "assets/theming/simple/SimpleTheme_minislide_Page5.png",
+      "xxh3": "811c5e0bbb067e65",
+      "bytes": 27157,
+      "width": 1684,
+      "height": 947
+    },
+    "../assets/theming/simple/SimpleTheme_minislide_Page6.png": {
+      "path": "assets/theming/simple/SimpleTheme_minislide_Page6.png",
+      "xxh3": "89008cb9540d473a",
+      "bytes": 49388,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/alternatives1.png": {
+      "path": "_site/assets/animations/alternatives1.png",
+      "xxh3": "ee2d7b7fc8d4782c",
+      "bytes": 34793,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/alternatives2.png": {
+      "path": "_site/assets/animations/alternatives2.png",
+      "xxh3": "65669e9d9294f050",
+      "bytes": 36483,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/alternatives3.png": {
+      "path": "_site/assets/animations/alternatives3.png",
+      "xxh3": "ed4684399154a74f",
+      "bytes": 36754,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/cetz1.png": {
+      "path": "_site/assets/animations/cetz1.png",
+      "xxh3": "11cf3be45ce63118",
+      "bytes": 22576,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/cetz2.png": {
+      "path": "_site/assets/animations/cetz2.png",
+      "xxh3": "b579b8d234772d90",
+      "bytes": 22546,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/cetz3.png": {
+      "path": "_site/assets/animations/cetz3.png",
+      "xxh3": "6aa11a820e18ec39",
+      "bytes": 34076,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/fletcher1.png": {
+      "path": "_site/assets/animations/fletcher1.png",
+      "xxh3": "85b32f59278e0972",
+      "bytes": 70284,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/fletcher2.png": {
+      "path": "_site/assets/animations/fletcher2.png",
+      "xxh3": "fd1ad3c7a387cd84",
+      "bytes": 73708,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/fletcher3.png": {
+      "path": "_site/assets/animations/fletcher3.png",
+      "xxh3": "271eec745e6a36b7",
+      "bytes": 83411,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/item-by-item1.png": {
+      "path": "_site/assets/animations/item-by-item1.png",
+      "xxh3": "eeedd2916a6a3e5f",
+      "bytes": 39461,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/item-by-item2.png": {
+      "path": "_site/assets/animations/item-by-item2.png",
+      "xxh3": "b48c413ef5c72492",
+      "bytes": 54557,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/item-by-item3.png": {
+      "path": "_site/assets/animations/item-by-item3.png",
+      "xxh3": "10316aaf2889a55e",
+      "bytes": 66784,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/meanwhile1.png": {
+      "path": "_site/assets/animations/meanwhile1.png",
+      "xxh3": "e85c5e403f6f8e54",
+      "bytes": 26037,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/meanwhile2.png": {
+      "path": "_site/assets/animations/meanwhile2.png",
+      "xxh3": "8e720c6fdcd0f4e8",
+      "bytes": 32060,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/one-by-one1.png": {
+      "path": "_site/assets/animations/one-by-one1.png",
+      "xxh3": "a6a7cf65c33226f9",
+      "bytes": 24692,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/one-by-one2.png": {
+      "path": "_site/assets/animations/one-by-one2.png",
+      "xxh3": "9f6ea1a63cdc9afb",
+      "bytes": 26648,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/one-by-one3.png": {
+      "path": "_site/assets/animations/one-by-one3.png",
+      "xxh3": "bb23e94a8ad48a62",
+      "bytes": 28181,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/pause1.png": {
+      "path": "_site/assets/animations/pause1.png",
+      "xxh3": "b34936ba7c49e207",
+      "bytes": 22580,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/pause2.png": {
+      "path": "_site/assets/animations/pause2.png",
+      "xxh3": "76196978424ca96e",
+      "bytes": 35205,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/pause3.png": {
+      "path": "_site/assets/animations/pause3.png",
+      "xxh3": "e004ed8cd284dd95",
+      "bytes": 48365,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/track1.png": {
+      "path": "_site/assets/animations/track1.png",
+      "xxh3": "2f85d355c8d18cfd",
+      "bytes": 29367,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/track2.png": {
+      "path": "_site/assets/animations/track2.png",
+      "xxh3": "3679c99f50272396",
+      "bytes": 39888,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/track3.png": {
+      "path": "_site/assets/animations/track3.png",
+      "xxh3": "db15725dbf647c40",
+      "bytes": 42637,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/uncover-only1.png": {
+      "path": "_site/assets/animations/uncover-only1.png",
+      "xxh3": "e15c759578e96174",
+      "bytes": 51920,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/uncover-only2.png": {
+      "path": "_site/assets/animations/uncover-only2.png",
+      "xxh3": "9b870a1276bdc495",
+      "bytes": 38228,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/uncover-only3.png": {
+      "path": "_site/assets/animations/uncover-only3.png",
+      "xxh3": "dabc63ac3f696d8f",
+      "bytes": 40405,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/appendix-hide1.png": {
+      "path": "_site/assets/components/appendix-hide1.png",
+      "xxh3": "46723e9a54e7eee8",
+      "bytes": 28195,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/appendix-hide2.png": {
+      "path": "_site/assets/components/appendix-hide2.png",
+      "xxh3": "0979681d8d8fde54",
+      "bytes": 26715,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/appendix-hide3.png": {
+      "path": "_site/assets/components/appendix-hide3.png",
+      "xxh3": "918cffa5018e3900",
+      "bytes": 39065,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/appendix-hide4.png": {
+      "path": "_site/assets/components/appendix-hide4.png",
+      "xxh3": "bd08e6f48158b62c",
+      "bytes": 27358,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/appendix-hide5.png": {
+      "path": "_site/assets/components/appendix-hide5.png",
+      "xxh3": "9d0dd1ada8f756f0",
+      "bytes": 41885,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/appendix-hide6.png": {
+      "path": "_site/assets/components/appendix-hide6.png",
+      "xxh3": "30abede0c2e45f75",
+      "bytes": 18523,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/appendix-hide7.png": {
+      "path": "_site/assets/components/appendix-hide7.png",
+      "xxh3": "b098a55d75e4d0ca",
+      "bytes": 46001,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/appendix-nohide1.png": {
+      "path": "_site/assets/components/appendix-nohide1.png",
+      "xxh3": "352f523045e5e0c8",
+      "bytes": 33888,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/appendix-nohide2.png": {
+      "path": "_site/assets/components/appendix-nohide2.png",
+      "xxh3": "f06645c80e462f9c",
+      "bytes": 31646,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/appendix-nohide3.png": {
+      "path": "_site/assets/components/appendix-nohide3.png",
+      "xxh3": "68cc7c0fe34358e6",
+      "bytes": 39065,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/appendix-nohide4.png": {
+      "path": "_site/assets/components/appendix-nohide4.png",
+      "xxh3": "a58e3a4f3896ddea",
+      "bytes": 32254,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/appendix-nohide5.png": {
+      "path": "_site/assets/components/appendix-nohide5.png",
+      "xxh3": "5cd5ef524399f7f4",
+      "bytes": 41885,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/appendix-nohide6.png": {
+      "path": "_site/assets/components/appendix-nohide6.png",
+      "xxh3": "6b74b2ad1d7271f5",
+      "bytes": 32206,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/appendix-nohide7.png": {
+      "path": "_site/assets/components/appendix-nohide7.png",
+      "xxh3": "2ec9ed48b390b98f",
+      "bytes": 46001,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/basic-appendix1.png": {
+      "path": "_site/assets/components/basic-appendix1.png",
+      "xxh3": "9642b14c29e01ad8",
+      "bytes": 23385,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/basic-appendix2.png": {
+      "path": "_site/assets/components/basic-appendix2.png",
+      "xxh3": "dfe646a95d6e3c33",
+      "bytes": 33280,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/basic-appendix3.png": {
+      "path": "_site/assets/components/basic-appendix3.png",
+      "xxh3": "6fc5d38696b6268a",
+      "bytes": 24169,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/basic-appendix4.png": {
+      "path": "_site/assets/components/basic-appendix4.png",
+      "xxh3": "0aa3c43d4e497d6b",
+      "bytes": 40251,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/bibliography1.png": {
+      "path": "_site/assets/components/bibliography1.png",
+      "xxh3": "f07f2cbe2f628fe4",
+      "bytes": 50960,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/bibliography2.png": {
+      "path": "_site/assets/components/bibliography2.png",
+      "xxh3": "ea86990508f0925a",
+      "bytes": 39122,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/callout-cambfurt1.png": {
+      "path": "_site/assets/components/callout-cambfurt1.png",
+      "xxh3": "ed6f7e41469e40c7",
+      "bytes": 77820,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/callout-cambfurt2.png": {
+      "path": "_site/assets/components/callout-cambfurt2.png",
+      "xxh3": "925cec6d75619328",
+      "bytes": 60618,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/callout-cambfurt3.png": {
+      "path": "_site/assets/components/callout-cambfurt3.png",
+      "xxh3": "0fecb47dc8865302",
+      "bytes": 62318,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/callout-chalkboard1.png": {
+      "path": "_site/assets/components/callout-chalkboard1.png",
+      "xxh3": "4d4f979788174604",
+      "bytes": 1894994,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/callout-chalkboard2.png": {
+      "path": "_site/assets/components/callout-chalkboard2.png",
+      "xxh3": "a9ccbebf640e2cde",
+      "bytes": 2036661,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/callout-chalkboard3.png": {
+      "path": "_site/assets/components/callout-chalkboard3.png",
+      "xxh3": "dac6ac5b60012569",
+      "bytes": 2036820,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/callout-fancy1.png": {
+      "path": "_site/assets/components/callout-fancy1.png",
+      "xxh3": "a2b0513e618316ea",
+      "bytes": 78629,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/callout-fancy2.png": {
+      "path": "_site/assets/components/callout-fancy2.png",
+      "xxh3": "3eecd0765ef58d6e",
+      "bytes": 60885,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/callout-fancy3.png": {
+      "path": "_site/assets/components/callout-fancy3.png",
+      "xxh3": "bf2950db6a1f3c24",
+      "bytes": 62932,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/callout-metropolis1.png": {
+      "path": "_site/assets/components/callout-metropolis1.png",
+      "xxh3": "ecb3cce629efc078",
+      "bytes": 72337,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/callout-metropolis2.png": {
+      "path": "_site/assets/components/callout-metropolis2.png",
+      "xxh3": "65e1523505d05b6c",
+      "bytes": 52432,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/callout-metropolis3.png": {
+      "path": "_site/assets/components/callout-metropolis3.png",
+      "xxh3": "e5935013d663475e",
+      "bytes": 55270,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/callout-simple1.png": {
+      "path": "_site/assets/components/callout-simple1.png",
+      "xxh3": "a233c3927c5b0ef0",
+      "bytes": 83973,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/callout-simple2.png": {
+      "path": "_site/assets/components/callout-simple2.png",
+      "xxh3": "d69adc0077c69211",
+      "bytes": 61980,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/callout-simple3.png": {
+      "path": "_site/assets/components/callout-simple3.png",
+      "xxh3": "30722ed2f581f6ce",
+      "bytes": 64301,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/my-focus-slide1.png": {
+      "path": "_site/assets/components/my-focus-slide1.png",
+      "xxh3": "b15dc395af076387",
+      "bytes": 16046,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/my-focus-slide2.png": {
+      "path": "_site/assets/components/my-focus-slide2.png",
+      "xxh3": "cc51ed848a1992b2",
+      "bytes": 19082,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/short-long1.png": {
+      "path": "_site/assets/components/short-long1.png",
+      "xxh3": "e3b287ac8b7c624c",
+      "bytes": 24518,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/components/short-long2.png": {
+      "path": "_site/assets/components/short-long2.png",
+      "xxh3": "dda5325a23814a14",
+      "bytes": 38036,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/getting-started/basic-usage1.png": {
+      "path": "_site/assets/getting-started/basic-usage1.png",
+      "xxh3": "3813cdbb92a55224",
+      "bytes": 228079,
+      "width": 3508,
+      "height": 1973
+    },
+    "/_site/assets/getting-started/basic-usage2.png": {
+      "path": "_site/assets/getting-started/basic-usage2.png",
+      "xxh3": "306297f92fced422",
+      "bytes": 71365,
+      "width": 3508,
+      "height": 1973
+    },
+    "/_site/assets/getting-started/basic-usage3.png": {
+      "path": "_site/assets/getting-started/basic-usage3.png",
+      "xxh3": "9208e7fac9e12294",
+      "bytes": 63277,
+      "width": 3508,
+      "height": 1973
+    },
+    "/_site/assets/getting-started/basic-usage4.png": {
+      "path": "_site/assets/getting-started/basic-usage4.png",
+      "xxh3": "e48d0d3e26289405",
+      "bytes": 62218,
+      "width": 3508,
+      "height": 1973
+    },
+    "/_site/assets/getting-started/basic-usage5.png": {
+      "path": "_site/assets/getting-started/basic-usage5.png",
+      "xxh3": "2a5ddf4fb0056ef3",
+      "bytes": 33731,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/navigation/no-hide-toc1.png": {
+      "path": "_site/assets/navigation/no-hide-toc1.png",
+      "xxh3": "10f494f9d947432b",
+      "bytes": 28193,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/navigation/no-hide-toc2.png": {
+      "path": "_site/assets/navigation/no-hide-toc2.png",
+      "xxh3": "ef8339bea69b5546",
+      "bytes": 26713,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/navigation/no-hide-toc3.png": {
+      "path": "_site/assets/navigation/no-hide-toc3.png",
+      "xxh3": "3a4196ddf461e992",
+      "bytes": 27356,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/navigation/toc-progress-cambfurt1.png": {
+      "path": "_site/assets/navigation/toc-progress-cambfurt1.png",
+      "xxh3": "8cbaf732703faf91",
+      "bytes": 27908,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/navigation/toc-progress-chalkboard1.png": {
+      "path": "_site/assets/navigation/toc-progress-chalkboard1.png",
+      "xxh3": "f629c10b62c911b2",
+      "bytes": 2351490,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/navigation/toc-progress-fancy1.png": {
+      "path": "_site/assets/navigation/toc-progress-fancy1.png",
+      "xxh3": "90175e94b8a57a17",
+      "bytes": 28194,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/navigation/toc-progress-metropolis1.png": {
+      "path": "_site/assets/navigation/toc-progress-metropolis1.png",
+      "xxh3": "18038692c52907cf",
+      "bytes": 26851,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/navigation/toc-progress-metropolis2.png": {
+      "path": "_site/assets/navigation/toc-progress-metropolis2.png",
+      "xxh3": "5c0ab9324d4070de",
+      "bytes": 16963,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/navigation/toc-progress-simple1.png": {
+      "path": "_site/assets/navigation/toc-progress-simple1.png",
+      "xxh3": "06ed303354f78022",
+      "bytes": 28194,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/navigation/toc-progress-simple2.png": {
+      "path": "_site/assets/navigation/toc-progress-simple2.png",
+      "xxh3": "c09b3081f35d915a",
+      "bytes": 26714,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/navigation/with-hide-toc1.png": {
+      "path": "_site/assets/navigation/with-hide-toc1.png",
+      "xxh3": "8a909c93673bb9b1",
+      "bytes": 19047,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/navigation/with-hide-toc2.png": {
+      "path": "_site/assets/navigation/with-hide-toc2.png",
+      "xxh3": "2ac3e91a592263d9",
+      "bytes": 19095,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/navigation/with-hide-toc3.png": {
+      "path": "_site/assets/navigation/with-hide-toc3.png",
+      "xxh3": "17a75783f1e59029",
+      "bytes": 21438,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/cambfurt/CambfurtTheme_Page1.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_Page1.png",
+      "xxh3": "dd58c8bffacb437d",
+      "bytes": 67555,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/cambfurt/CambfurtTheme_Page2.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_Page2.png",
+      "xxh3": "a91722c667556543",
+      "bytes": 23305,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/cambfurt/CambfurtTheme_Page3.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_Page3.png",
+      "xxh3": "16ebf5f143385b5f",
+      "bytes": 78367,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/cambfurt/CambfurtTheme_Page4.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_Page4.png",
+      "xxh3": "2f07d5d9966847ac",
+      "bytes": 20787,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/cambfurt/CambfurtTheme_Page5.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_Page5.png",
+      "xxh3": "b9f28cb4ab39e0e3",
+      "bytes": 24918,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/cambfurt/CambfurtTheme_Page6.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_Page6.png",
+      "xxh3": "1e58a945dea5cd63",
+      "bytes": 51322,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page1.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page1.png",
+      "xxh3": "8d6b1e5a26657656",
+      "bytes": 67555,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page2.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page2.png",
+      "xxh3": "af8efc3c4896fefa",
+      "bytes": 23232,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page3.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page3.png",
+      "xxh3": "67b94655193e532d",
+      "bytes": 77154,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page4.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page4.png",
+      "xxh3": "4fdd04083c2638b9",
+      "bytes": 20680,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page5.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page5.png",
+      "xxh3": "acc8d185df1483a4",
+      "bytes": 24824,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page6.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page6.png",
+      "xxh3": "1fb963b4e90c7d99",
+      "bytes": 47465,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/chalkboard/ChalkboardTheme_Page1.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_Page1.png",
+      "xxh3": "7105059e45ee62a9",
+      "bytes": 2406139,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/chalkboard/ChalkboardTheme_Page2.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_Page2.png",
+      "xxh3": "5d447f706bbf6b45",
+      "bytes": 2333893,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/chalkboard/ChalkboardTheme_Page3.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_Page3.png",
+      "xxh3": "2c7abdab553c4da4",
+      "bytes": 2390757,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/chalkboard/ChalkboardTheme_Page4.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_Page4.png",
+      "xxh3": "5c1dde1c0c42bd5b",
+      "bytes": 2337049,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/chalkboard/ChalkboardTheme_Page5.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_Page5.png",
+      "xxh3": "43d1bd066ac2182d",
+      "bytes": 2330684,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/chalkboard/ChalkboardTheme_Page6.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_Page6.png",
+      "xxh3": "ada098d22bc6099e",
+      "bytes": 2358974,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page1.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page1.png",
+      "xxh3": "147f897d4a34dc79",
+      "bytes": 2403457,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page2.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page2.png",
+      "xxh3": "a7c40066300a617e",
+      "bytes": 2333896,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page3.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page3.png",
+      "xxh3": "b0bf579fd24b7b8e",
+      "bytes": 2406227,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page4.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page4.png",
+      "xxh3": "23e3eae0be8fee87",
+      "bytes": 2335819,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page5.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page5.png",
+      "xxh3": "5790406b6177d740",
+      "bytes": 2330679,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page6.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page6.png",
+      "xxh3": "cea36b3076db4d58",
+      "bytes": 2372254,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/fancy/FancyTheme_Page1.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_Page1.png",
+      "xxh3": "833a3ca6a22f2835",
+      "bytes": 40713,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/fancy/FancyTheme_Page2.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_Page2.png",
+      "xxh3": "e75d92c20074a528",
+      "bytes": 17402,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/fancy/FancyTheme_Page3.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_Page3.png",
+      "xxh3": "22a85971886f9ef6",
+      "bytes": 73458,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/fancy/FancyTheme_Page4.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_Page4.png",
+      "xxh3": "5af191c226edf971",
+      "bytes": 20885,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/fancy/FancyTheme_Page5.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_Page5.png",
+      "xxh3": "079322334d69676a",
+      "bytes": 20636,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/fancy/FancyTheme_Page6.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_Page6.png",
+      "xxh3": "12938ac34cd7d5e6",
+      "bytes": 44519,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/fancy/FancyTheme_minislide_Page1.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_minislide_Page1.png",
+      "xxh3": "833a3ca6a22f2835",
+      "bytes": 40713,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/fancy/FancyTheme_minislide_Page2.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_minislide_Page2.png",
+      "xxh3": "e75d92c20074a528",
+      "bytes": 17402,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/fancy/FancyTheme_minislide_Page3.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_minislide_Page3.png",
+      "xxh3": "99f21ef900169775",
+      "bytes": 82765,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/fancy/FancyTheme_minislide_Page4.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_minislide_Page4.png",
+      "xxh3": "6054daf64f0652fb",
+      "bytes": 20733,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/fancy/FancyTheme_minislide_Page5.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_minislide_Page5.png",
+      "xxh3": "079322334d69676a",
+      "bytes": 20636,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/fancy/FancyTheme_minislide_Page6.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_minislide_Page6.png",
+      "xxh3": "63a761e2406f7805",
+      "bytes": 53683,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/metropolis/MetropolisTheme_Page1.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_Page1.png",
+      "xxh3": "a7ad67b2d9410acc",
+      "bytes": 54601,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/metropolis/MetropolisTheme_Page2.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_Page2.png",
+      "xxh3": "5c0ab9324d4070de",
+      "bytes": 16963,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/metropolis/MetropolisTheme_Page3.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_Page3.png",
+      "xxh3": "14d59c3186e85614",
+      "bytes": 62174,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/metropolis/MetropolisTheme_Page4.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_Page4.png",
+      "xxh3": "8907c4f22419c8ee",
+      "bytes": 20979,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/metropolis/MetropolisTheme_Page5.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_Page5.png",
+      "xxh3": "ed48c7b7cdc3da57",
+      "bytes": 19316,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/metropolis/MetropolisTheme_Page6.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_Page6.png",
+      "xxh3": "d9dc9401663f1643",
+      "bytes": 37567,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/metropolis/MetropolisTheme_minislide_Page1.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_minislide_Page1.png",
+      "xxh3": "a7ad67b2d9410acc",
+      "bytes": 54601,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/metropolis/MetropolisTheme_minislide_Page2.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_minislide_Page2.png",
+      "xxh3": "5c0ab9324d4070de",
+      "bytes": 16963,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/metropolis/MetropolisTheme_minislide_Page3.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_minislide_Page3.png",
+      "xxh3": "401d2534ee34d89b",
+      "bytes": 72391,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/metropolis/MetropolisTheme_minislide_Page4.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_minislide_Page4.png",
+      "xxh3": "b112630626e953dc",
+      "bytes": 21111,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/metropolis/MetropolisTheme_minislide_Page5.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_minislide_Page5.png",
+      "xxh3": "ed48c7b7cdc3da57",
+      "bytes": 19316,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/metropolis/MetropolisTheme_minislide_Page6.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_minislide_Page6.png",
+      "xxh3": "a218ee37aaf8eebf",
+      "bytes": 46190,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/simple/SimpleTheme_Page1.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_Page1.png",
+      "xxh3": "8329a252ee60c15c",
+      "bytes": 57647,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/simple/SimpleTheme_Page2.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_Page2.png",
+      "xxh3": "0c0ad3066cb4d034",
+      "bytes": 26716,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/simple/SimpleTheme_Page3.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_Page3.png",
+      "xxh3": "0bb6085cdb4988c3",
+      "bytes": 68254,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/simple/SimpleTheme_Page4.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_Page4.png",
+      "xxh3": "aabee75c0ea6e4ea",
+      "bytes": 20757,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/simple/SimpleTheme_Page5.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_Page5.png",
+      "xxh3": "ae55bfbf7db65ab0",
+      "bytes": 27359,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/simple/SimpleTheme_Page6.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_Page6.png",
+      "xxh3": "07af82c604f160ef",
+      "bytes": 39848,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/simple/SimpleTheme_minislide_Page1.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_minislide_Page1.png",
+      "xxh3": "8329a252ee60c15c",
+      "bytes": 57647,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/simple/SimpleTheme_minislide_Page2.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_minislide_Page2.png",
+      "xxh3": "27eb849e844e6d57",
+      "bytes": 26767,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/simple/SimpleTheme_minislide_Page3.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_minislide_Page3.png",
+      "xxh3": "289a7a91d3ea8fb2",
+      "bytes": 78322,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/simple/SimpleTheme_minislide_Page4.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_minislide_Page4.png",
+      "xxh3": "a1beaf479a955e2f",
+      "bytes": 20890,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/simple/SimpleTheme_minislide_Page5.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_minislide_Page5.png",
+      "xxh3": "811c5e0bbb067e65",
+      "bytes": 27157,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/theming/simple/SimpleTheme_minislide_Page6.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_minislide_Page6.png",
+      "xxh3": "89008cb9540d473a",
+      "bytes": 49388,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/alternatives1.png": {
+      "path": "assets/animations/alternatives1.png",
+      "xxh3": "ee2d7b7fc8d4782c",
+      "bytes": 34793,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/alternatives2.png": {
+      "path": "assets/animations/alternatives2.png",
+      "xxh3": "65669e9d9294f050",
+      "bytes": 36483,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/alternatives3.png": {
+      "path": "assets/animations/alternatives3.png",
+      "xxh3": "ed4684399154a74f",
+      "bytes": 36754,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/cetz1.png": {
+      "path": "assets/animations/cetz1.png",
+      "xxh3": "11cf3be45ce63118",
+      "bytes": 22576,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/cetz2.png": {
+      "path": "assets/animations/cetz2.png",
+      "xxh3": "b579b8d234772d90",
+      "bytes": 22546,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/cetz3.png": {
+      "path": "assets/animations/cetz3.png",
+      "xxh3": "6aa11a820e18ec39",
+      "bytes": 34076,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/fletcher1.png": {
+      "path": "assets/animations/fletcher1.png",
+      "xxh3": "85b32f59278e0972",
+      "bytes": 70284,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/fletcher2.png": {
+      "path": "assets/animations/fletcher2.png",
+      "xxh3": "fd1ad3c7a387cd84",
+      "bytes": 73708,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/fletcher3.png": {
+      "path": "assets/animations/fletcher3.png",
+      "xxh3": "271eec745e6a36b7",
+      "bytes": 83411,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/item-by-item1.png": {
+      "path": "assets/animations/item-by-item1.png",
+      "xxh3": "eeedd2916a6a3e5f",
+      "bytes": 39461,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/item-by-item2.png": {
+      "path": "assets/animations/item-by-item2.png",
+      "xxh3": "b48c413ef5c72492",
+      "bytes": 54557,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/item-by-item3.png": {
+      "path": "assets/animations/item-by-item3.png",
+      "xxh3": "10316aaf2889a55e",
+      "bytes": 66784,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/meanwhile1.png": {
+      "path": "assets/animations/meanwhile1.png",
+      "xxh3": "e85c5e403f6f8e54",
+      "bytes": 26037,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/meanwhile2.png": {
+      "path": "assets/animations/meanwhile2.png",
+      "xxh3": "8e720c6fdcd0f4e8",
+      "bytes": 32060,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/one-by-one1.png": {
+      "path": "assets/animations/one-by-one1.png",
+      "xxh3": "a6a7cf65c33226f9",
+      "bytes": 24692,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/one-by-one2.png": {
+      "path": "assets/animations/one-by-one2.png",
+      "xxh3": "9f6ea1a63cdc9afb",
+      "bytes": 26648,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/one-by-one3.png": {
+      "path": "assets/animations/one-by-one3.png",
+      "xxh3": "bb23e94a8ad48a62",
+      "bytes": 28181,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/pause1.png": {
+      "path": "assets/animations/pause1.png",
+      "xxh3": "b34936ba7c49e207",
+      "bytes": 22580,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/pause2.png": {
+      "path": "assets/animations/pause2.png",
+      "xxh3": "76196978424ca96e",
+      "bytes": 35205,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/pause3.png": {
+      "path": "assets/animations/pause3.png",
+      "xxh3": "e004ed8cd284dd95",
+      "bytes": 48365,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/track1.png": {
+      "path": "assets/animations/track1.png",
+      "xxh3": "2f85d355c8d18cfd",
+      "bytes": 29367,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/track2.png": {
+      "path": "assets/animations/track2.png",
+      "xxh3": "3679c99f50272396",
+      "bytes": 39888,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/track3.png": {
+      "path": "assets/animations/track3.png",
+      "xxh3": "db15725dbf647c40",
+      "bytes": 42637,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/uncover-only1.png": {
+      "path": "assets/animations/uncover-only1.png",
+      "xxh3": "e15c759578e96174",
+      "bytes": 51920,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/uncover-only2.png": {
+      "path": "assets/animations/uncover-only2.png",
+      "xxh3": "9b870a1276bdc495",
+      "bytes": 38228,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/uncover-only3.png": {
+      "path": "assets/animations/uncover-only3.png",
+      "xxh3": "dabc63ac3f696d8f",
+      "bytes": 40405,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-hide1.png": {
+      "path": "assets/components/appendix-hide1.png",
+      "xxh3": "46723e9a54e7eee8",
+      "bytes": 28195,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-hide2.png": {
+      "path": "assets/components/appendix-hide2.png",
+      "xxh3": "0979681d8d8fde54",
+      "bytes": 26715,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-hide3.png": {
+      "path": "assets/components/appendix-hide3.png",
+      "xxh3": "918cffa5018e3900",
+      "bytes": 39065,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-hide4.png": {
+      "path": "assets/components/appendix-hide4.png",
+      "xxh3": "bd08e6f48158b62c",
+      "bytes": 27358,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-hide5.png": {
+      "path": "assets/components/appendix-hide5.png",
+      "xxh3": "9d0dd1ada8f756f0",
+      "bytes": 41885,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-hide6.png": {
+      "path": "assets/components/appendix-hide6.png",
+      "xxh3": "30abede0c2e45f75",
+      "bytes": 18523,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-hide7.png": {
+      "path": "assets/components/appendix-hide7.png",
+      "xxh3": "b098a55d75e4d0ca",
+      "bytes": 46001,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-nohide1.png": {
+      "path": "assets/components/appendix-nohide1.png",
+      "xxh3": "352f523045e5e0c8",
+      "bytes": 33888,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-nohide2.png": {
+      "path": "assets/components/appendix-nohide2.png",
+      "xxh3": "f06645c80e462f9c",
+      "bytes": 31646,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-nohide3.png": {
+      "path": "assets/components/appendix-nohide3.png",
+      "xxh3": "68cc7c0fe34358e6",
+      "bytes": 39065,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-nohide4.png": {
+      "path": "assets/components/appendix-nohide4.png",
+      "xxh3": "a58e3a4f3896ddea",
+      "bytes": 32254,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-nohide5.png": {
+      "path": "assets/components/appendix-nohide5.png",
+      "xxh3": "5cd5ef524399f7f4",
+      "bytes": 41885,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-nohide6.png": {
+      "path": "assets/components/appendix-nohide6.png",
+      "xxh3": "6b74b2ad1d7271f5",
+      "bytes": 32206,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/appendix-nohide7.png": {
+      "path": "assets/components/appendix-nohide7.png",
+      "xxh3": "2ec9ed48b390b98f",
+      "bytes": 46001,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/basic-appendix1.png": {
+      "path": "assets/components/basic-appendix1.png",
+      "xxh3": "9642b14c29e01ad8",
+      "bytes": 23385,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/basic-appendix2.png": {
+      "path": "assets/components/basic-appendix2.png",
+      "xxh3": "dfe646a95d6e3c33",
+      "bytes": 33280,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/basic-appendix3.png": {
+      "path": "assets/components/basic-appendix3.png",
+      "xxh3": "6fc5d38696b6268a",
+      "bytes": 24169,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/basic-appendix4.png": {
+      "path": "assets/components/basic-appendix4.png",
+      "xxh3": "0aa3c43d4e497d6b",
+      "bytes": 40251,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/bibliography1.png": {
+      "path": "assets/components/bibliography1.png",
+      "xxh3": "f07f2cbe2f628fe4",
+      "bytes": 50960,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/bibliography2.png": {
+      "path": "assets/components/bibliography2.png",
+      "xxh3": "ea86990508f0925a",
+      "bytes": 39122,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-cambfurt1.png": {
+      "path": "assets/components/callout-cambfurt1.png",
+      "xxh3": "ed6f7e41469e40c7",
+      "bytes": 77820,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-cambfurt2.png": {
+      "path": "assets/components/callout-cambfurt2.png",
+      "xxh3": "925cec6d75619328",
+      "bytes": 60618,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-cambfurt3.png": {
+      "path": "assets/components/callout-cambfurt3.png",
+      "xxh3": "0fecb47dc8865302",
+      "bytes": 62318,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-chalkboard1.png": {
+      "path": "assets/components/callout-chalkboard1.png",
+      "xxh3": "4d4f979788174604",
+      "bytes": 1894994,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-chalkboard2.png": {
+      "path": "assets/components/callout-chalkboard2.png",
+      "xxh3": "a9ccbebf640e2cde",
+      "bytes": 2036661,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-chalkboard3.png": {
+      "path": "assets/components/callout-chalkboard3.png",
+      "xxh3": "dac6ac5b60012569",
+      "bytes": 2036820,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-fancy1.png": {
+      "path": "assets/components/callout-fancy1.png",
+      "xxh3": "a2b0513e618316ea",
+      "bytes": 78629,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-fancy2.png": {
+      "path": "assets/components/callout-fancy2.png",
+      "xxh3": "3eecd0765ef58d6e",
+      "bytes": 60885,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-fancy3.png": {
+      "path": "assets/components/callout-fancy3.png",
+      "xxh3": "bf2950db6a1f3c24",
+      "bytes": 62932,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-metropolis1.png": {
+      "path": "assets/components/callout-metropolis1.png",
+      "xxh3": "ecb3cce629efc078",
+      "bytes": 72337,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-metropolis2.png": {
+      "path": "assets/components/callout-metropolis2.png",
+      "xxh3": "65e1523505d05b6c",
+      "bytes": 52432,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-metropolis3.png": {
+      "path": "assets/components/callout-metropolis3.png",
+      "xxh3": "e5935013d663475e",
+      "bytes": 55270,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-simple1.png": {
+      "path": "assets/components/callout-simple1.png",
+      "xxh3": "a233c3927c5b0ef0",
+      "bytes": 83973,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-simple2.png": {
+      "path": "assets/components/callout-simple2.png",
+      "xxh3": "d69adc0077c69211",
+      "bytes": 61980,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/callout-simple3.png": {
+      "path": "assets/components/callout-simple3.png",
+      "xxh3": "30722ed2f581f6ce",
+      "bytes": 64301,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/my-focus-slide1.png": {
+      "path": "assets/components/my-focus-slide1.png",
+      "xxh3": "b15dc395af076387",
+      "bytes": 16046,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/my-focus-slide2.png": {
+      "path": "assets/components/my-focus-slide2.png",
+      "xxh3": "cc51ed848a1992b2",
+      "bytes": 19082,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/short-long1.png": {
+      "path": "assets/components/short-long1.png",
+      "xxh3": "e3b287ac8b7c624c",
+      "bytes": 24518,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/components/short-long2.png": {
+      "path": "assets/components/short-long2.png",
+      "xxh3": "dda5325a23814a14",
+      "bytes": 38036,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/getting-started/basic-usage1.png": {
+      "path": "assets/getting-started/basic-usage1.png",
+      "xxh3": "3813cdbb92a55224",
+      "bytes": 228079,
+      "width": 3508,
+      "height": 1973
+    },
+    "/assets/getting-started/basic-usage2.png": {
+      "path": "assets/getting-started/basic-usage2.png",
+      "xxh3": "306297f92fced422",
+      "bytes": 71365,
+      "width": 3508,
+      "height": 1973
+    },
+    "/assets/getting-started/basic-usage3.png": {
+      "path": "assets/getting-started/basic-usage3.png",
+      "xxh3": "9208e7fac9e12294",
+      "bytes": 63277,
+      "width": 3508,
+      "height": 1973
+    },
+    "/assets/getting-started/basic-usage4.png": {
+      "path": "assets/getting-started/basic-usage4.png",
+      "xxh3": "e48d0d3e26289405",
+      "bytes": 62218,
+      "width": 3508,
+      "height": 1973
+    },
+    "/assets/getting-started/basic-usage5.png": {
+      "path": "assets/getting-started/basic-usage5.png",
+      "xxh3": "2a5ddf4fb0056ef3",
+      "bytes": 33731,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/no-hide-toc1.png": {
+      "path": "assets/navigation/no-hide-toc1.png",
+      "xxh3": "10f494f9d947432b",
+      "bytes": 28193,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/no-hide-toc2.png": {
+      "path": "assets/navigation/no-hide-toc2.png",
+      "xxh3": "ef8339bea69b5546",
+      "bytes": 26713,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/no-hide-toc3.png": {
+      "path": "assets/navigation/no-hide-toc3.png",
+      "xxh3": "3a4196ddf461e992",
+      "bytes": 27356,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/toc-progress-cambfurt1.png": {
+      "path": "assets/navigation/toc-progress-cambfurt1.png",
+      "xxh3": "8cbaf732703faf91",
+      "bytes": 27908,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/toc-progress-chalkboard1.png": {
+      "path": "assets/navigation/toc-progress-chalkboard1.png",
+      "xxh3": "f629c10b62c911b2",
+      "bytes": 2351490,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/toc-progress-fancy1.png": {
+      "path": "assets/navigation/toc-progress-fancy1.png",
+      "xxh3": "90175e94b8a57a17",
+      "bytes": 28194,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/toc-progress-metropolis1.png": {
+      "path": "assets/navigation/toc-progress-metropolis1.png",
+      "xxh3": "18038692c52907cf",
+      "bytes": 26851,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/toc-progress-metropolis2.png": {
+      "path": "assets/navigation/toc-progress-metropolis2.png",
+      "xxh3": "5c0ab9324d4070de",
+      "bytes": 16963,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/toc-progress-simple1.png": {
+      "path": "assets/navigation/toc-progress-simple1.png",
+      "xxh3": "06ed303354f78022",
+      "bytes": 28194,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/toc-progress-simple2.png": {
+      "path": "assets/navigation/toc-progress-simple2.png",
+      "xxh3": "c09b3081f35d915a",
+      "bytes": 26714,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/with-hide-toc1.png": {
+      "path": "assets/navigation/with-hide-toc1.png",
+      "xxh3": "8a909c93673bb9b1",
+      "bytes": 19047,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/with-hide-toc2.png": {
+      "path": "assets/navigation/with-hide-toc2.png",
+      "xxh3": "2ac3e91a592263d9",
+      "bytes": 19095,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/navigation/with-hide-toc3.png": {
+      "path": "assets/navigation/with-hide-toc3.png",
+      "xxh3": "17a75783f1e59029",
+      "bytes": 21438,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/cambfurt/CambfurtTheme_Page1.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_Page1.png",
+      "xxh3": "dd58c8bffacb437d",
+      "bytes": 67555,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/cambfurt/CambfurtTheme_Page2.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_Page2.png",
+      "xxh3": "a91722c667556543",
+      "bytes": 23305,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/cambfurt/CambfurtTheme_Page3.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_Page3.png",
+      "xxh3": "16ebf5f143385b5f",
+      "bytes": 78367,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/cambfurt/CambfurtTheme_Page4.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_Page4.png",
+      "xxh3": "2f07d5d9966847ac",
+      "bytes": 20787,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/cambfurt/CambfurtTheme_Page5.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_Page5.png",
+      "xxh3": "b9f28cb4ab39e0e3",
+      "bytes": 24918,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/cambfurt/CambfurtTheme_Page6.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_Page6.png",
+      "xxh3": "1e58a945dea5cd63",
+      "bytes": 51322,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/cambfurt/CambfurtTheme_minislide_Page1.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_minislide_Page1.png",
+      "xxh3": "8d6b1e5a26657656",
+      "bytes": 67555,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/cambfurt/CambfurtTheme_minislide_Page2.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_minislide_Page2.png",
+      "xxh3": "af8efc3c4896fefa",
+      "bytes": 23232,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/cambfurt/CambfurtTheme_minislide_Page3.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_minislide_Page3.png",
+      "xxh3": "67b94655193e532d",
+      "bytes": 77154,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/cambfurt/CambfurtTheme_minislide_Page4.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_minislide_Page4.png",
+      "xxh3": "4fdd04083c2638b9",
+      "bytes": 20680,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/cambfurt/CambfurtTheme_minislide_Page5.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_minislide_Page5.png",
+      "xxh3": "acc8d185df1483a4",
+      "bytes": 24824,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/cambfurt/CambfurtTheme_minislide_Page6.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_minislide_Page6.png",
+      "xxh3": "1fb963b4e90c7d99",
+      "bytes": 47465,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/chalkboard/ChalkboardTheme_Page1.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_Page1.png",
+      "xxh3": "7105059e45ee62a9",
+      "bytes": 2406139,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/chalkboard/ChalkboardTheme_Page2.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_Page2.png",
+      "xxh3": "5d447f706bbf6b45",
+      "bytes": 2333893,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/chalkboard/ChalkboardTheme_Page3.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_Page3.png",
+      "xxh3": "2c7abdab553c4da4",
+      "bytes": 2390757,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/chalkboard/ChalkboardTheme_Page4.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_Page4.png",
+      "xxh3": "5c1dde1c0c42bd5b",
+      "bytes": 2337049,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/chalkboard/ChalkboardTheme_Page5.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_Page5.png",
+      "xxh3": "43d1bd066ac2182d",
+      "bytes": 2330684,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/chalkboard/ChalkboardTheme_Page6.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_Page6.png",
+      "xxh3": "ada098d22bc6099e",
+      "bytes": 2358974,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/chalkboard/ChalkboardTheme_minislide_Page1.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_minislide_Page1.png",
+      "xxh3": "147f897d4a34dc79",
+      "bytes": 2403457,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/chalkboard/ChalkboardTheme_minislide_Page2.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_minislide_Page2.png",
+      "xxh3": "a7c40066300a617e",
+      "bytes": 2333896,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/chalkboard/ChalkboardTheme_minislide_Page3.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_minislide_Page3.png",
+      "xxh3": "b0bf579fd24b7b8e",
+      "bytes": 2406227,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/chalkboard/ChalkboardTheme_minislide_Page4.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_minislide_Page4.png",
+      "xxh3": "23e3eae0be8fee87",
+      "bytes": 2335819,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/chalkboard/ChalkboardTheme_minislide_Page5.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_minislide_Page5.png",
+      "xxh3": "5790406b6177d740",
+      "bytes": 2330679,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/chalkboard/ChalkboardTheme_minislide_Page6.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_minislide_Page6.png",
+      "xxh3": "cea36b3076db4d58",
+      "bytes": 2372254,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/fancy/FancyTheme_Page1.png": {
+      "path": "assets/theming/fancy/FancyTheme_Page1.png",
+      "xxh3": "833a3ca6a22f2835",
+      "bytes": 40713,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/fancy/FancyTheme_Page2.png": {
+      "path": "assets/theming/fancy/FancyTheme_Page2.png",
+      "xxh3": "e75d92c20074a528",
+      "bytes": 17402,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/fancy/FancyTheme_Page3.png": {
+      "path": "assets/theming/fancy/FancyTheme_Page3.png",
+      "xxh3": "22a85971886f9ef6",
+      "bytes": 73458,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/fancy/FancyTheme_Page4.png": {
+      "path": "assets/theming/fancy/FancyTheme_Page4.png",
+      "xxh3": "5af191c226edf971",
+      "bytes": 20885,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/fancy/FancyTheme_Page5.png": {
+      "path": "assets/theming/fancy/FancyTheme_Page5.png",
+      "xxh3": "079322334d69676a",
+      "bytes": 20636,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/fancy/FancyTheme_Page6.png": {
+      "path": "assets/theming/fancy/FancyTheme_Page6.png",
+      "xxh3": "12938ac34cd7d5e6",
+      "bytes": 44519,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/fancy/FancyTheme_minislide_Page1.png": {
+      "path": "assets/theming/fancy/FancyTheme_minislide_Page1.png",
+      "xxh3": "833a3ca6a22f2835",
+      "bytes": 40713,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/fancy/FancyTheme_minislide_Page2.png": {
+      "path": "assets/theming/fancy/FancyTheme_minislide_Page2.png",
+      "xxh3": "e75d92c20074a528",
+      "bytes": 17402,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/fancy/FancyTheme_minislide_Page3.png": {
+      "path": "assets/theming/fancy/FancyTheme_minislide_Page3.png",
+      "xxh3": "99f21ef900169775",
+      "bytes": 82765,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/fancy/FancyTheme_minislide_Page4.png": {
+      "path": "assets/theming/fancy/FancyTheme_minislide_Page4.png",
+      "xxh3": "6054daf64f0652fb",
+      "bytes": 20733,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/fancy/FancyTheme_minislide_Page5.png": {
+      "path": "assets/theming/fancy/FancyTheme_minislide_Page5.png",
+      "xxh3": "079322334d69676a",
+      "bytes": 20636,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/fancy/FancyTheme_minislide_Page6.png": {
+      "path": "assets/theming/fancy/FancyTheme_minislide_Page6.png",
+      "xxh3": "63a761e2406f7805",
+      "bytes": 53683,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/metropolis/MetropolisTheme_Page1.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_Page1.png",
+      "xxh3": "a7ad67b2d9410acc",
+      "bytes": 54601,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/metropolis/MetropolisTheme_Page2.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_Page2.png",
+      "xxh3": "5c0ab9324d4070de",
+      "bytes": 16963,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/metropolis/MetropolisTheme_Page3.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_Page3.png",
+      "xxh3": "14d59c3186e85614",
+      "bytes": 62174,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/metropolis/MetropolisTheme_Page4.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_Page4.png",
+      "xxh3": "8907c4f22419c8ee",
+      "bytes": 20979,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/metropolis/MetropolisTheme_Page5.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_Page5.png",
+      "xxh3": "ed48c7b7cdc3da57",
+      "bytes": 19316,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/metropolis/MetropolisTheme_Page6.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_Page6.png",
+      "xxh3": "d9dc9401663f1643",
+      "bytes": 37567,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/metropolis/MetropolisTheme_minislide_Page1.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_minislide_Page1.png",
+      "xxh3": "a7ad67b2d9410acc",
+      "bytes": 54601,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/metropolis/MetropolisTheme_minislide_Page2.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_minislide_Page2.png",
+      "xxh3": "5c0ab9324d4070de",
+      "bytes": 16963,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/metropolis/MetropolisTheme_minislide_Page3.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_minislide_Page3.png",
+      "xxh3": "401d2534ee34d89b",
+      "bytes": 72391,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/metropolis/MetropolisTheme_minislide_Page4.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_minislide_Page4.png",
+      "xxh3": "b112630626e953dc",
+      "bytes": 21111,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/metropolis/MetropolisTheme_minislide_Page5.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_minislide_Page5.png",
+      "xxh3": "ed48c7b7cdc3da57",
+      "bytes": 19316,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/metropolis/MetropolisTheme_minislide_Page6.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_minislide_Page6.png",
+      "xxh3": "a218ee37aaf8eebf",
+      "bytes": 46190,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/simple/SimpleTheme_Page1.png": {
+      "path": "assets/theming/simple/SimpleTheme_Page1.png",
+      "xxh3": "8329a252ee60c15c",
+      "bytes": 57647,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/simple/SimpleTheme_Page2.png": {
+      "path": "assets/theming/simple/SimpleTheme_Page2.png",
+      "xxh3": "0c0ad3066cb4d034",
+      "bytes": 26716,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/simple/SimpleTheme_Page3.png": {
+      "path": "assets/theming/simple/SimpleTheme_Page3.png",
+      "xxh3": "0bb6085cdb4988c3",
+      "bytes": 68254,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/simple/SimpleTheme_Page4.png": {
+      "path": "assets/theming/simple/SimpleTheme_Page4.png",
+      "xxh3": "aabee75c0ea6e4ea",
+      "bytes": 20757,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/simple/SimpleTheme_Page5.png": {
+      "path": "assets/theming/simple/SimpleTheme_Page5.png",
+      "xxh3": "ae55bfbf7db65ab0",
+      "bytes": 27359,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/simple/SimpleTheme_Page6.png": {
+      "path": "assets/theming/simple/SimpleTheme_Page6.png",
+      "xxh3": "07af82c604f160ef",
+      "bytes": 39848,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/simple/SimpleTheme_minislide_Page1.png": {
+      "path": "assets/theming/simple/SimpleTheme_minislide_Page1.png",
+      "xxh3": "8329a252ee60c15c",
+      "bytes": 57647,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/simple/SimpleTheme_minislide_Page2.png": {
+      "path": "assets/theming/simple/SimpleTheme_minislide_Page2.png",
+      "xxh3": "27eb849e844e6d57",
+      "bytes": 26767,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/simple/SimpleTheme_minislide_Page3.png": {
+      "path": "assets/theming/simple/SimpleTheme_minislide_Page3.png",
+      "xxh3": "289a7a91d3ea8fb2",
+      "bytes": 78322,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/simple/SimpleTheme_minislide_Page4.png": {
+      "path": "assets/theming/simple/SimpleTheme_minislide_Page4.png",
+      "xxh3": "a1beaf479a955e2f",
+      "bytes": 20890,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/simple/SimpleTheme_minislide_Page5.png": {
+      "path": "assets/theming/simple/SimpleTheme_minislide_Page5.png",
+      "xxh3": "811c5e0bbb067e65",
+      "bytes": 27157,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/theming/simple/SimpleTheme_minislide_Page6.png": {
+      "path": "assets/theming/simple/SimpleTheme_minislide_Page6.png",
+      "xxh3": "89008cb9540d473a",
+      "bytes": 49388,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/alternatives1.png": {
+      "path": "_site/assets/animations/alternatives1.png",
+      "xxh3": "ee2d7b7fc8d4782c",
+      "bytes": 34793,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/alternatives2.png": {
+      "path": "_site/assets/animations/alternatives2.png",
+      "xxh3": "65669e9d9294f050",
+      "bytes": 36483,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/alternatives3.png": {
+      "path": "_site/assets/animations/alternatives3.png",
+      "xxh3": "ed4684399154a74f",
+      "bytes": 36754,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/cetz1.png": {
+      "path": "_site/assets/animations/cetz1.png",
+      "xxh3": "11cf3be45ce63118",
+      "bytes": 22576,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/cetz2.png": {
+      "path": "_site/assets/animations/cetz2.png",
+      "xxh3": "b579b8d234772d90",
+      "bytes": 22546,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/cetz3.png": {
+      "path": "_site/assets/animations/cetz3.png",
+      "xxh3": "6aa11a820e18ec39",
+      "bytes": 34076,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/fletcher1.png": {
+      "path": "_site/assets/animations/fletcher1.png",
+      "xxh3": "85b32f59278e0972",
+      "bytes": 70284,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/fletcher2.png": {
+      "path": "_site/assets/animations/fletcher2.png",
+      "xxh3": "fd1ad3c7a387cd84",
+      "bytes": 73708,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/fletcher3.png": {
+      "path": "_site/assets/animations/fletcher3.png",
+      "xxh3": "271eec745e6a36b7",
+      "bytes": 83411,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/item-by-item1.png": {
+      "path": "_site/assets/animations/item-by-item1.png",
+      "xxh3": "eeedd2916a6a3e5f",
+      "bytes": 39461,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/item-by-item2.png": {
+      "path": "_site/assets/animations/item-by-item2.png",
+      "xxh3": "b48c413ef5c72492",
+      "bytes": 54557,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/item-by-item3.png": {
+      "path": "_site/assets/animations/item-by-item3.png",
+      "xxh3": "10316aaf2889a55e",
+      "bytes": 66784,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/meanwhile1.png": {
+      "path": "_site/assets/animations/meanwhile1.png",
+      "xxh3": "e85c5e403f6f8e54",
+      "bytes": 26037,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/meanwhile2.png": {
+      "path": "_site/assets/animations/meanwhile2.png",
+      "xxh3": "8e720c6fdcd0f4e8",
+      "bytes": 32060,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/one-by-one1.png": {
+      "path": "_site/assets/animations/one-by-one1.png",
+      "xxh3": "a6a7cf65c33226f9",
+      "bytes": 24692,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/one-by-one2.png": {
+      "path": "_site/assets/animations/one-by-one2.png",
+      "xxh3": "9f6ea1a63cdc9afb",
+      "bytes": 26648,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/one-by-one3.png": {
+      "path": "_site/assets/animations/one-by-one3.png",
+      "xxh3": "bb23e94a8ad48a62",
+      "bytes": 28181,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/pause1.png": {
+      "path": "_site/assets/animations/pause1.png",
+      "xxh3": "b34936ba7c49e207",
+      "bytes": 22580,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/pause2.png": {
+      "path": "_site/assets/animations/pause2.png",
+      "xxh3": "76196978424ca96e",
+      "bytes": 35205,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/pause3.png": {
+      "path": "_site/assets/animations/pause3.png",
+      "xxh3": "e004ed8cd284dd95",
+      "bytes": 48365,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/track1.png": {
+      "path": "_site/assets/animations/track1.png",
+      "xxh3": "2f85d355c8d18cfd",
+      "bytes": 29367,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/track2.png": {
+      "path": "_site/assets/animations/track2.png",
+      "xxh3": "3679c99f50272396",
+      "bytes": 39888,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/track3.png": {
+      "path": "_site/assets/animations/track3.png",
+      "xxh3": "db15725dbf647c40",
+      "bytes": 42637,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/uncover-only1.png": {
+      "path": "_site/assets/animations/uncover-only1.png",
+      "xxh3": "e15c759578e96174",
+      "bytes": 51920,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/uncover-only2.png": {
+      "path": "_site/assets/animations/uncover-only2.png",
+      "xxh3": "9b870a1276bdc495",
+      "bytes": 38228,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/uncover-only3.png": {
+      "path": "_site/assets/animations/uncover-only3.png",
+      "xxh3": "dabc63ac3f696d8f",
+      "bytes": 40405,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/appendix-hide1.png": {
+      "path": "_site/assets/components/appendix-hide1.png",
+      "xxh3": "46723e9a54e7eee8",
+      "bytes": 28195,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/appendix-hide2.png": {
+      "path": "_site/assets/components/appendix-hide2.png",
+      "xxh3": "0979681d8d8fde54",
+      "bytes": 26715,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/appendix-hide3.png": {
+      "path": "_site/assets/components/appendix-hide3.png",
+      "xxh3": "918cffa5018e3900",
+      "bytes": 39065,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/appendix-hide4.png": {
+      "path": "_site/assets/components/appendix-hide4.png",
+      "xxh3": "bd08e6f48158b62c",
+      "bytes": 27358,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/appendix-hide5.png": {
+      "path": "_site/assets/components/appendix-hide5.png",
+      "xxh3": "9d0dd1ada8f756f0",
+      "bytes": 41885,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/appendix-hide6.png": {
+      "path": "_site/assets/components/appendix-hide6.png",
+      "xxh3": "30abede0c2e45f75",
+      "bytes": 18523,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/appendix-hide7.png": {
+      "path": "_site/assets/components/appendix-hide7.png",
+      "xxh3": "b098a55d75e4d0ca",
+      "bytes": 46001,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/appendix-nohide1.png": {
+      "path": "_site/assets/components/appendix-nohide1.png",
+      "xxh3": "352f523045e5e0c8",
+      "bytes": 33888,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/appendix-nohide2.png": {
+      "path": "_site/assets/components/appendix-nohide2.png",
+      "xxh3": "f06645c80e462f9c",
+      "bytes": 31646,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/appendix-nohide3.png": {
+      "path": "_site/assets/components/appendix-nohide3.png",
+      "xxh3": "68cc7c0fe34358e6",
+      "bytes": 39065,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/appendix-nohide4.png": {
+      "path": "_site/assets/components/appendix-nohide4.png",
+      "xxh3": "a58e3a4f3896ddea",
+      "bytes": 32254,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/appendix-nohide5.png": {
+      "path": "_site/assets/components/appendix-nohide5.png",
+      "xxh3": "5cd5ef524399f7f4",
+      "bytes": 41885,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/appendix-nohide6.png": {
+      "path": "_site/assets/components/appendix-nohide6.png",
+      "xxh3": "6b74b2ad1d7271f5",
+      "bytes": 32206,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/appendix-nohide7.png": {
+      "path": "_site/assets/components/appendix-nohide7.png",
+      "xxh3": "2ec9ed48b390b98f",
+      "bytes": 46001,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/basic-appendix1.png": {
+      "path": "_site/assets/components/basic-appendix1.png",
+      "xxh3": "9642b14c29e01ad8",
+      "bytes": 23385,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/basic-appendix2.png": {
+      "path": "_site/assets/components/basic-appendix2.png",
+      "xxh3": "dfe646a95d6e3c33",
+      "bytes": 33280,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/basic-appendix3.png": {
+      "path": "_site/assets/components/basic-appendix3.png",
+      "xxh3": "6fc5d38696b6268a",
+      "bytes": 24169,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/basic-appendix4.png": {
+      "path": "_site/assets/components/basic-appendix4.png",
+      "xxh3": "0aa3c43d4e497d6b",
+      "bytes": 40251,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/bibliography1.png": {
+      "path": "_site/assets/components/bibliography1.png",
+      "xxh3": "f07f2cbe2f628fe4",
+      "bytes": 50960,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/bibliography2.png": {
+      "path": "_site/assets/components/bibliography2.png",
+      "xxh3": "ea86990508f0925a",
+      "bytes": 39122,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/callout-cambfurt1.png": {
+      "path": "_site/assets/components/callout-cambfurt1.png",
+      "xxh3": "ed6f7e41469e40c7",
+      "bytes": 77820,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/callout-cambfurt2.png": {
+      "path": "_site/assets/components/callout-cambfurt2.png",
+      "xxh3": "925cec6d75619328",
+      "bytes": 60618,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/callout-cambfurt3.png": {
+      "path": "_site/assets/components/callout-cambfurt3.png",
+      "xxh3": "0fecb47dc8865302",
+      "bytes": 62318,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/callout-chalkboard1.png": {
+      "path": "_site/assets/components/callout-chalkboard1.png",
+      "xxh3": "4d4f979788174604",
+      "bytes": 1894994,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/callout-chalkboard2.png": {
+      "path": "_site/assets/components/callout-chalkboard2.png",
+      "xxh3": "a9ccbebf640e2cde",
+      "bytes": 2036661,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/callout-chalkboard3.png": {
+      "path": "_site/assets/components/callout-chalkboard3.png",
+      "xxh3": "dac6ac5b60012569",
+      "bytes": 2036820,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/callout-fancy1.png": {
+      "path": "_site/assets/components/callout-fancy1.png",
+      "xxh3": "a2b0513e618316ea",
+      "bytes": 78629,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/callout-fancy2.png": {
+      "path": "_site/assets/components/callout-fancy2.png",
+      "xxh3": "3eecd0765ef58d6e",
+      "bytes": 60885,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/callout-fancy3.png": {
+      "path": "_site/assets/components/callout-fancy3.png",
+      "xxh3": "bf2950db6a1f3c24",
+      "bytes": 62932,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/callout-metropolis1.png": {
+      "path": "_site/assets/components/callout-metropolis1.png",
+      "xxh3": "ecb3cce629efc078",
+      "bytes": 72337,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/callout-metropolis2.png": {
+      "path": "_site/assets/components/callout-metropolis2.png",
+      "xxh3": "65e1523505d05b6c",
+      "bytes": 52432,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/callout-metropolis3.png": {
+      "path": "_site/assets/components/callout-metropolis3.png",
+      "xxh3": "e5935013d663475e",
+      "bytes": 55270,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/callout-simple1.png": {
+      "path": "_site/assets/components/callout-simple1.png",
+      "xxh3": "a233c3927c5b0ef0",
+      "bytes": 83973,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/callout-simple2.png": {
+      "path": "_site/assets/components/callout-simple2.png",
+      "xxh3": "d69adc0077c69211",
+      "bytes": 61980,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/callout-simple3.png": {
+      "path": "_site/assets/components/callout-simple3.png",
+      "xxh3": "30722ed2f581f6ce",
+      "bytes": 64301,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/my-focus-slide1.png": {
+      "path": "_site/assets/components/my-focus-slide1.png",
+      "xxh3": "b15dc395af076387",
+      "bytes": 16046,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/my-focus-slide2.png": {
+      "path": "_site/assets/components/my-focus-slide2.png",
+      "xxh3": "cc51ed848a1992b2",
+      "bytes": 19082,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/short-long1.png": {
+      "path": "_site/assets/components/short-long1.png",
+      "xxh3": "e3b287ac8b7c624c",
+      "bytes": 24518,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/components/short-long2.png": {
+      "path": "_site/assets/components/short-long2.png",
+      "xxh3": "dda5325a23814a14",
+      "bytes": 38036,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/getting-started/basic-usage1.png": {
+      "path": "_site/assets/getting-started/basic-usage1.png",
+      "xxh3": "3813cdbb92a55224",
+      "bytes": 228079,
+      "width": 3508,
+      "height": 1973
+    },
+    "_site/assets/getting-started/basic-usage2.png": {
+      "path": "_site/assets/getting-started/basic-usage2.png",
+      "xxh3": "306297f92fced422",
+      "bytes": 71365,
+      "width": 3508,
+      "height": 1973
+    },
+    "_site/assets/getting-started/basic-usage3.png": {
+      "path": "_site/assets/getting-started/basic-usage3.png",
+      "xxh3": "9208e7fac9e12294",
+      "bytes": 63277,
+      "width": 3508,
+      "height": 1973
+    },
+    "_site/assets/getting-started/basic-usage4.png": {
+      "path": "_site/assets/getting-started/basic-usage4.png",
+      "xxh3": "e48d0d3e26289405",
+      "bytes": 62218,
+      "width": 3508,
+      "height": 1973
+    },
+    "_site/assets/getting-started/basic-usage5.png": {
+      "path": "_site/assets/getting-started/basic-usage5.png",
+      "xxh3": "2a5ddf4fb0056ef3",
+      "bytes": 33731,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/navigation/no-hide-toc1.png": {
+      "path": "_site/assets/navigation/no-hide-toc1.png",
+      "xxh3": "10f494f9d947432b",
+      "bytes": 28193,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/navigation/no-hide-toc2.png": {
+      "path": "_site/assets/navigation/no-hide-toc2.png",
+      "xxh3": "ef8339bea69b5546",
+      "bytes": 26713,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/navigation/no-hide-toc3.png": {
+      "path": "_site/assets/navigation/no-hide-toc3.png",
+      "xxh3": "3a4196ddf461e992",
+      "bytes": 27356,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/navigation/toc-progress-cambfurt1.png": {
+      "path": "_site/assets/navigation/toc-progress-cambfurt1.png",
+      "xxh3": "8cbaf732703faf91",
+      "bytes": 27908,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/navigation/toc-progress-chalkboard1.png": {
+      "path": "_site/assets/navigation/toc-progress-chalkboard1.png",
+      "xxh3": "f629c10b62c911b2",
+      "bytes": 2351490,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/navigation/toc-progress-fancy1.png": {
+      "path": "_site/assets/navigation/toc-progress-fancy1.png",
+      "xxh3": "90175e94b8a57a17",
+      "bytes": 28194,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/navigation/toc-progress-metropolis1.png": {
+      "path": "_site/assets/navigation/toc-progress-metropolis1.png",
+      "xxh3": "18038692c52907cf",
+      "bytes": 26851,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/navigation/toc-progress-metropolis2.png": {
+      "path": "_site/assets/navigation/toc-progress-metropolis2.png",
+      "xxh3": "5c0ab9324d4070de",
+      "bytes": 16963,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/navigation/toc-progress-simple1.png": {
+      "path": "_site/assets/navigation/toc-progress-simple1.png",
+      "xxh3": "06ed303354f78022",
+      "bytes": 28194,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/navigation/toc-progress-simple2.png": {
+      "path": "_site/assets/navigation/toc-progress-simple2.png",
+      "xxh3": "c09b3081f35d915a",
+      "bytes": 26714,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/navigation/with-hide-toc1.png": {
+      "path": "_site/assets/navigation/with-hide-toc1.png",
+      "xxh3": "8a909c93673bb9b1",
+      "bytes": 19047,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/navigation/with-hide-toc2.png": {
+      "path": "_site/assets/navigation/with-hide-toc2.png",
+      "xxh3": "2ac3e91a592263d9",
+      "bytes": 19095,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/navigation/with-hide-toc3.png": {
+      "path": "_site/assets/navigation/with-hide-toc3.png",
+      "xxh3": "17a75783f1e59029",
+      "bytes": 21438,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/cambfurt/CambfurtTheme_Page1.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_Page1.png",
+      "xxh3": "dd58c8bffacb437d",
+      "bytes": 67555,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/cambfurt/CambfurtTheme_Page2.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_Page2.png",
+      "xxh3": "a91722c667556543",
+      "bytes": 23305,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/cambfurt/CambfurtTheme_Page3.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_Page3.png",
+      "xxh3": "16ebf5f143385b5f",
+      "bytes": 78367,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/cambfurt/CambfurtTheme_Page4.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_Page4.png",
+      "xxh3": "2f07d5d9966847ac",
+      "bytes": 20787,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/cambfurt/CambfurtTheme_Page5.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_Page5.png",
+      "xxh3": "b9f28cb4ab39e0e3",
+      "bytes": 24918,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/cambfurt/CambfurtTheme_Page6.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_Page6.png",
+      "xxh3": "1e58a945dea5cd63",
+      "bytes": 51322,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page1.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page1.png",
+      "xxh3": "8d6b1e5a26657656",
+      "bytes": 67555,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page2.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page2.png",
+      "xxh3": "af8efc3c4896fefa",
+      "bytes": 23232,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page3.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page3.png",
+      "xxh3": "67b94655193e532d",
+      "bytes": 77154,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page4.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page4.png",
+      "xxh3": "4fdd04083c2638b9",
+      "bytes": 20680,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page5.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page5.png",
+      "xxh3": "acc8d185df1483a4",
+      "bytes": 24824,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page6.png": {
+      "path": "_site/assets/theming/cambfurt/CambfurtTheme_minislide_Page6.png",
+      "xxh3": "1fb963b4e90c7d99",
+      "bytes": 47465,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/chalkboard/ChalkboardTheme_Page1.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_Page1.png",
+      "xxh3": "7105059e45ee62a9",
+      "bytes": 2406139,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/chalkboard/ChalkboardTheme_Page2.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_Page2.png",
+      "xxh3": "5d447f706bbf6b45",
+      "bytes": 2333893,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/chalkboard/ChalkboardTheme_Page3.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_Page3.png",
+      "xxh3": "2c7abdab553c4da4",
+      "bytes": 2390757,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/chalkboard/ChalkboardTheme_Page4.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_Page4.png",
+      "xxh3": "5c1dde1c0c42bd5b",
+      "bytes": 2337049,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/chalkboard/ChalkboardTheme_Page5.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_Page5.png",
+      "xxh3": "43d1bd066ac2182d",
+      "bytes": 2330684,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/chalkboard/ChalkboardTheme_Page6.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_Page6.png",
+      "xxh3": "ada098d22bc6099e",
+      "bytes": 2358974,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page1.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page1.png",
+      "xxh3": "147f897d4a34dc79",
+      "bytes": 2403457,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page2.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page2.png",
+      "xxh3": "a7c40066300a617e",
+      "bytes": 2333896,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page3.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page3.png",
+      "xxh3": "b0bf579fd24b7b8e",
+      "bytes": 2406227,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page4.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page4.png",
+      "xxh3": "23e3eae0be8fee87",
+      "bytes": 2335819,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page5.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page5.png",
+      "xxh3": "5790406b6177d740",
+      "bytes": 2330679,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page6.png": {
+      "path": "_site/assets/theming/chalkboard/ChalkboardTheme_minislide_Page6.png",
+      "xxh3": "cea36b3076db4d58",
+      "bytes": 2372254,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/fancy/FancyTheme_Page1.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_Page1.png",
+      "xxh3": "833a3ca6a22f2835",
+      "bytes": 40713,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/fancy/FancyTheme_Page2.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_Page2.png",
+      "xxh3": "e75d92c20074a528",
+      "bytes": 17402,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/fancy/FancyTheme_Page3.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_Page3.png",
+      "xxh3": "22a85971886f9ef6",
+      "bytes": 73458,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/fancy/FancyTheme_Page4.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_Page4.png",
+      "xxh3": "5af191c226edf971",
+      "bytes": 20885,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/fancy/FancyTheme_Page5.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_Page5.png",
+      "xxh3": "079322334d69676a",
+      "bytes": 20636,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/fancy/FancyTheme_Page6.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_Page6.png",
+      "xxh3": "12938ac34cd7d5e6",
+      "bytes": 44519,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/fancy/FancyTheme_minislide_Page1.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_minislide_Page1.png",
+      "xxh3": "833a3ca6a22f2835",
+      "bytes": 40713,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/fancy/FancyTheme_minislide_Page2.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_minislide_Page2.png",
+      "xxh3": "e75d92c20074a528",
+      "bytes": 17402,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/fancy/FancyTheme_minislide_Page3.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_minislide_Page3.png",
+      "xxh3": "99f21ef900169775",
+      "bytes": 82765,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/fancy/FancyTheme_minislide_Page4.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_minislide_Page4.png",
+      "xxh3": "6054daf64f0652fb",
+      "bytes": 20733,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/fancy/FancyTheme_minislide_Page5.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_minislide_Page5.png",
+      "xxh3": "079322334d69676a",
+      "bytes": 20636,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/fancy/FancyTheme_minislide_Page6.png": {
+      "path": "_site/assets/theming/fancy/FancyTheme_minislide_Page6.png",
+      "xxh3": "63a761e2406f7805",
+      "bytes": 53683,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/metropolis/MetropolisTheme_Page1.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_Page1.png",
+      "xxh3": "a7ad67b2d9410acc",
+      "bytes": 54601,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/metropolis/MetropolisTheme_Page2.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_Page2.png",
+      "xxh3": "5c0ab9324d4070de",
+      "bytes": 16963,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/metropolis/MetropolisTheme_Page3.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_Page3.png",
+      "xxh3": "14d59c3186e85614",
+      "bytes": 62174,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/metropolis/MetropolisTheme_Page4.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_Page4.png",
+      "xxh3": "8907c4f22419c8ee",
+      "bytes": 20979,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/metropolis/MetropolisTheme_Page5.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_Page5.png",
+      "xxh3": "ed48c7b7cdc3da57",
+      "bytes": 19316,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/metropolis/MetropolisTheme_Page6.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_Page6.png",
+      "xxh3": "d9dc9401663f1643",
+      "bytes": 37567,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/metropolis/MetropolisTheme_minislide_Page1.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_minislide_Page1.png",
+      "xxh3": "a7ad67b2d9410acc",
+      "bytes": 54601,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/metropolis/MetropolisTheme_minislide_Page2.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_minislide_Page2.png",
+      "xxh3": "5c0ab9324d4070de",
+      "bytes": 16963,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/metropolis/MetropolisTheme_minislide_Page3.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_minislide_Page3.png",
+      "xxh3": "401d2534ee34d89b",
+      "bytes": 72391,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/metropolis/MetropolisTheme_minislide_Page4.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_minislide_Page4.png",
+      "xxh3": "b112630626e953dc",
+      "bytes": 21111,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/metropolis/MetropolisTheme_minislide_Page5.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_minislide_Page5.png",
+      "xxh3": "ed48c7b7cdc3da57",
+      "bytes": 19316,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/metropolis/MetropolisTheme_minislide_Page6.png": {
+      "path": "_site/assets/theming/metropolis/MetropolisTheme_minislide_Page6.png",
+      "xxh3": "a218ee37aaf8eebf",
+      "bytes": 46190,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/simple/SimpleTheme_Page1.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_Page1.png",
+      "xxh3": "8329a252ee60c15c",
+      "bytes": 57647,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/simple/SimpleTheme_Page2.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_Page2.png",
+      "xxh3": "0c0ad3066cb4d034",
+      "bytes": 26716,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/simple/SimpleTheme_Page3.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_Page3.png",
+      "xxh3": "0bb6085cdb4988c3",
+      "bytes": 68254,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/simple/SimpleTheme_Page4.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_Page4.png",
+      "xxh3": "aabee75c0ea6e4ea",
+      "bytes": 20757,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/simple/SimpleTheme_Page5.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_Page5.png",
+      "xxh3": "ae55bfbf7db65ab0",
+      "bytes": 27359,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/simple/SimpleTheme_Page6.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_Page6.png",
+      "xxh3": "07af82c604f160ef",
+      "bytes": 39848,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/simple/SimpleTheme_minislide_Page1.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_minislide_Page1.png",
+      "xxh3": "8329a252ee60c15c",
+      "bytes": 57647,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/simple/SimpleTheme_minislide_Page2.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_minislide_Page2.png",
+      "xxh3": "27eb849e844e6d57",
+      "bytes": 26767,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/simple/SimpleTheme_minislide_Page3.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_minislide_Page3.png",
+      "xxh3": "289a7a91d3ea8fb2",
+      "bytes": 78322,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/simple/SimpleTheme_minislide_Page4.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_minislide_Page4.png",
+      "xxh3": "a1beaf479a955e2f",
+      "bytes": 20890,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/simple/SimpleTheme_minislide_Page5.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_minislide_Page5.png",
+      "xxh3": "811c5e0bbb067e65",
+      "bytes": 27157,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/theming/simple/SimpleTheme_minislide_Page6.png": {
+      "path": "_site/assets/theming/simple/SimpleTheme_minislide_Page6.png",
+      "xxh3": "89008cb9540d473a",
+      "bytes": 49388,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/alternatives1.png": {
+      "path": "assets/animations/alternatives1.png",
+      "xxh3": "ee2d7b7fc8d4782c",
+      "bytes": 34793,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/alternatives2.png": {
+      "path": "assets/animations/alternatives2.png",
+      "xxh3": "65669e9d9294f050",
+      "bytes": 36483,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/alternatives3.png": {
+      "path": "assets/animations/alternatives3.png",
+      "xxh3": "ed4684399154a74f",
+      "bytes": 36754,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/cetz1.png": {
+      "path": "assets/animations/cetz1.png",
+      "xxh3": "11cf3be45ce63118",
+      "bytes": 22576,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/cetz2.png": {
+      "path": "assets/animations/cetz2.png",
+      "xxh3": "b579b8d234772d90",
+      "bytes": 22546,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/cetz3.png": {
+      "path": "assets/animations/cetz3.png",
+      "xxh3": "6aa11a820e18ec39",
+      "bytes": 34076,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/fletcher1.png": {
+      "path": "assets/animations/fletcher1.png",
+      "xxh3": "85b32f59278e0972",
+      "bytes": 70284,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/fletcher2.png": {
+      "path": "assets/animations/fletcher2.png",
+      "xxh3": "fd1ad3c7a387cd84",
+      "bytes": 73708,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/fletcher3.png": {
+      "path": "assets/animations/fletcher3.png",
+      "xxh3": "271eec745e6a36b7",
+      "bytes": 83411,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/item-by-item1.png": {
+      "path": "assets/animations/item-by-item1.png",
+      "xxh3": "eeedd2916a6a3e5f",
+      "bytes": 39461,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/item-by-item2.png": {
+      "path": "assets/animations/item-by-item2.png",
+      "xxh3": "b48c413ef5c72492",
+      "bytes": 54557,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/item-by-item3.png": {
+      "path": "assets/animations/item-by-item3.png",
+      "xxh3": "10316aaf2889a55e",
+      "bytes": 66784,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/meanwhile1.png": {
+      "path": "assets/animations/meanwhile1.png",
+      "xxh3": "e85c5e403f6f8e54",
+      "bytes": 26037,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/meanwhile2.png": {
+      "path": "assets/animations/meanwhile2.png",
+      "xxh3": "8e720c6fdcd0f4e8",
+      "bytes": 32060,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/one-by-one1.png": {
+      "path": "assets/animations/one-by-one1.png",
+      "xxh3": "a6a7cf65c33226f9",
+      "bytes": 24692,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/one-by-one2.png": {
+      "path": "assets/animations/one-by-one2.png",
+      "xxh3": "9f6ea1a63cdc9afb",
+      "bytes": 26648,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/one-by-one3.png": {
+      "path": "assets/animations/one-by-one3.png",
+      "xxh3": "bb23e94a8ad48a62",
+      "bytes": 28181,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/pause1.png": {
+      "path": "assets/animations/pause1.png",
+      "xxh3": "b34936ba7c49e207",
+      "bytes": 22580,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/pause2.png": {
+      "path": "assets/animations/pause2.png",
+      "xxh3": "76196978424ca96e",
+      "bytes": 35205,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/pause3.png": {
+      "path": "assets/animations/pause3.png",
+      "xxh3": "e004ed8cd284dd95",
+      "bytes": 48365,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/track1.png": {
+      "path": "assets/animations/track1.png",
+      "xxh3": "2f85d355c8d18cfd",
+      "bytes": 29367,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/track2.png": {
+      "path": "assets/animations/track2.png",
+      "xxh3": "3679c99f50272396",
+      "bytes": 39888,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/track3.png": {
+      "path": "assets/animations/track3.png",
+      "xxh3": "db15725dbf647c40",
+      "bytes": 42637,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/uncover-only1.png": {
+      "path": "assets/animations/uncover-only1.png",
+      "xxh3": "e15c759578e96174",
+      "bytes": 51920,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/uncover-only2.png": {
+      "path": "assets/animations/uncover-only2.png",
+      "xxh3": "9b870a1276bdc495",
+      "bytes": 38228,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/uncover-only3.png": {
+      "path": "assets/animations/uncover-only3.png",
+      "xxh3": "dabc63ac3f696d8f",
+      "bytes": 40405,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-hide1.png": {
+      "path": "assets/components/appendix-hide1.png",
+      "xxh3": "46723e9a54e7eee8",
+      "bytes": 28195,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-hide2.png": {
+      "path": "assets/components/appendix-hide2.png",
+      "xxh3": "0979681d8d8fde54",
+      "bytes": 26715,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-hide3.png": {
+      "path": "assets/components/appendix-hide3.png",
+      "xxh3": "918cffa5018e3900",
+      "bytes": 39065,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-hide4.png": {
+      "path": "assets/components/appendix-hide4.png",
+      "xxh3": "bd08e6f48158b62c",
+      "bytes": 27358,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-hide5.png": {
+      "path": "assets/components/appendix-hide5.png",
+      "xxh3": "9d0dd1ada8f756f0",
+      "bytes": 41885,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-hide6.png": {
+      "path": "assets/components/appendix-hide6.png",
+      "xxh3": "30abede0c2e45f75",
+      "bytes": 18523,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-hide7.png": {
+      "path": "assets/components/appendix-hide7.png",
+      "xxh3": "b098a55d75e4d0ca",
+      "bytes": 46001,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-nohide1.png": {
+      "path": "assets/components/appendix-nohide1.png",
+      "xxh3": "352f523045e5e0c8",
+      "bytes": 33888,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-nohide2.png": {
+      "path": "assets/components/appendix-nohide2.png",
+      "xxh3": "f06645c80e462f9c",
+      "bytes": 31646,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-nohide3.png": {
+      "path": "assets/components/appendix-nohide3.png",
+      "xxh3": "68cc7c0fe34358e6",
+      "bytes": 39065,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-nohide4.png": {
+      "path": "assets/components/appendix-nohide4.png",
+      "xxh3": "a58e3a4f3896ddea",
+      "bytes": 32254,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-nohide5.png": {
+      "path": "assets/components/appendix-nohide5.png",
+      "xxh3": "5cd5ef524399f7f4",
+      "bytes": 41885,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-nohide6.png": {
+      "path": "assets/components/appendix-nohide6.png",
+      "xxh3": "6b74b2ad1d7271f5",
+      "bytes": 32206,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/appendix-nohide7.png": {
+      "path": "assets/components/appendix-nohide7.png",
+      "xxh3": "2ec9ed48b390b98f",
+      "bytes": 46001,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/basic-appendix1.png": {
+      "path": "assets/components/basic-appendix1.png",
+      "xxh3": "9642b14c29e01ad8",
+      "bytes": 23385,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/basic-appendix2.png": {
+      "path": "assets/components/basic-appendix2.png",
+      "xxh3": "dfe646a95d6e3c33",
+      "bytes": 33280,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/basic-appendix3.png": {
+      "path": "assets/components/basic-appendix3.png",
+      "xxh3": "6fc5d38696b6268a",
+      "bytes": 24169,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/basic-appendix4.png": {
+      "path": "assets/components/basic-appendix4.png",
+      "xxh3": "0aa3c43d4e497d6b",
+      "bytes": 40251,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/bibliography1.png": {
+      "path": "assets/components/bibliography1.png",
+      "xxh3": "f07f2cbe2f628fe4",
+      "bytes": 50960,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/bibliography2.png": {
+      "path": "assets/components/bibliography2.png",
+      "xxh3": "ea86990508f0925a",
+      "bytes": 39122,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-cambfurt1.png": {
+      "path": "assets/components/callout-cambfurt1.png",
+      "xxh3": "ed6f7e41469e40c7",
+      "bytes": 77820,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-cambfurt2.png": {
+      "path": "assets/components/callout-cambfurt2.png",
+      "xxh3": "925cec6d75619328",
+      "bytes": 60618,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-cambfurt3.png": {
+      "path": "assets/components/callout-cambfurt3.png",
+      "xxh3": "0fecb47dc8865302",
+      "bytes": 62318,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-chalkboard1.png": {
+      "path": "assets/components/callout-chalkboard1.png",
+      "xxh3": "4d4f979788174604",
+      "bytes": 1894994,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-chalkboard2.png": {
+      "path": "assets/components/callout-chalkboard2.png",
+      "xxh3": "a9ccbebf640e2cde",
+      "bytes": 2036661,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-chalkboard3.png": {
+      "path": "assets/components/callout-chalkboard3.png",
+      "xxh3": "dac6ac5b60012569",
+      "bytes": 2036820,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-fancy1.png": {
+      "path": "assets/components/callout-fancy1.png",
+      "xxh3": "a2b0513e618316ea",
+      "bytes": 78629,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-fancy2.png": {
+      "path": "assets/components/callout-fancy2.png",
+      "xxh3": "3eecd0765ef58d6e",
+      "bytes": 60885,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-fancy3.png": {
+      "path": "assets/components/callout-fancy3.png",
+      "xxh3": "bf2950db6a1f3c24",
+      "bytes": 62932,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-metropolis1.png": {
+      "path": "assets/components/callout-metropolis1.png",
+      "xxh3": "ecb3cce629efc078",
+      "bytes": 72337,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-metropolis2.png": {
+      "path": "assets/components/callout-metropolis2.png",
+      "xxh3": "65e1523505d05b6c",
+      "bytes": 52432,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-metropolis3.png": {
+      "path": "assets/components/callout-metropolis3.png",
+      "xxh3": "e5935013d663475e",
+      "bytes": 55270,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-simple1.png": {
+      "path": "assets/components/callout-simple1.png",
+      "xxh3": "a233c3927c5b0ef0",
+      "bytes": 83973,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-simple2.png": {
+      "path": "assets/components/callout-simple2.png",
+      "xxh3": "d69adc0077c69211",
+      "bytes": 61980,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/callout-simple3.png": {
+      "path": "assets/components/callout-simple3.png",
+      "xxh3": "30722ed2f581f6ce",
+      "bytes": 64301,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/my-focus-slide1.png": {
+      "path": "assets/components/my-focus-slide1.png",
+      "xxh3": "b15dc395af076387",
+      "bytes": 16046,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/my-focus-slide2.png": {
+      "path": "assets/components/my-focus-slide2.png",
+      "xxh3": "cc51ed848a1992b2",
+      "bytes": 19082,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/short-long1.png": {
+      "path": "assets/components/short-long1.png",
+      "xxh3": "e3b287ac8b7c624c",
+      "bytes": 24518,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/components/short-long2.png": {
+      "path": "assets/components/short-long2.png",
+      "xxh3": "dda5325a23814a14",
+      "bytes": 38036,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/getting-started/basic-usage1.png": {
+      "path": "assets/getting-started/basic-usage1.png",
+      "xxh3": "3813cdbb92a55224",
+      "bytes": 228079,
+      "width": 3508,
+      "height": 1973
+    },
+    "assets/getting-started/basic-usage2.png": {
+      "path": "assets/getting-started/basic-usage2.png",
+      "xxh3": "306297f92fced422",
+      "bytes": 71365,
+      "width": 3508,
+      "height": 1973
+    },
+    "assets/getting-started/basic-usage3.png": {
+      "path": "assets/getting-started/basic-usage3.png",
+      "xxh3": "9208e7fac9e12294",
+      "bytes": 63277,
+      "width": 3508,
+      "height": 1973
+    },
+    "assets/getting-started/basic-usage4.png": {
+      "path": "assets/getting-started/basic-usage4.png",
+      "xxh3": "e48d0d3e26289405",
+      "bytes": 62218,
+      "width": 3508,
+      "height": 1973
+    },
+    "assets/getting-started/basic-usage5.png": {
+      "path": "assets/getting-started/basic-usage5.png",
+      "xxh3": "2a5ddf4fb0056ef3",
+      "bytes": 33731,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/no-hide-toc1.png": {
+      "path": "assets/navigation/no-hide-toc1.png",
+      "xxh3": "10f494f9d947432b",
+      "bytes": 28193,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/no-hide-toc2.png": {
+      "path": "assets/navigation/no-hide-toc2.png",
+      "xxh3": "ef8339bea69b5546",
+      "bytes": 26713,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/no-hide-toc3.png": {
+      "path": "assets/navigation/no-hide-toc3.png",
+      "xxh3": "3a4196ddf461e992",
+      "bytes": 27356,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/toc-progress-cambfurt1.png": {
+      "path": "assets/navigation/toc-progress-cambfurt1.png",
+      "xxh3": "8cbaf732703faf91",
+      "bytes": 27908,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/toc-progress-chalkboard1.png": {
+      "path": "assets/navigation/toc-progress-chalkboard1.png",
+      "xxh3": "f629c10b62c911b2",
+      "bytes": 2351490,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/toc-progress-fancy1.png": {
+      "path": "assets/navigation/toc-progress-fancy1.png",
+      "xxh3": "90175e94b8a57a17",
+      "bytes": 28194,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/toc-progress-metropolis1.png": {
+      "path": "assets/navigation/toc-progress-metropolis1.png",
+      "xxh3": "18038692c52907cf",
+      "bytes": 26851,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/toc-progress-metropolis2.png": {
+      "path": "assets/navigation/toc-progress-metropolis2.png",
+      "xxh3": "5c0ab9324d4070de",
+      "bytes": 16963,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/toc-progress-simple1.png": {
+      "path": "assets/navigation/toc-progress-simple1.png",
+      "xxh3": "06ed303354f78022",
+      "bytes": 28194,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/toc-progress-simple2.png": {
+      "path": "assets/navigation/toc-progress-simple2.png",
+      "xxh3": "c09b3081f35d915a",
+      "bytes": 26714,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/with-hide-toc1.png": {
+      "path": "assets/navigation/with-hide-toc1.png",
+      "xxh3": "8a909c93673bb9b1",
+      "bytes": 19047,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/with-hide-toc2.png": {
+      "path": "assets/navigation/with-hide-toc2.png",
+      "xxh3": "2ac3e91a592263d9",
+      "bytes": 19095,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/navigation/with-hide-toc3.png": {
+      "path": "assets/navigation/with-hide-toc3.png",
+      "xxh3": "17a75783f1e59029",
+      "bytes": 21438,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/cambfurt/CambfurtTheme_Page1.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_Page1.png",
+      "xxh3": "dd58c8bffacb437d",
+      "bytes": 67555,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/cambfurt/CambfurtTheme_Page2.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_Page2.png",
+      "xxh3": "a91722c667556543",
+      "bytes": 23305,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/cambfurt/CambfurtTheme_Page3.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_Page3.png",
+      "xxh3": "16ebf5f143385b5f",
+      "bytes": 78367,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/cambfurt/CambfurtTheme_Page4.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_Page4.png",
+      "xxh3": "2f07d5d9966847ac",
+      "bytes": 20787,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/cambfurt/CambfurtTheme_Page5.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_Page5.png",
+      "xxh3": "b9f28cb4ab39e0e3",
+      "bytes": 24918,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/cambfurt/CambfurtTheme_Page6.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_Page6.png",
+      "xxh3": "1e58a945dea5cd63",
+      "bytes": 51322,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/cambfurt/CambfurtTheme_minislide_Page1.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_minislide_Page1.png",
+      "xxh3": "8d6b1e5a26657656",
+      "bytes": 67555,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/cambfurt/CambfurtTheme_minislide_Page2.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_minislide_Page2.png",
+      "xxh3": "af8efc3c4896fefa",
+      "bytes": 23232,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/cambfurt/CambfurtTheme_minislide_Page3.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_minislide_Page3.png",
+      "xxh3": "67b94655193e532d",
+      "bytes": 77154,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/cambfurt/CambfurtTheme_minislide_Page4.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_minislide_Page4.png",
+      "xxh3": "4fdd04083c2638b9",
+      "bytes": 20680,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/cambfurt/CambfurtTheme_minislide_Page5.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_minislide_Page5.png",
+      "xxh3": "acc8d185df1483a4",
+      "bytes": 24824,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/cambfurt/CambfurtTheme_minislide_Page6.png": {
+      "path": "assets/theming/cambfurt/CambfurtTheme_minislide_Page6.png",
+      "xxh3": "1fb963b4e90c7d99",
+      "bytes": 47465,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/chalkboard/ChalkboardTheme_Page1.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_Page1.png",
+      "xxh3": "7105059e45ee62a9",
+      "bytes": 2406139,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/chalkboard/ChalkboardTheme_Page2.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_Page2.png",
+      "xxh3": "5d447f706bbf6b45",
+      "bytes": 2333893,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/chalkboard/ChalkboardTheme_Page3.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_Page3.png",
+      "xxh3": "2c7abdab553c4da4",
+      "bytes": 2390757,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/chalkboard/ChalkboardTheme_Page4.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_Page4.png",
+      "xxh3": "5c1dde1c0c42bd5b",
+      "bytes": 2337049,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/chalkboard/ChalkboardTheme_Page5.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_Page5.png",
+      "xxh3": "43d1bd066ac2182d",
+      "bytes": 2330684,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/chalkboard/ChalkboardTheme_Page6.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_Page6.png",
+      "xxh3": "ada098d22bc6099e",
+      "bytes": 2358974,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/chalkboard/ChalkboardTheme_minislide_Page1.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_minislide_Page1.png",
+      "xxh3": "147f897d4a34dc79",
+      "bytes": 2403457,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/chalkboard/ChalkboardTheme_minislide_Page2.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_minislide_Page2.png",
+      "xxh3": "a7c40066300a617e",
+      "bytes": 2333896,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/chalkboard/ChalkboardTheme_minislide_Page3.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_minislide_Page3.png",
+      "xxh3": "b0bf579fd24b7b8e",
+      "bytes": 2406227,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/chalkboard/ChalkboardTheme_minislide_Page4.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_minislide_Page4.png",
+      "xxh3": "23e3eae0be8fee87",
+      "bytes": 2335819,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/chalkboard/ChalkboardTheme_minislide_Page5.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_minislide_Page5.png",
+      "xxh3": "5790406b6177d740",
+      "bytes": 2330679,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/chalkboard/ChalkboardTheme_minislide_Page6.png": {
+      "path": "assets/theming/chalkboard/ChalkboardTheme_minislide_Page6.png",
+      "xxh3": "cea36b3076db4d58",
+      "bytes": 2372254,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/fancy/FancyTheme_Page1.png": {
+      "path": "assets/theming/fancy/FancyTheme_Page1.png",
+      "xxh3": "833a3ca6a22f2835",
+      "bytes": 40713,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/fancy/FancyTheme_Page2.png": {
+      "path": "assets/theming/fancy/FancyTheme_Page2.png",
+      "xxh3": "e75d92c20074a528",
+      "bytes": 17402,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/fancy/FancyTheme_Page3.png": {
+      "path": "assets/theming/fancy/FancyTheme_Page3.png",
+      "xxh3": "22a85971886f9ef6",
+      "bytes": 73458,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/fancy/FancyTheme_Page4.png": {
+      "path": "assets/theming/fancy/FancyTheme_Page4.png",
+      "xxh3": "5af191c226edf971",
+      "bytes": 20885,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/fancy/FancyTheme_Page5.png": {
+      "path": "assets/theming/fancy/FancyTheme_Page5.png",
+      "xxh3": "079322334d69676a",
+      "bytes": 20636,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/fancy/FancyTheme_Page6.png": {
+      "path": "assets/theming/fancy/FancyTheme_Page6.png",
+      "xxh3": "12938ac34cd7d5e6",
+      "bytes": 44519,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/fancy/FancyTheme_minislide_Page1.png": {
+      "path": "assets/theming/fancy/FancyTheme_minislide_Page1.png",
+      "xxh3": "833a3ca6a22f2835",
+      "bytes": 40713,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/fancy/FancyTheme_minislide_Page2.png": {
+      "path": "assets/theming/fancy/FancyTheme_minislide_Page2.png",
+      "xxh3": "e75d92c20074a528",
+      "bytes": 17402,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/fancy/FancyTheme_minislide_Page3.png": {
+      "path": "assets/theming/fancy/FancyTheme_minislide_Page3.png",
+      "xxh3": "99f21ef900169775",
+      "bytes": 82765,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/fancy/FancyTheme_minislide_Page4.png": {
+      "path": "assets/theming/fancy/FancyTheme_minislide_Page4.png",
+      "xxh3": "6054daf64f0652fb",
+      "bytes": 20733,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/fancy/FancyTheme_minislide_Page5.png": {
+      "path": "assets/theming/fancy/FancyTheme_minislide_Page5.png",
+      "xxh3": "079322334d69676a",
+      "bytes": 20636,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/fancy/FancyTheme_minislide_Page6.png": {
+      "path": "assets/theming/fancy/FancyTheme_minislide_Page6.png",
+      "xxh3": "63a761e2406f7805",
+      "bytes": 53683,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/metropolis/MetropolisTheme_Page1.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_Page1.png",
+      "xxh3": "a7ad67b2d9410acc",
+      "bytes": 54601,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/metropolis/MetropolisTheme_Page2.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_Page2.png",
+      "xxh3": "5c0ab9324d4070de",
+      "bytes": 16963,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/metropolis/MetropolisTheme_Page3.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_Page3.png",
+      "xxh3": "14d59c3186e85614",
+      "bytes": 62174,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/metropolis/MetropolisTheme_Page4.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_Page4.png",
+      "xxh3": "8907c4f22419c8ee",
+      "bytes": 20979,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/metropolis/MetropolisTheme_Page5.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_Page5.png",
+      "xxh3": "ed48c7b7cdc3da57",
+      "bytes": 19316,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/metropolis/MetropolisTheme_Page6.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_Page6.png",
+      "xxh3": "d9dc9401663f1643",
+      "bytes": 37567,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/metropolis/MetropolisTheme_minislide_Page1.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_minislide_Page1.png",
+      "xxh3": "a7ad67b2d9410acc",
+      "bytes": 54601,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/metropolis/MetropolisTheme_minislide_Page2.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_minislide_Page2.png",
+      "xxh3": "5c0ab9324d4070de",
+      "bytes": 16963,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/metropolis/MetropolisTheme_minislide_Page3.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_minislide_Page3.png",
+      "xxh3": "401d2534ee34d89b",
+      "bytes": 72391,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/metropolis/MetropolisTheme_minislide_Page4.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_minislide_Page4.png",
+      "xxh3": "b112630626e953dc",
+      "bytes": 21111,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/metropolis/MetropolisTheme_minislide_Page5.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_minislide_Page5.png",
+      "xxh3": "ed48c7b7cdc3da57",
+      "bytes": 19316,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/metropolis/MetropolisTheme_minislide_Page6.png": {
+      "path": "assets/theming/metropolis/MetropolisTheme_minislide_Page6.png",
+      "xxh3": "a218ee37aaf8eebf",
+      "bytes": 46190,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/simple/SimpleTheme_Page1.png": {
+      "path": "assets/theming/simple/SimpleTheme_Page1.png",
+      "xxh3": "8329a252ee60c15c",
+      "bytes": 57647,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/simple/SimpleTheme_Page2.png": {
+      "path": "assets/theming/simple/SimpleTheme_Page2.png",
+      "xxh3": "0c0ad3066cb4d034",
+      "bytes": 26716,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/simple/SimpleTheme_Page3.png": {
+      "path": "assets/theming/simple/SimpleTheme_Page3.png",
+      "xxh3": "0bb6085cdb4988c3",
+      "bytes": 68254,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/simple/SimpleTheme_Page4.png": {
+      "path": "assets/theming/simple/SimpleTheme_Page4.png",
+      "xxh3": "aabee75c0ea6e4ea",
+      "bytes": 20757,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/simple/SimpleTheme_Page5.png": {
+      "path": "assets/theming/simple/SimpleTheme_Page5.png",
+      "xxh3": "ae55bfbf7db65ab0",
+      "bytes": 27359,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/simple/SimpleTheme_Page6.png": {
+      "path": "assets/theming/simple/SimpleTheme_Page6.png",
+      "xxh3": "07af82c604f160ef",
+      "bytes": 39848,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/simple/SimpleTheme_minislide_Page1.png": {
+      "path": "assets/theming/simple/SimpleTheme_minislide_Page1.png",
+      "xxh3": "8329a252ee60c15c",
+      "bytes": 57647,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/simple/SimpleTheme_minislide_Page2.png": {
+      "path": "assets/theming/simple/SimpleTheme_minislide_Page2.png",
+      "xxh3": "27eb849e844e6d57",
+      "bytes": 26767,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/simple/SimpleTheme_minislide_Page3.png": {
+      "path": "assets/theming/simple/SimpleTheme_minislide_Page3.png",
+      "xxh3": "289a7a91d3ea8fb2",
+      "bytes": 78322,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/simple/SimpleTheme_minislide_Page4.png": {
+      "path": "assets/theming/simple/SimpleTheme_minislide_Page4.png",
+      "xxh3": "a1beaf479a955e2f",
+      "bytes": 20890,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/simple/SimpleTheme_minislide_Page5.png": {
+      "path": "assets/theming/simple/SimpleTheme_minislide_Page5.png",
+      "xxh3": "811c5e0bbb067e65",
+      "bytes": 27157,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/theming/simple/SimpleTheme_minislide_Page6.png": {
+      "path": "assets/theming/simple/SimpleTheme_minislide_Page6.png",
+      "xxh3": "89008cb9540d473a",
+      "bytes": 49388,
+      "width": 1684,
+      "height": 947
+    }
+  }
+}

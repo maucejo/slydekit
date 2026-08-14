@@ -104,7 +104,7 @@ Slydekit borrows or adapts some of the codes provided by Polylux and Touying for
 
 **Localization out of the box.** Strings such as "Outline", "Note", "Tip", or "Proof" are pulled from a JSON dictionary keyed by `lang`, currently covering Chinese, English, French, German, Italian, Spanish and Portuguese
 
-## Comparison with Touying and Polylux
+<!-- ## Comparison with Touying and Polylux
 
 Touying and Polylux are the two most established presentation packages in the Typst ecosystem, and Slydekit deliberately sits close to both in spirit: heading-driven slides, `#pause`/`#uncover`/`#only` semantics, and a theme system. The differences are mostly a matter of scope and defaults.
 
@@ -131,7 +131,7 @@ Slydekit instead builds on Typst's native `context`, `state`, and `query` mechan
 
 This does not prevent users from introducing their own persistent state. Theme authors and helper functions can freely declare additional `state()` or `counter()` values whenever needed, independently of Slydekit's core. The only information managed centrally by Slydekit is the state that must remain synchronized with the presentation lifecycle. For example, values initialized once per presentation or updated once per subslide. The difference therefore lies less in extensibility itself than in how shared state is organized. Touying centralizes it in a single configurable object, whereas Slydekit keeps it decentralized and relies on Typst's built-in mechanisms.
 
-Despite these architectural differences, the animation capabilities of Touying and Slydekit are intentionally very similar. Slydekit provides `#pause`, `#meanwhile`, `#uncover`, `#only`, `one-by-one`, `item-by-item`, `alternatives`, `track`, and `reveal`, covering the same core incremental-reveal use cases as Touying, including synchronized parallel reveal chains and incremental mathematical expressions. Where the two projects differ is primarily outside the animation system, since Touying also includes export tooling (PPTX and HTML) and speaker-note support, whereas Slydekit deliberately focuses on PDF presentations and leaves these capabilities to external packages such as Presio.
+Despite these architectural differences, the animation capabilities of Touying and Slydekit are intentionally very similar. Slydekit provides `#pause`, `#meanwhile`, `#uncover`, `#only`, `one-by-one`, `item-by-item`, `alternatives`, `track`, and `reveal`, covering the same core incremental-reveal use cases as Touying, including synchronized parallel reveal chains and incremental mathematical expressions. Where the two projects differ is primarily outside the animation system, since Touying also includes export tooling (PPTX and HTML) and speaker-note support, whereas Slydekit deliberately focuses on PDF presentations and leaves these capabilities to external packages such as Presio. -->
 
 ## Themes at a glance
 
