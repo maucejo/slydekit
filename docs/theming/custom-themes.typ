@@ -82,7 +82,7 @@ To enable theme composition and partial theme definitions, Slydekit uses a share
   Boolean state that indicates whether the current slide is part of the appendix. It is used to determine the numbering format for slides in the appendix.
 ]
 
-#argument-callout(kind: "State", "colors", [dictionary])[
+#argument-callout(kind: "State", "colors", [dictionary], default: [(:)])[
   Dictionary that defines the color scheme of the presentation.
 ]
 
@@ -90,7 +90,7 @@ To enable theme composition and partial theme definitions, Slydekit uses a share
   String or content that represents the title of the current slide. It is used to display the title in the header or footer of the slide.
 ]
 
-#argument-callout(kind: "State", "fonts", [dictionary])[
+#argument-callout(kind: "State", "fonts", [dictionary], default: [(:)])[
   Dictionary that defines the fonts of the presentation.
 ]
 

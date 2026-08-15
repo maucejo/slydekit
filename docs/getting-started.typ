@@ -30,8 +30,8 @@ After importing the template, you have to initialize the template by a show rule
   institution: "Institution",
   contact: none,
   theme: simple,
-  fonts: none,
-  colors: none,
+  fonts: (:),
+  colors: (:),
   lang: "en",
   aspect-ratio: "16-9",
   navigation-style: "topbar",
@@ -75,7 +75,7 @@ Contact information for the author(s) or presenter(s), such as an email address 
 The theme to be used for the presentation. Available themes include `simple`, `fancy`, `metropolis`, `cambfurt`, and `chalkboard`. You can also create your own custom theme by defining a new theme in your Typst document.
 ]
 
-#argument-callout("fonts", [dictionary], default: [none])[
+#argument-callout("fonts", [dictionary], default: [(:)])[
 Custom fonts to be used in the presentation. You can specify a set of fonts to override the default fonts provided by the selected theme. If not specified, the theme's default fonts will be used.
 
 The dictionary should have the following structure:
@@ -89,7 +89,7 @@ The dictionary should have the following structure:
 ```
 ]
 
-#argument-callout("colors", [dictionary], default: [none])[
+#argument-callout("colors", [dictionary], default: [(:)])[
 Custom colors to be used in the presentation. You can specify a set of colors to override the default colors provided by the selected theme. If not specified, the theme's default colors will be used.
 
 The dictionary should have the following structure:
