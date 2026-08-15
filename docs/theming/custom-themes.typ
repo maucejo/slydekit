@@ -27,6 +27,8 @@ Basically, any theme exposes the same conceptual interface, which is a dictionar
   link-box: custom-link-box,
   boxeq: custom-boxeq,
   custom-box: custom-custom-box,
+  colors: custom-colors,
+  fonts: custom-fonts
 )
 ```
 
@@ -38,6 +40,8 @@ The elements of the dictionary are:
 - `link-box`: A function that defines the appearance of a link box, which is used to display links to other slides.
 - `boxeq`: A function that defines the appearance of a box equation.
 - `custom-box`: A function that defines the appearance of a custom callout box.
+- `colors`: A dictionary that defines the color scheme of the presentation.
+- `fonts`: A dictionary that defines the fonts used in the presentation.
 
 This design allows to define generic high-level functions that can be used whatever the theme is.
 
@@ -147,8 +151,12 @@ To implement a custom theme, you have to define a function that includes the `sh
 ```typ
 // my-theme.typ
 
+// Define the colors and fonts of the theme
+#let my-theme-colors = (...)
+#let my-theme-fonts = (...)
+
 // Theme function
-#let my-theme(body, colors: none, fonts: none) = context {
+#let my-theme(body) = context {
   // Equivalent to new-section-slide in Touying
   show heading.where(level: 1): it => { ... }
 
@@ -192,6 +200,12 @@ To implement a custom theme, you have to define a function that includes the `sh
   ...
 }
 
+// Custom callout box
+#let my-theme-custom-box = context {
+  // Define the style of the custom callout box
+  ...
+}
+
 // Theme dictionary
 #let my-theme = (
   theme: my-theme,
@@ -200,6 +214,9 @@ To implement a custom theme, you have to define a function that includes the `sh
   focus-slide: my-theme-focus-slide,
   link-box: my-theme-link-box,
   boxeq: my-theme-boxeq,
+  custom-box: my-theme-custom-box,
+  colors: my-theme-colors,
+  fonts: my-theme-fonts
 )
 ```
 
@@ -210,29 +227,10 @@ Once the theme is defined, you can use it in your presentation by specifying it 
 
 #show: slydekit.with(
   theme: my-theme,
-  colors: my-theme-colors,
-  fonts: my-theme-fonts,
 )
 ```
 
 #calepin.elements.callout(kind: "note")[
-  If you want to avoid setting the colors and fonts arguments in the `#slydekit` function, you can define your theme function to use the default colors and fonts of the theme, as follows:
-  ```typ
-  // my-theme.typ
-
-  // Define the colors and fonts of the theme
-  #let my-theme-colors = (...)
-  #let my-theme-fonts = (...)
-
-  #let my-theme(body, colors: none, fonts: none) = context {
-    // Update the shared states with the colors and fonts of the theme for further use
-    sk-states.colors.update(my-colors-theme)
-    sk-states.fonts.update(my-fonts-theme)
-
-  // The rest of the theme definition goes here...
-  }
-  ```
-
   You can also explore the source code of the #link("https://github.com/maucejo/slydekit/tree/main/src/themes", "built-in themes") to see how they are defined and how they rely on shared states to manage colors, fonts, and other theming elements.
 ]
 

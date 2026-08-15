@@ -3,15 +3,15 @@
 // #let my-theme = (
 //   theme: metropolis.theme,
 //   title: cambfurt.title,
-//   toc: simple-toc,
-//   focus-slide: fancy-focus-slide,
-//   link-box: simple-link-box,
-//   boxeq: fancy-boxeq,
+//   toc: simple.toc,
+//   focus-slide: fancy.focus-slide,
+//   link-box: simple.link-box,
+//   boxeq: fancy.boxeq,
 // )
 
 #let my-theme = (
   theme: fancy.theme,
-  toc: fancy-toc,
+  toc: fancy.toc,
 )
 
 

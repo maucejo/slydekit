@@ -1,8 +1,8 @@
 #import "slydekit-defaults.typ": *
 #import "themes/metropolis.typ": metropolis
-#import "themes/fancy.typ": *
+#import "themes/fancy.typ": fancy
 #import "themes/simple.typ": simple
-#import "themes/cambfurt.typ": *
+#import "themes/cambfurt.typ": cambfurt
 #import "themes/chalkboard.typ": chalkboard, chalkboard-colors-variant
 
 // Title slide
