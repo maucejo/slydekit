@@ -157,6 +157,9 @@ To implement a custom theme, you have to define a function that includes the `sh
 
 // Theme function
 #let my-theme(body) = context {
+  // To use your theme color, you have to use the shared state `sk-states.colors.get().my-color`
+  // instead of `my-theme-color` directly.
+
   // Equivalent to new-section-slide in Touying
   show heading.where(level: 1): it => { ... }
 
