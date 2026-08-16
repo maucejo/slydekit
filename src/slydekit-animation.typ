@@ -158,7 +158,7 @@
 #let only = _reveal.with(reserved: false)
 
 // Reproduces the visibility logic of reveal(), but allows a third-party package (Fletcher, CeTZ...) to provide its own masking via the hide-fn argument. This is useful for packages that use their own visibility logic and own context, which are not compatible with uncover/only.
-#let reveal(..args, hide-fn: none, body) = {
+#let draw-reveal(..args, hide-fn: none, body) = {
   let step = sk-states.subslide-step.get().first()
   let int-or-range = args.pos()
   let from = args.named().at("from", default: 1)
@@ -248,4 +248,59 @@
   }
 
   [#metadata((int-or-range: (), from: 1, to: n))<sk-reveal>#anim-content]
+}
+
+// Code animation integration
+#let raw-renderer(highlight-color: luma(90%), ..args) = (active, body) => {
+  set raw(..args)
+  show raw.line: it => if it.number in active {
+    highlight(fill: highlight-color, it)
+  } else {
+    it
+  }
+  body
+}
+
+#let codly-renderer(codly-fn, highlight-color: luma(90%), ..args) = (active, body) => {
+  codly-fn(highlights: active.map(l => (line: l, fill: highlight-color), ..args))
+  body
+  codly-fn()
+}
+
+#let zebraw-renderer(zebraw-fn, highlight-color: rgb("e0f5f2"), ..args) = (active, body) => {
+  zebraw-fn(
+    highlight-lines: active.map(l => (l, highlight-color)),
+    ..args,
+    body,
+  )
+}
+
+#let code-reveal(
+  steps: (:),
+  renderer: raw-renderer(),
+  ..args,
+  body,
+) = {
+  let max-step = calc.max(1, ..steps.values().map(v =>
+    if type(v) == array { calc.max(..v) } else { v }
+  ))
+  [#metadata((int-or-range: (), from: 1, to: max-step))<sk-reveal>]
+
+  context {
+    let step = sk-states.subslide-step.get().first()
+    let active = steps.pairs()
+      .filter(((_, v)) => if type(v) == array { step in v } else { step == v })
+      .map(((k, _)) => int(k))
+
+    if renderer != none {
+      renderer(active, ..args, body)
+    } else {
+      show raw.line: it => if it.number in active {
+        highlight(fill: highlight-color, ..args, it)
+      } else {
+        it
+      }
+      body
+    }
+  }
 }

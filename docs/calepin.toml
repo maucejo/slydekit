@@ -47,19 +47,19 @@ include = ["assets/**"]
 fold = true
 
 [[sidebar.section]]
-    [[sidebar.section.item]]
-    target = "./getting-started.typ"
+  [[sidebar.section.item]]
+  target = "./getting-started.typ"
 
 [[sidebar.section]]
 title = "Theming"
-    [[sidebar.section.item]]
-      target = "theming/built-in-themes.typ"
+  [[sidebar.section.item]]
+    target = "theming/built-in-themes.typ"
 
-    [[sidebar.section.item]]
-      target = "theming/fonts-colors.typ"
+  [[sidebar.section.item]]
+    target = "theming/fonts-colors.typ"
 
-    [[sidebar.section.item]]
-      target = "theming/custom-themes.typ"
+  [[sidebar.section.item]]
+    target = "theming/custom-themes.typ"
 
 [[sidebar.section]]
 title = "Animations"
@@ -79,7 +79,10 @@ title = "Animations"
     target = "animations/alternatives.typ"
 
   [[sidebar.section.item]]
-    target = "animations/reveal.typ"
+    target = "animations/draw-reveal.typ"
+
+  [[sidebar.section.item]]
+    target = "animations/code-reveal.typ"
 
 [[sidebar.section]]
 title = "Navigation, Progress"

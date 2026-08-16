@@ -1,4 +1,4 @@
-// #import "@preview/slydekit:0.2.0": *
+// #import "@preview/slydekit:0.3.0": *
 #import "../src/slydekit.typ": *
 #import "@preview/cetz:0.5.2"
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
@@ -38,7 +38,7 @@
     align(center)[
       #cetz.canvas({
         import cetz.draw: *
-        let reveal-cetz = reveal.with(hide-fn: cetz.draw.hide.with(bounds: true))
+        let reveal-cetz = draw-reveal.with(hide-fn: cetz.draw.hide.with(bounds: true))
 
         // Toujours visible
         circle((0, 0))
@@ -65,7 +65,7 @@
 
 #slide("Fletcher integration", steps: 2)[
   #context {
-    let reveal-fletcher = reveal.with(hide-fn: fletcher.hide.with(bounds: true))
+    let reveal-fletcher = draw-reveal.with(hide-fn: fletcher.hide.with(bounds: true))
     diagram(
       node-stroke: .1em,
       node-fill: gradient.radial(blue.lighten(80%), blue, center: (30%, 20%), radius: 80%),
@@ -82,6 +82,17 @@
       edge((0,0), (2,0), `close()`, "-|>", bend: -40deg),
     )
   }
+]
+
+#slide("Code integration")[
+  #code-reveal(steps: ("2": 1, "4": 2))[
+```py
+def fib(n):
+    if n <= 1:
+        return n
+    return fib(n-1) + fib(n-2)
+```
+]
 ]
 
 == Section <s:section>

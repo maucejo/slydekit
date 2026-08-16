@@ -80,7 +80,7 @@ This section introduces the basic workflow for creating presentations with Slyde
 To use the `slydekit` template, you need to include the following line at the beginning of your `typ` file:
 
 ```typ
-#import "@preview/slydekit:0.2.0": *
+#import "@preview/slydekit:0.3.0": *
 ```
 
 = Template initialization
@@ -177,7 +177,7 @@ Whether to generate a handout version of the presentation. If set to `true`, the
 = Basic usage
 
 ```typ
-#import "@preview/slydekit:0.2.0": *
+#import "@preview/slydekit:0.3.0": *
 
 #show: slydekit.with(
   title: "Slydekit",

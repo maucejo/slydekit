@@ -1,4 +1,4 @@
-#import "slydekit-animation.typ": pause, uncover, only, meanwhile, alternatives, one-by-one, item-by-item, reveal, track
+#import "slydekit-animation.typ": *
 #import "slydekit-deps.typ": *
 #import "slydekit-defaults.typ": *
 #import "slydekit-themes.typ": *

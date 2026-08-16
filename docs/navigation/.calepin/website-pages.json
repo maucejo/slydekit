@@ -27,6 +27,40 @@
     "translations": {}
   },
   {
+    "href": "animations/code-reveal.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "animations",
+        "code-reveal",
+        "codly",
+        "zebraw"
+      ]
+    },
+    "path": "animations/code-reveal.typ",
+    "pdf": null,
+    "title": "Code animation",
+    "translation_key": "animations/code-reveal",
+    "translations": {}
+  },
+  {
+    "href": "animations/draw-reveal.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "animations",
+        "draw-reveal",
+        "cetz",
+        "fletcher"
+      ]
+    },
+    "path": "animations/draw-reveal.typ",
+    "pdf": null,
+    "title": "CeTZ/Fletcher integration",
+    "translation_key": "animations/draw-reveal",
+    "translations": {}
+  },
+  {
     "href": "animations/item.html",
     "language": null,
     "meta": {
@@ -72,23 +106,6 @@
     "pdf": null,
     "title": "Pause, uncover and only",
     "translation_key": "animations/pause",
-    "translations": {}
-  },
-  {
-    "href": "animations/reveal.html",
-    "language": null,
-    "meta": {
-      "tags": [
-        "animations",
-        "reveal",
-        "cetz",
-        "fletcher"
-      ]
-    },
-    "path": "animations/reveal.typ",
-    "pdf": null,
-    "title": "CeTZ/Fletcher integration",
-    "translation_key": "animations/reveal",
     "translations": {}
   },
   {

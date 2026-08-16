@@ -21,7 +21,7 @@ Presentations are built directly from document headings, with five predefined th
 Slydekit is used as a #show rule at the top of your document. Everything else in the file is written as ordinary Typst content: headings become sections and slides, and no #slide[...] wrapper is required.
 
 ```typ
-#import "@preview/slydekit:0.2.0": *
+#import "@preview/slydekit:0.3.0": *
 
 #show: slydekit.with(
   title: "Title",

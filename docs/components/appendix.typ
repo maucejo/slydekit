@@ -19,7 +19,7 @@ To include an appendix in your presentation, you can use the `appendix` function
 
 Practically, a presentation including an appendix looks like this:
 ```typ
-#import "@preview/slydekit:0.2.0": *
+#import "@preview/slydekit:0.3.0": *
 
 #show: slydekit.with(...)
 
@@ -56,7 +56,7 @@ For the built-in themes, the appendix slides are automatically excluded from the
 == Without `hide-toc`
 
 ```typ
-#import "@preview/slydekit:0.2.0": *
+#import "@preview/slydekit:0.3.0": *
 
 #show: slydekit.with(...)
 
@@ -100,7 +100,7 @@ For the built-in themes, the appendix slides are automatically excluded from the
 == With `hide-toc`
 
 ```typ
-#import "@preview/slydekit:0.2.0": *
+#import "@preview/slydekit:0.3.0": *
 
 #show: slydekit.with(...)
 
