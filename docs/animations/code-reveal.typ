@@ -21,9 +21,13 @@ Slydekit provides the `code-reveal` function that can be used to create this eff
 )
 ```
 
-#argument-callout("steps", [dictionary], default: [(:)])[Steps for the code reveal animation.
+#argument-callout("highlight-lines", [dictionary], default: [(:)])[Lines to highlight during the code reveal animation.
 
 The dictionary keys are strings representing the line numbers of the code snippet, and the values are either integers or arrays of integers indicating the subslide numbers on which the corresponding lines should be highlighted. For example, `("2": 1, "4": 2)` means that line 2 will be highlighted on subslide 1, and line 4 will be highlighted on subslide 2.]
+
+#argument-callout("hide-lines", [dictionary], default: [(:)])[Lines to hide during the code reveal animation.
+
+The dictionary keys are strings representing the line numbers of the code snippet, and the values are either integers or arrays of integers indicating the subslide numbers from which the corresponding lines should be visible. For example, `("3": 2, "4": 3)` means that line 3 will be visible from subslide 2, and line 4 will be visible from subslide 3.]
 
 #argument-callout("renderer", [function], default: [raw-renderer()])[The function used to render the code snippet. This can be a custom renderer or one of the provided renderers, namely `raw-renderer`, `codly-renderer`, or `zebraw-renderer`.]
 
@@ -61,7 +65,10 @@ def fib(n):
 ```
 
 #slide("Code animation - Raw renderer")[
-  #code-reveal(steps: ("2": 1, "4": 2))[#code]
+  #code-reveal(
+    highlight-lines: ("2": 2, "4": 3),
+    hide-lines: ("3": 2, "4": 3)
+  )[#code]
 ]
 ````
 
@@ -69,8 +76,9 @@ def fib(n):
   (
     ("../assets/animations/raw-renderer1.png", "Step 1"),
     ("../assets/animations/raw-renderer2.png", "Step 2"),
+    ("../assets/animations/raw-renderer3.png", "Step 3"),
   ),
-  columns: 2,
+  columns: 3,
   max-width: 100%,
 )
 
@@ -113,7 +121,11 @@ def fib(n):
 ```
 
 #slide("Code animation - Codly renderer")[
-  #code-reveal(steps: ("2": 1, "4": 2), renderer: codly-renderer(codly, highlight-color: rgb("#a6b0e8")))[#code]
+  #show: codly-init
+  #code-reveal(
+    highlight-lines: ("2": 2, "4": 3),
+    hide-lines: ("3": 2, "4": 3),
+    renderer: codly-renderer(codly, highlight-color: rgb("#a6b0e8")))[#code]
 ]
 ````
 
@@ -121,8 +133,9 @@ def fib(n):
   (
     ("../assets/animations/codly-renderer1.png", "Step 1"),
     ("../assets/animations/codly-renderer2.png", "Step 2"),
+    ("../assets/animations/codly-renderer3.png", "Step 3"),
   ),
-  columns: 2,
+  columns: 3,
   max-width: 100%,
 )
 
@@ -161,7 +174,11 @@ def fib(n):
 ```
 
 #slide("Code animation - Zebraw renderer")[
-  #code-reveal(steps: ("2": 1, "4": 2), renderer: zebraw-renderer(zebraw))[#code]
+  #code-reveal(
+    highlight-lines: ("2": 2, "4": 3),
+    hide-lines: ("3": 2, "4": 3),
+    renderer: zebraw-renderer(zebraw)
+  )[#code]
 ]
 ````
 
@@ -169,8 +186,9 @@ def fib(n):
   (
     ("../assets/animations/zebraw-renderer1.png", "Step 1"),
     ("../assets/animations/zebraw-renderer2.png", "Step 2"),
+    ("../assets/animations/zebraw-renderer3.png", "Step 3"),
   ),
-  columns: 2,
+  columns: 3,
   max-width: 100%,
 )
 

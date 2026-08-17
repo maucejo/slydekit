@@ -275,32 +275,52 @@
   )
 }
 
+// Helper function required to process the body when zebraw-renderer is used. This is required because, starting with zebraw 0.6.x, zebraw no longer lets Typst simply compose raw.line. It retrieves it.lines, processes the lines itself with process-lines, then reconstructs the block with grids.
+#let process-raw-body(body, hidden) = {
+  if type(body) == content {
+    if body.func() == raw {
+      let lines = body.text.split("\n")
+      let filtered-text = lines.enumerate().map(((idx, line)) => {
+        if (idx + 1) in hidden { "" } else { line }
+      }).join("\n")
+      return raw(filtered-text, lang: body.lang, block: body.block)
+    } else if body.has("children") {
+      return body.children.map(c => process-raw-body(c, hidden)).join()
+    }
+  }
+  return body
+}
+
 #let code-reveal(
-  steps: (:),
+  highlight-lines: (:),
+  hide-lines: (:),
   renderer: raw-renderer(),
-  ..args,
   body,
 ) = {
-  let max-step = calc.max(1, ..steps.values().map(v =>
-    if type(v) == array { calc.max(..v) } else { v }
-  ))
+  let step-value(v) = if type(v) == array { calc.max(..v) } else { v }
+  let max-step = calc.max(
+    1,
+    ..highlight-lines.values().map(step-value),
+    ..hide-lines.values().map(step-value),
+  )
   [#metadata((int-or-range: (), from: 1, to: max-step))<sk-reveal>]
 
   context {
     let step = sk-states.subslide-step.get().first()
-    let active = steps.pairs()
+
+    let active = highlight-lines.pairs()
       .filter(((_, v)) => if type(v) == array { step in v } else { step == v })
       .map(((k, _)) => int(k))
 
-    if renderer != none {
-      renderer(active, ..args, body)
-    } else {
-      show raw.line: it => if it.number in active {
-        highlight(fill: highlight-color, ..args, it)
-      } else {
-        it
-      }
-      body
-    }
+    let hidden = hide-lines.pairs()
+      .filter(((_, v)) => if type(v) == array { step not in v } else { step < v })
+      .map(((k, _)) => int(k))
+
+    show raw.line: it => if it.number in hidden { std.hide(it) } else { it }
+
+    // Process the body to hide lines that are not active, so that the renderer receives a body with only the visible lines. This is necessary for the zebraw-renderer, which need to know the line numbers of the visible lines to apply highlighting correctly.
+    let new-body = process-raw-body(body, hidden)
+
+    renderer(active, new-body)
   }
 }

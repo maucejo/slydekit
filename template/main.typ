@@ -1,5 +1,5 @@
-#import "@preview/slydekit:0.3.0": *
-// #import "../src/slydekit.typ": *
+// #import "@preview/slydekit:0.3.0": *
+#import "../src/slydekit.typ": *
 #import "@preview/cetz:0.5.2"
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
 
@@ -85,12 +85,15 @@
 ]
 
 #slide("Code animation")[
-  #code-reveal(steps: ("2": 1, "4": 2))[
-    ```py
+  #code-reveal(
+    highlight-lines: ("2": 2, "4": 3),
+    hide-lines: ("3": 2, "4": 3),
+  )[
+    ```python
     def fib(n):
-      if n <= 1:
-          return n
-      return fib(n-1) + fib(n-2)
+        if n <= 1:
+            return n
+        return fib(n-1) + fib(n-2)
     ```
   ]
 ]

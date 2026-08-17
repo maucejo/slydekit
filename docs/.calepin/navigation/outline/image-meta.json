@@ -136,15 +136,22 @@
     },
     "/_site/assets/animations/codly-renderer1.png": {
       "path": "_site/assets/animations/codly-renderer1.png",
-      "xxh3": "3b434dfc2f7a962b",
-      "bytes": 49014,
+      "xxh3": "f5d5fb14b6da5771",
+      "bytes": 39867,
       "width": 1684,
       "height": 947
     },
     "/_site/assets/animations/codly-renderer2.png": {
       "path": "_site/assets/animations/codly-renderer2.png",
-      "xxh3": "f581c392c50cd534",
-      "bytes": 49754,
+      "xxh3": "220b567de184c03f",
+      "bytes": 42570,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/codly-renderer3.png": {
+      "path": "_site/assets/animations/codly-renderer3.png",
+      "xxh3": "65f3c51e973c631a",
+      "bytes": 49746,
       "width": 1684,
       "height": 947
     },
@@ -248,15 +255,22 @@
     },
     "/_site/assets/animations/raw-renderer1.png": {
       "path": "_site/assets/animations/raw-renderer1.png",
-      "xxh3": "018a2d80036ab187",
-      "bytes": 39535,
+      "xxh3": "137d8aec07151ad0",
+      "bytes": 30946,
       "width": 1684,
       "height": 947
     },
     "/_site/assets/animations/raw-renderer2.png": {
       "path": "_site/assets/animations/raw-renderer2.png",
-      "xxh3": "65425fed50730075",
-      "bytes": 39633,
+      "xxh3": "3a907f4d9b5e8e09",
+      "bytes": 33249,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/raw-renderer3.png": {
+      "path": "_site/assets/animations/raw-renderer3.png",
+      "xxh3": "1e1b013da1e680e1",
+      "bytes": 39641,
       "width": 1684,
       "height": 947
     },
@@ -304,14 +318,21 @@
     },
     "/_site/assets/animations/zebraw-renderer1.png": {
       "path": "_site/assets/animations/zebraw-renderer1.png",
-      "xxh3": "7e87c0ac9c9d1d39",
-      "bytes": 47084,
+      "xxh3": "b9929e2faa09e62b",
+      "bytes": 47093,
       "width": 1684,
       "height": 947
     },
     "/_site/assets/animations/zebraw-renderer2.png": {
       "path": "_site/assets/animations/zebraw-renderer2.png",
-      "xxh3": "daa10ae37aa45873",
+      "xxh3": "63fb25a2ce15476f",
+      "bytes": 47085,
+      "width": 1684,
+      "height": 947
+    },
+    "/_site/assets/animations/zebraw-renderer3.png": {
+      "path": "_site/assets/animations/zebraw-renderer3.png",
+      "xxh3": "83686f1b45b97a5f",
       "bytes": 47092,
       "width": 1684,
       "height": 947
@@ -1179,15 +1200,22 @@
     },
     "/assets/animations/codly-renderer1.png": {
       "path": "assets/animations/codly-renderer1.png",
-      "xxh3": "3b434dfc2f7a962b",
-      "bytes": 49014,
+      "xxh3": "f5d5fb14b6da5771",
+      "bytes": 39867,
       "width": 1684,
       "height": 947
     },
     "/assets/animations/codly-renderer2.png": {
       "path": "assets/animations/codly-renderer2.png",
-      "xxh3": "f581c392c50cd534",
-      "bytes": 49754,
+      "xxh3": "220b567de184c03f",
+      "bytes": 42570,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/codly-renderer3.png": {
+      "path": "assets/animations/codly-renderer3.png",
+      "xxh3": "65f3c51e973c631a",
+      "bytes": 49746,
       "width": 1684,
       "height": 947
     },
@@ -1291,15 +1319,22 @@
     },
     "/assets/animations/raw-renderer1.png": {
       "path": "assets/animations/raw-renderer1.png",
-      "xxh3": "018a2d80036ab187",
-      "bytes": 39535,
+      "xxh3": "137d8aec07151ad0",
+      "bytes": 30946,
       "width": 1684,
       "height": 947
     },
     "/assets/animations/raw-renderer2.png": {
       "path": "assets/animations/raw-renderer2.png",
-      "xxh3": "65425fed50730075",
-      "bytes": 39633,
+      "xxh3": "3a907f4d9b5e8e09",
+      "bytes": 33249,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/raw-renderer3.png": {
+      "path": "assets/animations/raw-renderer3.png",
+      "xxh3": "1e1b013da1e680e1",
+      "bytes": 39641,
       "width": 1684,
       "height": 947
     },
@@ -1347,14 +1382,21 @@
     },
     "/assets/animations/zebraw-renderer1.png": {
       "path": "assets/animations/zebraw-renderer1.png",
-      "xxh3": "7e87c0ac9c9d1d39",
-      "bytes": 47084,
+      "xxh3": "1c3126217999633c",
+      "bytes": 38235,
       "width": 1684,
       "height": 947
     },
     "/assets/animations/zebraw-renderer2.png": {
       "path": "assets/animations/zebraw-renderer2.png",
-      "xxh3": "daa10ae37aa45873",
+      "xxh3": "ce47fa972310ea9f",
+      "bytes": 40370,
+      "width": 1684,
+      "height": 947
+    },
+    "/assets/animations/zebraw-renderer3.png": {
+      "path": "assets/animations/zebraw-renderer3.png",
+      "xxh3": "c9bcad0a7e43104e",
       "bytes": 47092,
       "width": 1684,
       "height": 947
@@ -2222,15 +2264,22 @@
     },
     "_site/assets/animations/codly-renderer1.png": {
       "path": "_site/assets/animations/codly-renderer1.png",
-      "xxh3": "3b434dfc2f7a962b",
-      "bytes": 49014,
+      "xxh3": "f5d5fb14b6da5771",
+      "bytes": 39867,
       "width": 1684,
       "height": 947
     },
     "_site/assets/animations/codly-renderer2.png": {
       "path": "_site/assets/animations/codly-renderer2.png",
-      "xxh3": "f581c392c50cd534",
-      "bytes": 49754,
+      "xxh3": "220b567de184c03f",
+      "bytes": 42570,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/codly-renderer3.png": {
+      "path": "_site/assets/animations/codly-renderer3.png",
+      "xxh3": "65f3c51e973c631a",
+      "bytes": 49746,
       "width": 1684,
       "height": 947
     },
@@ -2334,15 +2383,22 @@
     },
     "_site/assets/animations/raw-renderer1.png": {
       "path": "_site/assets/animations/raw-renderer1.png",
-      "xxh3": "018a2d80036ab187",
-      "bytes": 39535,
+      "xxh3": "137d8aec07151ad0",
+      "bytes": 30946,
       "width": 1684,
       "height": 947
     },
     "_site/assets/animations/raw-renderer2.png": {
       "path": "_site/assets/animations/raw-renderer2.png",
-      "xxh3": "65425fed50730075",
-      "bytes": 39633,
+      "xxh3": "3a907f4d9b5e8e09",
+      "bytes": 33249,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/raw-renderer3.png": {
+      "path": "_site/assets/animations/raw-renderer3.png",
+      "xxh3": "1e1b013da1e680e1",
+      "bytes": 39641,
       "width": 1684,
       "height": 947
     },
@@ -2390,14 +2446,21 @@
     },
     "_site/assets/animations/zebraw-renderer1.png": {
       "path": "_site/assets/animations/zebraw-renderer1.png",
-      "xxh3": "7e87c0ac9c9d1d39",
-      "bytes": 47084,
+      "xxh3": "b9929e2faa09e62b",
+      "bytes": 47093,
       "width": 1684,
       "height": 947
     },
     "_site/assets/animations/zebraw-renderer2.png": {
       "path": "_site/assets/animations/zebraw-renderer2.png",
-      "xxh3": "daa10ae37aa45873",
+      "xxh3": "63fb25a2ce15476f",
+      "bytes": 47085,
+      "width": 1684,
+      "height": 947
+    },
+    "_site/assets/animations/zebraw-renderer3.png": {
+      "path": "_site/assets/animations/zebraw-renderer3.png",
+      "xxh3": "83686f1b45b97a5f",
       "bytes": 47092,
       "width": 1684,
       "height": 947
@@ -3265,15 +3328,22 @@
     },
     "assets/animations/codly-renderer1.png": {
       "path": "assets/animations/codly-renderer1.png",
-      "xxh3": "3b434dfc2f7a962b",
-      "bytes": 49014,
+      "xxh3": "f5d5fb14b6da5771",
+      "bytes": 39867,
       "width": 1684,
       "height": 947
     },
     "assets/animations/codly-renderer2.png": {
       "path": "assets/animations/codly-renderer2.png",
-      "xxh3": "f581c392c50cd534",
-      "bytes": 49754,
+      "xxh3": "220b567de184c03f",
+      "bytes": 42570,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/codly-renderer3.png": {
+      "path": "assets/animations/codly-renderer3.png",
+      "xxh3": "65f3c51e973c631a",
+      "bytes": 49746,
       "width": 1684,
       "height": 947
     },
@@ -3377,15 +3447,22 @@
     },
     "assets/animations/raw-renderer1.png": {
       "path": "assets/animations/raw-renderer1.png",
-      "xxh3": "018a2d80036ab187",
-      "bytes": 39535,
+      "xxh3": "137d8aec07151ad0",
+      "bytes": 30946,
       "width": 1684,
       "height": 947
     },
     "assets/animations/raw-renderer2.png": {
       "path": "assets/animations/raw-renderer2.png",
-      "xxh3": "65425fed50730075",
-      "bytes": 39633,
+      "xxh3": "3a907f4d9b5e8e09",
+      "bytes": 33249,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/raw-renderer3.png": {
+      "path": "assets/animations/raw-renderer3.png",
+      "xxh3": "1e1b013da1e680e1",
+      "bytes": 39641,
       "width": 1684,
       "height": 947
     },
@@ -3433,14 +3510,21 @@
     },
     "assets/animations/zebraw-renderer1.png": {
       "path": "assets/animations/zebraw-renderer1.png",
-      "xxh3": "7e87c0ac9c9d1d39",
-      "bytes": 47084,
+      "xxh3": "1c3126217999633c",
+      "bytes": 38235,
       "width": 1684,
       "height": 947
     },
     "assets/animations/zebraw-renderer2.png": {
       "path": "assets/animations/zebraw-renderer2.png",
-      "xxh3": "daa10ae37aa45873",
+      "xxh3": "ce47fa972310ea9f",
+      "bytes": 40370,
+      "width": 1684,
+      "height": 947
+    },
+    "assets/animations/zebraw-renderer3.png": {
+      "path": "assets/animations/zebraw-renderer3.png",
+      "xxh3": "c9bcad0a7e43104e",
       "bytes": 47092,
       "width": 1684,
       "height": 947
