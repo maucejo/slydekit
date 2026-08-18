@@ -1,23 +1,4 @@
 // States
-#let sk-states = (
-  app-slide-number: counter("appendix"),
-  appendix: state("appendix", false),
-  colors: state("colors", (:)),
-  current-slide-title: state("current-slide-title", []),
-  fonts: state("fonts", (:)),
-  handout: state("handout", false),
-  is-footcite: state("is-footcite", false),
-  logo: state("logo"),
-  localization: state("localization"),
-  navigation-style: state("navigation-style", "topbar"),
-  pause-index: counter("pause-index"),
-  pres-info: state("pres-info"),
-  slide-number: counter("slide-number"),
-  subslide-total: counter("subslide-total"),
-  subslide-step: counter("subslide-step"),
-  theme: state("theme"),
-)
-
 // Defaults
 #let margins = (
   left: 2cm,
@@ -45,5 +26,30 @@
   header-footer-logo: none
 )
 
+#let default-numbering = (
+  section: "1.1.",
+  appendix: "A.1.",
+)
+
 #let default-language = ("en", "de", "fr",  "es", "it", "pt", "zh")
+
+#let sk-states = (
+  app-slide-number: counter("appendix"),
+  appendix: state("appendix", false),
+  colors: state("colors", (:)),
+  current-slide-title: state("current-slide-title", []),
+  fonts: state("fonts", (:)),
+  handout: state("handout", false),
+  is-footcite: state("is-footcite", false),
+  logo: state("logo"),
+  localization: state("localization"),
+  navigation-style: state("navigation-style", "topbar"),
+  numbering: state("numbering", default-numbering),
+  pause-index: counter("pause-index"),
+  pres-info: state("pres-info"),
+  slide-number: counter("slide-number"),
+  subslide-total: counter("subslide-total"),
+  subslide-step: counter("subslide-step"),
+  theme: state("theme"),
+)
 

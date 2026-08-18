@@ -35,6 +35,7 @@ After importing the template, you have to initialize the template by a show rule
   lang: "en",
   aspect-ratio: "16-9",
   navigation-style: "topbar",
+  numbering: (:),
   title-logo: (),
   slide-logo: none,
   handout: false,
@@ -123,6 +124,18 @@ Aspect ratio of the slides. Common values include "16-9" for widescreen presenta
 
 #argument-callout("navigation-style", [string], default: ["topbar"])[
 Navigation style for the presentation. Available options include "topbar" for a top navigation bar, "minislide" for a mini slide navigation, and other custom navigation styles that can be defined in your Typst document. This setting affects how users can navigate through the slides during the presentation.
+]
+
+#argument-callout("numbering", [dictionary], default: [(:)])[
+Custom numbering format for sections and appendices. You can specify a set of numbering formats to override the default numbering provided by the selected theme. If not specified, the theme's default numbering (i.e. `"1.1."` for normal sections and `"A.1."` for appendix sections) will be used.
+
+The dictionary should have the following structure:
+```typ
+#let numbering = (
+  section: "Numbering format for sections",
+  appendix: "Numbering format for appendices",
+)
+```
 ]
 
 #argument-callout("title-logo", [array], default: [()])[

@@ -10,7 +10,7 @@
   date: "2024-06-01",
   institution: "Université de Typst",
   contact: "john.doe@univ.typst.fr",
-  theme: metropolis,
+  // theme: metropolis,
   // theme: fancy,
   // theme: simple,
   // theme: cambfurt,

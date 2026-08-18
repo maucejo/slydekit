@@ -52,8 +52,9 @@
 // - false  : Never displays appendix sections.
 #let mini-slides(
   fill: none,
-  alpha: 50%,
+  // alpha: 50%,
   display-subsection: true,
+  section-numbering: false,
   linebreaks: true,
   display-appendix: "auto",
 ) = {
@@ -69,8 +70,6 @@
     } else {
       theme-colors.at("header", default: black)
     }
-
-    let faded-fill = if type(main-fill) == color { main-fill.lighten(alpha) } else { main-fill }
 
     // Detection of the current slide number and the total number of slides
     let current-is-appendix = sk-states.appendix.get()
@@ -118,7 +117,6 @@
       }
 
       let is-current-sec = (sec-idx == current-sec-idx)
-      let sec-color = if is-current-sec { main-fill } else { faded-fill }
 
       // Slides attached to this section, via the <sk-slide> marker
       let slides = all-slides.filter(h => (
@@ -127,12 +125,21 @@
       ))
 
       let col-content = {
-        set text(fill: sec-color)
-
         // Remove linebreaks when displaying subsections, to avoid double linebreaks
         {
           show linebreak: none
-          link(section.location(), section.body)
+          let num = if section-numbering {
+            let fmt = if sk-states.appendix.get() {
+              sk-states.numbering.get().appendix
+            } else {
+              sk-states.numbering.get().section
+            }
+            numbering(fmt, ..counter(heading).at(section.location())) + " "
+          } else {
+            none
+          }
+
+          link(section.location(), num + section.body)
         }
 
         if display-subsection and slides.len() > 0 {
@@ -184,8 +191,6 @@
   inactive-color,
   entry-size: 0.8575em,
   gutter: 4%,
-  section-numbering: "1.1.",
-  appendix-numbering: "A.1.",
 ) = context {
   set text(size: entry-size)
   show linebreak: none
@@ -203,7 +208,7 @@
 
   let entries = sections.enumerate().map(((idx, s)) => {
     let s-is-appendix = sk-states.appendix.at(s.location())
-    let format = if s-is-appendix { appendix-numbering } else { section-numbering }
+    let format = if s-is-appendix { sk-states.numbering.get().appendix } else { sk-states.numbering.get().section }
 
     let count = counter(heading).at(s.location())
     let num = numbering(format, ..count)

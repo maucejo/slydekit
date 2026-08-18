@@ -25,15 +25,6 @@
   set page(fill: sk-states.colors.get().background, margin: margins + metropolis-margin)
 
   // Heading styles
-  set heading(numbering: (..nums) => {
-    if sk-states.appendix.get() {
-      numbering("A.1.", ..nums)
-    } else {
-      numbering("1.1.", ..nums)
-    }
-  })
-
-  // Heading styles
   show heading.where(level: 1): it => {
     set strong(delta: 0)
     set page(header: none, footer: none, margin: margins)

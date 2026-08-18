@@ -25,15 +25,6 @@
   set page(fill: sk-states.colors.get().background, margin: margins + simple-margin)
 
   // Heading styles
-  set heading(numbering: (..nums) => {
-    if sk-states.appendix.get() {
-      numbering("A.1.", ..nums)
-    } else {
-      numbering("1.1.", ..nums)
-    }
-  })
-
-  // Heading styles
   show heading.where(level: 1): it => {
     let header-content = {
       let dy = if sk-states.navigation-style.get() == "topbar" { 0em } else { -0.2em }

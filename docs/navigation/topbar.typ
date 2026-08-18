@@ -54,8 +54,8 @@ To implement the minislide navigation style, Slydekit provides the mini-slides h
 ```typ
 #let mini-slides(
   fill: none,
-  alpha: 50%,
   display-subsection: true,
+  section-numbering: false,
   linebreaks: true,
   display-appendix: "auto",
 )
@@ -64,11 +64,14 @@ To implement the minislide navigation style, Slydekit provides the mini-slides h
 #argument-callout("fill", [color | none], default: [none])[
 The color used to fill the active slide indicator. If set to `none`, the indicator uses the `header` entry defined `color` dictionary instead.]
 
-#argument-callout("alpha", [number], default: [50%])[
-The transparency applied to inactive slides. A value of `0%` makes them fully transparent, while `100%` makes them fully opaque. The default value is `50%`, which provides a balanced visibility for inactive slides.]
+// #argument-callout("alpha", [number], default: [50%])[
+// The transparency applied to inactive slides. A value of `0%` makes them fully transparent, while `100%` makes them fully opaque. The default value is `50%`, which provides a balanced visibility for inactive slides.]
 
 #argument-callout("display-subsection", [boolean], default: [true])[
 A boolean value that determines whether to display bullets for each slide under the sections. If set to `true`, bullets will be displayed for each slide under the sections. If set to `false`, bullets will not be displayed.]
+
+#argument-callout("section-numbering", [boolean], default: [false])[
+A boolean value that determines whether to display section numbering. If set to `true`, section numbers will be displayed next to the section titles. If set to `false`, section numbers will not be displayed.]
 
 #argument-callout("linebreaks", [boolean], default: [true])[
 A boolean value that determines whether to place the bullets on a new line under the section title. If set to `true`, bullets will be placed horizontally on a new line under the section title. If set to `false`, bullets will be placed vertically on the same line as the section title.]

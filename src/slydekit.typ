@@ -20,6 +20,7 @@
   navigation-style: "topbar",
   title-logo: (),
   slide-logo: none,
+  numbering: (:),
   handout: false,
   body
 ) = context {
@@ -28,6 +29,20 @@
     paper: "presentation-" + aspect-ratio,
     margin: margins,
   )
+
+  // Numbering
+  let sk-numbering = default-numbering + numbering
+
+  set heading(numbering: if numbering != none {
+    (..nums) => {
+      if sk-states.appendix.get() {
+        std.numbering(sk-numbering.appendix, ..nums)
+      } else {
+        std.numbering(sk-numbering.section, ..nums)
+      }
+    }
+  })
+  sk-states.numbering.update(sk-numbering)
 
   // Localization
   let sk-lang = if default-language.contains(lang) {lang} else {"en"}
