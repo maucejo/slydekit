@@ -1,6 +1,7 @@
 #import "slydekit-animation.typ": *
 #import "slydekit-deps.typ": *
 #import "slydekit-defaults.typ": *
+#import "slydekit-outline.typ": *
 #import "slydekit-themes.typ": *
 #import "slydekit-utils.typ": *
 
@@ -20,7 +21,8 @@
   navigation-style: "topbar",
   title-logo: (),
   slide-logo: none,
-  numbering: (:),
+  section-numbering: false,
+  numbering-pattern: (:),
   handout: false,
   body
 ) = context {
@@ -30,19 +32,22 @@
     margin: margins,
   )
 
+  // Section numbering
+  sk-states.section-numbering.update(section-numbering)
+
   // Numbering
-  let sk-numbering = default-numbering + numbering
+  let sk-numbering-pattern = default-numbering-pattern + numbering-pattern
 
   set heading(numbering: if numbering != none {
     (..nums) => {
       if sk-states.appendix.get() {
-        std.numbering(sk-numbering.appendix, ..nums)
+        std.numbering(sk-numbering-pattern.appendix, ..nums)
       } else {
-        std.numbering(sk-numbering.section, ..nums)
+        std.numbering(sk-numbering-pattern.section, ..nums)
       }
     }
   })
-  sk-states.numbering.update(sk-numbering)
+  sk-states.numbering-pattern.update(sk-numbering-pattern)
 
   // Localization
   let sk-lang = if default-language.contains(lang) {lang} else {"en"}
@@ -58,6 +63,11 @@
 
   // Rules common to all themes
 
+  // Level 1 heading
+  show heading.where(level: 1): it => context {
+    sk-states.slide-index.update(0)
+    it
+  }
   // Level 2 headings are slides, defined with == Title
   show heading.where(level: 2): it => slide(it.body)[]
 

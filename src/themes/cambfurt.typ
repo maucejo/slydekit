@@ -27,7 +27,7 @@
 
   // Heading styles
   show heading.where(level: 1): it => {
-    let dy = 2pt
+    let dy = -2pt
     let header-content = if sk-states.navigation-style.get() == "topbar" {
       let topbar = grid(
         columns: (1fr, 1fr),
@@ -52,12 +52,25 @@
     let sections = query(heading.where(level: 1).before(here()))
     let current-section = if sections.len() > 0 { sections.last().body } else { none }
 
+    let num = if sk-states.section-numbering.get() {
+      let format = if sk-states.appendix.get() {
+        sk-states.numbering-pattern.get().appendix
+      } else {
+        sk-states.numbering-pattern.get().section
+      }
+
+      let count = counter(heading).get().first()
+      numbering(format, count)
+    } else {
+      none
+    }
+
     let topbar = grid(
         columns: (1fr, 1fr),
         align: (right + horizon, left + horizon),
         rows: 1.5em,
-        grid.cell(fill: sk-states.colors.get().header)[#text(fill: white)[*#current-section* #h(0.75em)]],
-        grid.cell(fill: sk-states.colors.get().secondary)[#text(fill: sk-states.colors.get().primary)[#h(0.75em) *#sk-states.current-slide-title.get()*]],
+        grid.cell(fill: sk-states.colors.get().header)[#text(fill: white)[*#text(fill: white, num) #current-section* #h(0.75em)]],
+        grid.cell(fill: sk-states.colors.get().secondary)[#text(fill: sk-states.colors.get().primary)[#h(0.75em) *#subtitle-slide()*]],
       )
       full-width(move(dy: -2pt)[#topbar])
   } else if sk-states.navigation-style.get() == "minislide" {
@@ -66,7 +79,7 @@
       #place(top, dy: -0.75em)[#cell(fill: sk-states.colors.get().secondary.lighten(60%))
       ]
       #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
-      #place(dx: 3.5%, dy: 1em)[#box(width: 100%, outset: (left: 2em, right: 1em, rest: 0.5em), fill: sk-states.colors.get().secondary.lighten(45%), text(size: 1.25em, weight: "bold", fill: sk-states.colors.get().header, sk-states.current-slide-title.get()))]
+      #place(dx: 3.5%, dy: 1em)[#box(width: 100%, outset: (left: 2em, right: 1em, rest: 0.5em), fill: sk-states.colors.get().secondary.lighten(45%), text(size: 1.25em, weight: "bold", fill: sk-states.colors.get().header, subtitle-slide()))]
     ]
     full-width(mini-content)
   }
@@ -203,7 +216,7 @@
       )
       move(dy: -2pt)[#topbar]
     } else {
-      move(dx: 1em, dy: -0.5em)[#box(width: 100%, fill: sk-states.colors.get().secondary, outset: (left: 1em, rest: 0.5em))[*#sk-states.localization.get().toc*]]
+      move(dx: 1em, dy: -0.5em)[#box(width: 100%, fill: sk-states.colors.get().secondary.lighten(45%), outset: (left: 1em, rest: 0.5em))[*#sk-states.localization.get().toc*]]
     }
     let header = full-width(fill: none, align(horizon, text(size: 1.2em, fill: sk-states.colors.get().primary)[#header-content]))
 

@@ -130,16 +130,16 @@
           show linebreak: none
           let num = if section-numbering {
             let fmt = if sk-states.appendix.get() {
-              sk-states.numbering.get().appendix
+              sk-states.numbering-pattern.get().appendix
             } else {
-              sk-states.numbering.get().section
+              sk-states.numbering-pattern.get().section
             }
-            numbering(fmt, ..counter(heading).at(section.location())) + " "
+            numbering(fmt, ..counter(heading).at(section.location()))
           } else {
             none
           }
 
-          link(section.location(), num + section.body)
+          link(section.location(), [#num #section.body])
         }
 
         if display-subsection and slides.len() > 0 {
@@ -208,7 +208,7 @@
 
   let entries = sections.enumerate().map(((idx, s)) => {
     let s-is-appendix = sk-states.appendix.at(s.location())
-    let format = if s-is-appendix { sk-states.numbering.get().appendix } else { sk-states.numbering.get().section }
+    let format = if s-is-appendix { sk-states.numbering-pattern.get().appendix } else { sk-states.numbering-pattern.get().section }
 
     let count = counter(heading).at(s.location())
     let num = numbering(format, ..count)

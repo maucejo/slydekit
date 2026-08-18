@@ -17,6 +17,7 @@
 
   if title != none and title != [] {
     sk-states.current-slide-title.update(title)
+    sk-states.slide-index.step()
   }
 
   // Split the body into parallel tracks at <meanwhile> boundaries, then
@@ -27,9 +28,7 @@
   let max-reveal-step = analyze-max-step(body)
   let max-track-length = calc.max(..tracks.map(t => t.len()))
   let total = calc.max(max-track-length, max-reveal-step)
-  if steps != none {
-    total = calc.max(total, steps)
-  }
+  if steps != none {total = calc.max(total, steps)}
 
   sk-states.subslide-total.update(total)
 
@@ -78,11 +77,39 @@
   }
 }
 
+#let subtitle-slide(fill-number: none) = context {
+  let title = sk-states.current-slide-title.get()
+
+  let num = if sk-states.section-numbering.get() {
+    let fmt = if sk-states.appendix.get() {
+      sk-states.numbering-pattern.get().appendix
+    } else {
+      sk-states.numbering-pattern.get().section
+    }
+
+    let sec-num = counter(heading).get().first()
+    let slide-idx = sk-states.slide-index.get().first()
+    numbering(fmt, sec-num, slide-idx)
+  } else {
+    none
+  }
+
+  let fill-num = if fill-number != none {
+    text(fill: fill-number)[#num]
+  } else {
+    num
+  }
+
+
+  [#fill-num #title]
+}
+
 // Appendix
 #let appendix(body) = context {
   pagebreak(weak: true)
   sk-states.appendix.update(true)
   counter(heading).update(0)
+  sk-states.slide-index.update(0)
 
   body
 }

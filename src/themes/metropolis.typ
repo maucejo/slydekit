@@ -34,10 +34,23 @@
     set text(size: 1.3em)
     v(-0.7em)
 
+    let num = if sk-states.section-numbering.get() {
+      let format = if sk-states.appendix.get() {
+        sk-states.numbering-pattern.get().appendix
+      } else {
+        sk-states.numbering-pattern.get().section
+      }
+
+      let count = counter(heading).get()
+      numbering(format, ..count)
+    } else {
+      none
+    }
+
     stack(
       dir: ttb,
       spacing: 0.5em,
-      [*#it.body*],
+      [*#text(fill: sk-states.colors.get().primary)[#num] #it.body*],
       block(
         height: 2pt,
         width: 100%,
@@ -48,7 +61,7 @@
   }
 
   let header = context if sk-states.navigation-style.get() == "topbar" {
-    let header-title = [#h(1em)*#sk-states.current-slide-title.get()*]
+    let header-title = [#h(1em)*#subtitle-slide()*]
     full-width(fill: sk-states.colors.get().header, align(horizon, text(size: 1.2em, fill: white)[#header-title]))
   } else if sk-states.navigation-style.get() == "minislide" {
     let mini-content = [
@@ -56,7 +69,7 @@
       #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
       #place(dy: 0.5em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().header))
 
-      #place(dx: 3.5%, dy: 1.25em)[#text(size: 1.25em, weight: "bold", fill: sk-states.colors.get().header, sk-states.current-slide-title.get())]
+      #place(dx: 3.5%, dy: 1.25em)[#text(size: 1.25em, weight: "bold", fill: sk-states.colors.get().header, subtitle-slide(fill-number: sk-states.colors.get().primary))]
     ]
     full-width(mini-content)
   }

@@ -18,10 +18,12 @@
   // fonts: (body: "New Computer Modern"),
   // colors: chalkboard-colors-variant,
   lang: "en",
-  navigation-style: "minislide",
+  // navigation-style: "minislide",
   title-logo: (image("images/slydekit-full.svg", height: 2.5cm),),
   slide-logo: image("images/slydekit-mini.svg", height: 1.25cm),
   // handout: true
+  // section-numbering: true,
+  // numbering-pattern: (section: "I.1.", appendix: "A.1."),
 )
 
 #title-slide
@@ -61,6 +63,14 @@
       })
     ]
   }
+]
+
+==
+
+zefzef
+
+#slide[
+  tertertert
 ]
 
 #slide("Fletcher integration", steps: 2)[
@@ -230,7 +240,7 @@ ice cream.
   #lorem(10)
 ]
 
-==
+#pagebreak()
 
 #question-box[
   #lorem(10)
