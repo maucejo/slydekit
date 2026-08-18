@@ -128,7 +128,7 @@
         // Remove linebreaks when displaying subsections, to avoid double linebreaks
         {
           show linebreak: none
-          let num = if section-numbering {
+          let num = if sk-states.section-numbering.get() {
             let fmt = if sk-states.appendix.get() {
               sk-states.numbering-pattern.get().appendix
             } else {

@@ -77,10 +77,8 @@
   }
 }
 
-#let subtitle-slide(fill-number: none) = context {
-  let title = sk-states.current-slide-title.get()
-
-  let num = if sk-states.section-numbering.get() {
+#let num-sec(type: "slide") = context {
+   if sk-states.section-numbering.get() {
     let fmt = if sk-states.appendix.get() {
       sk-states.numbering-pattern.get().appendix
     } else {
@@ -88,16 +86,24 @@
     }
 
     let sec-num = counter(heading).get().first()
-    let slide-idx = sk-states.slide-index.get().first()
-    numbering(fmt, sec-num, slide-idx)
+    if type == "slide" {
+      let slide-idx = sk-states.slide-index.get().first()
+      numbering(fmt, sec-num, slide-idx)
+    } else if type == "section" {
+      numbering(fmt, sec-num)
+    }
   } else {
     none
   }
+}
+
+#let subtitle-slide(fill-number: none) = context {
+  let title = sk-states.current-slide-title.get()
 
   let fill-num = if fill-number != none {
-    text(fill: fill-number)[#num]
+    text(fill: fill-number)[#num-sec()]
   } else {
-    num
+    num-sec()
   }
 
 

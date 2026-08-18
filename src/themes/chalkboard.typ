@@ -45,23 +45,10 @@
     set text(size: 1.3em)
     v(-0.7em)
 
-    let num = if sk-states.section-numbering.get() {
-      let format = if sk-states.appendix.get() {
-        sk-states.numbering-pattern.get().appendix
-      } else {
-        sk-states.numbering-pattern.get().section
-      }
-
-      let count = counter(heading).get()
-      numbering(format, ..count)
-    } else {
-      none
-    }
-
     stack(
       dir: ttb,
       spacing: 0.5em,
-      [*#text(sk-states.colors.get().primary, num) #it.body*],
+      [*#text(sk-states.colors.get().primary, num-sec(type: "section")) #it.body*],
       block(
         height: 2pt,
         width: 100%,

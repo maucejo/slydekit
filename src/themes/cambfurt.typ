@@ -52,24 +52,11 @@
     let sections = query(heading.where(level: 1).before(here()))
     let current-section = if sections.len() > 0 { sections.last().body } else { none }
 
-    let num = if sk-states.section-numbering.get() {
-      let format = if sk-states.appendix.get() {
-        sk-states.numbering-pattern.get().appendix
-      } else {
-        sk-states.numbering-pattern.get().section
-      }
-
-      let count = counter(heading).get().first()
-      numbering(format, count)
-    } else {
-      none
-    }
-
     let topbar = grid(
         columns: (1fr, 1fr),
         align: (right + horizon, left + horizon),
         rows: 1.5em,
-        grid.cell(fill: sk-states.colors.get().header)[#text(fill: white)[*#text(fill: white, num) #current-section* #h(0.75em)]],
+        grid.cell(fill: sk-states.colors.get().header)[#text(fill: white)[*#text(fill: white, num-sec(type: "section")) #current-section* #h(0.75em)]],
         grid.cell(fill: sk-states.colors.get().secondary)[#text(fill: sk-states.colors.get().primary)[#h(0.75em) *#subtitle-slide()*]],
       )
       full-width(move(dy: -2pt)[#topbar])
