@@ -21,7 +21,7 @@ To use the `slydekit` template, you need to include the following line at the be
 After importing the template, you have to initialize the template by a show rule with the `#slydekit` command. This function takes a set of optional arguments that allow you to customize the presentation's appearance and behavior.
 
 ```typ
-#show: slydekit.with(
+#let slydekit(
   title: "Title",
   subtitle: "Subtitle",
   short-title: "Short title",
@@ -35,9 +35,10 @@ After importing the template, you have to initialize the template by a show rule
   lang: "en",
   aspect-ratio: "16-9",
   navigation-style: "topbar",
-  numbering: (:),
   title-logo: (),
   slide-logo: none,
+  section-numbering: false,
+  numbering-pattern: (:),
   handout: false,
 )
 ```
@@ -126,18 +127,6 @@ Aspect ratio of the slides. Common values include "16-9" for widescreen presenta
 Navigation style for the presentation. Available options include "topbar" for a top navigation bar, "minislide" for a mini slide navigation, and other custom navigation styles that can be defined in your Typst document. This setting affects how users can navigate through the slides during the presentation.
 ]
 
-#argument-callout("numbering", [dictionary], default: [(:)])[
-Custom numbering format for sections and appendices. You can specify a set of numbering formats to override the default numbering provided by the selected theme. If not specified, the theme's default numbering (i.e. `"1.1."` for normal sections and `"A.1."` for appendix sections) will be used.
-
-The dictionary should have the following structure:
-```typ
-#let numbering = (
-  section: "Numbering format for sections",
-  appendix: "Numbering format for appendices",
-)
-```
-]
-
 #argument-callout("title-logo", [array], default: [()])[
 Logo to be displayed on the title slide. You can provide an image file (e.g., PNG, SVG) to be displayed alongside the title and subtitle on the first slide of the presentation.
 
@@ -149,6 +138,22 @@ title-logo: (image("logo1.svg", height: 2.5cm), image("logo2.svg", height: 2.5cm
 
 #argument-callout("slide-logo", [image], default: [none])[
 Logo to be displayed on each slide. You can provide an image file (e.g., PNG, SVG) to be displayed in a consistent location on every slide of the presentation. This is useful for branding or to include a small logo throughout the presentation.
+]
+
+#argument-callout("section-numbering", [bool], default: [false])[
+Whether to enable section numbering in the presentation. If set to `true`, each section and slides titles will be automatically numbered given the `numbering-pattern`. If set to `false`, sections will not be numbered.
+]
+
+#argument-callout("numbering-pattern", [dictionary], default: [(:)])[
+Custom numbering format for sections and appendices. You can specify a set of numbering formats to override the default numbering provided by the selected theme. If not specified, the theme's default numbering (i.e. `"1.1."` for normal sections and `"A.1."` for appendix sections) will be used.
+
+The dictionary should have the following structure:
+```typ
+#let numbering = (
+  section: "Numbering format for sections",
+  appendix: "Numbering format for appendices",
+)
+```
 ]
 
 #argument-callout("handout", [bool], default: [false])[

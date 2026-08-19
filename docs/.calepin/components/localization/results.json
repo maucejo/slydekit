@@ -1,15 +1,15 @@
 {
   "schema": 2,
-  "calepin_version": "0.0.47",
+  "calepin_version": "0.0.52",
   "input": "components/localization.typ",
-  "generation": "c8aeb4c33e03ca4a-1349cde127705c16",
+  "generation": "c3e3c17c163a62ab-1349cde127705c16",
   "store": {},
   "chunks": {
     "chunk-1": {
       "label": "chunk-1",
       "engine": "json",
-      "source": "{\n    \"note\": \"Note\",\n    \"proof\": \"Proof\",\n    \"tip\": \"Tip\",\n    \"toc\": \"Outline\",\n    \"warning\": \"Warning\"\n}",
-      "status": "skipped",
+      "source": "{\n    \"note\": \"Note\",\n    \"proof\": \"Proof\",\n    \"tip\": \"Tip\",\n    \"toc\": \"Outline\",\n    \"warning\": \"Warning\"\n}\n",
+      "status": "unavailable",
       "options": {
         "echo": true,
         "output": true,
@@ -28,6 +28,8 @@
         "fig-subcaptions": null,
         "fig-layout-columns": null,
         "fig-layout-rows": null,
+        "tbl-caption": null,
+        "lst-caption": null,
         "kind": null
       },
       "items": []

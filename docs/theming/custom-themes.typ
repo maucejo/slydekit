@@ -118,12 +118,20 @@ To enable theme composition and partial theme definitions, Slydekit uses a share
   String that indicates the navigation style of the presentation. It can be "topbar" or "minislide". It is used to determine the layout of the header.
 ]
 
+#argument-callout(kind: "State", "numbering-pattern", [dictionary])[
+  Dictionary that defines the numbering pattern for sections and slides. It is used to customize the numbering format of the presentation.
+]
+
 #argument-callout(kind: "State", "pause-index", [counter])[
   Tracks the index of the current pause in the presentation. It is used to manage the timing and sequencing of slides.
 ]
 
 #argument-callout(kind: "State", "pres-info", [dictionary])[
   Dictionary that contains information about the presentation, such as title, subtitle, author, date, institution, contact, and title-logo. It is used to display the presentation information in the title slide and other relevant places.
+]
+
+#argument-callout(kind: "State", "section-numbering", [bool], default: [false])[
+  Boolean that indicates whether section numbering is enabled in the presentation. It is used to determine whether to display section numbers in the slide titles.
 ]
 
 #argument-callout(kind: "State", "slide-number", [counter])[

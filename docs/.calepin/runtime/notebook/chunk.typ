@@ -26,14 +26,44 @@
   out
 }
 
-#let _query-crossref-placeholders(crossref-labels) = {
-  let out = []
+// The query pass evaluates the document before any results exist, so a label
+// that only gets attached during the render pass would be undefined here and
+// every `@ref` to it would fail the query. Emit an empty figure of the matching
+// kind per label so the reference resolves in both passes.
+#let _query-placeholder-kinds = (
+  "fig-": image,
+  "tbl-": table,
+  "lst-": raw,
+)
+
+// An `lst-` label names the chunk's echoed source as a listing. The labels here
+// are the raw names from the chunk header, not the classified docs the results
+// document carries, so match on the prefix.
+#let _listing-names(crossref-labels) = {
+  let out = ()
   for name in crossref-labels {
-    if type(name) == str and name.starts-with("fig-") {
-      out += [#figure(box(width: 0pt, height: 0pt), caption: none) #label(name)]
+    if type(name) == str and name.starts-with("lst-") {
+      out.push(name)
     }
   }
   out
+}
+
+// Render the echoed source, wrapped as a listing figure when the chunk carries
+// an `lst-` label or caption. Without either, the code renders exactly as it
+// did before, with no figure and no counter consumed.
+#let _listing-block(code, engine, label, crossref-labels, options) = {
+  let block = _input-block(code, lang: engine)
+  let names = _listing-names(crossref-labels)
+  let caption = options.at("lst-caption", default: none)
+  if names.len() == 0 and caption == none {
+    return block
+  }
+  let rendered = figure(block, kind: raw, caption: caption)
+  for name in names {
+    rendered = [#rendered #std.label(name)]
+  }
+  rendered
 }
 
 #let _strip-qmd-label-quotes(value) = {
@@ -84,6 +114,67 @@
     }
   }
   none
+}
+
+// The panel count for a `#|` header chunk. Typst reads only `label` out of the
+// header (the rest is parsed on the Rust side, after this pass), but the query
+// pass needs the count to emit one placeholder per referenceable panel.
+#let _qmd-subcaption-count(body) = {
+  let code = _raw-text(body)
+  let code = if code.starts-with("\n") { code.slice(1) } else { code }
+  for line in code.split("\n") {
+    let trimmed = line.trim()
+    if not trimmed.starts-with("#|") {
+      return 0
+    }
+    let directive = trimmed.slice(2).trim()
+    let colon = directive.position(":")
+    if colon == none {
+      continue
+    }
+    let key = directive.slice(0, colon).trim()
+    if key in ("fig-subcap", "fig-subcaptions", "fig.subcap") {
+      let value = _parse-qmd-label-value(directive.slice(colon + 1))
+      return if type(value) == array { value.len() } else { 0 }
+    }
+  }
+  0
+}
+
+// How many panels a `fig-` label can address. The panels themselves only exist
+// once the chunk has run, which is after this pass, so the sub-caption list is
+// the one count available here: a document that references a panel captions it.
+#let _query-panel-count(options, body) = {
+  let subcaptions = options.at("fig-subcaptions", default: none)
+  let from-options = if type(subcaptions) == array { subcaptions.len() } else { 0 }
+  calc.max(from-options, _qmd-subcaption-count(body))
+}
+
+#let _query-crossref-placeholders(crossref-labels, options, body) = {
+  let out = []
+  let panels = _query-panel-count(options, body)
+  for name in crossref-labels {
+    if type(name) != str {
+      continue
+    }
+    for (prefix, figure-kind) in _query-placeholder-kinds {
+      if name.starts-with(prefix) {
+        out += [
+          #figure(box(width: 0pt, height: 0pt), kind: figure-kind, caption: none)
+          #label(name)
+        ]
+        if prefix == "fig-" {
+          for index in range(panels) {
+            out += [
+              #figure(box(width: 0pt, height: 0pt), kind: figure-kind, caption: none)
+              #label(name + "-" + str(index + 1))
+            ]
+          }
+        }
+      }
+    }
+  }
+  out
 }
 
 #let _label-name(value) = {
@@ -147,7 +238,11 @@
   out
 }
 
-#let _emit-chunk(config, engine, body, ..args) = context {
+// `fallback` renders `body` when it turns out not to be a chunk after all,
+// because no engine was available to run it. Callers that are themselves `raw`
+// show rules must not hand the element straight back — that would re-enter the
+// same rule — so the default re-renders it through Calepin's code styling.
+#let _emit-chunk(config, engine, body, fallback: _html-themed-raw-block, ..args) = context {
   let options = _call-defaults + args.named()
   let label-opt = options.at("label")
   let qmd-label-opt = _qmd-label-from-body(body)
@@ -184,7 +279,7 @@
     [
       #label-step
       #metadata(_chunk-spec(body, engine, label, crossref-labels, options)) <calepin-chunk>
-      #_query-crossref-placeholders(crossref-labels)
+      #_query-crossref-placeholders(crossref-labels, options, body)
     ]
   } else {
     let code = _raw-text(body)
@@ -202,8 +297,25 @@
     // to `_render-results`, which converts their JSON form for the active
     // target. Function-call options already match what is stored, so this is a
     // no-op for them.
-    if results-path != none and results-path != "" {
-      let chunk = _result-chunk(_results-document(config: runtime-config), label)
+    let chunk = if results-path != none and results-path != "" {
+      _result-chunk(_results-document(config: runtime-config), label)
+    } else {
+      none
+    }
+    // A fenced block names a language, which is not a promise that Calepin can
+    // run it: anything outside the built-in engines is looked up as a Jupyter
+    // kernel, and prose fences such as ```rust or ```json usually have none.
+    // Execution reports that back as `unavailable`, and a block Calepin cannot
+    // run is not a chunk — hand it to whatever styles ordinary fenced code
+    // here, which is how a package like codly keeps its own blocks. The label
+    // counter still steps, so this decision cannot pull the automatic `chunk-N`
+    // numbering out of step with the query pass (issue #108).
+    if chunk != none and chunk.at("status", default: "") == "unavailable" {
+      label-step
+      // `body` may be the wrapper content of an explicit `calepin.chunk` call;
+      // the fallbacks all style a raw element, so hand them the fence itself.
+      fallback(_raw-node(body))
+    } else {
       if chunk != none {
         let stored-source = chunk.at("source", default: "")
         if stored-source != "" {
@@ -229,34 +341,34 @@
           }
         }
       }
-    }
-    let show-echo = options.at("echo") == true
-    let results-mode = options.at("results")
-    label-step
-    [#metadata((label: label, page: here().page())) <calepin-page>]
+      let show-echo = options.at("echo") == true
+      let results-mode = options.at("results")
+      label-step
+      [#metadata((label: label, page: here().page())) <calepin-page>]
 
-    // Stash the resolved display options so a `#calepin.results(label)` call
-    // placed elsewhere can render this chunk with identical settings. Only the
-    // render-relevant keys are kept so the stored value stays plain data.
-    let stashed = (:)
-    for key in _base-options.keys() {
-      stashed.insert(key, options.at(key))
-    }
-    stashed.insert("inline-output", options.at("inline-output"))
-    _relocate-opts.update(reg => {
-      reg.insert(label, stashed)
-      reg
-    })
+      // Stash the resolved display options so a `#calepin.results(label)` call
+      // placed elsewhere can render this chunk with identical settings. Only the
+      // render-relevant keys are kept so the stored value stays plain data.
+      let stashed = (:)
+      for key in _base-options.keys() {
+        stashed.insert(key, options.at(key))
+      }
+      stashed.insert("inline-output", options.at("inline-output"))
+      _relocate-opts.update(reg => {
+        reg.insert(label, stashed)
+        reg
+      })
 
-    if show-echo {
-      _input-block(code, lang: engine)
-    } else if results-path == none or results-path == "" {
-      _input-block(code, lang: engine)
-    }
-    // `results: "hide"`/`"hidden"` runs the chunk but renders nothing here; the
-    // output can still be shown elsewhere with `#calepin.results(label)`.
-    if results-path != none and results-path != "" and not _results-hidden(results-mode) {
-      _render-results(label, options, anchor: true, config: runtime-config)
+      if show-echo {
+        _listing-block(code, engine, label, crossref-labels, options)
+      } else if results-path == none or results-path == "" {
+        _listing-block(code, engine, label, crossref-labels, options)
+      }
+      // `results: "hide"`/`"hidden"` runs the chunk but renders nothing here; the
+      // output can still be shown elsewhere with `#calepin.results(label)`.
+      if results-path != none and results-path != "" and not _results-hidden(results-mode) {
+        _render-results(label, options, anchor: true, config: runtime-config)
+      }
     }
   }
 }
@@ -277,16 +389,20 @@
   }
 }
 
-#let _chunk-from-raw-plain(config, engine, it) = context {
+// The single entry point for a fenced block, whether it reached us from the
+// staged source rewrite or from a `raw` show rule. Both passes must take the
+// same branch here: a block that emits chunk metadata during the query pass but
+// not during the render pass desynchronises the automatic `chunk-N` counter, so
+// every later chunk renders its predecessor's source (issue #108). Nothing in
+// this decision may therefore depend on the pass.
+#let _fenced-chunk(config, engine, it, fallback: _html-themed-raw-block) = context {
   let defaults = _resolve-options-for(_call-defaults)
   if _fenced-chunks-runs(engine, defaults.at("fenced-chunks")) {
-    _emit-chunk(config, engine, it, ..defaults)
+    _emit-chunk(config, engine, it, fallback: fallback, ..defaults)
   } else {
-    _html-themed-raw-block(it)
+    fallback(it)
   }
 }
-
-#let _fenced-chunk(engine, it) = _chunk-from-raw-plain(none, engine, it)
 
 #let _infer-engine(body) = {
   let node = _raw-node(body)

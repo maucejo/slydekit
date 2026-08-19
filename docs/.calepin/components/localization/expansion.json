@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "fingerprint": 14460694204185299530,
-  "generation": "c8aeb4c33e03ca4a-1349cde127705c16",
+  "fingerprint": 14115338395802297003,
+  "generation": "c3e3c17c163a62ab-1349cde127705c16",
   "completed_store": {},
   "stabilized_chunks": [
     {
       "label": "chunk-1",
       "engine": "json",
-      "code": "{\n    \"note\": \"Note\",\n    \"proof\": \"Proof\",\n    \"tip\": \"Tip\",\n    \"toc\": \"Outline\",\n    \"warning\": \"Warning\"\n}",
+      "code": "{\n    \"note\": \"Note\",\n    \"proof\": \"Proof\",\n    \"tip\": \"Tip\",\n    \"toc\": \"Outline\",\n    \"warning\": \"Warning\"\n}\n",
       "script": true,
       "exec_options": {
         "eval": true,
@@ -38,9 +38,11 @@
         "fig-subcaptions": null,
         "fig-layout-columns": null,
         "fig-layout-rows": null,
+        "tbl-caption": null,
+        "lst-caption": null,
         "kind": null
       },
-      "ordinal": 1,
+      "ordinal": 0,
       "crossref_labels": []
     }
   ],

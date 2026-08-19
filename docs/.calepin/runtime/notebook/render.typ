@@ -7,7 +7,6 @@
 #import "result-support.typ": _artifact-path, _attach-label, _attach-labels
 #import "result-support.typ": _crossref-labels-for, _select-representation
 
-#let code-block = codemod.code-block
 #let _html-themed-raw-block = codemod._html-themed-raw-block
 #let _input-block = codemod._input-block
 #let _output-block = codemod._output-block
@@ -32,12 +31,20 @@
   }
 }
 
-#let _figure-or-content(content, label, fig-labels, caption, caption-location, anchor) = {
+#let _figure-or-content(
+  content,
+  label,
+  fig-labels,
+  caption,
+  caption-location,
+  anchor,
+  kind: auto,
+) = {
   if caption == none and fig-labels.len() == 0 {
     content
   } else {
     _label-figure(
-      figure(content, caption: _figure-caption(caption, caption-location)),
+      figure(content, kind: kind, caption: _figure-caption(caption, caption-location)),
       label,
       fig-labels,
       anchor,
@@ -211,30 +218,43 @@
   if value.ends-with("in") {
     return float(value.slice(0, value.len() - 2).trim()) * 1in
   }
+  if value.ends-with("fr") {
+    return float(value.slice(0, value.len() - 2).trim()) * 1fr
+  }
   value
 }
 
-#let _paged-result-options(options) = {
-  let out = (:)
-  if "fig-width" in options and options.at("fig-width") != none {
-    out.insert("fig-width", _paged-layout-size(options.at("fig-width")))
+// Grid track lists serialize as arrays of size strings, so each entry needs
+// the same string-to-length conversion a scalar size gets.
+#let _paged-layout-tracks(value) = {
+  if type(value) == array {
+    value.map(_paged-layout-size)
+  } else {
+    _paged-layout-size(value)
   }
-  if "fig-height" in options and options.at("fig-height") != none {
-    out.insert("fig-height", _paged-layout-size(options.at("fig-height")))
-  }
-  if "fig-align" in options and options.at("fig-align") != none {
-    out.insert("fig-align", options.at("fig-align"))
-  }
-  out
 }
 
+// Display options declared in a fenced `#|` chunk header exist only in the
+// serialized result options: Typst reads nothing but `label` out of the
+// header, so a caption, alt text, or layout written there never reaches the
+// call options this render started from. Restore every stored option that was
+// actually set (unset ones serialize as `none` and must not clobber call-site
+// values); paged output needs size strings converted to lengths, HTML
+// consumes them directly.
 #let _merge-result-options(opts, chunk) = {
-  let options = chunk.at("options", default: (:))
-  if _is-html() {
-    opts + options
-  } else {
-    opts + _paged-result-options(options)
+  let out = opts
+  for (key, value) in chunk.at("options", default: (:)) {
+    if value == none {
+      continue
+    }
+    if not _is-html() and key in ("fig-width", "fig-height") {
+      value = _paged-layout-size(value)
+    } else if not _is-html() and key in ("fig-layout-columns", "fig-layout-rows") {
+      value = _paged-layout-tracks(value)
+    }
+    out.insert(key, value)
   }
+  out
 }
 
 // Sizes written by a relocation call go through the same string-to-length
@@ -269,7 +289,7 @@
   rows: opts.at("fig-layout-rows"),
 )
 
-#let _finalize-figure-content(content, label, fig-labels, figure-opts, anchor) = {
+#let _finalize-figure-content(content, label, fig-labels, figure-opts, anchor, kind: auto) = {
   let rendered = _figure-or-content(
     content,
     label,
@@ -277,6 +297,7 @@
     figure-opts.caption,
     figure-opts.at("caption-location"),
     anchor,
+    kind: kind,
   )
   _finalize-figure-display(rendered, figure-opts.align, figure-opts.link)
 }
@@ -419,6 +440,61 @@
   }
 }
 
+// Panels of a multi-plot chunk are figures of their own kind, so they carry a
+// counter Typst can number and a label a reference can resolve, without
+// disturbing the figure counter their parent uses.
+#let _subfigure-kind = "calepin-subfigure"
+
+// `@fig-name-2` names the second panel, 1-based, matching the documented form.
+#let _subfigure-label-name(base, index) = base + "-" + str(index + 1)
+
+#let _subfigure-number(location) = numbering(
+  "a",
+  ..counter(figure.where(kind: _subfigure-kind)).at(location),
+)
+
+// Typst would caption a panel "Figure N"; print the letter and the chunk's own
+// sub-caption text instead. Installed around the grid rather than in
+// `calepin.document`, so a panel is lettered even when the runtime is driven
+// directly. Reference formatting still needs the document rule, since a
+// reference can sit anywhere in the prose.
+#let _subfigure-panel = it => {
+  let n = context _subfigure-number(it.location())
+  block(breakable: false)[
+    #it.body
+    #if it.caption != none {
+      text(size: 0.85em)[(#n)~#it.caption.body]
+    } else {
+      text(size: 0.85em)[(#n)]
+    }
+  ]
+}
+
+// A panel becomes a sub-figure when it can be referenced (the chunk carries a
+// `fig-` label) or when it has a sub-caption to letter. A plain multi-plot
+// chunk keeps its bare grid: no letters, no counter, no labels.
+#let _panels-are-subfigures(subcaptions, fig-labels) = {
+  fig-labels.len() > 0 or (subcaptions != none and subcaptions != auto)
+}
+
+#let _subfigure-cell(content, caption, fig-labels, index, anchor) = {
+  // A custom `kind` has no default supplement, and Typst refuses to render one
+  // without it. Set it here rather than in a document show rule, so a panel is
+  // valid even when the runtime is used outside `calepin.document`. The panel
+  // caption prints its letter itself, so the supplement stays empty.
+  let panel = figure(content, kind: _subfigure-kind, supplement: none, caption: caption)
+  if anchor {
+    for base in fig-labels {
+      panel = [#panel #std.label(_subfigure-label-name(base, index))]
+    }
+  }
+  if _is-html() {
+    std.html.elem("div", attrs: (style: "min-width: 0;"))[#panel]
+  } else {
+    panel
+  }
+}
+
 #let _grid-cell(content, caption) = {
   if _is-html() and caption != none {
     std.html.elem("div", attrs: (style: "min-width: 0;"))[
@@ -451,25 +527,49 @@
 
 #let _render-image-grid(items, label, opts, fig-labels, anchor: true) = {
   let figure-opts = _figure-options(opts)
+  let subfigures = _panels-are-subfigures(figure-opts.subcaptions, fig-labels)
 
   let cells = ()
   for (index, item) in items.enumerate() {
+    let panel = _grid-image(item, figure-opts)
+    let caption = _caption-for-index(figure-opts.subcaptions, index)
     cells.push(
-      _grid-cell(
-        _grid-image(item, figure-opts),
-        _caption-for-index(figure-opts.subcaptions, index),
-      ),
+      if subfigures {
+        _subfigure-cell(panel, caption, fig-labels, index, anchor)
+      } else {
+        _grid-cell(panel, caption)
+      },
     )
   }
 
   let columns = _grid-columns(items.len(), figure-opts.columns, figure-opts.rows)
+  let grid-content = _grid-content(columns, figure-opts.rows, cells)
+  // Panel letters restart inside every parent figure.
+  let grid-content = if subfigures {
+    [
+      #show figure.where(kind: _subfigure-kind): _subfigure-panel
+      #counter(figure.where(kind: _subfigure-kind)).update(0)
+      #grid-content
+    ]
+  } else {
+    grid-content
+  }
   let content = _wrap-grid-display(
-    _grid-content(columns, figure-opts.rows, cells),
+    grid-content,
     figure-opts.width,
     figure-opts.responsive,
     figure-opts.align,
   )
-  _finalize-figure-content(content, label, fig-labels, figure-opts, anchor)
+  // A panel reference reads its parent's number off the image counter, so the
+  // parent must land there rather than in whatever kind Typst infers for a grid.
+  _finalize-figure-content(
+    content,
+    label,
+    fig-labels,
+    figure-opts,
+    anchor,
+    kind: if subfigures { image } else { auto },
+  )
 }
 
 #let _render-display-item(item, label, opts, fig-labels, anchor: true) = {
@@ -595,6 +695,82 @@
   }
 }
 
+// How many runs of consecutive image items the chunk's output contains. Output
+// between two plots (R flushes `cat()` between plot calls; Python buffers its
+// stdout ahead of them) starts a new run.
+#let _image-group-count(items) = {
+  let count = 0
+  let in-group = false
+  for item in items {
+    if _is-image-display-item(item) {
+      if not in-group {
+        count += 1
+        in-group = true
+      }
+    } else {
+      in-group = false
+    }
+  }
+  count
+}
+
+// Render a chunk's items in order, batching consecutive images into one figure
+// each. `fig-labels` and the caption carried by `opts` are attached by every
+// batch, so callers pass them only when a single batch will result.
+#let _render-item-sequence(items, label, opts, anchor, fig-labels: ()) = {
+  let image-group = ()
+  for result-item in items {
+    if _is-image-display-item(result-item) {
+      image-group.push(result-item)
+    } else {
+      if image-group.len() > 0 {
+        _render-image-group(image-group, label, opts, fig-labels, anchor)
+        image-group = ()
+      }
+      _render-item(result-item, label, opts, fig-labels, anchor: anchor)
+    }
+  }
+  _render-image-group(image-group, label, opts, fig-labels, anchor)
+}
+
+// Render a chunk's items, attaching its `fig-` identity exactly once.
+//
+// A chunk's caption and cross-reference label name one figure. When other
+// output splits the images into several batches, letting each batch attach them
+// defines the label twice (Typst rejects the reference) and numbers the caption
+// twice. Wrap the whole chunk in a single figure instead.
+#let _render-figure-sequence(items, label, opts, fig-labels, anchor) = {
+  let is-figure = fig-labels.len() > 0 or opts.at("fig-caption", default: none) != none
+  if is-figure and _image-group-count(items) > 1 {
+    // Batches render without a caption or labels of their own, so none of them
+    // becomes a figure and the outer figure is the only one.
+    let body = _render-item-sequence(items, label, opts + ("fig-caption": none), anchor)
+    _finalize-figure-content(body, label, fig-labels, _figure-options(opts), anchor)
+  } else {
+    _render-item-sequence(items, label, opts, anchor, fig-labels: fig-labels)
+  }
+}
+
+// Wrap rendered output as a table figure, so `@tbl-name` resolves and the
+// caption is numbered from Typst's table counter rather than the figure one.
+#let _table-figure(content, caption, tbl-labels, opts, anchor) = {
+  // A table figure whose body is printed output rather than a real `table`
+  // element carries no implicit description, so strict PDF/UA renders demand
+  // one. Reuse the chunk's `fig-alt-text` when the author set it.
+  let alt = opts.at("fig-alt-text", default: none)
+  let rendered = figure(
+    content,
+    kind: table,
+    caption: _figure-caption(caption, opts.at("fig-cap-location", default: auto)),
+    ..if alt == none or alt == "" { (:) } else { (alt: alt) },
+  )
+  if tbl-labels.len() > 0 {
+    _attach-labels(rendered, tbl-labels)
+  } else {
+    rendered
+  }
+}
+
 // `anchor` controls whether cross-reference labels (and the chunk's internal-id
 // label) are attached. The inline render owns the anchor; a relocated copy that
 // does not own it passes `anchor: false` so the same output can appear more than
@@ -609,9 +785,8 @@
   if chunk == none {
     panic("calepin results do not contain label `" + label + "`")
   }
-  // Relocation-specific choices must win over the serialized chunk options,
-  // especially for HTML where `_merge-result-options` restores every stored
-  // display option.
+  // Relocation-specific choices must win over the serialized chunk options
+  // that `_merge-result-options` restores.
   let opts = _merge-result-options(opts, chunk) + _relocation-override-values(overrides)
   // `results: "hide"` only suppresses a chunk's own inline render. Reaching
   // `_render-results` at all (e.g. through a `#calepin.results` relocation)
@@ -620,18 +795,18 @@
     opts.insert("results", "render")
   }
   let fig-labels = if anchor { _crossref-labels-for(chunk, "fig") } else { () }
+  let tbl-labels = if anchor { _crossref-labels-for(chunk, "tbl") } else { () }
   let items = chunk.at("items", default: ())
-  let image-group = ()
-  for result-item in items {
-    if _is-image-display-item(result-item) {
-      image-group.push(result-item)
-    } else {
-      if image-group.len() > 0 {
-        _render-image-group(image-group, label, opts, fig-labels, anchor)
-        image-group = ()
-      }
-      _render-item(result-item, label, opts, fig-labels, anchor: anchor)
-    }
+  let tbl-caption = opts.at("tbl-caption", default: none)
+
+  // A `tbl-` label names the chunk's non-image output as a table. Wrap the
+  // whole rendered sequence once, the same way a split figure is wrapped: the
+  // inner batches keep their own figure handling for any images the chunk also
+  // produced, and the table figure encloses the result.
+  if tbl-labels.len() > 0 or tbl-caption != none {
+    let body = _render-figure-sequence(items, label, opts, fig-labels, anchor)
+    return _table-figure(body, tbl-caption, tbl-labels, opts, anchor)
   }
-  _render-image-group(image-group, label, opts, fig-labels, anchor)
+
+  _render-figure-sequence(items, label, opts, fig-labels, anchor)
 }

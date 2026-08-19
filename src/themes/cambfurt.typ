@@ -56,8 +56,8 @@
         columns: (1fr, 1fr),
         align: (right + horizon, left + horizon),
         rows: 1.5em,
-        grid.cell(fill: sk-states.colors.get().header)[#text(fill: white)[*#text(fill: white, num-sec(type: "section")) #current-section* #h(0.75em)]],
-        grid.cell(fill: sk-states.colors.get().secondary)[#text(fill: sk-states.colors.get().primary)[#h(0.75em) *#subtitle-slide()*]],
+        grid.cell(fill: sk-states.colors.get().header)[#text(fill: white)[*#text(fill: white, formatted-number(type: "section")) #current-section* #h(0.75em)]],
+        grid.cell(fill: sk-states.colors.get().secondary)[#text(fill: sk-states.colors.get().primary)[#h(0.75em) *#slide-subtitle()*]],
       )
       full-width(move(dy: -2pt)[#topbar])
   } else if sk-states.navigation-style.get() == "minislide" {
@@ -66,7 +66,7 @@
       #place(top, dy: -0.75em)[#cell(fill: sk-states.colors.get().secondary.lighten(60%))
       ]
       #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
-      #place(dx: 3.5%, dy: 1em)[#box(width: 100%, outset: (left: 2em, right: 1em, rest: 0.5em), fill: sk-states.colors.get().secondary.lighten(45%), text(size: 1.25em, weight: "bold", fill: sk-states.colors.get().header, subtitle-slide()))]
+      #place(dx: 3.5%, dy: 1em)[#box(width: 100%, outset: (left: 2em, right: 1em, rest: 0.5em), fill: sk-states.colors.get().secondary.lighten(45%), text(size: 1.25em, weight: "bold", fill: sk-states.colors.get().header, slide-subtitle()))]
     ]
     full-width(mini-content)
   }

@@ -43,7 +43,7 @@
   }
 
   let header = context if sk-states.navigation-style.get() == "topbar" {
-    let header-title = [#h(1em)*#subtitle-slide()*]
+    let header-title = [#h(1em)*#slide-subtitle()*]
     full-width(fill: none, align(horizon, text(size: 1.2em, fill: sk-states.colors.get().primary)[#header-title]))
   } else if sk-states.navigation-style.get() == "minislide" {
     let mini-content = [
@@ -51,7 +51,7 @@
       #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
       #place(dy: 0.5em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().primary))
 
-      #place(dx: 3.5%, dy: 1.25em)[#text(size: 1.25em, weight: "bold", fill: sk-states.colors.get().header, subtitle-slide())]
+      #place(dx: 3.5%, dy: 1.25em)[#text(size: 1.25em, weight: "bold", fill: sk-states.colors.get().header, slide-subtitle())]
     ]
     full-width(mini-content)
   }

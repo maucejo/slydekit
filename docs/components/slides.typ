@@ -102,3 +102,33 @@ Then, you can use it in your presentation like this:
   columns: 2,
   max-width: 100%,
 )
+
+= Section numbering
+
+Slydekit supports automatic global numbering of sections and slides. You can customize the numbering pattern and enable or disable section numbering as needed. This behavior is driven by the `section-numbering` and `numbering-pattern` arguments of the `slydekit` function (see #link("getting-started.html#template-initialization", "Getting Started") for details).
+
+`slide-subtitle` and `formatted-number` are two helper functions provided by SlydeKit for implementing slide title numbering. The `slide-subtitle` function generates a slide's subtitle, including its section and subsection numbers, while `formatted-number` formats these numbers according to a specified pattern. Both functions are intended for use when creating custom slide templates, ensuring consistent numbering throughout the presentation.
+
+== Slide subtitle
+
+The function `slide-subtitle` is used to generate the subtitle of a slide, which includes the section number and the subsection number.
+
+```typ
+slide-subtitle(fill-number: none)
+```
+
+#argument-callout("fill-number", [color | none], default: [none])[
+  The color to fill the section and subsection numbers. If set to `none`, the numbers will be filled with the default color.
+]
+
+== Formatted number
+
+The `formatted-number` function is used to format the title of the sections and subsections numbers according to the specified pattern.
+
+```typ
+formatted-number(type: "slide")
+```
+
+#argument-callout("type", [string], default: ["slide"])[
+  The type of number to format. It can be either `"section"` for section numbers or `"slide"` for slide numbers.
+]

@@ -13,7 +13,7 @@
   // theme: metropolis,
   // theme: fancy,
   // theme: simple,
-  theme: cambfurt,
+  // theme: cambfurt,
   // theme: chalkboard,
   // fonts: (body: "New Computer Modern"),
   // colors: chalkboard-colors-variant,
@@ -22,7 +22,7 @@
   title-logo: (image("images/slydekit-full.svg", height: 2.5cm),),
   slide-logo: image("images/slydekit-mini.svg", height: 1.25cm),
   // handout: true
-  // section-numbering: true,
+  section-numbering: true,
   // numbering-pattern: (section: "I.1.", appendix: "A.1."),
 )
 
@@ -63,14 +63,6 @@
       })
     ]
   }
-]
-
-==
-
-zefzef
-
-#slide[
-  tertertert
 ]
 
 #slide("Fletcher integration", steps: 2)[

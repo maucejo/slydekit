@@ -3,14 +3,13 @@
 #import "/.calepin/calepin.typ" as runtime
 #import "runtime-config.typ": config
 
-#let _bound = runtime.bind(config)
+#let _bound = runtime._bind(config)
 #let pages = _bound.pages
 #let setup = _bound.setup
 #let chunk = _bound.chunk
 #let inline = _bound.inline
 #let results = _bound.results
 #let _fenced-chunk = _bound._fenced-chunk
-#let code-block = _bound.code-block
 #let elements = _bound.elements
 #let _resolve-asset-href = _bound._resolve-asset-href
 #let _resolve-asset-path = _bound._resolve-asset-path

@@ -20,21 +20,76 @@
 #let inline = chunks.inline
 #let results = chunks.results
 #let store = storemod
-#let _fenced-chunk = chunks._fenced-chunk
-#let code-block = code.code-block
+// The staged source rewrite calls the runtime in place of the fence it
+// replaced, so a block this document does not run is handed back as an ordinary
+// raw element: a package such as codly declares its `raw` rule after
+// `calepin.document`, making that rule the outermost one, and it claims the
+// element before Calepin sees it again.
+//
+// Calepin's own rule is suppressed across the element rather than around this
+// call. The suppression is read where the element sits, and a show rule runs at
+// layout time, long after a `_without-raw-chunk-transforms` scope would have
+// restored the flag — leaving Calepin to treat the element as a second,
+// unlabelled chunk.
+#let _fenced-source-fallback = it => context {
+  let previous = chunksupport._disable-raw-chunk-transforms.get()
+  chunksupport._disable-raw-chunk-transforms.update(_ => true)
+  it
+  chunksupport._disable-raw-chunk-transforms.update(_ => previous)
+}
+#let _fenced-chunk = (engine, it) => chunks._fenced-chunk(
+  none,
+  engine,
+  it,
+  fallback: _fenced-source-fallback,
+)
 #let elements = elementmod
+
+// A reference to a panel reports both numbers: `@fig-x-2` reads "Figure 1b",
+// the form Quarto and LaTeX subcaption use. The panel caption itself is
+// rendered by a rule the grid installs.
+// A panel's own supplement is suppressed so its caption reads "(a) ...", so a
+// reference borrows the enclosing figure's. Typst resolves the localized default
+// for `auto` at layout and does not expose it, hence the literal fallback.
+#let _subfigure-supplement(it, location) = {
+  if it.supplement != auto and it.supplement != none {
+    return it.supplement
+  }
+  let parents = query(figure.where(kind: image).before(location))
+  if parents.len() > 0 and parents.last().supplement not in (auto, none) {
+    return parents.last().supplement
+  }
+  [Figure]
+}
+
+#let _subfigure-ref = it => {
+  let el = it.element
+  if el == none or el.func() != figure or el.kind != render._subfigure-kind {
+    return it
+  }
+  context {
+    let parent = counter(figure.where(kind: image)).at(el.location()).first()
+    let sub = render._subfigure-number(el.location())
+    link(el.location())[#_subfigure-supplement(it, el.location()) #parent#sub]
+  }
+}
 
 #let _document(config, body) = {
   let config = runtimeconfig._runtime-config(bound: config)
-  let raw-langs = config.at("raw-langs", default: ())
+  show ref: _subfigure-ref
+  // Which languages run is decided by `_fenced-chunk` alone, from the
+  // document's own `fenced-chunks` setting. Gating here on a language list
+  // instead would make the decision depend on data that differs between the
+  // query and render passes, which is what desynchronises the `chunk-N`
+  // counter (issue #108).
   show raw.where(block: true, theme: auto): it => {
     let lang = if it.has("lang") { it.lang } else { none }
     if chunks._disable-raw-chunk-transforms.get() {
       code._html-themed-raw-block(it)
     } else if lang in ("typ", "typst") {
       chunksupport._without-raw-chunk-transforms(() => code._html-themed-raw-block(it))
-    } else if lang != none and raw-langs.contains(lang) {
-      chunks._chunk-from-raw-plain(config, lang, it)
+    } else if lang != none {
+      chunks._fenced-chunk(config, lang, it)
     } else {
       code._html-themed-raw-block(it)
     }
@@ -44,7 +99,7 @@
 
 #let document(body) = _document(none, body)
 
-#let bind(config) = {
+#let _bind(config) = {
   let config = runtimeconfig._runtime-config(bound: config)
   (
     pages: pagesmod.pages,
@@ -53,9 +108,13 @@
     inline: (engine, body, ..args) => chunks._inline(config, engine, body, ..args),
     results: (..args) => chunks._results(config, ..args),
     store: storemod,
-    _fenced-chunk: (engine, body) => chunks._chunk-from-raw-plain(config, engine, body),
-    code-block: code.code-block,
-    elements: elementmod.bind(config),
+    _fenced-chunk: (engine, body) => chunks._fenced-chunk(
+      config,
+      engine,
+      body,
+      fallback: _fenced-source-fallback,
+    ),
+    elements: elementmod._bind(config),
     _resolve-asset-href: (path) => assets._resolve-asset-href(path, config: config),
     _resolve-asset-path: (path) => assets._resolve-asset-path(path, config: config),
     document: body => _document(config, body),

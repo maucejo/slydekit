@@ -77,7 +77,7 @@
   }
 }
 
-#let num-sec(type: "slide") = context {
+#let formatted-number(type: "slide") = context {
    if sk-states.section-numbering.get() {
     let fmt = if sk-states.appendix.get() {
       sk-states.numbering-pattern.get().appendix
@@ -97,13 +97,13 @@
   }
 }
 
-#let subtitle-slide(fill-number: none) = context {
+#let slide-subtitle(fill-number: none) = context {
   let title = sk-states.current-slide-title.get()
 
   let fill-num = if fill-number != none {
-    text(fill: fill-number)[#num-sec()]
+    text(fill: fill-number)[#formatted-number()]
   } else {
-    num-sec()
+    formatted-number()
   }
 
 

@@ -59,6 +59,8 @@ Every argument to `slydekit(..)` is optional and falls back to a sensible defaul
 | `aspect-ratio` | `"16-9"` or `"4-3"` |
 | `navigation-style` | `"topbar"` or `"minislide"` |
 | `title-logo`, `slide-logo` | Logo(s) for the title page and the running footer |
+| `section-numbering` | Enables automatic numbering for sections and slides |
+| `numbering-pattern` | Customizes the numbering formats for sections and appendices |
 | `handout` | Handout mode |
 
 Structuring content is purely heading-driven:
@@ -66,6 +68,18 @@ Structuring content is purely heading-driven:
 - a level-1 heading (`= Section`) opens a new section and resets the progress indicators;
 - a level-2 heading (`== Slide title`) opens a new slide, equivalent to calling `#slide[...]` directly;
 - `#slide(steps: n)[...]` can be used explicitly when a slide needs a manual override on its number of reveal steps, or a `label:` for cross-referencing with `@ref`.
+
+Section and slide numbering can be enabled with `section-numbering: true`. By default, regular sections and slides use the `"1.1."` pattern, while appendix sections and slides use `"A.1."`. These formats can be customized with `numbering-pattern`, for example:
+
+```typ
+#show: slydekit.with(
+  section-numbering: true,
+  numbering-pattern: (
+    section: "1.1",
+    appendix: "A.1",
+  ),
+)
+```
 
 ## Disclaimer
 
@@ -85,10 +99,11 @@ Slydekit borrows or adapts some of the codes provided by Polylux and Touying for
 - `alternatives(start: n, repeat-last: bool, ..options)` shows one option per step in the same footprint, with `repeat-last: true` keeping the final option on screen instead of disappearing once its step is past.
 - `#meanwhile` splits a slide's top-level flow into parallel tracks at the point it's used, each with its own local `#pause` chain, advancing on the same subslide clock instead of one long concatenated sequence. This reproduces Touying's `#meanwhile` directly: `First #pause Second #meanwhile Third #pause Fourth` shows *First, Third* on the first step and all four on the second
 - `track(body)` splits its own content at `#pause` independently of the slide's main flow, so two adjacent columns (typically inside a `#grid(..)`) can each carry their own pause sequence, synchronized on the same subslide clock rather than concatenated into one long chain
-- `reveal(..)` exposes the same step logic as a plain boolean instead of content, so CeTZ drawings or Fletcher diagrams can conditionally show elements and still reserve their layout space via a `hide-fn` callback (`cetz.draw.hide(bounds: true)`, for instance)
+- `draw-reveal(..)` exposes the same step logic as a plain boolean instead of content, so CeTZ drawings or Fletcher diagrams can conditionally show elements and still reserve their layout space via a `hide-fn` callback (`cetz.draw.hide(bounds: true)`, for instance). It replaces the former `reveal(..)` helper
+- `code-reveal(..)` progressively reveals and highlights lines of a code block. It supports the built-in `raw-renderer`, `codly-renderer`, and `zebraw-renderer`, as well as custom renderers
 - `uncover`/`only` also accept a `cover-fn` argument for the same purpose when the content being hidden isn't a boolean-gated diagram but ordinary content that a third-party package wants to mask its own way
 
-**Five built-in themes sharing one architecture.** `metropolis`, `simple`, `fancy`, `cambfurt`, and `chalkboard` (with a color variant) each define the same six-function contract: `theme`, `title`, `toc`, `focus-slide`, `link-box`, `boxeq`, `box`. Because a theme is just a dictionary, any theme merges onto `metropolis` as a base, so a partial custom theme only needs to override the pieces it actually changes.
+**Five built-in themes sharing one architecture.** `metropolis`, `simple`, `fancy`, `cambfurt`, and `chalkboard` (with a color variant) each define the same six-function contract: `theme`, `title`, `toc`, `focus-slide`, `link-box`, `boxeq`, `custom-box`. Because a theme is just a dictionary, any theme merges onto `metropolis` as a base, so a partial custom theme only needs to override the pieces it actually changes.
 
 **Two navigation styles, computed automatically.** `"topbar"` shows the current slide title in a running header; `"minislide"` shows a live, per-section mini-outline (`mini-slides()`) with dots tracking the active slide, built entirely from heading and slide queries, no manual bookkeeping.
 
@@ -113,7 +128,7 @@ Touying and Polylux are the two most established presentation packages in the Ty
 | | **Slydekit** | **Touying** | **Polylux** |
 |---|---|---|---|
 | Slide creation | Heading-driven (`=`, `==`), plus explicit `#slide(..)` for overrides | Heading-driven, plus a richer `#slide[..]` API (waypoints, callback-style animations, cover mode) | Explicit `#slide[..]` calls; headings are not slides by themselves |
-| Animation primitives | `#pause`, `#meanwhile`, `#uncover`, `#only` (with a `cover-fn` hook), plus `one-by-one`, `item-by-item`, `alternatives`, `track` for parallel pause chains, and a boolean `reveal()` for CeTZ/Fletcher | `#pause`, `#meanwhile`, `#uncover`, `#only`, `#alternatives`, math-equation animations, native CeTZ/Fletcher integration | `#pause`, `#uncover`, `#only`, plus a lower-level overlay API that most themes build on |
+| Animation primitives | `#pause`, `#meanwhile`, `#uncover`, `#only` (with a `cover-fn` hook), plus `one-by-one`, `item-by-item`, `alternatives`, `track` for parallel pause chains, `code-reveal` for code blocks, and `draw-reveal` for CeTZ/Fletcher | `#pause`, `#meanwhile`, `#uncover`, `#only`, `#alternatives`, math-equation animations, native CeTZ/Fletcher integration | `#pause`, `#uncover`, `#only`, plus a lower-level overlay API that most themes build on |
 | Built-in themes | 5 (`metropolis`, `simple`, `fancy`, `cambfurt`, `chalkboard`), sharing one merge-onto-`simple` contract | 6 built-in (`simple`, `metropolis`, `dewdrop`, `university`, `aqua`, `stargazer`) plus a large third-party catalogue on Typst Universe | 1 minimal `simple` theme in core; most visual variety comes from independent community packages (e.g. `metropolis-polylux`, `rectangles-polylux`, `helios-polylux`) |
 | Navigation / outline | `topbar` or `minislide`, both auto-generated from headings; `progressive-outline` for per-slide mini-TOC | Rich navigation and progress components as part of its component library, theme-dependent | Left to individual themes; core Polylux stays low-level |
 | Appendix handling | First-class `#appendix[..]` with independent numbering and appendix-aware navigation | Supported via slide recall / appendix patterns, more manual | Not built in; left to the user or a theme |
@@ -131,7 +146,7 @@ Slydekit instead builds on Typst's native `context`, `state`, and `query` mechan
 
 This does not prevent users from introducing their own persistent state. Theme authors and helper functions can freely declare additional `state()` or `counter()` values whenever needed, independently of Slydekit's core. The only information managed centrally by Slydekit is the state that must remain synchronized with the presentation lifecycle. For example, values initialized once per presentation or updated once per subslide. The difference therefore lies less in extensibility itself than in how shared state is organized. Touying centralizes it in a single configurable object, whereas Slydekit keeps it decentralized and relies on Typst's built-in mechanisms.
 
-Despite these architectural differences, the animation capabilities of Touying and Slydekit are intentionally very similar. Slydekit provides `#pause`, `#meanwhile`, `#uncover`, `#only`, `one-by-one`, `item-by-item`, `alternatives`, `track`, and `reveal`, covering the same core incremental-reveal use cases as Touying, including synchronized parallel reveal chains and incremental mathematical expressions. Where the two projects differ is primarily outside the animation system, since Touying also includes export tooling (PPTX and HTML) and speaker-note support, whereas Slydekit deliberately focuses on PDF presentations and leaves these capabilities to external packages such as Presio. -->
+Despite these architectural differences, the animation capabilities of Touying and Slydekit are intentionally very similar. Slydekit provides `#pause`, `#meanwhile`, `#uncover`, `#only`, `one-by-one`, `item-by-item`, `alternatives`, `track`, `code-reveal`, and `draw-reveal`, covering the same core incremental-reveal use cases as Touying, including synchronized parallel reveal chains and incremental mathematical expressions. Where the two projects differ is primarily outside the animation system, since Touying also includes export tooling (PPTX and HTML) and speaker-note support, whereas Slydekit deliberately focuses on PDF presentations and leaves these capabilities to external packages such as Presio. -->
 
 ## Themes at a glance
 
