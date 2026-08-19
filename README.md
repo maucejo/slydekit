@@ -1,6 +1,6 @@
 # Slydekit
 
-[![Generic badge](https://img.shields.io/badge/Version-0.2.0-cornflowerblue.svg)](https://github.com/maucejo/slidekit/releases/tag/0.2.0)
+[![Generic badge](https://img.shields.io/badge/Version-0.3.0-cornflowerblue.svg)](https://github.com/maucejo/slidekit/releases/tag/0.3.0)
 [![MIT License](https://img.shields.io/badge/License-MIT-forestgreen)](https://github.com/maucejo/slydekit/blob/main/LICENSE)
 [![Stable documentation](https://img.shields.io/badge/docs-stable-mediumpurple)](https://maucejo.github.io/slydekit/)
 
