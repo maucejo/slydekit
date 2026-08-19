@@ -138,6 +138,10 @@ To enable theme composition and partial theme definitions, Slydekit uses a share
   Tracks the number of slides in the presentation. It is used to display the current slide number in the footer of slides.
 ]
 
+#argument-callout(kind: "State", "slide-index", [counter])[
+  Tracks the index of the current slide in the presentation. It is used to manage the sequencing and navigation of slides.
+]
+
 #argument-callout(kind: "State", "subslide-step", [counter])[
   Tracks the animation capacity in a slide. It is used to determine the total number of subslides in a slide.
 ]
