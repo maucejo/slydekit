@@ -139,7 +139,8 @@
             none
           }
 
-          link(section.location(), [#num #section.body])
+          let title = [#num #section.body]
+          link(section.location(), if is-current-sec { strong(title) } else { title })
         }
 
         if display-subsection and slides.len() > 0 {
