@@ -2,10 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://maucejo.github.io/slydekit/animations/alternatives.html</loc></url>
   <url><loc>https://maucejo.github.io/slydekit/animations/anim.html</loc></url>
+  <url><loc>https://maucejo.github.io/slydekit/animations/code-reveal.html</loc></url>
+  <url><loc>https://maucejo.github.io/slydekit/animations/draw-reveal.html</loc></url>
   <url><loc>https://maucejo.github.io/slydekit/animations/item.html</loc></url>
   <url><loc>https://maucejo.github.io/slydekit/animations/meanwhile.html</loc></url>
   <url><loc>https://maucejo.github.io/slydekit/animations/pause.html</loc></url>
-  <url><loc>https://maucejo.github.io/slydekit/animations/reveal.html</loc></url>
   <url><loc>https://maucejo.github.io/slydekit/components/appendix.html</loc></url>
   <url><loc>https://maucejo.github.io/slydekit/components/bibliography.html</loc></url>
   <url><loc>https://maucejo.github.io/slydekit/components/callout-boxes.html</loc></url>
