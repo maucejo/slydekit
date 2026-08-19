@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://maucejo.github.io/slydekit/sitemap.xml
