@@ -9,7 +9,7 @@
     "animations/meanwhile.html",
     "animations/pause.html",
     "assets/.DS_Store",
-    "assets/Catppuccin Latte.tmTheme",
+    "assets/Catppuccin-Latte.tmTheme",
     "assets/animations/.DS_Store",
     "assets/animations/alternatives1.png",
     "assets/animations/alternatives2.png",
@@ -227,7 +227,7 @@
     "theming/fonts-colors.html"
   ],
   "pagefind": {
-    "signature": 2849807075431745368,
+    "signature": 11425770274005970687,
     "outputs": [
       "pagefind/fragment/en_1977af9.pf_fragment",
       "pagefind/fragment/en_1a9f5e2.pf_fragment",
