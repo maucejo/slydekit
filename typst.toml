@@ -8,7 +8,7 @@ categories = ["presentation"]
 description = "A package to easily create presentation slides"
 repository = "https://github.com/maucejo/slydekit"
 keywords = ["presentation", "slides"]
-exclude = ["docs"]
+exclude = ["docs", "tests"]
 
 [template]
 path = "template"

@@ -26,29 +26,3 @@
 #my-focus-slide[
   *Heigh* #pause *ho!*
 ]
-
-// == Test
-
-// efefe
-
-// #tableofcontents
-
-// = First section
-
-// == A subsection
-
-// #lorem(10)
-
-// = Second section
-
-// == Another subsection
-
-// #lorem(10)
-
-// #show: appendix
-
-// = Appendix <hide-toc>
-
-// == A subsection in the appendix
-
-// #lorem(10)

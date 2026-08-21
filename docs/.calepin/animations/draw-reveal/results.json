@@ -1,8 +1,8 @@
 {
   "schema": 2,
-  "calepin_version": "0.0.52",
+  "calepin_version": "0.0.53",
   "input": "animations/draw-reveal.typ",
-  "generation": "8281725a2f8eff5e-1349cde127705c16",
+  "generation": "d987b38802ab76fa-1349cde127705c16",
   "store": {},
   "chunks": {}
 }

@@ -1,8 +1,8 @@
 {
   "schema": 2,
-  "calepin_version": "0.0.52",
+  "calepin_version": "0.0.53",
   "input": "theming/fonts-colors.typ",
-  "generation": "90ab45df08d1c26b-1349cde127705c16",
+  "generation": "dbe18280c1d54fc8-1349cde127705c16",
   "store": {},
   "chunks": {}
 }

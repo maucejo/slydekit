@@ -16,3 +16,4 @@ scripts
 justfile
 src/resources/images/chalkboard_old.png
 .DS_Store
+tests

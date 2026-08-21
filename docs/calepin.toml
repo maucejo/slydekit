@@ -10,7 +10,7 @@ typ = false
 minify = true
 search = "pagefind"
 favicon = "assets/slydekit-icon.svg"
-highlight-light = "assets/Catppuccin Latte.tmTheme"
+highlight-light = "assets/Catppuccin-Latte.tmTheme"
 
 [executables]
 typst = "typst"

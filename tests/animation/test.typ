@@ -93,7 +93,7 @@
 
 // CeTZ integration
 #slide("CeTZ integration", steps: 3)[
-  #let reveal-cetz = reveal.with(hide-fn: cetz.draw.hide.with(bounds: true))
+  #let reveal-cetz = draw-reveal.with(hide-fn: cetz.draw.hide.with(bounds: true))
 
   #context {
     align(center)[
@@ -103,12 +103,12 @@
         scale(400%)
         grid((-1.5, -1.5), (1.5, 1.5), step: 0.5, stroke: gray + 0.2pt)
 
-        reveal(from: 2, {
+        reveal-cetz(from: 2, {
           line((-1.5, 0), (1.5, 0))
           line((0, -1.5), (0, 1.5))
         })
 
-        reveal(3, circle((0, 0)))
+        reveal-cetz(3, circle((0, 0)))
       })
     ]
   }
@@ -117,7 +117,7 @@
 // Fletcher integration
 #slide("Fletcher integration", steps: 3)[
   #show raw: set text(size: 0.7em)
-  #let reveal-fletcher = reveal.with(hide-fn: fletcher.hide.with(bounds: true))
+  #let reveal-fletcher = draw-reveal.with(hide-fn: fletcher.hide.with(bounds: true))
 
   #context {
     align(center)[

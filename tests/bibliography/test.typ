@@ -16,14 +16,6 @@
 == Bibliography
 #bibliography(
   bytes(
-    // ```bib
-    // @book{knuth,
-    //   title={The Art of Computer Programming},
-    //   author={Donald E. Knuth},
-    //   year={1968},
-    //   publisher={Addison-Wesley},
-    // }
-    // ```.text,
     raw(lang: "bib",
     "@book{knuth,
       title={The Art of Computer Programming},
