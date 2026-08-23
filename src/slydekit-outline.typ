@@ -28,8 +28,8 @@
     ]
   }
 
-  // Résout gutter (ratio ou longueur) en longueur absolue, une seule fois,
-  // pour que col-width soit une longueur pure — jamais une expression relative
+  // Solves the gutter (ratio or length) into an absolute length, once and for all,
+  // so that col-width is a pure length — never a relative expression
   let gutter-length = if type(gutter) == ratio { gutter * size.width } else { gutter }
 
   let target-n = 1
@@ -53,21 +53,7 @@
   end-content
 })
 
-// #let toc = {
-//   set outline.entry(fill: none)
-//   show outline.entry: it => context {
-//     show linebreak: none
-//     let number = it.prefix()
-//     let section = it.element.body
-//     block(above: 1.5em, below: 0em)
-//     [#text([#number], fill: sk-states.colors.get().primary) #section]
-//   }
-
-//   set align(horizon)
-//   adaptive-columns(text(size: 1.2em, strong(outline(title:none, indent: 1em, depth: 1))))
-// }
-
-#let toc(display-appendix: "auto") = context {
+#let toc(fill: black, display-appendix: "auto") = context {
   let current-is-appendix = sk-states.appendix.at(here())
 
   let hidden-pages = query(<hide-toc>).map(l => l.location().page())
@@ -93,13 +79,9 @@
   let entries = sections.map(s => {
     let num = formatted-number(type: "section", at: s.location(), force: true)
     block(above: 1.5em, below: 0em)[
-      #link(s.location())[#text(fill: sk-states.colors.get().primary)[#num] #text(fill: black)[#s.body]]
+      #link(s.location())[#text(fill: sk-states.colors.get().primary)[#num] #text(fill: fill)[#s.body]]
     ]
   })
-
-  set align(horizon)
-  adaptive-columns(text(size: 1.2em, strong(entries.join())))
-}
 
   set align(horizon)
   adaptive-columns(text(size: 1.2em, strong(entries.join())))
@@ -254,12 +236,14 @@
   it,
   active-color,
   inactive-color,
-  entry-size: 0.8575em,
+  entry-size: 1.2em,
   gutter: 4%,
   display-subsection: false,
   display-appendix: "auto",
 ) = context {
+  set text(size: sk-states.fonts.get().size)
   set text(size: entry-size)
+
   show linebreak: none
 
   let current-is-appendix = sk-states.appendix.at(it.location())

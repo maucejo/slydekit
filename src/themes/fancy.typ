@@ -18,6 +18,8 @@
   raw: "Cascadia Code",
 )
 
+#let header-size = 1.2em
+
 #let fancy-theme(body) = context {
   // Page setup
   let fancy-margin = if sk-states.navigation-style.get() == "minislide" {
@@ -51,7 +53,7 @@
   // Header and footer
   let header = context if sk-states.navigation-style.get() == "topbar" {
     let header-title = [#h(1em)*#slide-subtitle()*]
-    full-width(fill: sk-states.colors.get().header, align(horizon, text(size: 1.2em, fill: white)[#header-title]))
+    full-width(fill: sk-states.colors.get().header, align(horizon, text(size: header-size, fill: white)[#header-title]))
   } else if sk-states.navigation-style.get() == "minislide" {
     let mini-content = [
       #let pad-lr = 3.5%
@@ -62,7 +64,7 @@
       }
       #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
       #place(dy: 0.5em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().header))
-      #place(dx: 3.5%, dy: 1.25em)[#text(size: 1.25em, weight: "bold", fill: sk-states.colors.get().header, slide-subtitle())]
+      #place(dx: 3.5%, dy: 1.25em)[#text(size: header-size, weight: "bold", fill: sk-states.colors.get().header, slide-subtitle())]
     ]
     full-width(mini-content)
   }
@@ -183,6 +185,8 @@
 }
 
 #let fancy-toc = context {
+  set text(size: sk-states.fonts.get().size)
+
   let (header-color, text-color) = if sk-states.navigation-style.get() == "topbar" {
     (sk-states.colors.get().header, white)
   } else {
@@ -196,7 +200,7 @@
       place(dy: 0.5em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().header))
     }
   }
-  let header = full-width(fill: header-color, align(horizon, text(size: 1.2em, fill: text-color)[#header-content]))
+  let header = full-width(fill: header-color, align(horizon, text(size: header-size, fill: text-color)[#header-content]))
 
   set page(header: header, footer: none)
 

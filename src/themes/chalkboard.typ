@@ -26,6 +26,8 @@
   raw: "Fantasque Sans Mono",
 )
 
+#let header-size = 1.2em
+
 #let chalkboard-theme(body) = context{
   set text(fill: rgb("#f2f1ea"))
 
@@ -60,7 +62,7 @@
 
   let header = context if sk-states.navigation-style.get() == "topbar" {
     let header-title = [#h(1em)*#slide-subtitle()*]
-    full-width(fill: none, align(horizon, text(size: 1.2em, fill: sk-states.colors.get().primary)[#header-title]))
+    full-width(fill: none, align(horizon, text(size: header-size, fill: sk-states.colors.get().primary)[#header-title]))
 
     full-width(place(dy: 2em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().header)))
   } else if sk-states.navigation-style.get() == "minislide" {
@@ -69,7 +71,7 @@
       #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
       #place(dy: 0.5em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().header))
 
-      #place(dx: 3.5%, dy: 1.25em)[#text(size: 1.25em, weight: "bold", fill: sk-states.colors.get().header, slide-subtitle())]
+      #place(dx: 3.5%, dy: 1.25em)[#text(size: header-size, weight: "bold", fill: sk-states.colors.get().header, slide-subtitle())]
     ]
     full-width(mini-content)
   }
@@ -174,6 +176,8 @@
 }
 
 #let chalkboard-toc = context {
+  set text(size: sk-states.fonts.get().size)
+
   let header-content = {
     let dy = if sk-states.navigation-style.get() == "topbar" { 0em } else { 0.5em }
     [
@@ -181,11 +185,11 @@
       #place(dy: 0.5em - dy, line(length: 100%, stroke: 0.05em + sk-states.colors.get().header))
     ]
   }
-  let header = full-width(fill: none, align(horizon, text(size: 1.2em, fill: sk-states.colors.get().primary)[#header-content]))
+  let header = full-width(fill: none, align(horizon, text(size: header-size, fill: sk-states.colors.get().primary)[#header-content]))
 
   set page(header: header, footer: none)
 
-  toc()
+  toc(fill: white)
 }
 
 #let chalkboard-focus-slide(body) = context {

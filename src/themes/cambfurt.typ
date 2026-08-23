@@ -18,6 +18,8 @@
   raw: "Cascadia Code",
 )
 
+#let header-size = 1.2em
+
 #let cambfurt-theme(body, colors: none, fonts: none) = context{
   // Page setup
   let cambfurt-margin = if sk-states.navigation-style.get() == "minislide" {
@@ -27,20 +29,19 @@
 
   // Heading styles
   show heading.where(level: 1): it => {
-    let dy = -2pt
     let header-content = if sk-states.navigation-style.get() == "topbar" {
       let topbar = grid(
         columns: (1fr, 1fr),
         align: right + horizon,
-        rows: 1.5em,
-        grid.cell(fill: sk-states.colors.get().header)[#text(fill: white)[*#sk-states.localization.get().toc* #h(0.75em)]],
+        rows: 1.5*sk-states.fonts.get().size,
+        grid.cell(fill: sk-states.colors.get().header)[#text(fill: white, size: 1.2*sk-states.fonts.get().size)[*#sk-states.localization.get().toc* #h(0.75em)]],
         cell(fill: sk-states.colors.get().secondary),
       )
-      move(dy: dy)[#topbar]
+      move(dy: -5pt)[#topbar]
     } else {
-      move(dx: 1em, dy: dy)[#box(width: 100%, fill: sk-states.colors.get().secondary.lighten(45%), outset: (left: 1em, rest: 0.5em))[*#sk-states.localization.get().toc*]]
+      move(dx: 1em)[#box(width: 100%, fill: sk-states.colors.get().secondary.lighten(45%), outset: (left: 1em, rest: 0.5em))[*#sk-states.localization.get().toc*]]
     }
-    let header = full-width(align(horizon, text(size: 1.399em, fill: sk-states.colors.get().header)[#header-content]))
+    let header = full-width(align(horizon, text(size: 1.2*sk-states.fonts.get().size, fill: sk-states.colors.get().header)[#header-content]))
 
     set page(header: header, footer: none, margin: margins)
     set align(horizon)
@@ -66,7 +67,7 @@
       #place(top, dy: -0.75em)[#cell(fill: sk-states.colors.get().secondary.lighten(60%))
       ]
       #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
-      #place(dx: 3.5%, dy: 1em)[#box(width: 100%, outset: (left: 2em, right: 1em, rest: 0.5em), fill: sk-states.colors.get().secondary.lighten(45%), text(size: 1.25em, weight: "bold", fill: sk-states.colors.get().header, slide-subtitle()))]
+      #place(dx: 3.5%, dy: 1em)[#box(width: 100%, outset: (left: 2em, right: 1em, rest: 0.5em), fill: sk-states.colors.get().secondary.lighten(45%), text(size: header-size, weight: "bold", fill: sk-states.colors.get().header, slide-subtitle()))]
     ]
     full-width(mini-content)
   }
@@ -193,19 +194,20 @@
 }
 
 #let cambfurt-toc = context {
+  set text(size: sk-states.fonts.get().size)
   let header-content = if sk-states.navigation-style.get() == "topbar" {
       let topbar = grid(
         columns: (1fr, 1fr),
         align: right + horizon,
-        rows: 1.5em,
+        rows: 1.5*sk-states.fonts.get().size,
         grid.cell(fill: sk-states.colors.get().primary)[#text(fill: white)[*#sk-states.localization.get().toc* #h(0.75em)]],
         cell(fill: sk-states.colors.get().secondary),
       )
-      move(dy: -2pt)[#topbar]
+      move(dy: -5pt)[#topbar]
     } else {
       move(dx: 1em, dy: -0.5em)[#box(width: 100%, fill: sk-states.colors.get().secondary.lighten(45%), outset: (left: 1em, rest: 0.5em))[*#sk-states.localization.get().toc*]]
     }
-    let header = full-width(fill: none, align(horizon, text(size: 1.2em, fill: sk-states.colors.get().primary)[#header-content]))
+    let header = full-width(fill: none, align(horizon, text(size: header-size, fill: sk-states.colors.get().primary)[#header-content]))
 
   set page(header: header, footer: none)
 
