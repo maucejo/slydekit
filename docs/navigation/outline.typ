@@ -37,9 +37,13 @@ In Slydekit, you can create an outline using the `tableofcontents` command.
 If you want to create a custom theme, Slydekit provides the `toc` command to create a simple table of contents with the current theme primary color. The `toc` function has the following signature:
 ```typ
 #let toc(
+  fill: black,
   display-appendix: "auto",
 )
 ```
+
+#argument-callout("fill", [color], default: [black])[
+The color used to fill the outline entries. The default value is `black`, which is a good color for most presentations. You can change this color to match your theme colors.]
 
 #argument-callout("display-appendix", [string], default: ["auto"])[
 Whether to display the appendix in the table of contents. The default value is `auto`, which means that the appendix outline will be displayed on a dedicated slide. If set to `true`, the appendix will always be displayed in the main outline. If set to `false`, the appendix outline will never be displayed.

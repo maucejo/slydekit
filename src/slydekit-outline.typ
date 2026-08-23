@@ -128,13 +128,20 @@
       }
     }
 
-    let sections = query(heading.where(level: 1)).filter(is-visible)
+    // Pages à exclure : == Titre <hide-toc> ou #slide(..., label: <hide-toc>)[...]
+    let hidden-pages = query(<hide-toc>).map(l => l.location().page())
+
+    let is-section-hidden(s) = (
+      (s.has("label") and s.label == <hide-toc>) or (s.location().page() in hidden-pages)
+    )
+
+    let sections = query(heading.where(level: 1))
+      .filter(is-visible)
+      .filter(s => not is-section-hidden(s))
+
     if sections.len() == 0 {
       return []
     }
-
-    // Pages with hidden headings (== Titre <hide-toc>) : to be excluded from the count
-    let hidden-pages = query(<hide-toc>).map(l => l.location().page())
 
     let all-slides = query(<sk-slide>)
       .filter(is-visible)
@@ -209,7 +216,6 @@
               } else {
                 sym.circle.small
               }
-              // sym.circle.small
             }
 
             link(slide-h.location(), dot)

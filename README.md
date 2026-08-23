@@ -87,7 +87,7 @@ Slydekit borrows or adapts some of the codes provided by Polylux and Touying for
 
 - animation: Slydekit slightly adapts the `item-by-item` and `alternatives` functions from Polylux.
 
-- outline: Slydekit adapts and extends the `progressive-outline` and `mini-slides` and borrows `adaptive-columns` from Touying.
+- outline: Slydekit adapts and extends the `progressive-outline`, `mini-slides` and `adaptive-columns` from Touying.
 
 ## Main features
 
