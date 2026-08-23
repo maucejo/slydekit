@@ -5,6 +5,54 @@
 #import "slydekit-themes.typ": *
 #import "slydekit-utils.typ": *
 
+#let heading-slide(heading, body) = {
+  if heading.has("label") {
+    slide(heading.body, body, label: heading.label)
+  } else {
+    slide(heading.body, body)
+  }
+}
+
+#let flush-slide(heading, chunks) = {
+  if heading != none {
+    heading-slide(heading, chunks.join())
+  } else if chunks.len() > 0 {
+    chunks.join()
+  } else {
+    none
+  }
+}
+
+#let slydekit-slides(body) = {
+  let children = if body.func() == [].func() { body.children } else { (body,) }
+
+  let current-heading = none
+  let current-body = ()
+  let output = ()
+
+  for child in children {
+    if child.func() == heading and (child.depth == 1 or child.depth == 2) {
+      let flushed = flush-slide(current-heading, current-body)
+      if flushed != none { output.push(flushed) }
+      current-body = ()
+
+      if child.depth == 2 {
+        current-heading = child
+      } else {
+        current-heading = none
+        output.push(child)
+      }
+    } else {
+      current-body.push(child)
+    }
+  }
+
+  let flushed = flush-slide(current-heading, current-body)
+  if flushed != none { output.push(flushed) }
+
+  output.join()
+}
+
 #let slydekit(
   title: "Title",
   subtitle: "Subtitle",
