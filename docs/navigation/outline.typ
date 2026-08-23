@@ -59,6 +59,7 @@ Slydekit provides a `progressive-outline` command that creates a progressive out
   entry-size: 0.8575em,
   gutter: 4%,
   display-subsection: false,
+  display-appendix: "auto",
 )
 ```
 
@@ -90,6 +91,9 @@ A typical implementation of the `progressive-outline` command when creating a th
   progressive-outline(it, active-color, inactive-color)
 }
 ```
+
+#argument-callout("display-appendix", [string], default: ["auto"])[
+Whether to display the appendix in the progressive outline. The default value is `auto`, which means that the appendix outline will be displayed on a dedicated slide. If set to `true`, the appendix will always be displayed in the main outline. If set to `false`, the appendix will never be displayed.]
 
 = Hide sections
 
