@@ -58,8 +58,7 @@ Slydekit provides a `progressive-outline` command that creates a progressive out
   inactive-color,
   entry-size: 0.8575em,
   gutter: 4%,
-  section-numbering: "1.1.",
-  appendix-numbering: "A.1.",
+  display-subsection: false,
 )
 ```
 
@@ -78,11 +77,8 @@ The size of the text used for the outline entries. The default value is `0.8575e
 #argument-callout("gutter", [number], default: [4%])[
 The space between the outline entries. The default value is `4%`.]
 
-#argument-callout("section-numbering", [string], default: ["1.1."])[
-The numbering format for sections. The default value is `"1.1."`.]
-
-#argument-callout("appendix-numbering", [string], default: ["A.1."])[
-The numbering format for appendices. The default value is `"A.1."`.]
+#argument-callout("display-subsection", [boolean], default: [false])[
+Whether to display subsections in the progressive outline. The default value is `false`. If set to `true`, the progressive outline will display subsections as well.]
 
 A typical implementation of the `progressive-outline` command when creating a theme is as follows:
 ```typ
@@ -106,7 +102,7 @@ Slydekit provides the `hide-new-section-slide` function to hide the slide that i
 This function can't be used in conjunction with `progressive-outline`, since `hide-new-section-slide` hides level 1 heading slides. However, the section will still be present in the `tableofcontents`.
 ]
 
-If you want to have a fine-grained control over which sections are hidden, you can use the label `hide-toc` command to hide specific sections.
+If you want to have a fine-grained control over which sections are hidden, you can use the label `<hide-toc>` command to hide specific sections.
 
 == Without `<hide-toc>`
 
@@ -131,3 +127,7 @@ If you want to have a fine-grained control over which sections are hidden, you c
   columns: 3,
   max-width: 100%,
 )
+
+#calepin.elements.callout[
+  The `<hide-toc>` label can also be used to hide a slide, defined with `#slide(..., label: <hide-toc>)` or `== Title <hide-toc>`, from the outlines (`tableofcontents`, `progressive-outline` and `mini-slides`). This can be useful for a bibliography slide for instance.
+]

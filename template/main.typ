@@ -1,5 +1,5 @@
-#import "@preview/slydekit:0.3.0": *
-// #import "../src/slydekit.typ": *
+// #import "@preview/slydekit:0.3.0": *
+#import "../src/slydekit.typ": *
 #import "@preview/cetz:0.5.2"
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
 
@@ -32,7 +32,7 @@
 
 // #show: hide-new-section-slide
 
-= First section
+= CeTZ and Fletcher integration
 // = #short-or-long[Short title][Long title]
 
 #slide("CeTZ integration", steps: 5)[
@@ -86,6 +86,7 @@
   }
 ]
 
+= Animations - Part 1
 #slide("Code animation")[
   #code-reveal(
     highlight-lines: ("2": 2, "4": 3),
@@ -100,26 +101,15 @@
   ]
 ]
 
-== Section <s:section>
+#slide("Pause, Uncover and only")[
+  Introduction, #pause always visible.
 
-#lorem(10)@knuth
+  #uncover(from: 3, to: 4)[A point that is only visible on slides 2 and 3.]
 
-- First point
-  - A nested point
-    - A deeply nested point
+  #only(5)[A final note that appears, without reserving space, only at the very end.]
 
-+ First point
-+ Second point
-
-Slide @s:section, slide @s:test
-
-#lorem(10)
-
-#place(bottom + right, dy: 1.5em, link-box(<s:test>, "Go to Test slide"))
-
-#slide("Math")[
   $
-    y = f(x) #uncover(2, $= x^2 + 2x + 1$)
+    y = f(x) #uncover(from:3, $= x^2 + 2x + 1$)
   $
 
   $
@@ -127,33 +117,7 @@ Slide @s:section, slide @s:test
   $
 ]
 
-#slide("Uncover / only")[
-  Introduction, always visible.
-
-  #uncover(from: 2, to: 3)[A point that is only visible on slides 2 and 3.]
-
-  #only(4)[A final note that appears, without reserving space, only at the very end.]
-]
-
-#slide("Test slide", label: <s:test>)[
-  #lorem(25)
-
-  #place(right + bottom,link-box(<s:section>, "Go to Section slide"))
-]
-
-#slide("Pause")[
-  A
-
-  #pause
-  B
-
-  <pause>
-  C
-]
-
-// == Synchronized columns
-
-#slide("Synchronized columns")[
+#slide("Track")[
   #grid(
     columns: (1fr, 1fr),
     align: top,
@@ -173,6 +137,7 @@ Slide @s:section, slide @s:test
   )
 ]
 
+= Animations - Part 2
 #slide("Meanwhile")[
   First
 
@@ -189,14 +154,14 @@ Slide @s:section, slide @s:test
   Fourth
 ]
 
-#slide("Successive choices")[
+#slide("Alternatives")[
 #alternatives[Ann][Bob][Christopher]
 likes
 #alternatives[chocolate][strawberry][vanilla]
 ice cream.
 ]
 
-#slide("Automatic list")[
+#slide("Item-by-item")[
   #item-by-item[
     - First argument
     - Second argument
@@ -204,11 +169,35 @@ ice cream.
   ]
 ]
 
+= Links and references
+== Root slide <s:section>
+
+#lorem(10)@knuth
+
+- First point
+  - A nested point
+    - A deeply nested point
+
++ First point
++ Second point
+
+Slide @s:section, slide @s:test
+
+#lorem(10)
+
+#place(bottom + right, dy: 1.5em, link-box(<s:test>, "Go to target slide"))
+
+#slide("Target slide", label: <s:test>)[
+  #lorem(25)
+
+  #place(right + bottom,link-box(<s:section>, "Go to root slide"))
+]
+
 #focus-slide[It is important!]
 
-= Second section
+= Callout boxes
 
-== Callout boxes
+== Information, tip and warning boxes
 
 #info-box[
   #lorem(10)
@@ -222,7 +211,7 @@ ice cream.
   #lorem(10)
 ]
 
-==
+== Important and proof boxes
 
 #important-box[
   #lorem(10)
@@ -232,7 +221,7 @@ ice cream.
   #lorem(10)
 ]
 
-#pagebreak()
+== Question and code boxes
 
 #question-box[
   #lorem(10)
@@ -242,8 +231,12 @@ ice cream.
   #lorem(10)
 ]
 
-== Bibliography
-#bibliography("ref.bib") <hide-toc>
+== Bibliography <hide-toc>
+#bibliography("ref.bib")
+
+// #slide("Bibliography", label: <hide-toc>)[
+//   #bibliography("ref.bib")
+// ]
 
 #show: appendix
 

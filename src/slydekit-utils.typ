@@ -77,24 +77,48 @@
   }
 }
 
-#let formatted-number(type: "slide") = context {
-   if sk-states.section-numbering.get() {
-    let fmt = if sk-states.appendix.get() {
+// #let formatted-number(type: "slide") = context {
+//    if sk-states.section-numbering.get() {
+//     let fmt = if sk-states.appendix.get() {
+//       sk-states.numbering-pattern.get().appendix
+//     } else {
+//       sk-states.numbering-pattern.get().section
+//     }
+
+//     let sec-num = counter(heading).get().first()
+//     if type == "slide" {
+//       let slide-idx = sk-states.slide-index.get().first()
+//       numbering(fmt, sec-num, slide-idx)
+//     } else if type == "section" {
+//       numbering(fmt, sec-num)
+//     }
+//   } else {
+//     none
+//   }
+// }
+
+#let formatted-number(type: "slide", at: none, force: false) = context {
+  let resolve(item) = if at != none { item.at(at) } else { item.get() }
+
+  if force or resolve(sk-states.section-numbering) {
+    let fmt = if resolve(sk-states.appendix) {
       sk-states.numbering-pattern.get().appendix
     } else {
       sk-states.numbering-pattern.get().section
     }
 
-    let sec-num = counter(heading).get().first()
+    let sec-num = resolve(counter(heading)).first()
+
     if type == "slide" {
-      let slide-idx = sk-states.slide-index.get().first()
+      let slide-idx = resolve(sk-states.slide-index).first()
       numbering(fmt, sec-num, slide-idx)
     } else if type == "section" {
       numbering(fmt, sec-num)
     }
-  } else {
-    none
   }
+  // } else {
+  //   none
+  // }
 }
 
 #let slide-subtitle(fill-number: none) = context {

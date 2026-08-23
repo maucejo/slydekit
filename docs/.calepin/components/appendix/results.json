@@ -1,8 +1,8 @@
 {
   "schema": 2,
-  "calepin_version": "0.0.53",
+  "calepin_version": "0.0.54",
   "input": "components/appendix.typ",
-  "generation": "898877e2a65750e2-1349cde127705c16",
+  "generation": "0c30acd16b7b516b-1349cde127705c16",
   "store": {},
   "chunks": {}
 }

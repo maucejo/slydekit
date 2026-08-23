@@ -8,23 +8,54 @@
   end: none,
   body,
 ) = layout(size => {
-  let n = calc.min(
-    calc.ceil(
-      measure(body).height
-        / (size.height - measure(start).height - measure(end).height),
-    ),
-    max-count,
-  )
-  if n < 1 {
-    n = 1
+  // Safeguard optional elements
+  let start-content = if start != none { start } else { [] }
+  let end-content = if end != none { end } else { [] }
+
+  // Safeguard if the height is infinite (e.g. height: auto)
+  let avail-height = size.height - measure(start-content).height - measure(end-content).height
+  if avail-height <= 0pt or avail-height == calc.inf {
+    return [
+      #start-content
+      #body
+      #end-content
+    ]
   }
-  start
-  if n == 1 {
+
+  // If max-count is 1, no need to calculate
+  if max-count <= 1 {
+    return [
+      #start-content
+      #body
+      #end-content
+    ]
+  }
+
+  // Calculate the ideal number of columns
+  let target-n = 1
+  for cols in range(1, max-count + 1) {
+    // Calculate the actual width of a column (subtracting gutters)
+    let col-width = (size.width - (cols - 1) * gutter) / cols
+
+    // Direct measure of the total height if the text is constrained to col-width
+    let measured-h = measure(block(width: col-width, body)).height
+
+    // If the average height per column fits in the available vertical space
+    if (measured-h / cols) <= avail-height {
+      target-n = cols
+      break
+    }
+    target-n = cols
+  }
+
+  // Final rendering
+  start-content
+  if target-n == 1 {
     body
   } else {
-    columns(n, body)
+    columns(target-n, gutter: gutter, body)
   }
-  end
+  end-content
 })
 
 #let toc = {
@@ -52,18 +83,15 @@
 // - false  : Never displays appendix sections.
 #let mini-slides(
   fill: none,
-  // alpha: 50%,
+  alpha: 100%,
   display-subsection: true,
   section-numbering: false,
   linebreaks: true,
   display-appendix: "auto",
 ) = {
-  // Inside mini-slides: show short title, hide long title
-  // Override locally: render the short title inside mini-slides
   show metadata.where(label: <sk-title>): it => it.value.short
 
   context {
-    // Retrieving the main color
     let theme-colors = sk-states.colors.get()
     let main-fill = if fill != none {
       fill
@@ -71,7 +99,6 @@
       theme-colors.at("header", default: black)
     }
 
-    // Detection of the current slide number and the total number of slides
     let current-is-appendix = sk-states.appendix.get()
 
     let is-visible(h) = {
@@ -86,18 +113,19 @@
       }
     }
 
-    // Sections : always real level 1 headings
     let sections = query(heading.where(level: 1)).filter(is-visible)
     if sections.len() == 0 {
       return []
     }
 
-    // Slides : the marker placed by slide(), independent of == or #slide(...)
-    let all-slides = query(<sk-slide>).filter(is-visible)
+    // Pages with hidden headings (== Titre <hide-toc>) : to be excluded from the count
+    let hidden-pages = query(<hide-toc>).map(l => l.location().page())
+
+    let all-slides = query(<sk-slide>)
+      .filter(is-visible)
+      .filter(h => h.location().page() not in hidden-pages)
 
     let current-page = here().page()
-
-    // Index of the current section
     let current-sec-idx = sections.filter(s => s.location().page() <= current-page).len() - 1
 
     let cols = ()
@@ -118,14 +146,12 @@
 
       let is-current-sec = (sec-idx == current-sec-idx)
 
-      // Slides attached to this section, via the <sk-slide> marker
       let slides = all-slides.filter(h => (
         h.location().page() >= sec-page
         and h.location().page() < next-sec-page
       ))
 
       let col-content = {
-        // Remove linebreaks when displaying subsections, to avoid double linebreaks
         {
           show linebreak: none
           let num = if sk-states.section-numbering.get() {
@@ -163,7 +189,12 @@
             let dot = if is-active-slide {
               sym.circle.filled
             } else {
-              sym.circle.small
+              if alpha < 100% {
+                text(fill: main-fill.lighten(alpha), sym.circle.filled)
+              } else {
+                sym.circle.small
+              }
+              // sym.circle.small
             }
 
             link(slide-h.location(), dot)
@@ -192,40 +223,67 @@
   inactive-color,
   entry-size: 0.8575em,
   gutter: 4%,
+  display-subsection: false,
 ) = context {
   set text(size: entry-size)
   show linebreak: none
 
   let it-hides-toc = it.has("label") and it.label == <hide-toc>
 
+  let all-sections = query(heading.where(level: 1, outlined: true))
+
   let sections = if it-hides-toc {
     (it,)
   } else {
-    query(heading.where(level: 1, outlined: true))
-      .filter(s => not (s.has("label") and s.label == <hide-toc>))
+    all-sections.filter(s => not (s.has("label") and s.label == <hide-toc>))
   }
 
   let current-idx = sections.position(s => s.location() == it.location())
 
-  let entries = sections.enumerate().map(((idx, s)) => {
-    let s-is-appendix = sk-states.appendix.at(s.location())
-    let format = if s-is-appendix { sk-states.numbering-pattern.get().appendix } else { sk-states.numbering-pattern.get().section }
+  // Pages to exclude from the count: == Titre <hide-toc> or #slide(..., label: <hide-toc>)[...]
+  let hidden-pages = query(<hide-toc>).map(l => l.location().page())
 
-    let count = counter(heading).at(s.location())
-    let num = numbering(format, ..count)
+  let entries = sections.enumerate().map(((idx, s)) => {
+    let num = formatted-number(type: "section", at: s.location(), force: true)
     let is-current = idx == current-idx
     let color = if is-current { active-color } else { inactive-color }
 
-    let entry = [
-      #text(fill: color, weight: "bold")[#num] #s.body
-    ]
+    let title = [#text(fill: color, weight: "bold")[#num] #s.body]
+
+    let subsections = if display-subsection and is-current {
+      // Find the very first level-1 heading after the current section (whether it is hidden or not)
+      let all-next-headings = query(heading.where(level: 1))
+        .filter(h => h.location().page() > s.location().page())
+
+      let sec-page = s.location().page()
+      let next-page = if all-next-headings.len() > 0 {
+        all-next-headings.first().location().page()
+      } else {
+        calc.inf
+      }
+
+      let slides = query(<sk-slide>).filter(h => (
+        h.location().page() >= sec-page
+        and h.location().page() < next-page
+        and h.value != none
+        and h.location().page() not in hidden-pages
+      ))
+
+      if slides.len() > 0 {
+        set text(size: 0.75em)
+        v(0.5em)
+        for h in slides {
+          let sub-num = formatted-number(at: h.location(), force: true)
+          block(inset: (left: 1em), above: 0.5em)[#text(fill: color)[#sub-num] #h.value]
+          v(0.25em)
+        }
+        v(-0.75em)
+      }
+    } else { none }
 
     block(below: 1.5em)[
-      #if is-current {
-        entry
-      } else {
-        text(fill: inactive-color)[#entry]
-      }
+      #if is-current { title } else { text(fill: inactive-color)[#title] }
+      #subsections
     ]
   })
 
