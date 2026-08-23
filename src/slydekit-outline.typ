@@ -8,11 +8,9 @@
   end: none,
   body,
 ) = layout(size => {
-  // Safeguard optional elements
   let start-content = if start != none { start } else { [] }
   let end-content = if end != none { end } else { [] }
 
-  // Safeguard if the height is infinite (e.g. height: auto)
   let avail-height = size.height - measure(start-content).height - measure(end-content).height
   if avail-height <= 0pt or avail-height == calc.inf {
     return [
@@ -22,7 +20,6 @@
     ]
   }
 
-  // If max-count is 1, no need to calculate
   if max-count <= 1 {
     return [
       #start-content
@@ -31,16 +28,15 @@
     ]
   }
 
-  // Calculate the ideal number of columns
+  // Résout gutter (ratio ou longueur) en longueur absolue, une seule fois,
+  // pour que col-width soit une longueur pure — jamais une expression relative
+  let gutter-length = if type(gutter) == ratio { gutter * size.width } else { gutter }
+
   let target-n = 1
   for cols in range(1, max-count + 1) {
-    // Calculate the actual width of a column (subtracting gutters)
-    let col-width = (size.width - (cols - 1) * gutter) / cols
-
-    // Direct measure of the total height if the text is constrained to col-width
+    let col-width = (size.width - (cols - 1) * gutter-length) / cols
     let measured-h = measure(block(width: col-width, body)).height
 
-    // If the average height per column fits in the available vertical space
     if (measured-h / cols) <= avail-height {
       target-n = cols
       break
@@ -48,7 +44,6 @@
     target-n = cols
   }
 
-  // Final rendering
   start-content
   if target-n == 1 {
     body
@@ -58,23 +53,61 @@
   end-content
 })
 
-#let toc = {
-  set outline.entry(fill: none)
-  show outline.entry: it => context {
-    show linebreak: none
-    let number = it.prefix()
-    let section = it.element.body
-    block(above: 1.5em, below: 0em)
-    [#text([#number], fill: sk-states.colors.get().primary) #section]
+// #let toc = {
+//   set outline.entry(fill: none)
+//   show outline.entry: it => context {
+//     show linebreak: none
+//     let number = it.prefix()
+//     let section = it.element.body
+//     block(above: 1.5em, below: 0em)
+//     [#text([#number], fill: sk-states.colors.get().primary) #section]
+//   }
+
+//   set align(horizon)
+//   adaptive-columns(text(size: 1.2em, strong(outline(title:none, indent: 1em, depth: 1))))
+// }
+
+#let toc(display-appendix: "auto") = context {
+  let current-is-appendix = sk-states.appendix.at(here())
+
+  let hidden-pages = query(<hide-toc>).map(l => l.location().page())
+
+  let is-section-hidden(s) = (
+    (s.has("label") and s.label == <hide-toc>) or (s.location().page() in hidden-pages)
+  )
+
+  let is-appendix-visible(s) = {
+    let s-is-appendix = sk-states.appendix.at(s.location())
+    if display-appendix == "auto" or display-appendix == auto {
+      s-is-appendix == current-is-appendix
+    } else if display-appendix == true {
+      true
+    } else {
+      not s-is-appendix
+    }
   }
 
+  let sections = query(heading.where(level: 1, outlined: true))
+    .filter(s => is-appendix-visible(s) and not is-section-hidden(s))
+
+  let entries = sections.map(s => {
+    let num = formatted-number(type: "section", at: s.location(), force: true)
+    block(above: 1.5em, below: 0em)[
+      #link(s.location())[#text(fill: sk-states.colors.get().primary)[#num] #text(fill: black)[#s.body]]
+    ]
+  })
+
   set align(horizon)
-  adaptive-columns(text(size: 1.2em, strong(outline(title:none, indent: 1em, depth: 1))))
+  adaptive-columns(text(size: 1.2em, strong(entries.join())))
+}
+
+  set align(horizon)
+  adaptive-columns(text(size: 1.2em, strong(entries.join())))
 }
 
 // Display a progress bar at the bottom of the slide, showing the current section progress
 // fill: color of the progress bar (default: primary color of the theme)
-// alpha: transparency applied to inactive sections (default: 50%)
+// alpha: transparency applied to inactive sections (default: 100%)
 // display-subsection: whether to display bullets for each slide under the sections (default: true)
 // linebreaks: whether to place the bullets on a new line under the section title (default: true)
 // display-appendix: whether to display appendix sections (default: "auto", which shows main sections during the main presentation and switches to appendix during the appendix)
@@ -223,7 +256,7 @@
   inactive-color,
   entry-size: 0.8575em,
   gutter: 4%,
-  display-subsection: true,
+  display-subsection: false,
   display-appendix: "auto",
 ) = context {
   set text(size: entry-size)

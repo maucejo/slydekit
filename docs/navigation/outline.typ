@@ -22,8 +22,6 @@ In Slydekit, you can create an outline using the `tableofcontents` command.
 #tableofcontents
 ```
 
-If you want to create a custom theme, Slydekit provides the `toc` command to create a simple table of contents with the current theme primary color. Actually, `tableofcontents` is just a wrapper around `toc`, that includes the title slide and the table of contents in a single slide.
-
 #calepin.elements.gallery(
   (
     ("../assets/navigation/toc-progress-simple1.png", "Table of contents - Simple theme", [Table of contents - Simple theme]),
@@ -36,7 +34,18 @@ If you want to create a custom theme, Slydekit provides the `toc` command to cre
   max-width: 100%,
 )
 
-You can see the #link("https://github.com/maucejo/slydekit/blob/main/src/slydekit-outline.typ#L29-L37", "source code") of the `toc` command to see implementation details.
+If you want to create a custom theme, Slydekit provides the `toc` command to create a simple table of contents with the current theme primary color. The `toc` function has the following signature:
+```typ
+#let toc(
+  display-appendix: "auto",
+)
+```
+
+#argument-callout("display-appendix", [string], default: ["auto"])[
+Whether to display the appendix in the table of contents. The default value is `auto`, which means that the appendix outline will be displayed on a dedicated slide. If set to `true`, the appendix will always be displayed in the main outline. If set to `false`, the appendix outline will never be displayed.
+]
+
+Actually, `tableofcontents` is just a wrapper around `toc`, that includes the title slide and the table of contents in a single slide.
 
 = Progressive outline
 

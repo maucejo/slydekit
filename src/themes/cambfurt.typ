@@ -209,7 +209,7 @@
 
   set page(header: header, footer: none)
 
-  toc
+  toc()
 }
 
 #let cambfurt-focus-slide(body) = context {

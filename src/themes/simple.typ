@@ -167,7 +167,7 @@
 
   set page(header: header, footer: none)
 
-  toc
+  toc()
 }
 
 #let simple-focus-slide(body) = context {

@@ -175,7 +175,7 @@
 
   set page(header: header, footer: none)
 
-  toc
+  toc()
 }
 
 #let metropolis-focus-slide(body) = context {

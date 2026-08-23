@@ -200,7 +200,7 @@
 
   set page(header: header, footer: none)
 
-  toc
+  toc()
 }
 
 #let fancy-focus-slide(body) = context {

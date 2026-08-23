@@ -1,6 +1,6 @@
 [package]
 name = "slydekit"
-version = "0.3.0"
+version = "0.4.0"
 entrypoint = "src/slydekit.typ"
 authors = ["Mathieu Aucejo"]
 license = "MIT"

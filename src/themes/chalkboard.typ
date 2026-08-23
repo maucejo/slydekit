@@ -185,7 +185,7 @@
 
   set page(header: header, footer: none)
 
-  toc
+  toc()
 }
 
 #let chalkboard-focus-slide(body) = context {
