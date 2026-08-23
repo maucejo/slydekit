@@ -223,29 +223,57 @@
   inactive-color,
   entry-size: 0.8575em,
   gutter: 4%,
-  display-subsection: false,
+  display-subsection: true,
+  display-appendix: "auto",
 ) = context {
   set text(size: entry-size)
   show linebreak: none
 
-  let it-hides-toc = it.has("label") and it.label == <hide-toc>
+  let current-is-appendix = sk-states.appendix.at(it.location())
+
+  // Pages to exclude: == Titre <hide-toc> or #slide(..., label: <hide-toc>)[...]
+  let hidden-pages = query(<hide-toc>).map(l => l.location().page())
+
+  let it-hides-toc = (it.has("label") and it.label == <hide-toc>) or (it.location().page() in hidden-pages)
+
+  // Si la section courante porte <hide-toc> et n'est PAS une annexe (ex: Bibliographie),
+  // on ne produit aucun sommaire.
+  if it-hides-toc and not current-is-appendix {
+    return []
+  }
 
   let all-sections = query(heading.where(level: 1, outlined: true))
 
-  let sections = if it-hides-toc {
-    (it,)
-  } else {
-    all-sections.filter(s => not (s.has("label") and s.label == <hide-toc>))
+  let is-section-hidden(s) = (
+    (s.has("label") and s.label == <hide-toc>) or (s.location().page() in hidden-pages)
+  )
+
+  // Même logique de bascule que mini-slides :
+  // "auto" -> ne montre que les sections de la même zone (annexe/principal) que 'it'
+  // true   -> fusionne tout dans un seul sommaire, sections principales et annexes confondues
+  // false  -> n'affiche jamais les annexes
+  let is-appendix-visible(s) = {
+    let s-is-appendix = sk-states.appendix.at(s.location())
+    if display-appendix == "auto" or display-appendix == auto {
+      s-is-appendix == current-is-appendix
+    } else if display-appendix == true {
+      true
+    } else {
+      not s-is-appendix
+    }
+  }
+
+  let sections = all-sections.filter(s => is-appendix-visible(s) and not is-section-hidden(s))
+
+  if sections.len() == 0 {
+    return []
   }
 
   let current-idx = sections.position(s => s.location() == it.location())
 
-  // Pages to exclude from the count: == Titre <hide-toc> or #slide(..., label: <hide-toc>)[...]
-  let hidden-pages = query(<hide-toc>).map(l => l.location().page())
-
   let entries = sections.enumerate().map(((idx, s)) => {
     let num = formatted-number(type: "section", at: s.location(), force: true)
-    let is-current = idx == current-idx
+    let is-current = (current-idx != none and idx == current-idx)
     let color = if is-current { active-color } else { inactive-color }
 
     let title = [#text(fill: color, weight: "bold")[#num] #s.body]
@@ -289,3 +317,4 @@
 
   adaptive-columns(gutter: gutter, entries.join())
 }
+

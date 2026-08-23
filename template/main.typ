@@ -240,7 +240,7 @@ Slide @s:section, slide @s:test
 
 #show: appendix
 
-= Appendix <hide-toc>
+= Appendix
 
 == Table <s:table>
 
@@ -265,6 +265,11 @@ Slide @s:section, slide @s:test
 
 == Second appendix
 
+#lorem(25)
+
+= Another appendix
+
+== #lorem(2)
 #lorem(25)
 
 #title-slide
