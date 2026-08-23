@@ -53,7 +53,7 @@ Slydekit provides three built-in renderers for the `code-reveal` function: `raw-
 #argument-callout("..args", [list])[Additional arguments to be passed to the `raw` function. See the #link("https://typst.app/docs/reference/text/raw/", "Typst documentation") for the `raw` function for the complete list of available arguments.]
 
 ````typ
-#import "@preview/slydekit:0.3.0": *
+#import "@preview/slydekit:0.4.0": *
 
 #show: slydekit
 
@@ -104,7 +104,7 @@ def fib(n):
 #argument-callout("..args", [list])[Additional arguments to be passed to the `codly` function. See the #link("https://github.com/Dherse/codly/blob/main/docs.pdf", "Codly documentation") for the complete list of available arguments.]
 
 ````typ
-#import "@preview/slydekit:0.3.0": *
+#import "@preview/slydekit:0.4.0": *
 #import "@preview/codly:1.3.0": *
 #import "@preview/codly-languages:0.1.10": *
 
@@ -161,7 +161,7 @@ def fib(n):
 #argument-callout("..args", [list])[Additional arguments to be passed to the `zebraw` function. See the #link("https://github.com/hongjr03/typst-zebraw", "Zebraw documentation") for the complete list of available arguments.]
 
 ````typ
-#import "@preview/slydekit:0.3.0": *
+#import "@preview/slydekit:0.4.0": *
 #import "@preview/zebraw:0.6.3": *
 
 #show: slydekit

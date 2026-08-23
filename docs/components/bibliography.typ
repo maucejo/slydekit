@@ -23,7 +23,7 @@ Slydekit provides a built-in bibliography feature that allows you to manage and 
 This function can be used directly in your slides. Alternatively, you can use the `@` syntax to create a footnote for a citation. For example, `@knuth` creates a footnote for the reference with the citation key `knuth`. To call the function explicitly, use the `#footcite(<key>)` syntax, where `<key>` is the citation key.
 
 ```typ
-#import "@preview/slydekit:0.3.0": *
+#import "@preview/slydekit:0.4.0": *
 
 #show: slydekit.with(...)
 
