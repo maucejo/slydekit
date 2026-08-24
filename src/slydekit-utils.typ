@@ -184,8 +184,8 @@
   counter(heading).update(0)
   sk-states.slide-index.update(0)
 
-  // body
-  slydekit-slides(body)
+  body
+  // slydekit-slides(body)
 }
 
 // Hide new section slide
