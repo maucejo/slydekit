@@ -20,8 +20,7 @@
     sk-states.slide-index.step()
   }
 
-  // Split the body into parallel tracks at <meanwhile> boundaries, then
-  // each track into chunks at <pause> labels. With no <meanwhile> at all, this is a single track equal to the previous flat chunk list, so existing slides are unaffected.
+  // Split the body into parallel tracks at <meanwhile> boundaries, then each track into chunks at <pause> labels. With no <meanwhile> at all, this is a single track equal to the previous flat chunk list, so existing slides are unaffected.
   let tracks = split-at-meanwhile(body).map(split-at-pause)
 
   // Compute the total number of steps requested by uncover/only and <pause> labels
@@ -43,7 +42,9 @@
     } else {
       sk-states.slide-number.step()
     }
+  }
 
+  context {
     // Metadata to attach a label to the slide, if requested
     if label != none {
       [#metadata((kind: "slide"))#label]
@@ -111,14 +112,80 @@
   [#fill-num #title]
 }
 
+// Heading-driven slides
+#let heading-slide(heading, body) = {
+  if heading.has("label") {
+    slide(heading.body, body, label: heading.label)
+  } else {
+    slide(heading.body, body)
+  }
+}
+
+#let flush-slide(heading, chunks) = {
+  if heading != none {
+    heading-slide(heading, chunks.join())
+  } else if chunks.len() > 0 {
+    chunks.join()
+  } else {
+    none
+  }
+}
+
+// Helper function to flatten content and extract nested markers
+#let slydekit-flatten(body) = {
+  if type(body) != content {
+    return ()
+  }
+  if body.func() == [].func() {
+    // If it's a sequence, we recursively flatten all its children into a flat array
+    body.children.map(slydekit-flatten).join()
+  } else {
+    (body,)
+  }
+}
+
+#let slydekit-slides(body) = {
+  // Guaranteed flattening as an array of elements
+  let children = slydekit-flatten(body)
+
+  let current-heading = none
+  let current-body = ()
+  let output = ()
+
+  for child in children {
+    if child.func() == heading and (child.depth == 1 or child.depth == 2) {
+      let flushed = flush-slide(current-heading, current-body)
+      if flushed != none { output.push(flushed) }
+      current-body = ()
+
+      if child.depth == 2 {
+        current-heading = child
+      } else {
+        current-heading = none
+        output.push(child)
+      }
+    } else {
+      current-body.push(child)
+    }
+  }
+
+  let flushed = flush-slide(current-heading, current-body)
+  if flushed != none { output.push(flushed) }
+
+  output.join()
+}
+
 // Appendix
+//
+// #show: appendix turns the rest of the document into a single opaque argument passed to this function (verified: body.children, as seen from outside appendix(), contains only a single child of type sequence at this point). The == headings of the appendix are therefore never visible to the slydekit-slides applied at the document level. The splitter is re-run here, on the body specific to the appendix, where it finds the flat list of the appendix headings again.
 #let appendix(body) = context {
   pagebreak(weak: true)
   sk-states.appendix.update(true)
   counter(heading).update(0)
   sk-states.slide-index.update(0)
 
-  body
+  // body
+  slydekit-slides(body)
 }
 
 // Hide new section slide

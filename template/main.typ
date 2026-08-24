@@ -30,10 +30,7 @@
 
 #tableofcontents
 
-// #show: hide-new-section-slide
-
-= CeTZ and Fletcher integration
-// = #short-or-long[Short title][Long title]
+= CeTZ/Fletcher integration
 
 #slide("CeTZ integration", steps: 5)[
   #context {
@@ -87,89 +84,91 @@
 ]
 
 = Animations - Part 1
-#slide("Code animation")[
-  #code-reveal(
-    highlight-lines: ("2": 2, "4": 3),
-    hide-lines: ("3": 2, "4": 3),
-  )[
-    ```python
-    def fib(n):
-        if n <= 1:
-            return n
-        return fib(n-1) + fib(n-2)
-    ```
+
+== Code animation
+
+#code-reveal(
+  highlight-lines: ("2": 2, "4": 3),
+  hide-lines: ("3": 2, "4": 3),
+)[
+  ```python
+  def fib(n):
+      if n <= 1:
+          return n
+      return fib(n-1) + fib(n-2)
+  ```
+]
+
+== Pause, uncover and only
+Introduction, #pause always visible.
+
+#uncover(from: 3, to: 4)[A point that is only visible on slides 2 and 3.]
+
+#only(5)[A final note that appears, without reserving space, only at the very end.]
+
+$
+  y = f(x) #uncover(from:3, $= x^2 + 2x + 1$)
+$
+
+$
+  #boxeq($E = m c^2$)
+$
+
+== Track
+
+#grid(
+  columns: (1fr, 1fr),
+  align: top,
+  column-gutter: 1em,
+  track[
+    First point #pause
+
+    Second point #pause
+
+    Third point
+  ],
+  track[
+    First parallel #pause
+
+    Second parallel
   ]
-]
-
-#slide("Pause, Uncover and only")[
-  Introduction, #pause always visible.
-
-  #uncover(from: 3, to: 4)[A point that is only visible on slides 2 and 3.]
-
-  #only(5)[A final note that appears, without reserving space, only at the very end.]
-
-  $
-    y = f(x) #uncover(from:3, $= x^2 + 2x + 1$)
-  $
-
-  $
-    #boxeq($E = m c^2$)
-  $
-]
-
-#slide("Track")[
-  #grid(
-    columns: (1fr, 1fr),
-    align: top,
-    column-gutter: 1em,
-    track[
-      First point #pause
-
-      Second point #pause
-
-      Third point
-    ],
-    track[
-      First parallel #pause
-
-      Second parallel
-    ]
-  )
-]
+)
 
 = Animations - Part 2
-#slide("Meanwhile")[
-  First
 
-  #pause
+== Meanwhile
 
-  Second
+First
 
-  #meanwhile
+#pause
 
-  Third
+Second
 
-  #pause
+#meanwhile
 
-  Fourth
-]
+Third
 
-#slide("Alternatives")[
+#pause
+
+Fourth
+
+== Alternatives
+
 #alternatives[Ann][Bob][Christopher]
 likes
 #alternatives[chocolate][strawberry][vanilla]
 ice cream.
-]
 
-#slide("Item-by-item")[
-  #item-by-item[
-    - First argument
-    - Second argument
-    - Third argument
-  ]
+== Item-by-item
+
+#item-by-item[
+  - First argument
+  - Second argument
+  - Third argument
 ]
 
 = Links and references
+
 == Root slide <s:section>
 
 #lorem(10)@knuth
@@ -187,11 +186,11 @@ Slide @s:section, slide @s:test
 
 #place(bottom + right, dy: 1.5em, link-box(<s:test>, "Go to target slide"))
 
-#slide("Target slide", label: <s:test>)[
-  #lorem(25)
+== Target slide <s:test>
 
-  #place(right + bottom,link-box(<s:section>, "Go to root slide"))
-]
+#lorem(25)
+
+#place(right + bottom,link-box(<s:section>, "Go to root slide"))
 
 #focus-slide[It is important!]
 
@@ -232,11 +231,8 @@ Slide @s:section, slide @s:test
 ]
 
 == Bibliography <hide-toc>
-#bibliography("ref.bib")
 
-// #slide("Bibliography", label: <hide-toc>)[
-//   #bibliography("ref.bib")
-// ]
+#bibliography("ref.bib")
 
 #show: appendix
 
