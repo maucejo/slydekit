@@ -117,5 +117,6 @@
 
   // slydekit-slides (defined in slydekit-utils.typ) groups each == heading with all content that follows it until the next heading, allowing #pause / #meanwhile to work without an explicit #slide[...].
   slydekit-slides(body)
+
   // body
 }

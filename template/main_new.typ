@@ -30,8 +30,6 @@
 
 #tableofcontents
 
-// #show raw: set text(size: 0.75em)
-
 = CeTZ/Fletcher integration
 
 #slide("CeTZ integration", steps: 5)[
@@ -102,6 +100,7 @@
 ]
 
 == Pause, uncover and only
+
 Introduction, #pause always visible.
 
 #uncover(from: 3, to: 4)[A point that is only visible on slides 2 and 3.]

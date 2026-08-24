@@ -144,9 +144,49 @@
   }
 }
 
+#let slydekit-expose-styled-headings(body) = {
+  let children = if type(body) == array {
+    body
+  } else if type(body) == content and body.func() == [].func() {
+    body.children
+  } else {
+    return body
+  }
+
+  let output = ()
+  for child in children {
+    if child.has("child") and child.has("styles") and child.child.func() == [].func() {
+      let current-body = ()
+      let nested-children = slydekit-expose-styled-headings(child.child.children)
+      for nested in nested-children {
+        if nested.func() == heading and (nested.depth == 1 or nested.depth == 2) {
+          if current-body.len() > 0 {
+            output.push(child.func()(current-body.join(), child.styles))
+          }
+          output.push(nested)
+          current-body = ()
+        } else {
+          current-body.push(nested)
+        }
+      }
+      if current-body.len() > 0 {
+        output.push(child.func()(current-body.join(), child.styles))
+      }
+    } else {
+      output.push(child)
+    }
+  }
+
+  output
+}
+
 #let slydekit-slides(body) = {
+  if body.has("child") and body.has("styles") {
+    return body.func()(slydekit-slides(body.child), body.styles)
+  }
+
   // Guaranteed flattening as an array of elements
-  let children = slydekit-flatten(body)
+  let children = slydekit-expose-styled-headings(slydekit-flatten(body))
 
   let current-heading = none
   let current-body = ()
@@ -164,6 +204,8 @@
         current-heading = none
         output.push(child)
       }
+    } else if child.has("child") and child.has("styles") and current-heading == none {
+      output.push(child.func()(slydekit-slides(child.child), child.styles))
     } else {
       current-body.push(child)
     }
@@ -184,8 +226,8 @@
   counter(heading).update(0)
   sk-states.slide-index.update(0)
 
-  body
-  // slydekit-slides(body)
+  // body
+  slydekit-slides(body)
 }
 
 // Hide new section slide
