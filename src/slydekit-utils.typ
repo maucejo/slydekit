@@ -177,7 +177,7 @@
 
 // Appendix
 //
-// #show: appendix turns the rest of the document into a single opaque argument passed to this function (verified: body.children, as seen from outside appendix(), contains only a single child of type sequence at this point). The == headings of the appendix are therefore never visible to the slydekit-slides applied at the document level. The splitter is re-run here, on the body specific to the appendix, where it finds the flat list of the appendix headings again.
+// #show: appendix transforme tout le reste du document en un unique argument opaque passé à cette fonction (vérifié : body.children, vu depuis l'extérieur de appendix(), ne contient qu'un seul enfant de type sequence à cet endroit). Les == de l'annexe ne sont donc jamais visibles par le slydekit-slides appliqué au niveau du document. On relance le splitter ici, sur le body propre à l'annexe, où il retrouve la liste à plat des headings de l'annexe.
 #let appendix(body) = context {
   pagebreak(weak: true)
   sk-states.appendix.update(true)
