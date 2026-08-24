@@ -30,6 +30,8 @@
 
 #tableofcontents
 
+// #show raw: set text(size: 0.75em)
+
 = CeTZ/Fletcher integration
 
 #slide("CeTZ integration", steps: 5)[

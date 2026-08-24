@@ -69,7 +69,7 @@
     it
   }
   // Level 2 headings are slides, defined with == Title
-  show heading.where(level: 2): it => slide(it.body)[]
+  // show heading.where(level: 2): it => slide(it.body)[]
 
   // Paragraph styles
   set par(justify: true)
@@ -116,7 +116,6 @@
   show: set-text.with(lang: sk-lang, fonts: sk-fonts)
 
   // slydekit-slides (defined in slydekit-utils.typ) groups each == heading with all content that follows it until the next heading, allowing #pause / #meanwhile to work without an explicit #slide[...].
-  // show: slydekit-slides
-
-  body
+  slydekit-slides(body)
+  // body
 }
