@@ -24,12 +24,12 @@
   let metropolis-margin = if sk-states.navigation-style.get() == "minislide" {
     (top: 3.25cm)
   }
-  set page(fill: sk-states.colors.get().background, margin: margins + metropolis-margin)
+  set page(fill: sk-states.colors.get().background, margin: default-margins + metropolis-margin)
 
   // Heading styles
   show heading.where(level: 1): it => {
     set strong(delta: 0)
-    set page(header: none, footer: none, margin: margins)
+    set page(header: none, footer: none, margin: default-margins)
 
     set align(horizon)
     show: pad.with(10%)
@@ -122,7 +122,7 @@
   let metropolis-margin = if sk-states.navigation-style.get() == "minislide" {
     (top: 2cm)
   }
-  set page(header: none, footer: none, margin: margins + metropolis-margin)
+  set page(header: none, footer: none, margin: default-margins + metropolis-margin)
 
   let title-info = sk-states.pres-info.get()
 

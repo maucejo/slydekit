@@ -5,6 +5,7 @@
   colors: state("colors", (:)),
   current-slide-title: state("current-slide-title", []),
   fonts: state("fonts", (:)),
+  frozen-counters: state("frozen-counters", ()),
   handout: state("handout", false),
   is-footcite: state("is-footcite", false),
   logo: state("logo"),
@@ -22,7 +23,7 @@
 )
 
 // Defaults
-#let margins = (
+#let default-margins = (
   left: 2cm,
   right: 2cm,
   top: 2cm,
@@ -34,6 +35,13 @@
   body: "New Computer Modern",
   math: "New Computer Modern Math",
   raw: "DejaVu Sans Mono",
+)
+
+#let default-frozen-counters = (
+    counter(figure.where(kind: image)),
+    counter(figure.where(kind: table)),
+    counter(math.equation),
+    // counter(footnote),
 )
 
 #let default-pres-info = (

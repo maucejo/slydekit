@@ -25,12 +25,12 @@
   let fancy-margin = if sk-states.navigation-style.get() == "minislide" {
     (top: 3.25cm)
   }
-  set page(fill: sk-states.colors.get().background, margin: margins + fancy-margin)
+  set page(fill: sk-states.colors.get().background, margin: default-margins + fancy-margin)
 
   // Heading styles
   show heading.where(level: 1): it => {
     set strong(delta: 0)
-    set page(header: none, footer: none, margin: margins)
+    set page(header: none, footer: none, margin: default-margins)
 
     set align(horizon)
     show: pad.with(10%)
@@ -149,7 +149,7 @@
 #let fancy-title = context {
   let fancy-margin = (left: 0.75cm, right: 0.75cm, top: 0.75cm, bottom: 0.75cm)
 
-  set page(header: none, footer: none, margin: margins + fancy-margin)
+  set page(header: none, footer: none, margin: default-margins + fancy-margin)
 
   let title-info = sk-states.pres-info.get()
 

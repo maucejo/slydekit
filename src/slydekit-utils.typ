@@ -50,15 +50,31 @@
       [#metadata((kind: "slide"))#label]
     }
 
+    // Native counters frozen at their value at the start of the slide.
+    let number-targets = sk-states.frozen-counters.get()
+    let saved-numbers = number-targets.map(c => c.get())
+    let reset-numbers() = {
+      for (c, val) in number-targets.zip(saved-numbers) {
+        c.update(val)
+      }
+    }
+
     // Direct generation of the slide content, without subslides
     if sk-states.handout.get() {
       // Handout mode: a single page per slide, in its fully revealed state. Content gated on one exact step (only(2)[..], not uncover(from: 2)[..]) never appears here, since intermediate steps are never rendered. Each track is joined on its own: tracks is an array of arrays of chunks (one array per parallel track), so tracks.join() would try to join arrays together instead of content, this joins the chunks inside each track first.
+      reset-numbers()
       sk-states.subslide-step.update(total)
       for chunks in tracks {
         chunks.join()
       }
     } else {
       for i in range(1, total + 1) {
+        // Reset before every substep, including the last one,
+        // without exception: making an exception for the last one would
+        // make it inherit the increment left by the penultimate one and double
+        // the progression on the page that is actually kept (verified).
+        reset-numbers()
+
         sk-states.subslide-step.update(i)
         if i > 1 {
           pagebreak(weak: true)
@@ -77,6 +93,100 @@
     }
   }
 }
+// #let default-number-kinds = (image, table)
+
+// #let slide(..args, steps: none, label: none, number-kinds: default-number-kinds) = {
+//   // Extraction and analysis of the positional arguments: title and body. If no title is provided, the first argument is the body. If two arguments are provided, the first is the title and the second is the body.
+//   let pos = args.pos()
+//   let (title, body) = if pos.len() == 0 {
+//     (none, [])
+//   } else if pos.len() == 1 {
+//     // Case : #slide[...] (no title, the only argument is the content)
+//     (none, pos.at(0))
+//   } else {
+//     // Case : #slide("Title")[...] (2 arguments : title then content)
+//     (pos.at(0), pos.at(1))
+//   }
+
+//   if title != none and title != [] {
+//     sk-states.current-slide-title.update(title)
+//     sk-states.slide-index.step()
+//   }
+
+//   // Split the body into parallel tracks at <meanwhile> boundaries, then each track into chunks at <pause> labels. With no <meanwhile> at all, this is a single track equal to the previous flat chunk list, so existing slides are unaffected.
+//   let tracks = split-at-meanwhile(body).map(split-at-pause)
+
+//   // Compute the total number of steps requested by uncover/only and <pause> labels
+//   let max-reveal-step = analyze-max-step(body)
+//   let max-track-length = calc.max(..tracks.map(t => t.len()))
+//   let total = calc.max(max-track-length, max-reveal-step)
+//   if steps != none {total = calc.max(total, steps)}
+
+//   sk-states.subslide-total.update(total)
+
+//   pagebreak(weak: true)
+
+//   // Invisible marker, placed at each call, regardless of the title
+//   [#metadata(title)<sk-slide>]
+
+//   context {
+//     if sk-states.appendix.get() {
+//       sk-states.app-slide-number.step()
+//     } else {
+//       sk-states.slide-number.step()
+//     }
+//   }
+
+//   context {
+//     // Metadata to attach a label to the slide, if requested
+//     if label != none {
+//       [#metadata((kind: "slide"))#label]
+//     }
+
+//     // Compteurs natifs figés à leur valeur d'entrée de la diapositive.
+//     let number-targets = number-kinds.map(k => counter(figure.where(kind: k))) + (counter(math.equation),)
+//     let saved-numbers = number-targets.map(c => c.get())
+//     let reset-numbers() = {
+//       for (c, val) in number-targets.zip(saved-numbers) {
+//         c.update(val)
+//       }
+//     }
+
+//     // Direct generation of the slide content, without subslides
+//     if sk-states.handout.get() {
+//       // Handout mode: a single page per slide, in its fully revealed state. Content gated on one exact step (only(2)[..], not uncover(from: 2)[..]) never appears here, since intermediate steps are never rendered. Each track is joined on its own: tracks is an array of arrays of chunks (one array per parallel track), so tracks.join() would try to join arrays together instead of content, this joins the chunks inside each track first.
+//       reset-numbers()
+//       sk-states.subslide-step.update(total)
+//       for chunks in tracks {
+//         chunks.join()
+//       }
+//     } else {
+//       for i in range(1, total + 1) {
+//         // Réinitialisé avant CHAQUE sous-étape, y compris la dernière,
+//         // sans exception : une exception sur la dernière lui ferait
+//         // hériter l'incrément laissé par l'avant-dernière et doublerait
+//         // la progression sur la page effectivement gardée (vérifié).
+//         reset-numbers()
+
+//         sk-states.subslide-step.update(i)
+//         if i > 1 {
+//           pagebreak(weak: true)
+//         }
+
+//         for chunks in tracks {
+//           for (idx, chunk) in chunks.enumerate() {
+//             if idx < i {
+//               chunk
+//             } else {
+//               hide(chunk)
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
 
 #let formatted-number(type: "slide", at: none, force: false) = context {
   let resolve(item) = if at != none { item.at(at) } else { item.get() }

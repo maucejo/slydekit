@@ -25,7 +25,7 @@
   let cambfurt-margin = if sk-states.navigation-style.get() == "minislide" {
     (top: 3.25cm)
   }
-  set page(fill: sk-states.colors.get().background, margin: margins + cambfurt-margin)
+  set page(fill: sk-states.colors.get().background, margin: default-margins + cambfurt-margin)
 
   // Heading styles
   show heading.where(level: 1): it => {
@@ -43,7 +43,7 @@
     }
     let header = full-width(align(horizon, text(size: 1.2*sk-states.fonts.get().size, fill: sk-states.colors.get().header)[#header-content]))
 
-    set page(header: header, footer: none, margin: margins)
+    set page(header: header, footer: none, margin: default-margins)
     set align(horizon)
 
     progressive-outline(it, sk-states.colors.get().primary, sk-states.colors.get().secondary.lighten(60%))

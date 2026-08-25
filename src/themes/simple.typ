@@ -24,7 +24,7 @@
   let simple-margin = if sk-states.navigation-style.get() == "minislide" {
     (top: 3.25cm)
   }
-  set page(fill: sk-states.colors.get().background, margin: margins + simple-margin)
+  set page(fill: sk-states.colors.get().background, margin: default-margins + simple-margin)
 
   // Heading styles
   show heading.where(level: 1): it => {
@@ -115,7 +115,7 @@
   let simple-margin = if sk-states.navigation-style.get() == "minislide" {
     (top: 2cm)
   }
-  set page(header: none, footer: none, margin: margins + simple-margin)
+  set page(header: none, footer: none, margin: default-margins + simple-margin)
 
   let title-info = sk-states.pres-info.get()
 

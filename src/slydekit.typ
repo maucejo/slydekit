@@ -23,13 +23,14 @@
   slide-logo: none,
   section-numbering: false,
   numbering-pattern: (:),
+  frozen-counters: (),
   handout: false,
   body
 ) = context {
   // Page setup
   set page(
     paper: "presentation-" + aspect-ratio,
-    margin: margins,
+    margin: default-margins,
   )
 
   // Section numbering
@@ -60,6 +61,9 @@
   sk-states.colors.update(sk-colors)
   sk-states.fonts.update(sk-fonts)
   show: sk-theme.theme
+
+  // Frozen counters
+  sk-states.frozen-counters.update(default-frozen-counters + frozen-counters)
 
   // Rules common to all themes
 
