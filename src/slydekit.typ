@@ -115,8 +115,8 @@
   // Fonts
   show: set-text.with(lang: sk-lang, fonts: sk-fonts)
 
-  // slydekit-slides (defined in slydekit-utils.typ) groups each == heading with all content that follows it until the next heading, allowing #pause / #meanwhile to work without an explicit #slide[...].
-  slydekit-slides(body)
+  // slide-parser (defined in slydekit-utils.typ) groups each == heading with all content that follows it until the next heading, allowing #pause / #meanwhile to work without an explicit #slide[...].
+  slide-parser(body)
 
   // body
 }

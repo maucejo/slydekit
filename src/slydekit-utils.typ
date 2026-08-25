@@ -132,19 +132,19 @@
 }
 
 // Helper function to flatten content and extract nested markers
-#let slydekit-flatten(body) = {
+#let flatten-sequence(body) = {
   if type(body) != content {
     return ()
   }
   if body.func() == [].func() {
     // If it's a sequence, we recursively flatten all its children into a flat array
-    body.children.map(slydekit-flatten).join()
+    body.children.map(flatten-sequence).join()
   } else {
     (body,)
   }
 }
 
-#let slydekit-expose-styled-headings(body) = {
+#let expose-styled-headings(body) = {
   let children = if type(body) == array {
     body
   } else if type(body) == content and body.func() == [].func() {
@@ -157,7 +157,7 @@
   for child in children {
     if child.has("child") and child.has("styles") and child.child.func() == [].func() {
       let current-body = ()
-      let nested-children = slydekit-expose-styled-headings(child.child.children)
+      let nested-children = expose-styled-headings(child.child.children)
       for nested in nested-children {
         if nested.func() == heading and (nested.depth == 1 or nested.depth == 2) {
           if current-body.len() > 0 {
@@ -180,13 +180,13 @@
   output
 }
 
-#let slydekit-slides(body) = {
+#let slide-parser(body) = {
   if body.has("child") and body.has("styles") {
-    return body.func()(slydekit-slides(body.child), body.styles)
+    return body.func()(slide-parser(body.child), body.styles)
   }
 
   // Guaranteed flattening as an array of elements
-  let children = slydekit-expose-styled-headings(slydekit-flatten(body))
+  let children = expose-styled-headings(flatten-sequence(body))
 
   let current-heading = none
   let current-body = ()
@@ -205,7 +205,7 @@
         output.push(child)
       }
     } else if child.has("child") and child.has("styles") and current-heading == none {
-      output.push(child.func()(slydekit-slides(child.child), child.styles))
+      output.push(child.func()(slide-parser(child.child), child.styles))
     } else {
       current-body.push(child)
     }
@@ -219,7 +219,7 @@
 
 // Appendix
 //
-// #show: appendix transforme tout le reste du document en un unique argument opaque passé à cette fonction (vérifié : body.children, vu depuis l'extérieur de appendix(), ne contient qu'un seul enfant de type sequence à cet endroit). Les == de l'annexe ne sont donc jamais visibles par le slydekit-slides appliqué au niveau du document. On relance le splitter ici, sur le body propre à l'annexe, où il retrouve la liste à plat des headings de l'annexe.
+// #show: appendix transforms the rest of the document into a single opaque argument passed to this function (verified: body.children, viewed from outside appendix(), contains only one child of type sequence at this point). The appendix's == headings are therefore never visible to the slide-parser applied at the document level. We run the splitter again here, on the appendix's own body, where it finds the appendix headings as a flat list.
 #let appendix(body) = context {
   pagebreak(weak: true)
   sk-states.appendix.update(true)
@@ -227,7 +227,7 @@
   sk-states.slide-index.update(0)
 
   // body
-  slydekit-slides(body)
+  slide-parser(body)
 }
 
 // Hide new section slide
