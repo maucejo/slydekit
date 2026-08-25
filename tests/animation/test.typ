@@ -13,6 +13,22 @@
 
 #show raw: set text(size: 1.18em)
 
+== Show rule before pause
+
+#show raw: set text(size: 1.18em)
+
+First point #pause
+
+Second point
+
+== Show rule after level 2 heading
+
+#show raw: set text(size: 1.18em)
+
+First point #pause
+
+Second point
+
 // Pause
 #slide[`#pause` example][
   I am #pause an important point that requires attention.
@@ -21,6 +37,7 @@
 
   I am not as important as the previous point.
 ]
+
 
 // Uncover / Only
 #slide[`#uncover/#only` example][

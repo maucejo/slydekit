@@ -13,13 +13,13 @@ This page describes the pause, uncover and only animations available in Slydekit
 `pause` is an animation that allows you to pause the presentation at a specific point, waiting for user interaction before proceeding. This is useful for emphasizing a point or allowing the audience to absorb information before moving on.
 
 ```typ
-#slide[`#pause` example][
-  I am #pause an important point that requires attention.
+== `#pause` example
 
-  #pause
+I am #pause an important point that requires attention.
 
-  I am not as important as the previous point.
-]
+#pause
+
+I am not as important as the previous point.
 ```
 
 #calepin.elements.gallery(

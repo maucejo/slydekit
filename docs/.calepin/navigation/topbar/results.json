@@ -1,8 +1,8 @@
 {
   "schema": 2,
-  "calepin_version": "0.0.54",
+  "calepin_version": "0.0.55",
   "input": "navigation/topbar.typ",
-  "generation": "f2c97cf1505851d4-1349cde127705c16",
+  "generation": "65556a48c02044e4-1349cde127705c16",
   "store": {},
   "chunks": {}
 }

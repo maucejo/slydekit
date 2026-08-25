@@ -86,7 +86,6 @@
 = Animations - Part 1
 
 == Code animation
-
 #code-reveal(
   highlight-lines: ("2": 2, "4": 3),
   hide-lines: ("3": 2, "4": 3),
@@ -99,11 +98,13 @@
   ```
 ]
 
+
+
 == Pause, uncover and only
 
 Introduction, #pause always visible.
 
-#uncover(from: 3, to: 4)[A point that is only visible on slides 2 and 3.]
+#uncover(from: 3, to: 4)[A point that is only visible on slides 3 and 4.]
 
 #only(5)[A final note that appears, without reserving space, only at the very end.]
 

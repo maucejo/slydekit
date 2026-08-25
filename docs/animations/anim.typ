@@ -8,7 +8,7 @@
 
 The animation system in Slydekit allows you to create dynamic and interactive presentations by controlling the visibility and behavior of content on slides.
 
-In Slydekit, animations must be encapuslated in a `slide` (See  #link("components/slide.html","Slide")). This means that you cannot apply animations to content outside of a slide context, i.e. in markup mode. This behavior is similar to that used in other presentation frameworks, such as #link("https://typst.app/universe/package/touying/", "Touying") or #link("https://typst.app/universe/package/minideck/","Minideck").
+// In Slydekit, animations must be encapuslated in a `slide` (See  #link("components/slide.html","Slide")). This means that you cannot apply animations to content outside of a slide context, i.e. in markup mode. This behavior is similar to that used in other presentation frameworks, such as #link("https://typst.app/universe/package/touying/", "Touying") or #link("https://typst.app/universe/package/minideck/","Minideck").
 
 The animation system provides a set of predefined animations that can be used to enhance your presentations. These animations include
 
