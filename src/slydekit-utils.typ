@@ -15,15 +15,7 @@
     (pos.at(0), pos.at(1))
   }
 
-  // Invisible marker for slide-parser only, placed first thing at each call,
-  // before any state mutation below. This is distinct from <sk-slide> further
-  // down: this one's own location is irrelevant, it exists purely so
-  // slide-parser can detect "an explicit #slide(..) call starts here" and
-  // close off whatever heading-driven slide was still accumulating, before
-  // this call's state updates (title, slide index, subslide total...) can
-  // leak into that preceding slide's body. <sk-slide> below stays exactly
-  // where it was, right after the pagebreak, since mini-slides and
-  // progressive-outline rely on its page location to delimit slides.
+  // Invisible marker for slide-parser only, placed first thing at each call, before any state mutation below. This is distinct from <sk-slide> further down: this one's own location is irrelevant, it exists purely so slide-parser can detect "an explicit #slide(..) call starts here" and close off whatever heading-driven slide was still accumulating, before this call's state updates (title, slide index, subslide total...) can leak into that preceding slide's body. <sk-slide> below stays exactly where it was, right after the pagebreak, since mini-slides and progressive-outline rely on its page location to delimit slides.
   [#metadata(none)<sk-slide-parser-boundary>]
 
   if title != none and title != [] {
