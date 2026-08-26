@@ -86,6 +86,7 @@
 = Animations - Part 1
 
 == Code animation
+
 #code-reveal(
   highlight-lines: ("2": 2, "4": 3),
   hide-lines: ("3": 2, "4": 3),
@@ -97,8 +98,6 @@
       return fib(n-1) + fib(n-2)
   ```
 ]
-
-
 
 == Pause, uncover and only
 

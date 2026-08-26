@@ -15,16 +15,9 @@
     (pos.at(0), pos.at(1))
   }
 
-  // Invisible marker for slide-parser only, placed first thing at each call,
-  // before any state mutation below. This is distinct from <sk-slide> further
-  // down: this one's own location is irrelevant, it exists purely so
-  // slide-parser can detect "an explicit #slide(..) call starts here" and
-  // close off whatever heading-driven slide was still accumulating, before
-  // this call's state updates (title, slide index, subslide total...) can
-  // leak into that preceding slide's body. <sk-slide> below stays exactly
-  // where it was, right after the pagebreak, since mini-slides and
-  // progressive-outline rely on its page location to delimit slides.
-  [#metadata(none)<sk-slide-parser-boundary>]
+  // Invisible marker, placed first thing at each call, before any state mutation below. slide-parser relies on this being the very first content this function emits: it's what lets it detect "an explicit #slide(..) call starts here" and close off whatever heading-driven slide was still accumulating, before any of this call's state updates (title, slide index, subslide total...) can leak into that preceding slide's body.
+  // [#metadata(title)<sk-slide>]
+  // Best place for slide-parser
 
   if title != none and title != [] {
     sk-states.current-slide-title.update(title)
@@ -44,6 +37,7 @@
 
   pagebreak(weak: true)
 
+  // Best place
   // Invisible marker, placed at each call, regardless of the title
   [#metadata(title)<sk-slide>]
 
@@ -230,13 +224,10 @@
   output
 }
 
-// Detects the invisible <sk-slide-parser-boundary> marker placed at the very
-// start of every explicit #slide(..) call, before any state mutation. Distinct
-// from <sk-slide> (used by mini-slides/progressive-outline for page-based
-// slide counting), which stays after the pagebreak and is passed through
-// untouched once this boundary has been detected.
+// Detects the invisible <sk-slide> marker placed at the start of every
+// explicit #slide(..) call's already-resolved output.
 #let is-slide-marker(child) = (
-  child.func() == metadata and child.has("label") and child.label == <sk-slide-parser-boundary>
+  child.func() == metadata and child.has("label") and child.label == <sk-slide>
 )
 
 #let slide-parser(body) = {
@@ -272,15 +263,13 @@
       // Boundary of an explicit #slide(..) call: since the marker is now
       // the very first thing slide() emits, nothing belonging to this call
       // has been accumulated yet. Whatever was pending for the enclosing
-      // heading is complete as of right here, close it off. The marker
-      // itself is internal to slide-parser and is dropped here, not passed
-      // through — it carries no value and mini-slides/progressive-outline
-      // rely on <sk-slide> further down instead.
+      // heading is complete as of right here, close it off.
       let flushed = flush-slide(current-heading, current-body)
       if flushed != none { output.push(flushed) }
       current-body = ()
       current-heading = none
       in-explicit-slide = true
+      output.push(child)
     } else if in-explicit-slide {
       // Remaining content of an already-resolved explicit #slide(..) call:
       // pass through as-is, it must not be re-split by the enclosing heading.

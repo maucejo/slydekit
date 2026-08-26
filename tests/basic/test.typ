@@ -15,7 +15,9 @@
 
 == First slide
 
-Hello Typst!
+Hello Typst! #pause
+
+This point appears on the second subslide.
 
 #slide("Second slide")[
   I am #pause an animated slide

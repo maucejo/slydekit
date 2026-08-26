@@ -13,24 +13,9 @@
 
 #show raw: set text(size: 1.18em)
 
-== Show rule before pause
-
-#show raw: set text(size: 1.18em)
-
-First point #pause
-
-Second point
-
-== Show rule after level 2 heading
-
-#show raw: set text(size: 1.18em)
-
-First point #pause
-
-Second point
-
 // Pause
 #slide[`#pause` example][
+// == `#pause` example
   I am #pause an important point that requires attention.
 
   #pause

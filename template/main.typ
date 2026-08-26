@@ -85,7 +85,7 @@
 
 = Animations - Part 1
 
-== Code animation
+// == Code animation
 
 #slide("Code animation")[
   #code-reveal(
@@ -100,6 +100,10 @@
     ```
   ]
 ]
+
+== Test
+
+#lorem(10)
 
 #slide("Pause, uncover and only")[
   Introduction, #pause always visible.
