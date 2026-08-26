@@ -25,6 +25,7 @@
   numbering-pattern: (:),
   frozen-counters: (),
   handout: false,
+  extra: (:),
   body
 ) = context {
   // Page setup
@@ -32,6 +33,9 @@
     paper: "presentation-" + aspect-ratio,
     margin: default-margins,
   )
+
+  // Extra presentation info
+  sk-states.extra.update(extra)
 
   // Section numbering
   sk-states.section-numbering.update(section-numbering)
