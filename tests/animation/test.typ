@@ -14,41 +14,42 @@
 #show raw: set text(size: 1.18em)
 
 // Pause
-#slide[`#pause` example][
-// == `#pause` example
-  I am #pause an important point that requires attention.
+== `#pause` example
 
-  #pause
+I am #pause an important point that requires attention.
 
-  I am not as important as the previous point.
-]
+#pause
+
+I am not as important as the previous point.
 
 
 // Uncover / Only
-#slide[`#uncover/#only` example][
-  #only(1)[I am only visible on the first subslide]
+== `#uncover/#only` example
 
-  #uncover(2)[I am only visible on the second subslide]
+#only(1)[I am only visible on the first subslide]
 
-  #only(1, 3)[I am only visible on the first and third subslides]
-]
+#uncover(2)[I am only visible on the second subslide]
+
+#only(1, 3)[I am only visible on the first and third subslides]
 
 // One-by-one
-#slide[`#one-by-one` example][
-  #one-by-one[I am ][not a ][ robot]
-]
+== `#one-by-one` example
+#one-by-one[I am ][not a ][ robot]
+
 
 // Item-by-item
-#slide[`#item-by-item` example][
+// #slide[`#item-by-item` example][
+== `#item-by-item` example
   #item-by-item[
     - I am the first item, visible on the first subslide
     - I am the second item, visible on the second subslide
     - I am the third item, visible on the third subslide
   ]
-]
+// ]
 
 // Meanwhile
-#slide[`#meanwhile` example][
+// #slide[`#meanwhile` example][
+== `#meanwhile` example
   First
 
   #pause
@@ -62,10 +63,11 @@
   #pause
 
   Fourth
-]
+// ]
 
 // Track
-#slide[`#track` example][
+// #slide[`#track` example][
+== `#track` example
   #grid(
     columns: (1fr, 1fr),
     align: top,
@@ -83,15 +85,16 @@
       Second parallel
     ]
   )
-]
+// ]
 
 // Alternatives
-#slide[`#alternatives` example][
+// #slide[`#alternatives` example][
+== `#alternatives` example
   #alternatives[Ann][Bob][Christopher]
   likes
   #alternatives[chocolate][strawberry][vanilla]
   ice cream.
-]
+// ]
 
 // CeTZ integration
 #slide("CeTZ integration", steps: 3)[

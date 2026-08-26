@@ -133,6 +133,10 @@
 
 // Heading-driven slides
 #let heading-slide(heading, body) = {
+  if heading.has("child") and heading.has("styles") {
+    return heading.func()(heading-slide(heading.child, body), heading.styles)
+  }
+
   if heading.has("label") {
     slide(heading.body, body, label: heading.label)
   } else {
@@ -168,7 +172,9 @@
   let current-body = ()
 
   for child in body {
-    if child.has("label") and child.label == <pause> {
+    if child.has("label") and (
+      child.label == <pause> or child.label == <sk-slide-parser-boundary>
+    ) {
       if current-body.len() > 0 {
         output.push(style-wrapper.func()(current-body.join(), style-wrapper.styles))
       }
@@ -197,15 +203,29 @@
 
   let output = ()
   for child in children {
-    if child.has("child") and child.has("styles") and child.child.func() == [].func() {
+    if child.func() == [].func() {
+      for nested in expose-styled-headings(child.children) {
+        output.push(nested)
+      }
+    } else if child.has("child") and child.has("styles") and child.child.func() == [].func() {
       let current-body = ()
       let nested-children = expose-styled-headings(child.child.children)
       for nested in nested-children {
-        if nested.func() == heading and (nested.depth == 1 or nested.depth == 2) {
+        let is-heading = nested.func() == heading and (
+          nested.depth == 1 or nested.depth == 2
+        )
+        let is-slide-boundary = nested.has("label") and (
+          nested.label == <sk-slide-parser-boundary>
+        )
+        if is-heading or is-slide-boundary {
           if current-body.len() > 0 {
             output.push(style-body-with-pauses(child, current-body))
           }
-          output.push(nested)
+          if is-heading {
+            output.push(child.func()(nested, child.styles))
+          } else {
+            output.push(nested)
+          }
           current-body = ()
         } else {
           current-body.push(nested)
@@ -231,6 +251,16 @@
   child.func() == metadata and child.has("label") and child.label == <sk-slide-parser-boundary>
 )
 
+#let unstyled-heading(child) = {
+  if child.func() == heading {
+    child
+  } else if child.has("child") and child.has("styles") {
+    unstyled-heading(child.child)
+  } else {
+    none
+  }
+}
+
 #let slide-parser(body) = {
   if body.has("child") and body.has("styles") {
     return body.func()(slide-parser(body.child), body.styles)
@@ -248,13 +278,15 @@
   let in-explicit-slide = false
 
   for child in children {
-    if child.func() == heading and (child.depth == 1 or child.depth == 2) {
+    let parsed-heading = unstyled-heading(child)
+
+    if parsed-heading != none and (parsed-heading.depth == 1 or parsed-heading.depth == 2) {
       let flushed = flush-slide(current-heading, current-body)
       if flushed != none { output.push(flushed) }
       current-body = ()
       in-explicit-slide = false
 
-      if child.depth == 2 {
+      if parsed-heading.depth == 2 {
         current-heading = child
       } else {
         current-heading = none
