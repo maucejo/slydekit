@@ -271,10 +271,7 @@
     (s.has("label") and s.label == <hide-toc>) or (s.location().page() in hidden-pages)
   )
 
-  // Même logique de bascule que mini-slides :
-  // "auto" -> ne montre que les sections de la même zone (annexe/principal) que 'it'
-  // true   -> fusionne tout dans un seul sommaire, sections principales et annexes confondues
-  // false  -> n'affiche jamais les annexes
+  // Same toggle logic as mini-slides: "auto" -> shows only sections from the same zone (appendix/main) as 'it' true   -> merges everything into a single table of contents, main and appendix sections combined false  -> never displays appendices
   let is-appendix-visible(s) = {
     let s-is-appendix = sk-states.appendix.at(s.location())
     if display-appendix == "auto" or display-appendix == auto {
@@ -340,4 +337,3 @@
 
   adaptive-columns(gutter: gutter, entries.join())
 }
-
