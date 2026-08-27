@@ -20,6 +20,7 @@
   subslide-total: counter("subslide-total"),
   subslide-step: counter("subslide-step"),
   theme: state("theme"),
+  extra: state("extra", (:)),
 )
 
 // Defaults
