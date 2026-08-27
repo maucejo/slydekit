@@ -13,7 +13,8 @@ Sometimes, you want to show multiple things at the same time, but not necessaril
 `#meanwhile` splits a slide's top-level content into parallel tracks at the point it appears, each carrying its own local `#pause` sequence instead of one long chain. All tracks advance together on the same subslide clock, so content before and after `#meanwhile` can reveal independently while staying in sync. For example, `First #pause Second #meanwhile Third #pause Fourth` shows *First* and *Third* on the first step, then all four on the second. This mirrors Touying's `#meanwhile` directly and requires no wrapper function, `#pause` and `#meanwhile` are the only markers needed.
 
 ```typ
-#slide[`#meanwhile` example][
+== `#meanwhile` example
+
   First
 
   #pause
@@ -27,7 +28,6 @@ Sometimes, you want to show multiple things at the same time, but not necessaril
   #pause
 
   Fourth
-]
 ```
 
 #calepin.elements.gallery(
@@ -44,25 +44,25 @@ Sometimes, you want to show multiple things at the same time, but not necessaril
 `track` provides the same parallel-track behavior as `#meanwhile`, exposed as a function rather than a flow marker, for the one case `#meanwhile` can't reach on its own: content nested inside a `#grid(..)` or `#columns(..)`. Since `#meanwhile`, like `#pause`, only sees a slide's direct top-level children, wrapping each column's content in `track(..)` lets every column carry its own independent `#pause` sequence while still advancing on the same subslide clock as the rest of the slide. Use `#meanwhile` for a linear flow with parallel timing, and `track(..)` when that parallel content needs to live side by side in a layout container.
 
 ```typ
-#slide[`#track` example][
-  #grid(
-    columns: (1fr, 1fr),
-    align: top,
-    column-gutter: 1em,
-    track[
-      First point #pause
+== `#track` example
 
-      Second point #pause
+#grid(
+  columns: (1fr, 1fr),
+  align: top,
+  column-gutter: 1em,
+  track[
+    First point #pause
 
-      Third point
-    ],
-    track[
-      First parallel #pause
+    Second point #pause
 
-      Second parallel
-    ]
-  )
-]
+    Third point
+  ],
+  track[
+    First parallel #pause
+
+    Second parallel
+  ]
+)
 ```
 
 #calepin.elements.gallery(

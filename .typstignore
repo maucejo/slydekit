@@ -17,4 +17,4 @@ justfile
 src/resources/images/chalkboard_old.png
 .DS_Store
 tests
-template/main_new.typ
+template/main_old.typ

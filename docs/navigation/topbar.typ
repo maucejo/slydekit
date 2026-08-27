@@ -12,12 +12,12 @@ To activate a given navigation style, you can set the `navigation-style` argumen
 ```typ
 // For the topbar navigation style
 #show: slydekit.with(
-  navigation-style: topbar,
+  navigation-style: "topbar",
 )
 
 // For the minislide navigation style
 #show: slydekit.with(
-  navigation-style: minislide,
+  navigation-style: "minislide",
 )
 ```
 
@@ -78,7 +78,7 @@ A boolean value that determines whether to display section numbering. If set to 
 A boolean value that determines whether to place the bullets on a new line under the section title. If set to `true`, bullets will be placed horizontally on a new line under the section title. If set to `false`, bullets will be placed vertically on the same line as the section title.]
 
 #argument-callout("display-appendix", [boolean | "auto"], default: ["auto"])[
-A boolean value that determines whether to display appendix sections. If set to "auto", the main sections are displayed during the main presentation and switches to appendix during the appendix. If set to `true`, it always displays everything (main + appendix). If set to `false`, it never displays appendix sections.]
+A boolean value that determines whether to display appendix sections. If set to `"auto"`, the main sections are displayed during the main presentation and switches to appendix during the appendix. If set to `true`, it always displays everything (main + appendix). If set to `false`, it never displays appendix sections.]
 
 = Usage in custom themes
 

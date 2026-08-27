@@ -19,10 +19,10 @@ Hello Typst! #pause
 
 This point appears on the second subslide.
 
-#slide("Second slide")[
-  I am #pause an animated slide
+== Second slide
 
-  $
-    #uncover(2)[$y = f(x)$]
-  $
-]
+I am #pause an animated slide
+
+$
+  #uncover(2)[$y = f(x)$]
+$

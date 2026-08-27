@@ -4,6 +4,7 @@
   appendix: state("appendix", false),
   colors: state("colors", (:)),
   current-slide-title: state("current-slide-title", []),
+  extra: state("extra", (:)),
   fonts: state("fonts", (:)),
   frozen-counters: state("frozen-counters", ()),
   handout: state("handout", false),
@@ -20,7 +21,6 @@
   subslide-total: counter("subslide-total"),
   subslide-step: counter("subslide-step"),
   theme: state("theme"),
-  extra: state("extra", (:)),
 )
 
 // Defaults

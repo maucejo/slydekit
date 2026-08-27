@@ -20,7 +20,10 @@
 
   if title != none and title != [] {
     sk-states.current-slide-title.update(title)
-    sk-states.slide-index.step()
+
+    if label != <hide-toc> {
+      sk-states.slide-index.step()
+    }
   }
 
   // Split the body into parallel tracks at <meanwhile> boundaries, then each track into chunks at <pause> labels. With no <meanwhile> at all, this is a single track equal to the previous flat chunk list, so existing slides are unaffected.

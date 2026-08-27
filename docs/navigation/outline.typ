@@ -46,7 +46,7 @@ If you want to create a custom theme, Slydekit provides the `toc` command to cre
 The color used to fill the outline entries. The default value is `black`, which is a good color for most presentations. You can change this color to match your theme colors.]
 
 #argument-callout("display-appendix", [string], default: ["auto"])[
-Whether to display the appendix in the table of contents. The default value is `auto`, which means that the appendix outline will be displayed on a dedicated slide. If set to `true`, the appendix will always be displayed in the main outline. If set to `false`, the appendix outline will never be displayed.
+Whether to display the appendix in the table of contents. The default value is `"auto"`, which means that the appendix outline will be displayed on a dedicated slide. If set to `true`, the appendix will always be displayed in the main outline. If set to `false`, the appendix outline will never be displayed.
 ]
 
 Actually, `tableofcontents` is just a wrapper around `toc`, that includes the title slide and the table of contents in a single slide.
@@ -94,6 +94,9 @@ The space between the outline entries. The default value is `4%`.]
 #argument-callout("display-subsection", [boolean], default: [false])[
 Whether to display subsections in the progressive outline. The default value is `false`. If set to `true`, the progressive outline will display subsections as well.]
 
+#argument-callout("display-appendix", [string], default: ["auto"])[
+Whether to display the appendix in the progressive outline. The default value is `"auto"`, which means that the appendix outline will be displayed on a dedicated slide. If set to `true`, the appendix will always be displayed in the main outline. If set to `false`, the appendix will never be displayed.]
+
 A typical implementation of the `progressive-outline` command when creating a theme is as follows:
 ```typ
 #show heading.where(level: 1): it => {
@@ -104,9 +107,6 @@ A typical implementation of the `progressive-outline` command when creating a th
   progressive-outline(it, active-color, inactive-color)
 }
 ```
-
-#argument-callout("display-appendix", [string], default: ["auto"])[
-Whether to display the appendix in the progressive outline. The default value is `auto`, which means that the appendix outline will be displayed on a dedicated slide. If set to `true`, the appendix will always be displayed in the main outline. If set to `false`, the appendix will never be displayed.]
 
 = Hide sections
 
@@ -119,31 +119,34 @@ Slydekit provides the `hide-new-section-slide` function to hide the slide that i
 This function can't be used in conjunction with `progressive-outline`, since `hide-new-section-slide` hides level 1 heading slides. However, the section will still be present in the `tableofcontents`.
 ]
 
-If you want to have a fine-grained control over which sections are hidden, you can use the label `<hide-toc>` command to hide specific sections.
+If you need fine-grained control over which sections appear in the outline, you can use the `<hide-toc>` label to hide specific sections. This is particularly useful for sections such as bibliographies, but it can be applied to any section you want to exclude from the outline. Simply add the label to the section title as follows:
+```typ
+= Bibliography <hide-toc>
+```
 
-== Without `<hide-toc>`
+// == Without `<hide-toc>`
 
-#calepin.elements.gallery(
-  (
-    ("../assets/navigation/no-hide-toc1.png", "No hide-toc - Outline slide", [No hide-toc - Outline slide]),
-    ("../assets/navigation/no-hide-toc2.png", "No hide-toc - Progressive outline - Step 1", [No hide-toc - Progressive outline]),
-    ("../assets/navigation/no-hide-toc3.png", "No hide-toc - Progressive outline - Step 2", [No hide-toc - Progressive outline]),
-  ),
-  columns: 3,
-  max-width: 100%,
-)
+// #calepin.elements.gallery(
+//   (
+//     ("../assets/navigation/no-hide-toc1.png", "No hide-toc - Outline slide", [No hide-toc - Outline slide]),
+//     ("../assets/navigation/no-hide-toc2.png", "No hide-toc - Progressive outline - Step 1", [No hide-toc - Progressive outline]),
+//     ("../assets/navigation/no-hide-toc3.png", "No hide-toc - Progressive outline - Step 2", [No hide-toc - Progressive outline]),
+//   ),
+//   columns: 3,
+//   max-width: 100%,
+// )
 
-== With `<hide-toc>`
+// == With `<hide-toc>`
 
-#calepin.elements.gallery(
-  (
-    ("../assets/navigation/with-hide-toc1.png", "Hide-toc - Outline slide", [Hide-toc - Outline slide]),
-    ("../assets/navigation/with-hide-toc2.png", "Hide-toc - Progressive outline - Step 1", [Hide-toc - Progressive outline]),
-    ("../assets/navigation/with-hide-toc3.png", "Hide-toc - Progressive outline - Step 2", [Hide-toc - Progressive outline]),
-  ),
-  columns: 3,
-  max-width: 100%,
-)
+// #calepin.elements.gallery(
+//   (
+//     ("../assets/navigation/with-hide-toc1.png", "Hide-toc - Outline slide", [Hide-toc - Outline slide]),
+//     ("../assets/navigation/with-hide-toc2.png", "Hide-toc - Progressive outline - Step 1", [Hide-toc - Progressive outline]),
+//     ("../assets/navigation/with-hide-toc3.png", "Hide-toc - Progressive outline - Step 2", [Hide-toc - Progressive outline]),
+//   ),
+//   columns: 3,
+//   max-width: 100%,
+// )
 
 #calepin.elements.callout[
   The `<hide-toc>` label can also be used to hide a slide, defined with `#slide(..., label: <hide-toc>)` or `== Title <hide-toc>`, from the outlines (`tableofcontents`, `progressive-outline` and `mini-slides`). This can be useful for a bibliography slide for instance.

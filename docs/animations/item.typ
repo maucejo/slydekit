@@ -34,9 +34,9 @@ Using `pause`can be tedious when you have a list of words or items  that you wan
 #argument-callout("..children", "list")[The list of words or phrases to be revealed one by one.]
 
 ```typ
-#slide[`#one-by-one` example][
-  #one-by-one[I am ][not a ][ robot]
-]
+== `one-by-one` example
+
+#one-by-one[I am ][not a ][ robot]
 ```
 
 #calepin.elements.gallery(
@@ -80,12 +80,12 @@ Using `pause`can be tedious when you have a list of words or items  that you wan
 #argument-callout("body", "content")[The list of items to be revealed one by one. This can be a list, enumeration, or terms.]
 
 ```typ
-#slide[`#item-by-item` example][
-  #item-by-item[
-    - I am the first item, visible on the first subslide
-    - I am the second item, visible on the second subslide
-    - I am the third item, visible on the third subslide
-  ]
+== `item-by-item` example
+
+#item-by-item[
+  - I am the first item, visible on the first subslide
+  - I am the second item, visible on the second subslide
+  - I am the third item, visible on the third subslide
 ]
 ```
 
@@ -102,12 +102,12 @@ Using `pause`can be tedious when you have a list of words or items  that you wan
 #calepin.elements.callout[
   The previous results can be obtained by using `pause` as follows:
   ```typ
-  #slide[`#item-by-item` example][
-    - I am the first item, visible on the first subslide
-    #pause
-    - I am the second item, visible on the second subslide
-    #pause
-    - I am the third item, visible on the third subslide
-  ]
+  == `item-by-item` example
+
+  - I am the first item, visible on the first subslide
+  #pause
+  - I am the second item, visible on the second subslide
+  #pause
+  - I am the third item, visible on the third subslide
 ```
 ]

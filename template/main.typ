@@ -1,5 +1,5 @@
-#import "@preview/slydekit:0.4.0": *
-// #import "../src/slydekit.typ": *
+// #import "@preview/slydekit:0.4.0": *
+#import "../src/slydekit.typ": *
 #import "@preview/cetz:0.5.2"
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
 
@@ -22,7 +22,7 @@
   title-logo: (image("images/slydekit-full.svg", height: 2.5cm),),
   slide-logo: image("images/slydekit-mini.svg", height: 1.25cm),
   // handout: true
-  // section-numbering: true,
+  section-numbering: true,
   // numbering-pattern: (section: "I.1.", appendix: "A.1."),
 )
 
@@ -83,45 +83,40 @@
   }
 ]
 
-= Animations - Part 1
+= Animations - Part 1 <hide-toc>
 
-// == Code animation
+== Code animation
 
-#slide("Code animation")[
-  #code-reveal(
-    highlight-lines: ("2": 2, "4": 3),
-    hide-lines: ("3": 2, "4": 3),
-  )[
-    ```python
-    def fib(n):
-        if n <= 1:
-            return n
-        return fib(n-1) + fib(n-2)
-    ```
-  ]
+#code-reveal(
+  highlight-lines: ("2": 2, "4": 3),
+  hide-lines: ("3": 2, "4": 3),
+)[
+  ```python
+  def fib(n):
+      if n <= 1:
+          return n
+      return fib(n-1) + fib(n-2)
+  ```
 ]
 
-== Test
+== Pause, uncover and only
 
-#lorem(10)
+Introduction, #pause always visible.
 
-#slide("Pause, uncover and only")[
-  Introduction, #pause always visible.
+#uncover(from: 3, to: 4)[A point that is only visible on slides 3 and 4.]
 
-  #uncover(from: 3, to: 4)[A point that is only visible on slides 2 and 3.]
+#only(5)[A final note that appears, without reserving space, only at the very end.]
 
-  #only(5)[A final note that appears, without reserving space, only at the very end.]
+$
+  y = f(x) #uncover(from: 3, $= x^2 + 2x + 1$)
+$
 
-  $
-    y = f(x) #uncover(from:3, $= x^2 + 2x + 1$)
-  $
+$
+  #boxeq($E = m c^2$)
+$
 
-  $
-    #boxeq($E = m c^2$)
-  $
-]
+== Track
 
-#slide("Track")[
 #grid(
   columns: (1fr, 1fr),
   align: top,
@@ -139,11 +134,10 @@
     Second parallel
   ]
 )
-]
 
 = Animations - Part 2
 
-#slide("Meanwhile")[
+== Meanwhile
 
 First
 
@@ -158,21 +152,20 @@ Third
 #pause
 
 Fourth
-]
 
-#slide("Alternatives")[
+== Alternatives
+
 #alternatives[Ann][Bob][Christopher]
 likes
 #alternatives[chocolate][strawberry][vanilla]
 ice cream.
-]
 
-#slide("Item-by-item")[
-  #item-by-item[
-    - First argument
-    - Second argument
-    - Third argument
-  ]
+== Item-by-item
+
+#item-by-item[
+  - First argument
+  - Second argument
+  - Third argument
 ]
 
 = Links and references
@@ -194,11 +187,11 @@ Slide @s:section, slide @s:test
 
 #place(bottom + right, dy: 1.5em, link-box(<s:test>, "Go to target slide"))
 
-#slide("Target slide", label: <s:test>)[
+== Target slide <s:test>
+
 #lorem(25)
 
 #place(right + bottom,link-box(<s:section>, "Go to root slide"))
-]
 
 #focus-slide[It is important!]
 

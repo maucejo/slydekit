@@ -39,6 +39,7 @@ After importing the template, you have to initialize the template by a show rule
   slide-logo: none,
   section-numbering: false,
   numbering-pattern: (:),
+  extra-info: (:),
   handout: false,
 )
 ```
@@ -156,6 +157,14 @@ The dictionary should have the following structure:
 ```
 ]
 
+#argument-callout("extra-info", [dictionary], default: [(:)])[
+User defined dictionary for extra information to be displayed in custom themes.
+
+#calepin.elements.callout[
+  This dictionary is not used in the built-in themes.
+]
+]
+
 #argument-callout("handout", [bool], default: [false])[
 Whether to generate a handout version of the presentation. If set to `true`, the presentation will be formatted for printing or distribution as a handout, which may include additional notes or a different layout suitable for paper or PDF distribution. If set to `false`, the presentation will be formatted for on-screen viewing.
 ]
@@ -182,13 +191,15 @@ Whether to generate a handout version of the presentation. If set to `true`, the
 
 == First slide
 
-#slide("Second slide")[
-  I am #pause an animated slide
+Hello Typst!
 
-  $
-    #uncover(2)[$y = f(x)$]
-  $
-]
+== Second slide
+
+I am #pause an animated slide
+
+$
+  #uncover(2)[$y = f(x)$]
+$
 ```
 
 #calepin.elements.gallery(

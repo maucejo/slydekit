@@ -39,7 +39,7 @@ A function that defines how the content should be hidden when it is not visible.
 #argument-callout("body", [content])[
 The content to be revealed.]
 
-Contrary to the other animations commands, using the `draw-reveal` function requires to open a new `context` that includes the CeTZ/Fletcher content to be revealed, as well as to provide the number of steps for th slide. This is because the `draw-reveal` function needs to know the current subslide step in order to determine whether the content should be visible or hidden.
+Contrary to the other animations commands, using the `draw-reveal` function requires an encapsulation into the `slide` command and to open a new `context` that includes the CeTZ/Fletcher content to be revealed, as well as to provide the number of steps for th slide. This is because the `draw-reveal` function needs to know the current subslide step in order to determine whether the content should be visible or hidden.
 
 #calepin.elements.callout[
   The current implementation of the Slydekit framework does not allow to compute the number of steps for a slide automatically, so you need to provide it manually. This is a known limitation that could be addressed in future versions of the framework.

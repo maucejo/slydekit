@@ -13,4 +13,12 @@
 
 = First section
 
-= Second section
+== A subsection
+
+#lorem(10)
+
+= Second section <hide-toc>
+
+== Another subsection
+
+#lorem(10)

@@ -27,12 +27,12 @@ The `alternatives` function allows you to display different content per step.
 #argument-callout("..options", "list")[The list of options to be displayed.]
 
 ```typ
-#slide[`#alternatives` example][
-  #alternatives[Ann][Bob][Christopher]
-  likes
-  #alternatives[chocolate][strawberry][vanilla]
-  ice cream.
-]
+== `#alternatives` example
+
+#alternatives[Ann][Bob][Christopher]
+likes
+#alternatives[chocolate][strawberry][vanilla]
+ice cream.
 ```
 
 #calepin.elements.gallery(

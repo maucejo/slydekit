@@ -25,7 +25,7 @@
   numbering-pattern: (:),
   frozen-counters: (),
   handout: false,
-  extra: (:),
+  extra-info: (:),
   body
 ) = context {
   // Page setup
@@ -33,9 +33,6 @@
     paper: "presentation-" + aspect-ratio,
     margin: default-margins,
   )
-
-  // Extra presentation info
-  sk-states.extra.update(extra)
 
   // Section numbering
   sk-states.section-numbering.update(section-numbering)
@@ -75,6 +72,10 @@
   show heading.where(level: 1): it => context {
     sk-states.slide-index.update(0)
     it
+
+    if it.has("label") and it.label == <hide-toc> {
+      counter(heading).update(n => n - 1)
+    }
   }
   // Level 2 headings are slides, defined with == Title
   // show heading.where(level: 2): it => slide(it.body)[]
@@ -104,7 +105,7 @@
   show bibliography: set text(size: 0.85em)
 
   // Title page
-  let sk-pres-info = (title: title, subtitle: subtitle, short-title: short-title, author: author, date: date, institution: institution, contact: contact, logo: title-logo)
+  let sk-pres-info = (title: title, subtitle: subtitle, short-title: short-title, author: author, date: date, institution: institution, contact: contact, logo: title-logo, extra: extra-info)
 
   // Update states
   sk-states.navigation-style.update(navigation-style)

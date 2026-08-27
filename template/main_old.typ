@@ -1,5 +1,5 @@
-// #import "@preview/slydekit:0.4.0": *
-#import "../src/slydekit.typ": *
+#import "@preview/slydekit:0.4.0": *
+// #import "../src/slydekit.typ": *
 #import "@preview/cetz:0.5.2"
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
 
@@ -18,7 +18,7 @@
   // fonts: (body: "New Computer Modern"),
   // colors: chalkboard-colors-variant,
   lang: "en",
-  // navigation-style: "minislide",
+  navigation-style: "minislide",
   title-logo: (image("images/slydekit-full.svg", height: 2.5cm),),
   slide-logo: image("images/slydekit-mini.svg", height: 1.25cm),
   // handout: true
@@ -29,7 +29,6 @@
 #title-slide
 
 #tableofcontents
-
 
 = CeTZ/Fletcher integration
 
@@ -86,38 +85,43 @@
 
 = Animations - Part 1
 
-== Code animation
+// == Code animation
 
-#code-reveal(
-  highlight-lines: ("2": 2, "4": 3),
-  hide-lines: ("3": 2, "4": 3),
-)[
-  ```python
-  def fib(n):
-      if n <= 1:
-          return n
-      return fib(n-1) + fib(n-2)
-  ```
+#slide("Code animation")[
+  #code-reveal(
+    highlight-lines: ("2": 2, "4": 3),
+    hide-lines: ("3": 2, "4": 3),
+  )[
+    ```python
+    def fib(n):
+        if n <= 1:
+            return n
+        return fib(n-1) + fib(n-2)
+    ```
+  ]
 ]
 
-== Pause, uncover and only
+== Test
 
-Introduction, #pause always visible.
+#lorem(10)
 
-#uncover(from: 3, to: 4)[A point that is only visible on slides 3 and 4.]
+#slide("Pause, uncover and only")[
+  Introduction, #pause always visible.
 
-#only(5)[A final note that appears, without reserving space, only at the very end.]
+  #uncover(from: 3, to: 4)[A point that is only visible on slides 2 and 3.]
 
-$
-  y = f(x) #uncover(from: 3, $= x^2 + 2x + 1$)
-$
+  #only(5)[A final note that appears, without reserving space, only at the very end.]
 
-$
-  #boxeq($E = m c^2$)
-$
+  $
+    y = f(x) #uncover(from:3, $= x^2 + 2x + 1$)
+  $
 
-== Track
+  $
+    #boxeq($E = m c^2$)
+  $
+]
 
+#slide("Track")[
 #grid(
   columns: (1fr, 1fr),
   align: top,
@@ -135,10 +139,11 @@ $
     Second parallel
   ]
 )
+]
 
 = Animations - Part 2
 
-== Meanwhile
+#slide("Meanwhile")[
 
 First
 
@@ -153,20 +158,21 @@ Third
 #pause
 
 Fourth
+]
 
-== Alternatives
-
+#slide("Alternatives")[
 #alternatives[Ann][Bob][Christopher]
 likes
 #alternatives[chocolate][strawberry][vanilla]
 ice cream.
+]
 
-== Item-by-item
-
-#item-by-item[
-  - First argument
-  - Second argument
-  - Third argument
+#slide("Item-by-item")[
+  #item-by-item[
+    - First argument
+    - Second argument
+    - Third argument
+  ]
 ]
 
 = Links and references
@@ -188,11 +194,11 @@ Slide @s:section, slide @s:test
 
 #place(bottom + right, dy: 1.5em, link-box(<s:test>, "Go to target slide"))
 
-== Target slide <s:test>
-
+#slide("Target slide", label: <s:test>)[
 #lorem(25)
 
 #place(right + bottom,link-box(<s:section>, "Go to root slide"))
+]
 
 #focus-slide[It is important!]
 
