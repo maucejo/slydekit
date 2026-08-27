@@ -299,7 +299,7 @@
     let is-current = (current-idx != none and idx == current-idx)
     let color = if is-current { active-color } else { inactive-color }
 
-    let title = [#text(fill: color, weight: "bold")[#num] #s.body]
+    let title = [#text(fill: color, weight: "bold")[#num] #text(fill:color, weight:"bold") [#s.body]
 
     let subsections = if display-subsection and is-current {
       // Find the very first level-1 heading after the current section (whether it is hidden or not)
