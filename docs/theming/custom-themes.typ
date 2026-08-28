@@ -278,6 +278,7 @@ A custom theme does not need to implement the complete theme contract. Functions
 For instance, if you want to create a custom theme that only changes the title slide and the table of contents slide, you can define your custom theme as follows:
 ```typ
 #import "@preview/slydekit:0.4.0": *
+
 #let my-theme = (
   theme: fancy.theme,
   toc: fancy.toc,

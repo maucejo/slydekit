@@ -18,4 +18,4 @@ The animation system provides a set of predefined animations that can be used to
 
 - `item-by-item`, which allows you to reveal content one item at a time, creating a sense of anticipation and engagement.
 
-- `reveal`, which allows you to reveal content in a specific order. This function is mainly used for integration with #link("https://typst.app/universe/package/cetz/", "CeTZ") and #link("https://typst.app/universe/package/fletcher/", "Fletcher").
+- `draw-reveal`, which allows you to reveal content in a specific order. This function is mainly used for integration with #link("https://typst.app/universe/package/cetz/", "CeTZ") and #link("https://typst.app/universe/package/fletcher/", "Fletcher").

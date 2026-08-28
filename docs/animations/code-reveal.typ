@@ -14,9 +14,9 @@ Slydekit provides the `code-reveal` function that can be used to create this eff
 
 ```typ
 #let code-reveal(
-  steps: (:),
+  highlight-lines: (:),
+  hide-lines: (:),
   renderer: raw-renderer(),
-  ..args,
   body,
 )
 ```
