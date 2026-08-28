@@ -20,10 +20,7 @@
 
   if title != none and title != [] {
     sk-states.current-slide-title.update(title)
-
-    if label != <hide-toc> {
-      sk-states.slide-index.step()
-    }
+    sk-states.slide-index.step()
   }
 
   // Split the body into parallel tracks at <meanwhile> boundaries, then each track into chunks at <pause> labels. With no <meanwhile> at all, this is a single track equal to the previous flat chunk list, so existing slides are unaffected.
@@ -75,10 +72,7 @@
       }
     } else {
       for i in range(1, total + 1) {
-        // Reset before every substep, including the last one,
-        // without exception: making an exception for the last one would
-        // make it inherit the increment left by the penultimate one and double
-        // the progression on the page that is actually kept (verified).
+        // Reset before every substep, including the last one, without exception: making an exception for the last one would make it inherit the increment left by the penultimate one and double the progression on the page that is actually kept (verified).
         reset-numbers()
 
         sk-states.subslide-step.update(i)
@@ -245,11 +239,7 @@
   output
 }
 
-// Detects the invisible <sk-slide-parser-boundary> marker placed at the very
-// start of every explicit #slide(..) call, before any state mutation. Distinct
-// from <sk-slide> (used by mini-slides/progressive-outline for page-based
-// slide counting), which stays after the pagebreak and is passed through
-// untouched once this boundary has been detected.
+// Detects the invisible <sk-slide-parser-boundary> marker placed at the very start of every explicit #slide(..) call, before any state mutation. Distinct from <sk-slide> (used by mini-slides/progressive-outline for page-based slide counting), which stays after the pagebreak and is passed through untouched once this boundary has been detected.
 #let is-slide-marker(child) = (
   child.func() == metadata and child.has("label") and child.label == <sk-slide-parser-boundary>
 )
@@ -275,9 +265,7 @@
   let current-heading = none
   let current-body = ()
   let output = ()
-  // True once an explicit #slide(..) marker has been seen since the last
-  // heading, meaning the rest of its already-resolved content must be
-  // passed through untouched rather than accumulated into current-body.
+  // True once an explicit #slide(..) marker has been seen since the last heading, meaning the rest of its already-resolved content must be passed through untouched rather than accumulated into current-body.
   let in-explicit-slide = false
 
   for child in children {
@@ -296,12 +284,7 @@
         output.push(child)
       }
     } else if is-slide-marker(child) {
-      // Boundary of an explicit #slide(..) call: since the marker is now
-      // the very first thing slide() emits, nothing belonging to this call
-      // has been accumulated yet. Whatever was pending for the enclosing
-      // heading is complete as of right here, close it off. The marker
-      // itself is internal to slide-parser and is dropped here, not passed
-      // through — it carries no value and mini-slides/progressive-outline
+      // Boundary of an explicit #slide(..) call: since the marker is now the very first thing slide() emits, nothing belonging to this call has been accumulated yet. Whatever was pending for the enclosing heading is complete as of right here, close it off. The marker itself is internal to slide-parser and is dropped here, not passed through — it carries no value and mini-slides/progressive-outline
       // rely on <sk-slide> further down instead.
       let flushed = flush-slide(current-heading, current-body)
       if flushed != none { output.push(flushed) }
@@ -309,8 +292,7 @@
       current-heading = none
       in-explicit-slide = true
     } else if in-explicit-slide {
-      // Remaining content of an already-resolved explicit #slide(..) call:
-      // pass through as-is, it must not be re-split by the enclosing heading.
+      // Remaining content of an already-resolved explicit #slide(..) call: pass through as-is, it must not be re-split by the enclosing heading.
       output.push(child)
     } else if child.has("child") and child.has("styles") and current-heading == none {
       output.push(child.func()(slide-parser(child.child), child.styles))

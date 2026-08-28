@@ -22,9 +22,7 @@
     chunks.push(current-chunk.join())
   }
 
-  // Always return at least one chunk, even if body ends up empty, so
-  // callers spreading chunks.len() values into calc.max(..) never receive
-  // a zero-length array
+  // Always return at least one chunk, even if body ends up empty, so callers spreading chunks.len() values into calc.max(..) never receive a zero-length array
   if chunks.len() == 0 {
     chunks.push([])
   }
@@ -131,7 +129,7 @@
     if visible {
       body
     } else if hide-fn != none {
-      // Allows a third-party package (Fletcher, CeTZ...) to provide its own masking
+      // Allows a third-party package to provide its own masking
       hide-fn(body)
     } else if reserved {
       if hide-color != none {
@@ -156,6 +154,15 @@
 #let meanwhile = <meanwhile>
 #let uncover = _reveal
 #let only = _reveal.with(reserved: false)
+
+// label, so nothing can land on it and overwrite it.
+#let anim-label(lbl, step: 1) = context {
+  let current = sk-states.subslide-step.get().first()
+  if current == step {
+    [#metadata(none)#lbl]
+  }
+}
+
 
 // Reproduces the visibility logic of reveal(), but allows a third-party package (Fletcher, CeTZ...) to provide its own masking via the hide-fn argument. This is useful for packages that use their own visibility logic and own context, which are not compatible with uncover/only.
 #let draw-reveal(..args, hide-fn: none, body) = {
