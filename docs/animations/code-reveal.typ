@@ -35,11 +35,11 @@ The dictionary keys are strings representing the line numbers of the code snippe
 
 #argument-callout("body", [content])[The code snippet to be animated. This should be a block of code written in the desired programming language, enclosed within triple backticks (```` ``` ````) and optionally specifying the language for syntax highlighting.]
 
-= Renderer
+= Renderers
 
 Slydekit provides three built-in renderers for the `code-reveal` function: `raw-renderer`, `codly-renderer`, and `zebraw-renderer`. Each renderer has its own set of customization options and can be used to achieve different visual effects for the code animation.
 
-== Native Typst renderer
+== Native Typst raw renderer
 
 ```typ
 #let raw-renderer(

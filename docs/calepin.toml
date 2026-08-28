@@ -84,6 +84,9 @@ title = "Animations"
   [[sidebar.section.item]]
     target = "animations/code-reveal.typ"
 
+  [[sidebar.section.item]]
+    target = "animations/anim-label.typ"
+
 [[sidebar.section]]
 title = "Navigation, Progress"
   [[sidebar.section.item]]

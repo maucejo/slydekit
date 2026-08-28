@@ -16,6 +16,22 @@
     "translations": {}
   },
   {
+    "excerpt": "Let imagine a scenario where you want tonavigate to a specific slide of an animation sequence. For this purpose you want to assign a label to a specific sub-slide, and then use that label to navigate directly to that slide using a link. Slydekit provides the anim-label function…",
+    "href": "animations/anim-label.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "animations",
+        "label"
+      ]
+    },
+    "path": "animations/anim-label.typ",
+    "pdf": null,
+    "title": "Animated slide labels",
+    "translation_key": "animations/anim-label",
+    "translations": {}
+  },
+  {
     "excerpt": "The animation system in Slydekit allows you to create dynamic and interactive presentations by controlling the visibility and behavior of content on slides.",
     "href": "animations/anim.html",
     "language": null,

@@ -26,7 +26,7 @@
   // Split the body into parallel tracks at <meanwhile> boundaries, then each track into chunks at <pause> labels. With no <meanwhile> at all, this is a single track equal to the previous flat chunk list, so existing slides are unaffected.
   let tracks = split-at-meanwhile(body).map(split-at-pause)
 
-  // Compute the total number of steps requested by uncover/only and <pause> labels
+  // Compute the total number of steps requested by uncover/only and <sk-pause> labels
   let max-reveal-step = analyze-max-step(body)
   let max-track-length = calc.max(..tracks.map(t => t.len()))
   let total = calc.max(max-track-length, max-reveal-step)
@@ -63,36 +63,35 @@
     }
 
     // Direct generation of the slide content, without subslides
-    block[
-      #if sk-states.handout.get() {
-        // Handout mode: a single page per slide, in its fully revealed state. Content gated on one exact step (only(2)[..], not uncover(from: 2)[..]) never appears here, since intermediate steps are never rendered. Each track is joined on its own: tracks is an array of arrays of chunks (one array per parallel track), so tracks.join() would try to join arrays together instead of content, this joins the chunks inside each track first.
+    if sk-states.handout.get() {
+      // Handout mode: a single page per slide, in its fully revealed state. Content gated on one exact step (only(2)[..], not uncover(from: 2)[..]) never appears here, since intermediate steps are never rendered. Each track is joined on its own: tracks is an array of arrays of chunks (one array per parallel track), so tracks.join() would try to join arrays together instead of content, this joins the chunks inside each track first.
+      reset-numbers()
+      sk-states.subslide-step.update(total)
+      for chunks in tracks {
+        chunks.join()
+      }
+    } else {
+      for i in range(1, total + 1) {
+        // Reset before every substep, including the last one, without exception: making an exception for the last one would make it inherit the increment left by the penultimate one and double the progression on the page that is actually kept (verified).
         reset-numbers()
-        sk-states.subslide-step.update(total)
-        for chunks in tracks {
-          chunks.join()
+
+        sk-states.subslide-step.update(i)
+        if i > 1 {
+          pagebreak(weak: true)
         }
-      } else {
-        for i in range(1, total + 1) {
-          // Reset before every substep, including the last one, without exception: making an exception for the last one would make it inherit the increment left by the penultimate one and double the progression on the page that is actually kept (verified).
-          reset-numbers()
 
-          sk-states.subslide-step.update(i)
-          if i > 1 {
-            pagebreak(weak: true)
-          }
-
-          for chunks in tracks {
-            for (idx, chunk) in chunks.enumerate() {
-              if idx < i {
-                chunk
-              } else {
-                hide(chunk)
-              }
+        for chunks in tracks {
+          for (idx, chunk) in chunks.enumerate() {
+            if idx < i {
+              chunk
+            } else {
+              hide(chunk)
             }
           }
         }
       }
-    ]
+    }
+
   }
 }
 
@@ -313,7 +312,7 @@
 //
 // #show: appendix transforms the rest of the document into a single opaque argument passed to this function (verified: body.children, viewed from outside appendix(), contains only one child of type sequence at this point). The appendix's == headings are therefore never visible to the slide-parser applied at the document level. We run the splitter again here, on the appendix's own body, where it finds the appendix headings as a flat list.
 #let appendix(body) = context {
-  pagebreak(weak: true)
+  // pagebreak(weak: true)
   sk-states.appendix.update(true)
   counter(heading).update(0)
   sk-states.slide-index.update(0)

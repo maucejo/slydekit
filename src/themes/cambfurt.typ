@@ -50,6 +50,7 @@
   }
 
   let header = context {
+    set text(size: sk-states.fonts.get().size)
     if sk-states.navigation-style.get() == "topbar" {
       let sections = query(heading.where(level: 1).before(here()))
       let current-section = if sections.len() > 0 { sections.last().body } else { none }
@@ -75,6 +76,7 @@
   }
 
   let footer = context {
+    set text(size: sk-states.fonts.get().size)
     let current-page = if sk-states.appendix.get() {
       sk-states.app-slide-number.get().first()
     } else {

@@ -50,6 +50,7 @@
   }
 
   let header = context {
+    set text(size: sk-states.fonts.get().size)
     if sk-states.navigation-style.get() == "topbar" {
       let header-title = [#h(1em)*#slide-subtitle()*]
       full-width(fill: sk-states.colors.get().header, align(horizon, text(size: header-size, fill: white)[#header-title]))
@@ -66,6 +67,7 @@
   }
 
   let footer = context {
+    set text(size: sk-states.fonts.get().size)
     let current-page = if sk-states.appendix.get() {
       sk-states.app-slide-number.get().first()
     } else {
