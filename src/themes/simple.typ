@@ -44,18 +44,20 @@
     progressive-outline(it, sk-states.colors.get().primary, sk-states.colors.get().secondary.lighten(60%))
   }
 
-  let header = context if sk-states.navigation-style.get() == "topbar" {
-    let header-title = [#h(1em)*#slide-subtitle()*]
-    full-width(fill: none, align(horizon, text(size: header-size, fill: sk-states.colors.get().primary)[#header-title]))
-  } else if sk-states.navigation-style.get() == "minislide" {
-    let mini-content = [
-      #let pad-lr = 3.5%
-      #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
-      #place(dy: 0.5em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().primary))
+  let header = context {
+    if sk-states.navigation-style.get() == "topbar" {
+      let header-title = [#h(1em)*#slide-subtitle()*]
+      full-width(fill: none, align(horizon, text(size: header-size, fill: sk-states.colors.get().primary)[#header-title]))
+    } else if sk-states.navigation-style.get() == "minislide" {
+      let mini-content = [
+        #let pad-lr = 3.5%
+        #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
+        #place(dy: 0.5em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().primary))
 
-      #place(dx: 3.5%, dy: 1.25em)[#text(size: header-size, weight: "bold", fill: sk-states.colors.get().header, slide-subtitle())]
-    ]
-    full-width(mini-content)
+        #place(dx: 3.5%, dy: 1.25em)[#text(size: header-size, weight: "bold", fill: sk-states.colors.get().header, slide-subtitle())]
+      ]
+      full-width(mini-content)
+    }
   }
 
   let footer = context {

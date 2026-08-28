@@ -49,27 +49,29 @@
     progressive-outline(it, sk-states.colors.get().primary, sk-states.colors.get().secondary.lighten(60%))
   }
 
-  let header = context if sk-states.navigation-style.get() == "topbar" {
-    let sections = query(heading.where(level: 1).before(here()))
-    let current-section = if sections.len() > 0 { sections.last().body } else { none }
+  let header = context {
+    if sk-states.navigation-style.get() == "topbar" {
+      let sections = query(heading.where(level: 1).before(here()))
+      let current-section = if sections.len() > 0 { sections.last().body } else { none }
 
-    let topbar = grid(
-        columns: (1fr, 1fr),
-        align: (right + horizon, left + horizon),
-        rows: 1.5em,
-        grid.cell(fill: sk-states.colors.get().header)[#text(fill: white)[*#text(fill: white, formatted-number(type: "section")) #current-section* #h(0.75em)]],
-        grid.cell(fill: sk-states.colors.get().secondary)[#text(fill: sk-states.colors.get().primary)[#h(0.75em) *#slide-subtitle()*]],
-      )
-      full-width(move(dy: -2pt)[#topbar])
-  } else if sk-states.navigation-style.get() == "minislide" {
-    let mini-content = [
-      #let pad-lr = 3.5%
-      #place(top, dy: -0.75em)[#cell(fill: sk-states.colors.get().secondary.lighten(60%))
+      let topbar = grid(
+          columns: (1fr, 1fr),
+          align: (right + horizon, left + horizon),
+          rows: 1.5em,
+          grid.cell(fill: sk-states.colors.get().header)[#text(fill: white)[*#text(fill: white, formatted-number(type: "section")) #current-section* #h(0.75em)]],
+          grid.cell(fill: sk-states.colors.get().secondary)[#text(fill: sk-states.colors.get().primary)[#h(0.75em) *#slide-subtitle()*]],
+        )
+        full-width(move(dy: -2pt)[#topbar])
+    } else if sk-states.navigation-style.get() == "minislide" {
+      let mini-content = [
+        #let pad-lr = 3.5%
+        #place(top, dy: -0.75em)[#cell(fill: sk-states.colors.get().secondary.lighten(60%))
+        ]
+        #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
+        #place(dx: 3.5%, dy: 1em)[#box(width: 100%, outset: (left: 2em, right: 1em, rest: 0.5em), fill: sk-states.colors.get().secondary.lighten(45%), text(size: header-size, weight: "bold", fill: sk-states.colors.get().header, slide-subtitle()))]
       ]
-      #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
-      #place(dx: 3.5%, dy: 1em)[#box(width: 100%, outset: (left: 2em, right: 1em, rest: 0.5em), fill: sk-states.colors.get().secondary.lighten(45%), text(size: header-size, weight: "bold", fill: sk-states.colors.get().header, slide-subtitle()))]
-    ]
-    full-width(mini-content)
+      full-width(mini-content)
+    }
   }
 
   let footer = context {
