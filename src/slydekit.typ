@@ -3,6 +3,7 @@
 #import "slydekit-defaults.typ": *
 #import "slydekit-outline.typ": *
 #import "slydekit-themes.typ": *
+#import "slydekit-slide.typ": slide, slide-parser
 #import "slydekit-utils.typ": *
 
 #let slydekit(
