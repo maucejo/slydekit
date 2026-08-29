@@ -23,7 +23,7 @@
     sk-states.slide-index.step()
   }
 
-  // Split the body into parallel tracks at <meanwhile> boundaries, then each track into chunks at <pause> labels. With no <meanwhile> at all, this is a single track equal to the previous flat chunk list, so existing slides are unaffected.
+  // Split the body into parallel tracks at <sk-meanwhile> boundaries, then each track into chunks at <sk-pause> labels. With no <sk-meanwhile> at all, this is a single track equal to the previous flat chunk list, so existing slides are unaffected.
   let tracks = split-at-meanwhile(body).map(split-at-pause)
 
   // Compute the total number of steps requested by uncover/only and <sk-pause> labels
@@ -171,7 +171,7 @@
 
   for child in body {
     if child.has("label") and (
-      child.label == <pause> or child.label == <sk-slide-parser-boundary>
+      child.label == <sk-pause> or child.label == <sk-slide-parser-boundary>
     ) {
       if current-body.len() > 0 {
         output.push(style-wrapper.func()(current-body.join(), style-wrapper.styles))

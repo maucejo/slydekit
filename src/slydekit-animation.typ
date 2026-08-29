@@ -11,8 +11,8 @@
 
   for child in body.children {
     current-chunk.push(child)
-    // As soon as an element has the <pause> label, we validate the current chunk
-    if child.has("label") and child.label == <pause> {
+    // As soon as an element has the <sk-pause> label, we validate the current chunk
+    if child.has("label") and child.label == <sk-pause> {
       chunks.push(current-chunk.join())
       current-chunk = ()
     }
@@ -30,7 +30,7 @@
   return chunks
 }
 
-// Splits body into parallel tracks at <meanwhile> boundaries, mirroring split-at-pause exactly. Each track is then split-at-pause'd on its own by the caller (slide()), and all tracks advance on the same subslide clock, which reproduces Touying's #meanwhile: content after #meanwhile gets its own local pause chain instead of being appended to the one before it.
+// Splits body into parallel tracks at <sk-meanwhile> boundaries, mirroring split-at-pause exactly. Each track is then split-at-pause'd on its own by the caller (slide()), and all tracks advance on the same subslide clock, which reproduces Touying's #meanwhile: content after #meanwhile gets its own local pause chain instead of being appended to the one before it.
 #let split-at-meanwhile(body) = {
   if body.func() != [].func() {
     return (body,)
@@ -41,7 +41,7 @@
 
   for child in body.children {
     current-track.push(child)
-    if child.has("label") and child.label == <meanwhile> {
+    if child.has("label") and child.label == <sk-meanwhile> {
       tracks.push(current-track.join())
       current-track = ()
     }
@@ -150,8 +150,8 @@
   ))<sk-reveal>#anim-content]
 }
 
-#let pause = <pause>
-#let meanwhile = <meanwhile>
+#let pause = <sk-pause>
+#let meanwhile = <sk-meanwhile>
 #let uncover = _reveal
 #let only = _reveal.with(reserved: false)
 
@@ -243,7 +243,7 @@
   ]
 }
 
-// Parallel track: local split by <pause>, counted independently of the main flow, but synchronized on the same subslide clock. Replaces the use of #meanwhile from Touying: instead of a marker inserted in the flow, we wrap each parallel branch in track(..).
+// Parallel track: local split by <sk-pause>, counted independently of the main flow, but synchronized on the same subslide clock. Replaces the use of #meanwhile from Touying: instead of a marker inserted in the flow, we wrap each parallel branch in track(..).
 #let track(body) = {
   let chunks = split-at-pause(body)
   let n = chunks.len()

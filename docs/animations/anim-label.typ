@@ -11,7 +11,7 @@ Let imagine a scenario where you want tonavigate to a specific slide of an anima
 ```typ
 #let anim-label(
   label,
-  step: 1,
+  step: 1
 )
 ```
 
