@@ -2,6 +2,7 @@
 // #import "../src/slydekit.typ": *
 #import "@preview/cetz:0.5.2"
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
+// #import "@preview/pinit:0.2.2": *
 
 #show: slydekit.with(
   title: "Slydekit",
@@ -83,6 +84,13 @@
   }
 ]
 
+// #slide("Pinit integration")[A simple #pin(1)highlighted text#pin(2).
+
+// #uncover(from: 2, pinit-highlight(1, 2))
+
+// #uncover(3, pinit-point-from((1, 2))[It is simple.])
+// ]
+
 = Animations - Part 1
 
 // == Code animation
@@ -100,10 +108,6 @@
     ```
   ]
 ]
-
-== Test
-
-#lorem(10)
 
 #slide("Pause, uncover and only")[
   Introduction, #pause always visible.

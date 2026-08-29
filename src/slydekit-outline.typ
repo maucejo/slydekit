@@ -127,7 +127,7 @@
       }
     }
 
-    // Pages à exclure : == Titre <hide-toc> ou #slide(..., label: <hide-toc>)[...]
+    // Pages to exclude : == Title <hide-toc> or #slide(..., label: <hide-toc>)[...]
     let hidden-pages = query(<hide-toc>).map(l => l.location().page())
 
     let is-section-hidden(s) = (
