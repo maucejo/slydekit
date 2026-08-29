@@ -193,7 +193,7 @@
 
   set page(header: header, footer: none)
 
-  toc(fill: white)
+  toc(fill: (entry: white))
 }
 
 #let chalkboard-focus-slide(body) = context {

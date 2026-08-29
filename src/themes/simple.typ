@@ -41,7 +41,7 @@
     set page(header: header, footer: none)
     set align(horizon)
 
-    progressive-outline(it, sk-states.colors.get().primary, sk-states.colors.get().secondary.lighten(60%))
+    progressive-outline(it, sk-states.colors.get().secondary.lighten(60%))
   }
 
   let header = context {

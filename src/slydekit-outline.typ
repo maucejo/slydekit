@@ -28,8 +28,7 @@
     ]
   }
 
-  // Solves the gutter (ratio or length) into an absolute length, once and for all,
-  // so that col-width is a pure length — never a relative expression
+  // Solves the gutter (ratio or length) into an absolute length, once and for all, so that col-width is a pure length — never a relative expression
   let gutter-length = if type(gutter) == ratio { gutter * size.width } else { gutter }
 
   let target-n = 1
@@ -53,7 +52,7 @@
   end-content
 })
 
-#let toc(fill: black, display-appendix: "auto") = context {
+#let toc(fill: (:), display-appendix: "auto") = context {
   let current-is-appendix = sk-states.appendix.at(here())
 
   let hidden-pages = query(<hide-toc>).map(l => l.location().page())
@@ -79,7 +78,7 @@
   let entries = sections.map(s => {
     let num = formatted-number(type: "section", at: s.location(), force: true)
     block(above: 1.5em, below: 0em)[
-      #link(s.location())[#text(fill: sk-states.colors.get().primary)[#num] #text(fill: fill)[#s.body]]
+      #link(s.location())[#text(fill: fill.at("number", default: sk-states.colors.get().primary))[#num] #text(fill: fill.at("entry", default: black))[#s.body]]
     ]
   })
 
@@ -240,7 +239,7 @@
 
 #let progressive-outline(
   it,
-  active-color,
+  active-color: (:),
   inactive-color,
   entry-size: 1.2em,
   gutter: 4%,
@@ -259,8 +258,8 @@
 
   let it-hides-toc = (it.has("label") and it.label == <hide-toc>) or (it.location().page() in hidden-pages)
 
-  // Si la section courante porte <hide-toc> et n'est PAS une annexe (ex: Bibliographie),
-  // on ne produit aucun sommaire.
+
+  // If the current section contains <hide-toc> and is not an appendix (e.g., Bibliography), no table of contents is generated.
   if it-hides-toc and not current-is-appendix {
     return []
   }
@@ -294,9 +293,12 @@
   let entries = sections.enumerate().map(((idx, s)) => {
     let num = formatted-number(type: "section", at: s.location(), force: true)
     let is-current = (current-idx != none and idx == current-idx)
-    let color = if is-current { active-color } else { inactive-color }
 
-    let title = [#text(fill: color, weight: "bold")[#num] #s.body]
+    // Define colors for the current section and inactive sections
+    let number-color = if is-current { active-color.at("number", default: sk-states.colors.get().primary) } else { inactive-color }
+    let text-color = if is-current { active-color.at("entry", default: black) } else { inactive-color }
+
+    let title = [#text(fill: number-color, weight: "bold")[#num] #text(fill: text-color)[#s.body]]
 
     let subsections = if display-subsection and is-current {
       // Find the very first level-1 heading after the current section (whether it is hidden or not)
@@ -322,7 +324,7 @@
         v(0.5em)
         for h in slides {
           let sub-num = formatted-number(at: h.location(), force: true)
-          block(inset: (left: 1em), above: 0.5em)[#text(fill: color)[#sub-num] #h.value]
+          block(inset: (left: 1em), above: 0.5em)[#text(fill: number-color)[#sub-num] #text(fill: text-color)[#h.value]]
           v(0.25em)
         }
         v(-0.75em)
