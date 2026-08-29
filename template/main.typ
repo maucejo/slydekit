@@ -14,7 +14,7 @@
   // theme: fancy,
   // theme: simple,
   // theme: cambfurt,
-  theme: chalkboard,
+  // theme: chalkboard,
   // fonts: (body: "New Computer Modern"),
   // colors: chalkboard-colors-variant,
   lang: "en",
