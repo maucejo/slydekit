@@ -12,12 +12,13 @@
   logo: state("logo"),
   localization: state("localization"),
   navigation-style: state("navigation-style", "topbar"),
+  numbering-hidden: state("sk-numbering-hidden", false),
   numbering-pattern: state("numbering-pattern"),
   pause-index: counter("pause-index"),
   pres-info: state("pres-info"),
   section-numbering: state("section-numbering", false),
   slide-number: counter("slide-number"),
-  slide-index: counter("subslide-index"),
+  // slide-index: counter("subslide-index"),
   subslide-total: counter("subslide-total"),
   subslide-step: counter("subslide-step"),
   theme: state("theme"),
@@ -39,6 +40,7 @@
 )
 
 #let default-frozen-counters = (
+    counter(heading),
     counter(figure.where(kind: image)),
     counter(figure.where(kind: table)),
     counter(math.equation),

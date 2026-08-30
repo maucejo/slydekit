@@ -21,7 +21,13 @@
 
   if title != none and title != [] {
     sk-states.current-slide-title.update(title)
-    sk-states.slide-index.step()
+
+    let hidden = label == <hide-toc>
+    sk-states.numbering-hidden.update(hidden)
+
+    if not hidden {
+      counter(heading).step(level: 2)
+    }
   }
 
   // Split the body into parallel tracks at <sk-meanwhile> boundaries, then each track into chunks at <sk-pause> labels. With no <sk-meanwhile> at all, this is a single track equal to the previous flat chunk list, so existing slides are unaffected.

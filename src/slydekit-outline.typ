@@ -243,7 +243,7 @@
   inactive-color,
   entry-size: 1.2em,
   gutter: 4%,
-  display-subsection: false,
+  display-subsection: true,
   display-appendix: "auto",
 ) = context {
   set text(size: sk-states.fonts.get().size)

@@ -4,18 +4,21 @@
 #let formatted-number(type: "slide", at: none, force: false) = context {
   let resolve(item) = if at != none { item.at(at) } else { item.get() }
 
-  if force or resolve(sk-states.section-numbering) {
+  if resolve(sk-states.numbering-hidden) {
+    none
+  } else if force or resolve(sk-states.section-numbering) {
     let fmt = if resolve(sk-states.appendix) {
       sk-states.numbering-pattern.get().appendix
     } else {
       sk-states.numbering-pattern.get().section
     }
 
-    let sec-num = resolve(counter(heading)).first()
+    let nums = resolve(counter(heading))
+    let sec-num = nums.at(0, default: 0)
+    let slide-num = nums.at(1, default: 0)
 
     if type == "slide" {
-      let slide-idx = resolve(sk-states.slide-index).first()
-      numbering(fmt, sec-num, slide-idx)
+      numbering(fmt, sec-num, slide-num)
     } else if type == "section" {
       numbering(fmt, sec-num)
     }
@@ -42,7 +45,7 @@
   // pagebreak(weak: true)
   sk-states.appendix.update(true)
   counter(heading).update(0)
-  sk-states.slide-index.update(0)
+  // sk-states.slide-index.update(0)
 
   // body
   slide-parser(body)

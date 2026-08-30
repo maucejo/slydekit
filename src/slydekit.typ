@@ -70,13 +70,14 @@
   // Rules common to all themes
 
   // Level 1 heading
-  show heading.where(level: 1): it => context {
-    sk-states.slide-index.update(0)
-    it
+  // show heading.where(level: 1): it => context {
+  //   sk-states.slide-index.update(0)
+  //   it
+  // }
+  show heading: it => context {
+    sk-states.numbering-hidden.update(it.has("label") and it.label == <hide-toc>)
 
-    if it.has("label") and it.label == <hide-toc> {
-      counter(heading).update(n => n - 1)
-    }
+    it
   }
   // Level 2 headings are slides, defined with == Title
   // show heading.where(level: 2): it => slide(it.body)[]
@@ -120,7 +121,7 @@
   show metadata.where(label: <sk-title>): it => it.value.long
 
   // Hide section titles from toc
-  show selector(<hide-toc>): set heading(outlined: false)
+  show selector(<hide-toc>): set heading(numbering: none, outlined: false)
 
   // Fonts
   show: set-text.with(lang: sk-lang, fonts: sk-fonts)
