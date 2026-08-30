@@ -42,10 +42,9 @@
 //
 // #show: appendix transforms the rest of the document into a single opaque argument passed to this function (verified: body.children, viewed from outside appendix(), contains only one child of type sequence at this point). The appendix's == headings are therefore never visible to the slide-parser applied at the document level. We run the splitter again here, on the appendix's own body, where it finds the appendix headings as a flat list.
 #let appendix(body) = context {
-  // pagebreak(weak: true)
+  pagebreak(weak: true)
   sk-states.appendix.update(true)
   counter(heading).update(0)
-  // sk-states.slide-index.update(0)
 
   // body
   slide-parser(body)
