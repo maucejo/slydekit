@@ -18,7 +18,6 @@
   pres-info: state("pres-info"),
   section-numbering: state("section-numbering", false),
   slide-number: counter("slide-number"),
-  // slide-index: counter("subslide-index"),
   subslide-total: counter("subslide-total"),
   subslide-step: counter("subslide-step"),
   theme: state("theme"),

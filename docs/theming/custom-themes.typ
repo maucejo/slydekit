@@ -118,6 +118,10 @@ To enable theme composition and partial theme definitions, Slydekit uses a share
   String that indicates the navigation style of the presentation. It can be "topbar" or "minislide". It is used to determine the layout of the header.
 ]
 
+#argument-callout(kind: "State", "numbering-hidden", [bool], default: [false])[
+  Boolean that indicates whether the numbering of slides is hidden. It is used to determine whether to display the slide numbers in the footer of slides.
+]
+
 #argument-callout(kind: "State", "numbering-pattern", [dictionary])[
   Dictionary that defines the numbering pattern for sections and slides. It is used to customize the numbering format of the presentation.
 ]
@@ -136,10 +140,6 @@ To enable theme composition and partial theme definitions, Slydekit uses a share
 
 #argument-callout(kind: "State", "slide-number", [counter])[
   Tracks the number of slides in the presentation. It is used to display the current slide number in the footer of slides.
-]
-
-#argument-callout(kind: "State", "slide-index", [counter])[
-  Tracks the index of the current slide in the presentation. It is used to manage the sequencing and navigation of slides.
 ]
 
 #argument-callout(kind: "State", "subslide-step", [counter])[
