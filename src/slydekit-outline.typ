@@ -52,8 +52,9 @@
   end-content
 })
 
-#let toc(fill: (:), display-appendix: "auto") = context {
+#let toc(fill: (:), display-appendix: "auto", slide-level: 2) = context {
   let current-is-appendix = sk-states.appendix.at(here())
+  let section-level = slide-level - 1
 
   let hidden-pages = query(<hide-toc>).map(l => l.location().page())
 
@@ -72,11 +73,11 @@
     }
   }
 
-  let sections = query(heading.where(level: 1, outlined: true))
+  let sections = query(heading.where(level: section-level, outlined: true))
     .filter(s => is-appendix-visible(s) and not is-section-hidden(s))
 
   let entries = sections.map(s => {
-    let num = formatted-number(type: "section", at: s.location(), force: true)
+    let num = formatted-number(at: s.location(), force: true)
     block(above: 1.5em, below: 0em)[
       #link(s.location())[#text(fill: fill.at("number", default: sk-states.colors.get().primary))[#num] #text(fill: fill.at("entry", default: black))[#s.body]]
     ]
@@ -102,6 +103,7 @@
   section-numbering: false,
   linebreaks: true,
   display-appendix: "auto",
+  slide-level: 2,
 ) = {
   show metadata.where(label: <sk-title>): it => it.value.short
 
@@ -113,6 +115,7 @@
       theme-colors.at("header", default: black)
     }
 
+    let section-level = slide-level - 1
     let current-is-appendix = sk-states.appendix.get()
 
     let is-visible(h) = {
@@ -134,7 +137,7 @@
       (s.has("label") and s.label == <hide-toc>) or (s.location().page() in hidden-pages)
     )
 
-    let sections = query(heading.where(level: 1))
+    let sections = query(heading.where(level: section-level))
       .filter(is-visible)
       .filter(s => not is-section-hidden(s))
 
@@ -245,6 +248,7 @@
   gutter: 4%,
   display-subsection: false,
   display-appendix: "auto",
+  slide-level: 2,
 ) = context {
   set text(size: sk-states.fonts.get().size)
   set text(size: entry-size)
@@ -252,6 +256,7 @@
   show linebreak: none
 
   let current-is-appendix = sk-states.appendix.at(it.location())
+  let section-level = slide-level - 1
 
   // Pages to exclude: == Titre <hide-toc> or #slide(..., label: <hide-toc>)[...]
   let hidden-pages = query(<hide-toc>).map(l => l.location().page())
@@ -264,7 +269,7 @@
     return []
   }
 
-  let all-sections = query(heading.where(level: 1, outlined: true))
+  let all-sections = query(heading.where(level: section-level, outlined: true))
 
   let is-section-hidden(s) = (
     (s.has("label") and s.label == <hide-toc>) or (s.location().page() in hidden-pages)
@@ -291,7 +296,7 @@
   let current-idx = sections.position(s => s.location() == it.location())
 
   let entries = sections.enumerate().map(((idx, s)) => {
-    let num = formatted-number(type: "section", at: s.location(), force: true)
+    let num = formatted-number(at: s.location(), force: true)
     let is-current = (current-idx != none and idx == current-idx)
 
     // Define colors for the current section and inactive sections
@@ -301,8 +306,8 @@
     let title = [#text(fill: number-color, weight: "bold")[#num] #text(fill: text-color)[#s.body]]
 
     let subsections = if display-subsection and is-current {
-      // Find the very first level-1 heading after the current section (whether it is hidden or not)
-      let all-next-headings = query(heading.where(level: 1))
+      // Find the very first section-level heading after the current section (whether it is hidden or not)
+      let all-next-headings = query(heading.where(level: section-level))
         .filter(h => h.location().page() > s.location().page())
 
       let sec-page = s.location().page()

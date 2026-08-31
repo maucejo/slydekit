@@ -27,8 +27,10 @@
   }
   set page(fill: sk-states.colors.get().background, margin: default-margins + cambfurt-margin)
 
+  let slide-level = sk-states.slide-level.get()
+
   // Heading styles
-  show heading.where(level: 1): it => {
+  show heading.where(level: slide-level - 1): it => {
     let header-content = if sk-states.navigation-style.get() == "topbar" {
       let topbar = grid(
         columns: (1fr, 1fr),
@@ -46,20 +48,20 @@
     set page(header: header, footer: none, margin: default-margins)
     set align(horizon)
 
-    progressive-outline(it, sk-states.colors.get().secondary.darken(5%))
+    progressive-outline(it, sk-states.colors.get().secondary.darken(5%), slide-level: slide-level)
   }
 
   let header = context {
     set text(size: sk-states.fonts.get().size)
     if sk-states.navigation-style.get() == "topbar" {
-      let sections = query(heading.where(level: 1).before(here()))
+      let sections = query(heading.where(level: slide-level - 1).before(here()))
       let current-section = if sections.len() > 0 { sections.last().body } else { none }
 
       let topbar = grid(
           columns: (1fr, 1fr),
           align: (right + horizon, left + horizon),
           rows: 1.5em,
-          grid.cell(fill: sk-states.colors.get().header)[#text(fill: white)[*#text(fill: white, formatted-number(type: "section")) #current-section* #h(0.75em)]],
+          grid.cell(fill: sk-states.colors.get().header)[#text(fill: white)[*#text(fill: white, formatted-number(slide-level: slide-level - 1)) #current-section* #h(0.75em)]],
           grid.cell(fill: sk-states.colors.get().secondary)[#text(fill: sk-states.colors.get().primary)[#h(0.75em) *#slide-subtitle()*]],
         )
         full-width(move(dy: -2pt)[#topbar])
@@ -68,7 +70,7 @@
         #let pad-lr = 3.5%
         #place(top, dy: -0.75em)[#cell(fill: sk-states.colors.get().secondary.lighten(60%))
         ]
-        #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
+        #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides(slide-level: slide-level)]
         #place(dx: 3.5%, dy: 1em)[#box(width: 100%, outset: (left: 2em, right: 1em, rest: 0.5em), fill: sk-states.colors.get().secondary.lighten(45%), text(size: header-size, weight: "bold", fill: sk-states.colors.get().header, slide-subtitle()))]
       ]
       full-width(mini-content)
@@ -215,7 +217,7 @@
 
   set page(header: header, footer: none)
 
-  toc()
+  toc(slide-level: sk-states.slide-level.get())
 }
 
 #let cambfurt-focus-slide(body) = context {

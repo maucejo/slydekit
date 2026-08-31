@@ -1,7 +1,7 @@
 #import "slydekit-defaults.typ": *
 #import "slydekit-slide.typ": slide-parser
 
-#let formatted-number(type: "slide", at: none, force: false) = context {
+#let formatted-number(at: none, force: false, slide-level: none) = context {
   let resolve(item) = if at != none { item.at(at) } else { item.get() }
 
   if resolve(sk-states.numbering-hidden) {
@@ -13,14 +13,16 @@
       sk-states.numbering-pattern.get().section
     }
 
-    let nums = resolve(counter(heading))
-    let sec-num = nums.at(0, default: 0)
-    let slide-num = nums.at(1, default: 0)
+    let counter-values = resolve(counter(heading))
 
-    if type == "slide" {
-      numbering(fmt, sec-num, slide-num)
-    } else if type == "section" {
-      numbering(fmt, sec-num)
+    if slide-level != none {
+      // Cut the table to keep the elements up to the requested level
+      let sub-values = counter-values.slice(0, calc.min(slide-level, counter-values.len()))
+      if sub-values.len() > 0 {
+        numbering(fmt, ..sub-values)
+      }
+    } else {
+      numbering(fmt, ..counter-values)
     }
   }
 }
@@ -47,12 +49,13 @@
   counter(heading).update(0)
 
   // body
-  slide-parser(body)
+  slide-parser(slide-level: sk-states.slide-level.get(), body)
+
 }
 
 // Hide new section slide
-#let hide-new-section-slide(body) = {
-  show heading.where(level: 1): none
+#let hide-new-section-slide(body) = context{
+  show heading.where(level: sk-states.slide-level.get() - 1): none
   body
 }
 
@@ -124,12 +127,14 @@
 }
 
 #let section-progress-bar(active-color, inactive-color) = context {
-  let current-sec = query(heading.where(level: 1)
+  let section-level = sk-states.slide-level.get() - 1
+
+  let current-sec = query(heading.where(level: section-level)
     .before(here()))
     .filter(h => not sk-states.appendix.at(h.location()))
     .len()
 
-  let total-sec = query(heading.where(level: 1))
+  let total-sec = query(heading.where(level: section-level))
     .filter(h => not sk-states.appendix.at(h.location()))
     .len()
 
@@ -188,7 +193,7 @@
   }
 }
 
-#let show-ref(it) = {
+#let show-ref(slide-level: 2, it) = it => {
   let el = it.element
   // if el == none { return it }
   if el == none { return footcite(it.target) }
@@ -200,11 +205,11 @@
     and el.value.at("kind", default: none) == "slide"
   )
 
-  // Detect slides created via == Title <...>
+  // Detect slides created via a heading at the configured slide-level
   let is-heading-slide = (
     el.func() == heading
     and el.has("level")
-    and el.level == 2
+    and el.level == slide-level
   )
 
   if is-metadata-slide or is-heading-slide {

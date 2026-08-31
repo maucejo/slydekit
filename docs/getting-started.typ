@@ -39,6 +39,8 @@ After importing the template, you have to initialize the template by a show rule
   slide-logo: none,
   section-numbering: false,
   numbering-pattern: (:),
+  frozen-counters: (),
+  slide-level: 2,
   extra-info: (:),
   handout: false,
 )
@@ -155,6 +157,14 @@ The dictionary should have the following structure:
   appendix: "Numbering format for appendices",
 )
 ```
+]
+
+#argument-callout("frozen-counters", [array], default: [()])[
+List of counters that should be frozen and not incremented during the presentation. This is useful for maintaining consistent numbering across slides, especially when using animations or overlays that may cause counters to increment unexpectedly. By specifying which counters to freeze, you can ensure that the numbering remains stable throughout the presentation.
+]
+
+#argument-callout("slide-level", [number], default: [2])[
+The heading level at which new slides are created. Headings at this level will start a new slide, while headings above this level (lower numbers) will be treated as section headings.
 ]
 
 #argument-callout("extra-info", [dictionary], default: [(:)])[

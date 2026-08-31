@@ -25,8 +25,9 @@
   section-numbering: false,
   numbering-pattern: (:),
   frozen-counters: (),
-  handout: false,
+  slide-level: 2,
   extra-info: (:),
+  handout: false,
   body
 ) = context {
   // Page setup
@@ -34,6 +35,9 @@
     paper: "presentation-" + aspect-ratio,
     margin: default-margins,
   )
+
+  // Slide level: headings at this depth become slides, headings above it (depth < slide-level) are structure headings, and the heading at depth slide-level - 1 acts as the section.
+  sk-states.slide-level.update(slide-level)
 
   // Section numbering
   sk-states.section-numbering.update(section-numbering)
@@ -68,12 +72,6 @@
   sk-states.frozen-counters.update(default-frozen-counters + frozen-counters)
 
   // Rules common to all themes
-
-  // Level 1 heading
-  // show heading.where(level: 1): it => context {
-  //   sk-states.slide-index.update(0)
-  //   it
-  // }
   show heading: it => context {
     sk-states.numbering-hidden.update(it.has("label") and it.label == <hide-toc>)
 
@@ -100,7 +98,7 @@
   }
 
   // References
-  show ref: show-ref
+  show ref: show-ref.with(slide-level: slide-level)
 
   // Bibliography style
   set bibliography(title: none)
@@ -127,7 +125,7 @@
   show: set-text.with(lang: sk-lang, fonts: sk-fonts)
 
   // slide-parser (defined in slydekit-utils.typ) groups each == heading with all content that follows it until the next heading, allowing #pause / #meanwhile to work without an explicit #slide[...].
-  slide-parser(body)
+  slide-parser(slide-level: slide-level, body)
 
   // body
 }

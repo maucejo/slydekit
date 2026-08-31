@@ -37,8 +37,10 @@
   }
   set page(fill: sk-states.colors.get().background, margin: default-margins + chalkboard-margin)
 
+  let slide-level = sk-states.slide-level.get()
+
   // Heading styles
-  show heading.where(level: 1): it => {
+  show heading.where(level: slide-level - 1): it => {
     set strong(delta: 0)
     set page(header: none, footer: none, margin: default-margins)
 
@@ -50,7 +52,7 @@
     stack(
       dir: ttb,
       spacing: 0.5em,
-      [*#text(sk-states.colors.get().primary, formatted-number(type: "section")) #it.body*],
+      [*#text(sk-states.colors.get().primary, formatted-number()) #it.body*],
       block(
         height: 2pt,
         width: 100%,
@@ -70,7 +72,7 @@
     } else if sk-states.navigation-style.get() == "minislide" {
       let mini-content = [
         #let pad-lr = 3.5%
-        #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
+        #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides(slide-level: slide-level)]
         #place(dy: 0.5em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().header))
 
         #place(dx: 3.5%, dy: 1.25em)[#text(size: header-size, weight: "bold", fill: sk-states.colors.get().header, slide-subtitle())]
@@ -193,7 +195,7 @@
 
   set page(header: header, footer: none)
 
-  toc(fill: (entry: white))
+  toc(fill: (entry: white), slide-level: sk-states.slide-level.get())
 }
 
 #let chalkboard-focus-slide(body) = context {

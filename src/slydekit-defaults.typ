@@ -17,6 +17,7 @@
   pause-index: counter("pause-index"),
   pres-info: state("pres-info"),
   section-numbering: state("section-numbering", false),
+  slide-level: state("slide-level", 2),
   slide-number: counter("slide-number"),
   subslide-total: counter("subslide-total"),
   subslide-step: counter("subslide-step"),

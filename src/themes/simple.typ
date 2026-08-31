@@ -26,8 +26,10 @@
   }
   set page(fill: sk-states.colors.get().background, margin: default-margins + simple-margin)
 
+  let slide-level = sk-states.slide-level.get()
+
   // Heading styles
-  show heading.where(level: 1): it => {
+  show heading.where(level: slide-level - 1): it => {
     let header-content = {
       let dy = if sk-states.navigation-style.get() == "topbar" { 0em } else { -0.2em }
       [#move(dx: 1em, dy: dy)[*#sk-states.localization.get().toc*]]
@@ -41,7 +43,7 @@
     set page(header: header, footer: none)
     set align(horizon)
 
-    progressive-outline(it, sk-states.colors.get().secondary.lighten(60%))
+    progressive-outline(it, sk-states.colors.get().secondary.lighten(60%), slide-level: slide-level)
   }
 
   let header = context {
@@ -52,7 +54,7 @@
     } else if sk-states.navigation-style.get() == "minislide" {
       let mini-content = [
         #let pad-lr = 3.5%
-        #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides()]
+        #pad(left: pad-lr, right: pad-lr, top: 0.5em)[#mini-slides(slide-level: slide-level)]
         #place(dy: 0.5em, line(length: 100%, stroke: 0.05em + sk-states.colors.get().primary))
 
         #place(dx: 3.5%, dy: 1.25em)[#text(size: header-size, weight: "bold", fill: sk-states.colors.get().header, slide-subtitle())]
@@ -175,7 +177,7 @@
 
   set page(header: header, footer: none)
 
-  toc()
+  toc(slide-level: sk-states.slide-level.get())
 }
 
 #let simple-focus-slide(body) = context {

@@ -23,9 +23,11 @@
   title-logo: (image("images/slydekit-full.svg", height: 2.5cm),),
   slide-logo: image("images/slydekit-mini.svg", height: 1.25cm),
   // handout: true
-  // section-numbering: true,
+  section-numbering: true,
   // numbering-pattern: (section: "I.1.", appendix: "A.1."),
 )
+
+// #show: hide-new-section-slide
 
 #title-slide
 
