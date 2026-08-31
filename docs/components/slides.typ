@@ -66,9 +66,6 @@ There are several ways to define custom slides, which can be used to create slid
   set page(header:none, footer: none, fill: sk-states.colors.get().focus)
   set align(center + horizon)
   text(size: 2em, fill: white)[*#body*]
-
-  // Decrement the page counter to avoid counting the focus slide as a regular slide
-  counter(page).update(n => n - 1)
 }
 ```
 
@@ -126,9 +123,21 @@ slide-subtitle(fill-number: none)
 The `formatted-number` function is used to format the title of the sections and subsections numbers according to the specified pattern.
 
 ```typ
-formatted-number(type: "slide")
+formatted-number(
+  at: none,
+  force: false,
+  level: none,
+)
 ```
 
-#argument-callout("type", [string], default: ["slide"])[
-  The type of number to format. It can be either `"section"` for section numbers or `"slide"` for slide numbers.
+#argument-callout("at", [label | selector | location | function], default: [none])[
+  Retrieves the value of the state at the given selector’s unique match.
+]
+
+#argument-callout("force", [bool], default: [false])[
+  Forces the display of the numbering, even if section numbering is disabled.
+]
+
+#argument-callout("level", [number], default: [none])[
+  The level of the heading to format. If set to `none`, the default `slide-level` will be used.
 ]

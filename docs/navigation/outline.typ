@@ -39,6 +39,7 @@ If you want to create a custom theme, Slydekit provides the `toc` command to cre
 #let toc(
   fill: (:),
   display-appendix: "auto",
+  slide-level: 2
 )
 ```
 
@@ -52,6 +53,10 @@ By default the outline number is filled with the theme primary color, and the ou
 
 #argument-callout("display-appendix", [string], default: ["auto"])[
 Whether to display the appendix in the table of contents. The default value is `"auto"`, which means that the appendix outline will be displayed on a dedicated slide. If set to `true`, the appendix will always be displayed in the main outline. If set to `false`, the appendix outline will never be displayed.
+]
+
+#argument-callout("slide-level", [number], default: [2])[
+The heading level that defines the slides. The section level is defined as `slide-level - 1`. For example, if `slide-level` is set to `2`, then headings at level `1` will be treated as sections, and headings at level `2` will be treated as slides.
 ]
 
 Actually, `tableofcontents` is just a wrapper around `toc`, that includes the title slide and the table of contents in a single slide.
@@ -78,6 +83,7 @@ Slydekit provides a `progressive-outline` command that creates a progressive out
   gutter: 4%,
   display-subsection: false,
   display-appendix: "auto",
+  slide-level: 2
 )
 ```
 
@@ -105,6 +111,9 @@ Whether to display subsections in the progressive outline. The default value is 
 
 #argument-callout("display-appendix", [string], default: ["auto"])[
 Whether to display the appendix in the progressive outline. The default value is `"auto"`, which means that the appendix outline will be displayed on a dedicated slide. If set to `true`, the appendix will always be displayed in the main outline. If set to `false`, the appendix will never be displayed.]
+
+#argument-callout("slide-level", [number], default: [2])[
+The heading level that defines the slides. The section level is defined as `slide-level - 1`. For example, if `slide-level` is set to `2`, then headings at level `1` will be treated as sections, and headings at level `2` will be treated as slides.]
 
 A typical implementation of the `progressive-outline` command when creating a theme is as follows:
 ```typ

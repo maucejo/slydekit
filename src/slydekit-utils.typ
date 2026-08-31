@@ -1,7 +1,7 @@
 #import "slydekit-defaults.typ": *
 #import "slydekit-slide.typ": slide-parser
 
-#let formatted-number(at: none, force: false, slide-level: none) = context {
+#let formatted-number(at: none, force: false, level: none) = context {
   let resolve(item) = if at != none { item.at(at) } else { item.get() }
 
   if resolve(sk-states.numbering-hidden) {
@@ -15,9 +15,9 @@
 
     let counter-values = resolve(counter(heading))
 
-    if slide-level != none {
+    if level != none {
       // Cut the table to keep the elements up to the requested level
-      let sub-values = counter-values.slice(0, calc.min(slide-level, counter-values.len()))
+      let sub-values = counter-values.slice(0, calc.min(level, counter-values.len()))
       if sub-values.len() > 0 {
         numbering(fmt, ..sub-values)
       }

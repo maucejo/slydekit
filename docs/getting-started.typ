@@ -161,6 +161,8 @@ The dictionary should have the following structure:
 
 #argument-callout("frozen-counters", [array], default: [()])[
 List of counters that should be frozen and not incremented during the presentation. This is useful for maintaining consistent numbering across slides, especially when using animations or overlays that may cause counters to increment unexpectedly. By specifying which counters to freeze, you can ensure that the numbering remains stable throughout the presentation.
+
+By default, the following counters are frozen: `slide-number`, `app-slide-number`, `section-number`, and `appendix-number`. You can add additional counters to this list as needed.
 ]
 
 #argument-callout("slide-level", [number], default: [2])[

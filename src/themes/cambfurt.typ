@@ -61,7 +61,7 @@
           columns: (1fr, 1fr),
           align: (right + horizon, left + horizon),
           rows: 1.5em,
-          grid.cell(fill: sk-states.colors.get().header)[#text(fill: white)[*#text(fill: white, formatted-number(slide-level: slide-level - 1)) #current-section* #h(0.75em)]],
+          grid.cell(fill: sk-states.colors.get().header)[#text(fill: white)[*#text(fill: white, formatted-number(level: slide-level - 1)) #current-section* #h(0.75em)]],
           grid.cell(fill: sk-states.colors.get().secondary)[#text(fill: sk-states.colors.get().primary)[#h(0.75em) *#slide-subtitle()*]],
         )
         full-width(move(dy: -2pt)[#topbar])

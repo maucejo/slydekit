@@ -1,12 +1,12 @@
 #import "/.calepin/calepin.typ" as calepin
 #import "../doc-utils.typ": *
 
-#set document(title: [Topbar/Minislide])
+#set document(title: [Top bar/Mini-slide])
 #metadata((tags: ("topbar", "minislide"))) <website-metadata>
 
-#html.elem("p", attrs: (style: "color: var(--calepin-color-link); font-size: 2em; font-weight: bold;"))[Topbar and minislide]
+#html.elem("p", attrs: (style: "color: var(--calepin-color-link); font-size: 2em; font-weight: bold;"))[Top bar and mini-slide]
 
-Slydekit provides optional navigation elements to help structure and navigate presentations. The **topbar** displays the presentation’s content as a persistent navigation bar, highlighting the current section to provide a clear overview of the presentation structure. The **minislide** complements the topbar by displaying a compact visual representation of the slides within the current section, allowing the audience to quickly identify the current slide and its position in the presentation. Together, these components provide a lightweight navigation system that improves orientation without taking significant space away from the main slide content.
+Slydekit provides optional navigation elements to help structure and navigate presentations. The `topbar` displays the presentation’s content as a persistent navigation bar, highlighting the current section to provide a clear overview of the presentation structure. The `minislide` complements the `topbar` by displaying a compact visual representation of the slides within the current section, allowing the audience to quickly identify the current slide and its position in the presentation. Together, these components provide a lightweight navigation system that improves orientation without taking significant space away from the main slide content.
 
 To activate a given navigation style, you can set the `navigation-style` argument in the `slydekit` command.
 ```typ
@@ -21,7 +21,7 @@ To activate a given navigation style, you can set the `navigation-style` argumen
 )
 ```
 
-= Topbar
+= Top bar
 
 #calepin.elements.gallery(
   (
@@ -35,7 +35,7 @@ To activate a given navigation style, you can set the `navigation-style` argumen
   max-width: 100%,
 )
 
-= Minislide
+= Mini-slide
 
 #calepin.elements.gallery(
   (
@@ -59,6 +59,7 @@ To implement the minislide navigation style, Slydekit provides the mini-slides h
   section-numbering: false,
   linebreaks: true,
   display-appendix: "auto",
+  slide-level: 2
 )
 ```
 
@@ -79,6 +80,9 @@ A boolean value that determines whether to place the bullets on a new line under
 
 #argument-callout("display-appendix", [boolean | "auto"], default: ["auto"])[
 A boolean value that determines whether to display appendix sections. If set to `"auto"`, the main sections are displayed during the main presentation and switches to appendix during the appendix. If set to `true`, it always displays everything (main + appendix). If set to `false`, it never displays appendix sections.]
+
+#argument-callout("slide-level", [number], default: [2])[
+The heading level that defines the slides. The section level is defined as `slide-level - 1`. For example, if `slide-level` is set to `2`, then headings at level `1` will be treated as sections, and headings at level `2` will be treated as slides.]
 
 = Usage in custom themes
 
