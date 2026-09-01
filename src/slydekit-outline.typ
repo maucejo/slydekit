@@ -58,9 +58,7 @@
 
   let hidden-pages = query(<hide-toc>).map(l => l.location().page())
 
-  let is-section-hidden(s) = (
-    (s.has("label") and s.label == <hide-toc>) or (s.location().page() in hidden-pages)
-  )
+  let is-section-hidden(s) = s.has("label") and s.label == <hide-toc>
 
   let is-appendix-visible(s) = {
     let s-is-appendix = sk-states.appendix.at(s.location())
@@ -75,6 +73,32 @@
 
   let sections = query(heading.where(level: section-level, outlined: true))
     .filter(s => is-appendix-visible(s) and not is-section-hidden(s))
+  let current-page = here().page()
+  let top-level-sections = query(heading.where(level: 1))
+    .filter(is-appendix-visible)
+  let current-top-level-idx = top-level-sections
+    .filter(s => s.location().page() <= current-page)
+    .len() - 1
+  let sections = if section-level > 1 and current-top-level-idx >= 0 {
+    let next-top-level-section = if current-top-level-idx + 1 < top-level-sections.len() {
+      top-level-sections.at(current-top-level-idx + 1)
+    } else {
+      none
+    }
+    let current-top-level-page = top-level-sections.at(current-top-level-idx).location().page()
+    let next-top-level-page = if next-top-level-section != none {
+      next-top-level-section.location().page()
+    } else {
+      calc.inf
+    }
+
+    sections.filter(s => (
+      s.location().page() >= current-top-level-page
+      and s.location().page() < next-top-level-page
+    ))
+  } else {
+    sections
+  }
 
   let entries = sections.map(s => {
     let num = formatted-number(at: s.location(), force: true)
@@ -133,9 +157,7 @@
     // Pages to exclude : == Title <hide-toc> or #slide(..., label: <hide-toc>)[...]
     let hidden-pages = query(<hide-toc>).map(l => l.location().page())
 
-    let is-section-hidden(s) = (
-      (s.has("label") and s.label == <hide-toc>) or (s.location().page() in hidden-pages)
-    )
+    let is-section-hidden(s) = s.has("label") and s.label == <hide-toc>
 
     let sections = query(heading.where(level: section-level))
       .filter(is-visible)
@@ -145,11 +167,41 @@
       return []
     }
 
+    let current-page = here().page()
+    let sections = if section-level > 1 {
+      let top-level-sections = query(heading.where(level: 1))
+        .filter(is-visible)
+      let current-top-level-idx = top-level-sections
+        .filter(s => s.location().page() <= current-page)
+        .len() - 1
+      let next-top-level-section = if current-top-level-idx + 1 < top-level-sections.len() {
+        top-level-sections.at(current-top-level-idx + 1)
+      } else {
+        none
+      }
+      let current-top-level-page = if current-top-level-idx >= 0 {
+        top-level-sections.at(current-top-level-idx).location().page()
+      } else {
+        0
+      }
+      let next-top-level-page = if next-top-level-section != none {
+        next-top-level-section.location().page()
+      } else {
+        calc.inf
+      }
+
+      sections.filter(s => (
+        s.location().page() >= current-top-level-page
+        and s.location().page() < next-top-level-page
+      ))
+    } else {
+      sections
+    }
+
     let all-slides = query(<sk-slide>)
       .filter(is-visible)
       .filter(h => h.location().page() not in hidden-pages)
 
-    let current-page = here().page()
     let current-sec-idx = sections.filter(s => s.location().page() <= current-page).len() - 1
 
     let cols = ()
@@ -246,7 +298,7 @@
   inactive-color,
   entry-size: 1.2em,
   gutter: 4%,
-  display-subsection: false,
+  display-subsection: true,
   display-appendix: "auto",
   slide-level: 2,
 ) = context {
@@ -261,19 +313,14 @@
   // Pages to exclude: == Titre <hide-toc> or #slide(..., label: <hide-toc>)[...]
   let hidden-pages = query(<hide-toc>).map(l => l.location().page())
 
-  let it-hides-toc = (it.has("label") and it.label == <hide-toc>) or (it.location().page() in hidden-pages)
-
+  let is-hidden(h) = h.has("label") and h.label == <hide-toc>
 
   // If the current section contains <hide-toc> and is not an appendix (e.g., Bibliography), no table of contents is generated.
-  if it-hides-toc and not current-is-appendix {
+  if is-hidden(it) and not current-is-appendix {
     return []
   }
 
   let all-sections = query(heading.where(level: section-level, outlined: true))
-
-  let is-section-hidden(s) = (
-    (s.has("label") and s.label == <hide-toc>) or (s.location().page() in hidden-pages)
-  )
 
   // Same toggle logic as mini-slides: "auto" -> shows only sections from the same zone (appendix/main) as 'it' true   -> merges everything into a single table of contents, main and appendix sections combined false  -> never displays appendices
   let is-appendix-visible(s) = {
@@ -287,7 +334,32 @@
     }
   }
 
-  let sections = all-sections.filter(s => is-appendix-visible(s) and not is-section-hidden(s))
+  let sections = all-sections.filter(s => is-appendix-visible(s) and not is-hidden(s))
+  let top-level-sections = query(heading.where(level: 1))
+    .filter(is-appendix-visible)
+  let current-top-level-idx = top-level-sections
+    .filter(s => s.location().page() <= it.location().page())
+    .len() - 1
+  let sections = if section-level > 1 and current-top-level-idx >= 0 {
+    let next-top-level-section = if current-top-level-idx + 1 < top-level-sections.len() {
+      top-level-sections.at(current-top-level-idx + 1)
+    } else {
+      none
+    }
+    let current-top-level-page = top-level-sections.at(current-top-level-idx).location().page()
+    let next-top-level-page = if next-top-level-section != none {
+      next-top-level-section.location().page()
+    } else {
+      calc.inf
+    }
+
+    sections.filter(s => (
+      s.location().page() >= current-top-level-page
+      and s.location().page() < next-top-level-page
+    ))
+  } else {
+    sections
+  }
 
   if sections.len() == 0 {
     return []
@@ -317,19 +389,33 @@
         calc.inf
       }
 
-      let slides = query(<sk-slide>).filter(h => (
-        h.location().page() >= sec-page
-        and h.location().page() < next-page
-        and h.value != none
-        and h.location().page() not in hidden-pages
-      ))
+      // Sub-items are the slides themselves: one level below the section (section-level = slide-level - 1), i.e. level slide-level.
+      let sub-level = slide-level
+      let true-slide-level = sk-states.slide-level.get()
 
-      if slides.len() > 0 {
+      // Slides created via slide-parser (heading-driven "==" or explicit #slide(..)) are never real heading elements: slide() only steps counter(heading) and drops a <sk-slide> marker, it never emits #heading(..). So once sub-level reaches the actual configured slide level, real slides must be found via <sk-slide> instead of a heading query. A shallower sub-level is still a genuine structure heading (slide-parser pushes those through as-is), so a heading query works there.
+      let sub-items = if sub-level == true-slide-level {
+        query(<sk-slide>).filter(h => (
+          h.location().page() >= sec-page
+          and h.location().page() < next-page
+          and h.value != none
+          and h.location().page() not in hidden-pages
+        )).map(h => (loc: h.location(), title: h.value))
+      } else {
+        query(heading.where(level: sub-level)).filter(h => (
+          h.location().page() >= sec-page
+          and h.location().page() < next-page
+          and not is-hidden(h)
+          and h.location().page() not in hidden-pages
+        )).map(h => (loc: h.location(), title: h.body))
+      }
+
+      if sub-items.len() > 0 {
         set text(size: 0.75em)
         v(0.5em)
-        for h in slides {
-          let sub-num = formatted-number(at: h.location(), force: true)
-          block(inset: (left: 1em), above: 0.5em)[#text(fill: number-color)[#sub-num] #text(fill: text-color)[#h.value]]
+        for item in sub-items {
+          let sub-num = formatted-number(at: item.loc, force: true)
+          block(inset: (left: 1em), above: 0.5em)[#text(fill: number-color)[#sub-num] #text(fill: text-color)[#item.title]]
           v(0.25em)
         }
         v(-0.75em)

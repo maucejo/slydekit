@@ -5,14 +5,14 @@
 
   set page(header: none, footer: none)
 
-  progressive-outline(it, luma(80%), slide-level: 2)
+  progressive-outline(it, luma(80%), slide-level: 2, display-subsection: true)
 }
 
 #show heading.where(level: 2): it => {
   pagebreak(weak: true)
   set page(header: none, footer: none)
 
-  progressive-outline(it, luma(80%), slide-level: 3)
+  progressive-outline(it, luma(80%), slide-level: 3, display-subsection: true)
 }
 
 #show: slydekit.with(
@@ -25,12 +25,12 @@
   // theme: metropolis,
   // theme: fancy,
   // theme: simple,
-  theme: cambfurt,
+  // theme: cambfurt,
   // theme: chalkboard,
   // fonts: (body: "New Computer Modern"),
   // colors: chalkboard-colors-variant,
   lang: "en",
-  // navigation-style: "minislide",
+  navigation-style: "minislide",
   title-logo: (image("images/slydekit-full.svg", height: 2.5cm),),
   slide-logo: image("images/slydekit-mini.svg", height: 1.25cm),
   slide-level: 4,
@@ -40,6 +40,7 @@
 )
 
 #title-slide
+
 
 = First part
 
@@ -58,7 +59,7 @@
 
 ergergerg
 
-// == Second section
+== Second section
 
 === Second subsection
 
@@ -69,6 +70,8 @@ efre
 = Second part
 
 == Second section
+
+#tableofcontents
 
 === Second subsection
 

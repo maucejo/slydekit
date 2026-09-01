@@ -3,6 +3,7 @@
 
 #let formatted-number(at: none, force: false, level: none) = context {
   let resolve(item) = if at != none { item.at(at) } else { item.get() }
+  let loc = if at != none { at } else { here() }
 
   if resolve(sk-states.numbering-hidden) {
     none
@@ -14,15 +15,22 @@
     }
 
     let counter-values = resolve(counter(heading))
-
-    if level != none {
-      // Cut the table to keep the elements up to the requested level
-      let sub-values = counter-values.slice(0, calc.min(level, counter-values.len()))
-      if sub-values.len() > 0 {
-        numbering(fmt, ..sub-values)
-      }
+    let depth = if level != none {
+      calc.min(level, counter-values.len())
     } else {
-      numbering(fmt, ..counter-values)
+      counter-values.len()
+    }
+
+    // A hidden ancestor — a shallower level whose currently active heading carries <hide-toc> — hides this number too, since this slide/section lives inside a section that was itself excluded from the outline.
+    let hidden-ancestor = range(1, depth).any(l => {
+      let last = query(heading.where(level: l).before(loc, inclusive: true))
+      last.len() > 0 and last.last().has("label") and last.last().label == <hide-toc>
+    })
+
+    if hidden-ancestor or depth == 0 {
+      none
+    } else {
+      numbering(fmt, ..counter-values.slice(0, depth))
     }
   }
 }
