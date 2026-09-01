@@ -1,8 +1,8 @@
 {
   "schema": 2,
-  "calepin_version": "0.0.55",
+  "calepin_version": "0.0.57",
   "input": "components/localization.typ",
-  "generation": "a3920098e00c30b5-1349cde127705c16",
+  "generation": "8ed0204ec7a05a8b-1349cde127705c16",
   "store": {},
   "chunks": {
     "chunk-1": {

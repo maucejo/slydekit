@@ -57,7 +57,7 @@
         height: 2pt,
         width: 100%,
         spacing: 0pt,
-        section-progress-bar(sk-states.colors.get().primary, sk-states.colors.get().secondary)
+        section-progress-bar(sk-states.colors.get().primary, sk-states.colors.get().secondary, slide-level: slide-level)
       ),
     )
   }

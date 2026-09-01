@@ -1,8 +1,8 @@
 {
   "schema": 2,
-  "calepin_version": "0.0.55",
+  "calepin_version": "0.0.57",
   "input": "components/callout-boxes.typ",
-  "generation": "869d1514b963fa4c-1349cde127705c16",
+  "generation": "cdefaf275b87fc42-1349cde127705c16",
   "store": {},
   "chunks": {}
 }

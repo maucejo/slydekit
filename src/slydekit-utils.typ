@@ -134,22 +134,75 @@
   )
 }
 
-#let section-progress-bar(active-color, inactive-color) = context {
-  let section-level = sk-states.slide-level.get() - 1
+#let section-progress-bar(active-color, inactive-color, slide-level: 2) = context {
+  let section-level = slide-level - 1
+  let parent-level = slide-level - 2
+  let not-appendix(h) = not sk-states.appendix.at(h.location())
 
-  let current-sec = query(heading.where(level: section-level)
-    .before(here()))
-    .filter(h => not sk-states.appendix.at(h.location()))
-    .len()
+  let pos = here()
 
-  let total-sec = query(heading.where(level: section-level))
-    .filter(h => not sk-states.appendix.at(h.location()))
+  // 1. Trouver le parent courant (Chapter 1)
+  let parent-before = if parent-level >= 1 {
+    query(heading.where(level: parent-level).before(pos))
+      .filter(not-appendix)
+      .at(-1, default: none)
+  } else {
+    none
+  }
+
+  // 2. Trouver le parent suivant (Chapter 2) s'il existe
+  let parent-after = if parent-before != none {
+    query(heading.where(level: parent-level))
+      .filter(not-appendix)
+      .filter(h => h.location().page() > parent-before.location().page())
+      .at(0, default: none)
+  } else {
+    none
+  }
+
+  // 3. Isoler les sections entre le chapitre courant et le suivant.
+  let scope-start-page = if parent-before != none {
+    parent-before.location().page()
+  } else {
+    0
+  }
+  let scope-end-page = if parent-after != none {
+    parent-after.location().page()
+  } else {
+    calc.inf
+  }
+  let scope-sections = query(heading.where(level: section-level))
+    .filter(not-appendix)
+    .filter(s => (
+      s.location().page() >= scope-start-page
+      and s.location().page() < scope-end-page
+    ))
+  let total-sec = scope-sections.len()
+
+  let current-sec = scope-sections
+    .filter(s => s.location().page() <= pos.page())
     .len()
 
   let ratio = if total-sec > 0 { current-sec / total-sec } else { 1 }
-
   progress-bar(ratio, active-color, inactive-color)
 }
+
+// #let section-progress-bar(active-color, inactive-color) = context {
+//   let section-level = sk-states.slide-level.get() - 1
+
+//   let current-sec = query(heading.where(level: section-level)
+//     .before(here()))
+//     .filter(h => not sk-states.appendix.at(h.location()))
+//     .len()
+
+//   let total-sec = query(heading.where(level: section-level))
+//     .filter(h => not sk-states.appendix.at(h.location()))
+//     .len()
+
+//   let ratio = if total-sec > 0 { current-sec / total-sec } else { 1 }
+
+//   progress-bar(ratio, active-color, inactive-color)
+// }
 
 #let slide-progress-bar(active-color, inactive-color, height: 2pt) = context {
   let current-page = sk-states.slide-number.get().first()
@@ -201,7 +254,7 @@
   }
 }
 
-#let show-ref(slide-level: 2, it) = it => {
+#let show-ref(slide-level: 2, it) = {
   let el = it.element
   // if el == none { return it }
   if el == none { return footcite(it.target) }

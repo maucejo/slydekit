@@ -22,7 +22,7 @@
   date: "2024-06-01",
   institution: "Université de Typst",
   contact: "john.doe@univ.typst.fr",
-  // theme: metropolis,
+  theme: metropolis,
   // theme: fancy,
   // theme: simple,
   // theme: cambfurt,
@@ -54,12 +54,11 @@
 
 #lorem(5)
 
-
 ==== section
 
 ergergerg
 
-== Second section
+// == Second section
 
 === Second subsection
 
@@ -76,5 +75,10 @@ efre
 === Second subsection
 
 ==== Third subsection
+
+=== Fourth subsection
+
+==== Fourth subsection
+
 
 ererfer

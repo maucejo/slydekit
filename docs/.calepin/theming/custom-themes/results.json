@@ -1,8 +1,8 @@
 {
   "schema": 2,
-  "calepin_version": "0.0.55",
+  "calepin_version": "0.0.57",
   "input": "theming/custom-themes.typ",
-  "generation": "3d0a8590011a4aa6-1349cde127705c16",
+  "generation": "50e0f1d0250d5389-1349cde127705c16",
   "store": {},
   "chunks": {}
 }

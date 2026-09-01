@@ -1,8 +1,8 @@
 {
   "schema": 2,
-  "calepin_version": "0.0.55",
+  "calepin_version": "0.0.57",
   "input": "animations/anim.typ",
-  "generation": "fe4ce2ae1c754a1f-1349cde127705c16",
+  "generation": "fc4996338090bb47-1349cde127705c16",
   "store": {},
   "chunks": {}
 }

@@ -12,7 +12,7 @@
   institution: "Université de Typst",
   contact: "john.doe@univ.typst.fr",
   // theme: metropolis,
-  // theme: fancy,
+  theme: fancy,
   // theme: simple,
   // theme: cambfurt,
   // theme: chalkboard,
@@ -199,7 +199,7 @@ Slide @s:section, slide @s:test
 
 #lorem(10)
 
-#place(bottom + right, dy: 1.5em, link-box(<s:test>, "Go to target slide"))
+#place(bottom + right, dy: 0em, link-box(<s:test>, "Go to target slide"))
 
 == Target slide <s:test>
 
