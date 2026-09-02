@@ -38,7 +38,7 @@ If you want to create a custom theme, Slydekit provides the `toc` command to cre
 ```typ
 #let toc(
   fill: (:),
-  display-appendix: "auto",
+  display-appendix: auto,
   slide-level: 2
 )
 ```
@@ -51,8 +51,8 @@ The color used to fill the outline number and entries. The dictionary keys are:
 By default the outline number is filled with the theme primary color, and the outline entries are filled with black.
 ]
 
-#argument-callout("display-appendix", [string], default: ["auto"])[
-Whether to display the appendix in the table of contents. The default value is `"auto"`, which means that the appendix outline will be displayed on a dedicated slide. If set to `true`, the appendix will always be displayed in the main outline. If set to `false`, the appendix outline will never be displayed.
+#argument-callout("display-appendix", [auto | boolean], default: [auto])[
+Whether to display the appendix in the table of contents. The default value is `auto`, which means that the appendix outline will be displayed on a dedicated slide. If set to `true`, the appendix will always be displayed in the main outline. If set to `false`, the appendix outline will never be displayed.
 ]
 
 #argument-callout("slide-level", [number], default: [2])[
@@ -82,7 +82,7 @@ Slydekit provides a `progressive-outline` command that creates a progressive out
   entry-size: 0.8575em,
   gutter: 4%,
   display-subsection: false,
-  display-appendix: "auto",
+  display-appendix: auto,
   slide-level: 2
 )
 ```
@@ -109,8 +109,8 @@ The space between the outline entries. The default value is `4%`.]
 #argument-callout("display-subsection", [boolean], default: [false])[
 Whether to display subsections in the progressive outline. The default value is `false`. If set to `true`, the progressive outline will display subsections as well.]
 
-#argument-callout("display-appendix", [string], default: ["auto"])[
-Whether to display the appendix in the progressive outline. The default value is `"auto"`, which means that the appendix outline will be displayed on a dedicated slide. If set to `true`, the appendix will always be displayed in the main outline. If set to `false`, the appendix will never be displayed.]
+#argument-callout("display-appendix", [auto | boolean], default: [auto])[
+Whether to display the appendix in the progressive outline. The default value is `auto`, which means that the appendix outline will be displayed on a dedicated slide. If set to `true`, the appendix will always be displayed in the main outline. If set to `false`, the appendix will never be displayed.]
 
 #argument-callout("slide-level", [number], default: [2])[
 The heading level that defines the slides. The `toc` function displays the sections headings at `slide-level - 1`.]

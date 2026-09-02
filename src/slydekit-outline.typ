@@ -52,7 +52,7 @@
   end-content
 })
 
-#let toc(fill: (:), display-appendix: "auto", slide-level: 2) = context {
+#let toc(fill: (:), display-appendix: auto, slide-level: 2) = context {
   let current-is-appendix = sk-states.appendix.at(here())
   let section-level = slide-level - 1
 
@@ -62,7 +62,7 @@
 
   let is-appendix-visible(s) = {
     let s-is-appendix = sk-states.appendix.at(s.location())
-    if display-appendix == "auto" or display-appendix == auto {
+    if display-appendix == auto {
       s-is-appendix == current-is-appendix
     } else if display-appendix == true {
       true
@@ -126,7 +126,7 @@
   display-subsection: true,
   section-numbering: false,
   linebreaks: true,
-  display-appendix: "auto",
+  display-appendix: auto,
   slide-level: 2,
 ) = {
   show metadata.where(label: <sk-title>): it => it.value.short
@@ -145,7 +145,7 @@
     let is-visible(h) = {
       let is-heading-appendix = sk-states.appendix.at(h.location())
 
-      if display-appendix == "auto" or display-appendix == auto {
+      if display-appendix == auto {
         is-heading-appendix == current-is-appendix
       } else if display-appendix == true {
         true
@@ -299,7 +299,7 @@
   entry-size: 1.2em,
   gutter: 4%,
   display-subsection: false,
-  display-appendix: "auto",
+  display-appendix: auto,
   slide-level: 2,
 ) = context {
   set text(size: sk-states.fonts.get().size)
@@ -322,10 +322,10 @@
 
   let all-sections = query(heading.where(level: section-level, outlined: true))
 
-  // Same toggle logic as mini-slides: "auto" -> shows only sections from the same zone (appendix/main) as 'it' true   -> merges everything into a single table of contents, main and appendix sections combined false  -> never displays appendices
+  // Same toggle logic as mini-slides: auto -> shows only sections from the same zone (appendix/main) as 'it' true   -> merges everything into a single table of contents, main and appendix sections combined false  -> never displays appendices
   let is-appendix-visible(s) = {
     let s-is-appendix = sk-states.appendix.at(s.location())
-    if display-appendix == "auto" or display-appendix == auto {
+    if display-appendix == auto {
       s-is-appendix == current-is-appendix
     } else if display-appendix == true {
       true

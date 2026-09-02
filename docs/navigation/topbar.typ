@@ -58,7 +58,7 @@ To implement the minislide navigation style, Slydekit provides the mini-slides h
   display-subsection: true,
   section-numbering: false,
   linebreaks: true,
-  display-appendix: "auto",
+  display-appendix: auto,
   slide-level: 2
 )
 ```
@@ -78,8 +78,8 @@ A boolean value that determines whether to display section numbering. If set to 
 #argument-callout("linebreaks", [boolean], default: [true])[
 A boolean value that determines whether to place the bullets on a new line under the section title. If set to `true`, bullets will be placed horizontally on a new line under the section title. If set to `false`, bullets will be placed vertically on the same line as the section title.]
 
-#argument-callout("display-appendix", [boolean | "auto"], default: ["auto"])[
-A boolean value that determines whether to display appendix sections. If set to `"auto"`, the main sections are displayed during the main presentation and switches to appendix during the appendix. If set to `true`, it always displays everything (main + appendix). If set to `false`, it never displays appendix sections.]
+#argument-callout("display-appendix", [auto | boolean], default: [auto])[
+A boolean value that determines whether to display appendix sections. If set to `auto`, the main sections are displayed during the main presentation and switches to appendix during the appendix. If set to `true`, it always displays everything (main + appendix). If set to `false`, it never displays appendix sections.]
 
 #argument-callout("slide-level", [number], default: [2])[
 The heading level that defines the slides. The section level is defined as `slide-level - 1`.]
