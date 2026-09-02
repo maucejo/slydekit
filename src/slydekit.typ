@@ -26,6 +26,7 @@
   numbering-pattern: (:),
   frozen-counters: (),
   slide-level: 2,
+  slide-align: horizon,
   extra-info: (:),
   handout: false,
   body
@@ -84,7 +85,7 @@
   set par(justify: true)
 
   // Page alignment
-  set align(horizon)
+  set align(slide-align)
 
   // Footnote style
   set footnote.entry(separator: none, clearance: 0.25em)
