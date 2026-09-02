@@ -1,8 +1,7 @@
-// #import "@preview/slydekit:0.4.0": *
-#import "../src/slydekit.typ": *
+#import "@preview/slydekit:0.4.0": *
+// #import "../src/slydekit.typ": *
 #import "@preview/cetz:0.5.2"
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
-// #import "@preview/pinit:0.2.2": *
 
 #show: slydekit.with(
   title: "Slydekit",
@@ -23,8 +22,9 @@
   title-logo: (image("images/slydekit-full.svg", height: 2.5cm),),
   slide-logo: image("images/slydekit-mini.svg", height: 1.25cm),
   // handout: true
-  section-numbering: true,
+  // section-numbering: true,
   // numbering-pattern: (section: "I.1.", appendix: "A.1."),
+  // slide-level: 2,
 )
 
 // #show: hide-new-section-slide

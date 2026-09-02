@@ -18,3 +18,4 @@ src/resources/images/chalkboard_old.png
 .DS_Store
 tests
 template/main_old.typ
+template/test_level.typ

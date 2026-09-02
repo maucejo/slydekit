@@ -22,7 +22,7 @@
   date: "2024-06-01",
   institution: "Université de Typst",
   contact: "john.doe@univ.typst.fr",
-  theme: metropolis,
+  // theme: metropolis,
   // theme: fancy,
   // theme: simple,
   // theme: cambfurt,
@@ -42,44 +42,57 @@
 #title-slide
 
 
-= First part
 
-== First section
+= Part 1
+
+== Main section 1
 
 #tableofcontents
 
-=== First subsection
+=== Section 1
 
-==== Test
+==== Slide 1
 
-#lorem(5)
+#lorem(10)
 
-==== section
+==== Slide 2
 
-ergergerg
+#lorem(10)
 
 // == Second section
 
-=== Second subsection
+=== Section 2
 
-==== test
+==== Slide 3
 
-efre
+#lorem(10)
 
-= Second part
+= Part 2
 
-== Second section
+== Main section 2
 
 #tableofcontents
 
-=== Second subsection
+=== Section 1
 
-==== Third subsection
+==== Slide 4
 
-erer
+#lorem(10)
 
-=== Fourth subsection
+=== Section 2
 
-==== Fourth subsection
+==== Slide 5
 
-ererfer
+#lorem(10)
+
+#show: appendix
+
+= Appendix 1
+
+== Appendix main section 1
+
+=== Appendix section 1
+
+==== Appendix slide 1
+
+#lorem(10)
