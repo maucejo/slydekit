@@ -82,7 +82,7 @@ A boolean value that determines whether to place the bullets on a new line under
 A boolean value that determines whether to display appendix sections. If set to `"auto"`, the main sections are displayed during the main presentation and switches to appendix during the appendix. If set to `true`, it always displays everything (main + appendix). If set to `false`, it never displays appendix sections.]
 
 #argument-callout("slide-level", [number], default: [2])[
-The heading level that defines the slides. The section level is defined as `slide-level - 1`. For example, if `slide-level` is set to `2`, then headings at level `1` will be treated as sections, and headings at level `2` will be treated as slides.]
+The heading level that defines the slides. The section level is defined as `slide-level - 1`.]
 
 = Usage in custom themes
 

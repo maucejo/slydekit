@@ -113,7 +113,7 @@ Whether to display subsections in the progressive outline. The default value is 
 Whether to display the appendix in the progressive outline. The default value is `"auto"`, which means that the appendix outline will be displayed on a dedicated slide. If set to `true`, the appendix will always be displayed in the main outline. If set to `false`, the appendix will never be displayed.]
 
 #argument-callout("slide-level", [number], default: [2])[
-The heading level that defines the slides. The section level is defined as `slide-level - 1`. For example, if `slide-level` is set to `2`, then headings at level `1` will be treated as sections, and headings at level `2` will be treated as slides.]
+The heading level that defines the slides. The `toc` function displays the sections headings at `slide-level - 1`.]
 
 A typical implementation of the `progressive-outline` command when creating a theme is as follows:
 ```typ
@@ -134,7 +134,7 @@ Slydekit provides the `hide-new-section-slide` function to hide the slide that i
 ```
 
 #calepin.elements.callout(kind: "warning")[
-This function can't be used in conjunction with `progressive-outline`, since `hide-new-section-slide` hides level 1 heading slides. However, the section will still be present in the `tableofcontents`.
+This function can't be used in conjunction with `progressive-outline`, since `hide-new-section-slide` hides level 1 heading slides. However, the sections will still be present in the `tableofcontents`.
 ]
 
 If you need fine-grained control over which sections appear in the outline, you can use the `<hide-toc>` label to hide specific sections. This is particularly useful for sections such as bibliographies, but it can be applied to any section you want to exclude from the outline. Simply add the label to the section title as follows:
@@ -168,4 +168,6 @@ If you need fine-grained control over which sections appear in the outline, you 
 
 #calepin.elements.callout[
   The `<hide-toc>` label can also be used to hide a slide, defined with `#slide(..., label: <hide-toc>)` or `== Title <hide-toc>`, from the outlines (`tableofcontents`, `progressive-outline` and `mini-slides`). This can be useful for a bibliography slide for instance.
+
+  In this case, all the headings of level greater than the hidden slide will be unnumbered and not displayed in the outlines (tableofcontents, progressive-outline and mini-slides). This is because the hidden slide is considered a hidden ancestor of the following slides, and therefore all its descendants are also hidden from the outlines.
 ]

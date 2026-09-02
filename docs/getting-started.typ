@@ -167,6 +167,12 @@ By default, the following counters are frozen: `slide-number`, `app-slide-number
 
 #argument-callout("slide-level", [number], default: [2])[
 The heading level at which new slides are created. Headings at this level will start a new slide, while headings above this level (lower numbers) will be treated as section headings.
+
+#calepin.elements.callout[
+  In Slydekit, the `slide-level` argument determines how the document structure is interpreted.
+
+  For example, if `slide-level` is set to 2, then headings at level 1 will be treated as sections, and headings at level 2 will be treated as slides. When `slide-level` is greater than 2, headings at level `slide-level` will be treated as slides, and headings at level `slide-level - 1` will be treated as sections. Headings at levels lower than `slide-level - 1` will be treated as structure headings that help to organize the content but do not create new slides.
+]
 ]
 
 #argument-callout("extra-info", [dictionary], default: [(:)])[

@@ -179,3 +179,13 @@ aside nav details.calepin-website-sidebar-section:not([open]) summary {
 li::marker {
   color: var(--li-color);
 }
+
+p {
+  text-align: justify;
+  text-justify: inter-character;
+}
+
+div.calepin-callout-body {
+  text-align: justify;
+  text-justify: inter-character;
+}

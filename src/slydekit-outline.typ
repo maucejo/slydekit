@@ -298,7 +298,7 @@
   inactive-color,
   entry-size: 1.2em,
   gutter: 4%,
-  display-subsection: true,
+  display-subsection: false,
   display-appendix: "auto",
   slide-level: 2,
 ) = context {
