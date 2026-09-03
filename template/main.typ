@@ -25,6 +25,7 @@
   // section-numbering: true,
   // numbering-pattern: (section: "I.1.", appendix: "A.1."),
   // slide-level: 2,
+  // slide-align: horizon,
 )
 
 // #show: hide-new-section-slide

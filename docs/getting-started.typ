@@ -41,6 +41,7 @@ After importing the template, you have to initialize the template by a show rule
   numbering-pattern: (:),
   frozen-counters: (),
   slide-level: 2,
+  slide-align: horizon,
   extra-info: (:),
   handout: false,
 )
@@ -173,6 +174,10 @@ The heading level at which new slides are created. Headings at this level will s
 
   For example, if `slide-level` is set to 2, then headings at level 1 will be treated as sections, and headings at level 2 will be treated as slides. When `slide-level` is greater than 2, headings at level `slide-level` will be treated as slides, and headings at level `slide-level - 1` will be treated as sections. Headings at levels lower than `slide-level - 1` will be treated as structure headings that help to organize the content but do not create new slides.
 ]
+]
+
+#argument-callout("slide-align", [string], default: [horizon])[
+Alignment of the slide content. This setting determines how the content within each slide is positioned.
 ]
 
 #argument-callout("extra-info", [dictionary], default: [(:)])[

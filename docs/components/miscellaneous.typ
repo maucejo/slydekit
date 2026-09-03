@@ -53,7 +53,7 @@ The `full-width` function allows you to create a block that spans the entire wid
 
 = Adaptive column layout
 
-The `adaptive-columns` function allows you to create a column layout that adapts to the available space. This function is borrowed from the #link("https://touying-typ.github.io/docs/reference/components/adaptive-columns", "Touying")
+The `adaptive-columns` function allows you to create a column layout that adapts to the available space. This function is inspired by the #link("https://touying-typ.github.io/docs/reference/components/adaptive-columns", "Touying") `adaptuve-columns` function, but the code has been rewritten to fix some #link("https://github.com/maucejo/slydekit/issues/8", "issues") observed in the original implementation.
 
 ```typ
 #let adaptive-columns(
