@@ -1,5 +1,5 @@
-#import "@preview/slydekit:0.4.0": *
-// #import "../src/slydekit.typ": *
+// #import "@preview/slydekit:0.4.0": *
+#import "../src/slydekit.typ": *
 #import "@preview/cetz:0.5.2"
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
 
@@ -11,14 +11,14 @@
   institution: "Typst university",
   contact: "john.doe@univ.typst.fr",
   // theme: metropolis,
-  // theme: fancy,
+  theme: fancy,
   // theme: simple,
   // theme: cambfurt,
   // theme: chalkboard,
   // fonts: (body: "New Computer Modern"),
   // colors: chalkboard-colors-variant,
   lang: "en",
-  navigation-style: "minislide",
+  // navigation-style: "minislide",
   title-logo: (image("images/slydekit-full.svg", height: 2.5cm),),
   slide-logo: image("images/slydekit-mini.svg", height: 1.25cm),
   // handout: true

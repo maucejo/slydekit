@@ -26,8 +26,8 @@
 
 // Defaults
 #let default-margins = (
-  left: 2cm,
-  right: 2cm,
+  left: 1.5cm,
+  right: 1.5cm,
   top: 2cm,
   bottom: 2cm,
 )

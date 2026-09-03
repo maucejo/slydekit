@@ -7,12 +7,12 @@
 #import "slydekit-utils.typ": *
 
 #let slydekit(
-  title: "Title",
-  subtitle: "Subtitle",
-  short-title: "Short title",
-  author: "Author",
-  date: "Date",
-  institution: "Institution",
+  title: none,
+  subtitle: none,
+  short-title: none,
+  author: none,
+  date: none,
+  institution: none,
   contact: none,
   theme: simple,
   fonts: (:),

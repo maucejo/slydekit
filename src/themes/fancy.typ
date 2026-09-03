@@ -87,14 +87,20 @@
         set align(bottom)
         set text(size: 0.8em)
 
-        place(dy: -0.5em, {
+        let logo = sk-states.logo.get()
+        let img-height = 1.75em
+
+        place(dy: -0.25em, {
           grid(
             columns: (1fr,)*3,
+            rows: img-height,
             align: (left + horizon, center + horizon, right + horizon),
             [
               #v(-0.5em)
-              #set image(height: 1.75em)
-              #move(dx: -1.75em, sk-states.logo.get())
+              #if logo != none {
+                set image(height: img-height)
+                move(dx: -img-height, logo)
+              }
             ],
             [
               #text(fill:sk-states.colors.get().footer, strong(sk-states.pres-info.get().short-title))
@@ -103,7 +109,7 @@
               #set text(fill:sk-states.colors.get().footer, weight: "bold")
               #show: move.with(dx: 0.75em)
               #if sk-states.appendix.get() {
-                context box(stroke: 1.75pt + sk-states.colors.get().footer, radius: 5pt, inset: -0.5em,outset: 1em)[A | #sk-states.app-slide-number.get().first() / #sk-states.slide-number.final().first()]
+                context box(stroke: 1.75pt + sk-states.colors.get().footer, radius: 5pt, inset: -0.5em,outset: 1em)[A | #sk-states.app-slide-number.get().first() / #sk-states.app-slide-number.final().first()]
               } else {
                 context box(stroke: 1.75pt + sk-states.colors.get().footer, radius: 5pt, inset: -0.5em,outset: 1em)[#sk-states.slide-number.get().first() / #sk-states.slide-number.final().first()]
               }
@@ -184,7 +190,7 @@
 
       if title-info.date != none {
         set text(size: 0.85em)
-        move(dy: 1em, block(spacing: 1em, title-info.date))
+        move(dy: 0.75em, block(spacing: 1em, title-info.date))
       }
     }
   )

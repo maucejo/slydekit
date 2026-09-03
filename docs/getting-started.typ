@@ -49,27 +49,27 @@ After importing the template, you have to initialize the template by a show rule
 
 #html.elem("div", attrs: (style: "margin-top: 2.5em;"))[]
 
-#argument-callout("title", [string | content], default: ["Title"])[
+#argument-callout("title", [string | content], default: [none])[
 Main title of the presentation
 ]
 
-#argument-callout("subtitle", [string | content], default: ["Subtitle"])[
+#argument-callout("subtitle", [string | content], default: [none])[
 Optional subtitle for the presentation
 ]
 
-#argument-callout("short-title", [string | content], default: ["Short title"])[
+#argument-callout("short-title", [string | content], default: [none])[
 Shorter version of the title for use in headers or footers
 ]
 
-#argument-callout("author", [string | content], default: ["Author"])[
+#argument-callout("author", [string | content], default: [none])[
 Name of the author(s) or presenter(s)
 ]
 
-#argument-callout("date", [string | content], default: ["Date"])[
+#argument-callout("date", [string | content], default: [none])[
 Date of the presentation
 ]
 
-#argument-callout("institution", [string | content], default: ["Institution"])[
+#argument-callout("institution", [string | content], default: [none])[
 Name of the institution or organization associated with the presentation
 ]
 
