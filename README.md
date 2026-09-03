@@ -62,6 +62,9 @@ Every argument to `slydekit(..)` is optional and falls back to a sensible defaul
 | `section-numbering` | Enables automatic numbering for sections and slides |
 | `numbering-pattern` | Customizes the numbering formats for sections and appendices |
 | `handout` | Handout mode |
+| `slide-level` | The level of the slide in the document hierarchy |
+| `slide-align` | The alignment of the slide content |
+| `extra-info` | Additional information to display on the slide |
 
 Structuring content is purely heading-driven:
 
