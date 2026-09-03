@@ -8,7 +8,7 @@
   subtitle: "An example of a presentation template using Typst",
   author: "John Doe",
   date: "2024-06-01",
-  institution: "Université de Typst",
+  institution: "Typst university",
   contact: "john.doe@univ.typst.fr",
   // theme: metropolis,
   // theme: fancy,
@@ -32,6 +32,89 @@
 #title-slide
 
 #tableofcontents
+
+= Animations
+
+== Pause, uncover and only
+
+Introduction, #pause always visible.
+
+#uncover(from: 3, to: 4)[A point that is only visible on slides 3 and 4.]
+
+#only(5)[A final note that appears, without reserving space, only at the very end.]
+
+$
+  y = f(x) #uncover(from: 3, $= x^2 + 2x + 1$)
+$
+
+$
+  #boxeq($E = m c^2$)
+$
+
+== Item-by-item
+
+#item-by-item[
+  - First argument
+  - Second argument
+  - Third argument
+]
+
+== Meanwhile
+
+First
+
+#pause
+
+Second
+
+#meanwhile
+
+Third
+
+#pause
+
+Fourth
+
+== Track
+
+#grid(
+  columns: (1fr, 1fr),
+  align: top,
+  column-gutter: 1em,
+  track[
+    First point #pause
+
+    Second point #pause
+
+    Third point
+  ],
+  track[
+    First parallel #pause
+
+    Second parallel
+  ]
+)
+
+== Alternatives
+
+#alternatives[Ann][Bob][Christopher]
+likes
+#alternatives[chocolate][strawberry][vanilla]
+ice cream.
+
+== Code animation
+
+#code-reveal(
+  highlight-lines: ("2": 2, "4": 3),
+  hide-lines: ("3": 2, "4": 3),
+)[
+  ```python
+  def fib(n):
+      if n <= 1:
+          return n
+      return fib(n-1) + fib(n-2)
+  ```
+]
 
 = CeTZ/Fletcher integration
 
@@ -86,105 +169,17 @@
   }
 ]
 
-// == Pinit integration
-
-// A simple #pin(1)highlighted text#pin(2).
-
-// #pinit-highlight(1, 2)
-// #pinit-point-from((1, 2))[It is simple.]
-
-// #uncover(from: 2, pinit-highlight(1, 2))
-
-// #uncover(3, pinit-point-from((1, 2))[It is simple.])
-
-= Animations - Part 1
-
-== Code animation
-
-#code-reveal(
-  highlight-lines: ("2": 2, "4": 3),
-  hide-lines: ("3": 2, "4": 3),
-)[
-  ```python
-  def fib(n):
-      if n <= 1:
-          return n
-      return fib(n-1) + fib(n-2)
-  ```
-]
-
-== Pause, uncover and only
-
-Introduction, #pause always visible.
-
-#uncover(from: 3, to: 4)[A point that is only visible on slides 3 and 4.]
-
-#only(5)[A final note that appears, without reserving space, only at the very end.]
-
-$
-  y = f(x) #uncover(from: 3, $= x^2 + 2x + 1$)
-$
-
-$
-  #boxeq($E = m c^2$)
-$
-
-== Track
-
-#grid(
-  columns: (1fr, 1fr),
-  align: top,
-  column-gutter: 1em,
-  track[
-    First point #pause
-
-    Second point #pause
-
-    Third point
-  ],
-  track[
-    First parallel #pause
-
-    Second parallel
-  ]
-)
-
-= Animations - Part 2
-
-== Meanwhile
-
-First
-
-#pause
-
-Second
-
-#meanwhile
-
-Third
-
-#pause
-
-Fourth
-
-== Alternatives
-
-#alternatives[Ann][Bob][Christopher]
-likes
-#alternatives[chocolate][strawberry][vanilla]
-ice cream.
-
-== Item-by-item
-
-#item-by-item[
-  - First argument
-  - Second argument
-  - Third argument
-]
-
 = Links and references
 
-== Root slide <s:section>
+== Animated slide labels
+
+Pause the animation at this point #anim-label(<my-label>, step: 1) #pause and assign a label to the current sub-slide.
+
+#pagebreak()
+
+Come back to the labeled sub-slide `#anim-label(<my-label>, step: 1)` using this #link(<my-label>, "link").
+
+== References -- Root slide <s:root>
 
 #lorem(10)@knuth
 
@@ -195,19 +190,17 @@ ice cream.
 + First point
 + Second point
 
-Slide @s:section, slide @s:test
+Slide @s:root, slide @s:target
 
 #lorem(10)
 
-#place(bottom + right, dy: 1em, link-box(<s:test>, "Go to target slide"))
+#place(bottom + right, dy: 1em, link-box(<s:target>, "Go to target slide"))
 
-== Target slide <s:test>
+== References -- Target slide <s:target>
 
 #lorem(25)
 
-#place(right + bottom,link-box(<s:section>, "Go to root slide"))
-
-#focus-slide[It is important!]
+#place(right + bottom,link-box(<s:root>, "Go to root slide"))
 
 = Callout boxes
 
@@ -248,6 +241,8 @@ Slide @s:section, slide @s:test
 == Bibliography <hide-toc>
 
 #bibliography("ref.bib")
+
+#focus-slide[This is a focus slide!]
 
 #show: appendix
 

@@ -79,10 +79,10 @@ title = "Animations"
     target = "animations/alternatives.typ"
 
   [[sidebar.section.item]]
-    target = "animations/draw-reveal.typ"
+    target = "animations/code-reveal.typ"
 
   [[sidebar.section.item]]
-    target = "animations/code-reveal.typ"
+    target = "animations/draw-reveal.typ"
 
   [[sidebar.section.item]]
     target = "animations/anim-label.typ"

@@ -26,5 +26,6 @@ Let imagine a scenario where you want tonavigate to a specific slide of an anima
 
 == Slide with pause
 
-Pause the animation at this point #anim-label(<my-label>, step: 1) and assign a label to the current sub-slide.
+Pause the animation at this point #anim-label(<my-label>, step: 1) #pause
+and assign a label to the current sub-slide.
 ```
