@@ -120,36 +120,7 @@ Slydekit borrows or adapts some of the codes provided by Polylux and Touying for
 
 **Small layout utilities that solve real slide problems.** `adaptive-columns` chooses 1–3 columns depending on measured content height, `full-width` lets a block bleed to the page edge regardless of margin shape, `row-img` lays out one to many logos with sensible left/center/right alignment, and `short-or-long` displays long title in `tableofcontents` slides and the short version in the `minislide` navigation style.
 
-**Localization out of the box.** Strings such as "Outline", "Note", "Tip", or "Proof" are pulled from a JSON dictionary keyed by `lang`, currently covering Chinese, English, French, German, Italian, Spanish and Portuguese
-
-<!-- ## Comparison with Touying and Polylux
-
-Touying and Polylux are the two most established presentation packages in the Typst ecosystem, and Slydekit deliberately sits close to both in spirit: heading-driven slides, `#pause`/`#uncover`/`#only` semantics, and a theme system. The differences are mostly a matter of scope and defaults.
-
-### Comparison table
-
-| | **Slydekit** | **Touying** | **Polylux** |
-|---|---|---|---|
-| Slide creation | Heading-driven (`=`, `==`), plus explicit `#slide(..)` for overrides | Heading-driven, plus a richer `#slide[..]` API (waypoints, callback-style animations, cover mode) | Explicit `#slide[..]` calls; headings are not slides by themselves |
-| Animation primitives | `#pause`, `#meanwhile`, `#uncover`, `#only` (with a `cover-fn` hook), plus `one-by-one`, `item-by-item`, `alternatives`, `track` for parallel pause chains, `code-reveal` for code blocks, and `draw-reveal` for CeTZ/Fletcher | `#pause`, `#meanwhile`, `#uncover`, `#only`, `#alternatives`, math-equation animations, native CeTZ/Fletcher integration | `#pause`, `#uncover`, `#only`, plus a lower-level overlay API that most themes build on |
-| Built-in themes | 5 (`metropolis`, `simple`, `fancy`, `cambfurt`, `chalkboard`), sharing one merge-onto-`simple` contract | 6 built-in (`simple`, `metropolis`, `dewdrop`, `university`, `aqua`, `stargazer`) plus a large third-party catalogue on Typst Universe | 1 minimal `simple` theme in core; most visual variety comes from independent community packages (e.g. `metropolis-polylux`, `rectangles-polylux`, `helios-polylux`) |
-| Navigation / outline | `topbar` or `minislide`, both auto-generated from headings; `progressive-outline` for per-slide mini-TOC | Rich navigation and progress components as part of its component library, theme-dependent | Left to individual themes; core Polylux stays low-level |
-| Appendix handling | First-class `#appendix[..]` with independent numbering and appendix-aware navigation | Supported via slide recall / appendix patterns, more manual | Not built in; left to the user or a theme |
-| Speaker notes, PPTX/HTML export | Through external packages like presio | Yes — dual-screen speaker notes, PDF/PPTX/HTML export via companion tools | Yes — pdfpc integration for speaker notes and timers |
-| Theming model | Fixed functions contract (`theme`, `title`, `toc`, `focus-slide`, `link-box`, `boxeq`, `box`) per theme, merged onto `simple` as a base | A `self` dictionary threaded through the whole rendering pipeline (`utils.merge-dicts` of `config-colors`, `config-info`, `config-page`, `config-common`, ...). Any custom function that wants `self` must be wrapped in `touying-fn-wrapper`/`touying-slide-wrapper`, but in exchange, any new piece of shared config is just a new key in that dictionary, no plumbing required elsewhere | No shared contract in core; themes are separate community packages |
-| Scope | Academic-presentation features pre-wired: citations, appendix, boxes, bilingual localization | Broad, general-purpose slide framework, largest feature surface of the three | Minimal core, intentionally low-level, designed to be built upon |
-
-### Summary
-
-Polylux, Touying, and Slydekit represent three distinct approaches to building presentations in Typst. Polylux provides a lightweight, modular core that focuses on presentation mechanics while leaving themes and higher-level components to companion packages. Touying and Slydekit both aim to deliver complete presentation frameworks out of the box, but they pursue that goal through different architectural choices.
-
-Touying centers its design around a shared `self` object that is threaded throughout the rendering pipeline. Any function—including those provided by themes or third-party packages—can declare itself `touying-fn-wrapper`-aware and access or extend this shared configuration without requiring changes elsewhere in the framework. This makes Touying highly extensible, at the cost of a more involved wrapper-based API.
-
-Slydekit instead builds on Typst's native `context`, `state`, and `query` mechanisms. Shared presentation state, such as colors, fonts, or the current subslide index, is exposed directly through Typst rather than collected into a dedicated configuration object. As a result, animation primitives such as `#pause`, `#meanwhile`, `#uncover`, and `#only`, together with the higher-level constructs built upon them, behave as ordinary Typst functions without requiring wrapper objects or special calling conventions.
-
-This does not prevent users from introducing their own persistent state. Theme authors and helper functions can freely declare additional `state()` or `counter()` values whenever needed, independently of Slydekit's core. The only information managed centrally by Slydekit is the state that must remain synchronized with the presentation lifecycle. For example, values initialized once per presentation or updated once per subslide. The difference therefore lies less in extensibility itself than in how shared state is organized. Touying centralizes it in a single configurable object, whereas Slydekit keeps it decentralized and relies on Typst's built-in mechanisms.
-
-Despite these architectural differences, the animation capabilities of Touying and Slydekit are intentionally very similar. Slydekit provides `#pause`, `#meanwhile`, `#uncover`, `#only`, `one-by-one`, `item-by-item`, `alternatives`, `track`, `code-reveal`, and `draw-reveal`, covering the same core incremental-reveal use cases as Touying, including synchronized parallel reveal chains and incremental mathematical expressions. Where the two projects differ is primarily outside the animation system, since Touying also includes export tooling (PPTX and HTML) and speaker-note support, whereas Slydekit deliberately focuses on PDF presentations and leaves these capabilities to external packages such as Presio. -->
+**Localization out of the box.** Strings such as "Outline", "Note", "Tip", or "Proof" are pulled from a JSON dictionary keyed by `lang`, currently covering Chinese, English, French, German, Italian, Spanish and Portuguese.
 
 ## Themes at a glance
 
