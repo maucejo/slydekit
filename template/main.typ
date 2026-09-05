@@ -2,6 +2,7 @@
 #import "../src/slydekit.typ": *
 #import "@preview/cetz:0.5.2"
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
+#import "@preview/lilaq:0.6.0" as lq
 
 #show: slydekit.with(
   title: "Slydekit",
@@ -11,7 +12,7 @@
   institution: "Typst university",
   contact: "john.doe@univ.typst.fr",
   // theme: metropolis,
-  theme: fancy,
+  // theme: fancy,
   // theme: simple,
   // theme: cambfurt,
   // theme: chalkboard,
@@ -117,7 +118,7 @@ ice cream.
   ```
 ]
 
-= CeTZ/Fletcher integration
+= Drawings animation
 
 #slide("CeTZ integration", steps: 5)[
   #context {
@@ -126,23 +127,23 @@ ice cream.
         import cetz.draw: *
         let reveal-cetz = draw-reveal.with(hide-fn: cetz.draw.hide.with(bounds: true))
 
-        // Toujours visible
+        // Always visible
         circle((0, 0))
 
-        // Visible uniquement à l'étape 2
+        // Visible only at step 2
         reveal-cetz(2, line((0, 0), (2, 1)))
 
-        // Visible à partir de l'étape 3, simule uncover(from: 3)
+        // Visible from step 3, emulate uncover(from: 3)
         reveal-cetz(from: 3, rect((3, 0), (4, 1)))
 
-        // Visible entre les étapes 3 et 5 inclus, simule uncover(from: 3, to: 5)
+        // Visible between steps 3 and 5 inclusive, emulate uncover(from: 3, to: 5)
         reveal-cetz(from: 3, to: 5, {
           circle((5, 0), radius: 0.5, fill: blue)
           circle((6.5, 0), radius: 0.5, fill: green)
           }
         )
 
-        // Visible seulement aux étapes 2 et 4, simule uncover(2, 4)
+        // Visible only at steps 2 and 4
         reveal-cetz(2, 4, line((0, 2), (2, 3)))
       })
     ]
@@ -170,11 +171,30 @@ ice cream.
   }
 ]
 
+#slide("Lilaq integration", steps: 2)[
+  #let xs = (0, 1, 2, 3, 4)
+
+  #align(center)[
+  #context {lq.diagram(
+    title: [Precious data],
+    xlabel: $x$,
+    ylabel: $y$,
+    width: 80%,
+    lq.plot(xs, (3, 5, 4, 2, 3), mark: "s", label: [A]),
+    draw-reveal(2, lq.plot(
+      xs, x => 2*calc.cos(x) + 3,
+      mark: "o", label: [B]
+    ))
+  )}
+  ]
+]
+
 = Links and references
 
 == Animated slide labels
 
 Pause the animation at this point #anim-label(<my-label>, step: 1) #pause and assign a label to the current sub-slide.
+
 
 #pagebreak()
 

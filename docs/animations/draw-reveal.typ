@@ -1,12 +1,12 @@
 #import "/.calepin/calepin.typ" as calepin
 #import "../doc-utils.typ": *
 
-#set document(title: [CeTZ/Fletcher integration])
+#set document(title: [Animated drawings])
 #metadata((tags: ("animations", "draw-reveal", "cetz", "fletcher"))) <website-metadata>
 
-#html.elem("p", attrs: (style: "color: var(--calepin-color-link); font-size: 2em; font-weight: bold;"))[CeTZ/Fletcher integration]
+#html.elem("p", attrs: (style: "color: var(--calepin-color-link); font-size: 2em; font-weight: bold;"))[Animated drawings]
 
-As mentioned in #link("animations/pause.html", "Pause, uncover and only"), `uncover` and `only` are not compatible with packages like CeTZ or Fletcher. The reason is that CeTZ and Fletcher have their own rendering mechanisms and context. Therefore, Slydekit cannot simply wrap the content with `hide()` as it does for regular Typst content.
+As mentioned in #link("animations/pause.html", "Pause, uncover and only"), `uncover` and `only` are not compatible with packages like CeTZ or Fletcher. The reason is that drawing packages have their own rendering mechanisms and context. Therefore, Slydekit cannot simply wrap the content with `hide()` as it does for regular Typst content.
 
 To integrate with these packages, you can use the `draw-reveal` function, which reproduces the visibility logic of `uncover` and `only`, without opening a new `context`. This allows third-party packages to provide their own masking via the `hide-fn` argument.
 
@@ -125,3 +125,35 @@ Contrary to the other animations commands, using the `draw-reveal` function requ
   max-width: 100%,
 )
 
+== Lilaq integration
+
+```typ
+#slide("Lilaq integration", steps: 2)[
+  #let xs = (0, 1, 2, 3, 4)
+
+  #align(center)[
+    #context {
+      lq.diagram(
+        title: [Precious data],
+        xlabel: $x$,
+        ylabel: $y$,
+        width: 80%,
+        lq.plot(xs, (3, 5, 4, 2, 3), mark: "s", label: [A]),
+        draw-reveal(2, lq.plot(
+          xs, x => 2*calc.cos(x) + 3,
+          mark: "o", label: [B])
+        )
+      )
+    }
+  ]
+]
+```
+
+#calepin.elements.gallery(
+  (
+    ("../assets/animations/lilaq1.png", "Step 1"),
+    ("../assets/animations/lilaq2.png", "Step 2"),
+  ),
+  columns: 2,
+  max-width: 100%,
+)

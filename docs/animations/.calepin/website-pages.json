@@ -63,7 +63,7 @@
     "translations": {}
   },
   {
-    "excerpt": "As mentioned in , uncover and only are not compatible with packages like CeTZ or Fletcher. The reason is that CeTZ and Fletcher have their own rendering mechanisms and context. Therefore, Slydekit cannot simply wrap the content with hide() as it does for regular Typst content.",
+    "excerpt": "As mentioned in , uncover and only are not compatible with packages like CeTZ or Fletcher. The reason is that drawing packages have their own rendering mechanisms and context. Therefore, Slydekit cannot simply wrap the content with hide() as it does for regular Typst content.",
     "href": "animations/draw-reveal.html",
     "language": null,
     "meta": {
@@ -76,7 +76,7 @@
     },
     "path": "animations/draw-reveal.typ",
     "pdf": null,
-    "title": "CeTZ/Fletcher integration",
+    "title": "Animated drawings",
     "translation_key": "animations/draw-reveal",
     "translations": {}
   },
