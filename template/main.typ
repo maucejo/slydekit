@@ -174,8 +174,7 @@ ice cream.
 #slide("Lilaq integration", steps: 2)[
   #let xs = (0, 1, 2, 3, 4)
 
-  #align(center)[
-  #context {lq.diagram(
+  #align(center)[#context {lq.diagram(
     title: [Precious data],
     xlabel: $x$,
     ylabel: $y$,
@@ -185,18 +184,18 @@ ice cream.
       xs, x => 2*calc.cos(x) + 3,
       mark: "o", label: [B]
     ))
-  )}
-  ]
+  )}]
 ]
 
 = Links and references
 
 == Animated slide labels
 
-Pause the animation at this point #anim-label(<my-label>, step: 1) #pause and assign a label to the current sub-slide.
+Pause the animation at this point #pause and assign a label to the current sub-slide.
 
+#anim-label(<my-label>, step: 1)
 
-#pagebreak()
+==
 
 Come back to the labeled sub-slide `#anim-label(<my-label>, step: 1)` using this #link(<my-label>, "link").
 
