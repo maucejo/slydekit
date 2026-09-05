@@ -29,6 +29,7 @@
   slide-align: horizon,
   extra-info: (:),
   handout: false,
+  activate-parser: true,
   body
 ) = context {
   // Page setup
@@ -39,6 +40,7 @@
 
   // Slide level: headings at this depth become slides, headings above it (depth < slide-level) are structure headings, and the heading at depth slide-level - 1 acts as the section.
   sk-states.slide-level.update(slide-level)
+  sk-states.activate-parser.update(activate-parser)
 
   // Section numbering
   sk-states.section-numbering.update(section-numbering)
@@ -126,7 +128,11 @@
   show: set-text.with(lang: sk-lang, fonts: sk-fonts)
 
   // slide-parser (defined in slydekit-utils.typ) groups each == heading with all content that follows it until the next heading, allowing #pause / #meanwhile to work without an explicit #slide[...].
-  slide-parser(slide-level: slide-level, body)
+  if sk-states.activate-parser.get() {
+    slide-parser(slide-level: slide-level, body)
+  } else {
+    show heading.where(level: slide-level): it => slide(it.body)[]
+    body
+  }
 
-  // body
 }

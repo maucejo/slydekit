@@ -37,11 +37,10 @@
   // handout: true
   section-numbering: true,
   // numbering-pattern: (section: "I.1.1.", appendix: "A.1.1."),
+  activate-parser: false,
 )
 
 #title-slide
-
-
 
 = Part 1
 

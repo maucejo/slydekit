@@ -1,5 +1,6 @@
 // States
 #let sk-states = (
+  activate-parser: state("activate-parser", true),
   app-slide-number: counter("appendix"),
   appendix: state("appendix", false),
   colors: state("colors", (:)),
