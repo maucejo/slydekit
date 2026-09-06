@@ -54,9 +54,9 @@
 
 #lorem(10)
 
-#slide("Example slide")[zefzefzef]
-
 ==== Slide 2
+
+#lorem(10)
 
 // == Second section
 
