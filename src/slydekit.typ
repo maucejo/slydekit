@@ -59,6 +59,9 @@
   })
   sk-states.numbering-pattern.update(sk-numbering-pattern)
 
+  // Slide-level headings are always numbered manually by slide() (either via slide-parser's heading-slide, or the direct show-rule substitution below) — never by Typst's own automatic heading numbering. A heading with numbering != none is auto-counted by Typst regardless of what its show rule renders it as, so leaving the pattern above active for slide-level headings would double-count them alongside slide()'s manual step. Setting numbering: none specifically for this level stops Typst's automatic counting for slide-level headings entirely, leaving slide()'s manual step as the sole, deterministic source of truth — this must come before slide-level headings are encountered, and applies independently of activate-parser since slide-level headings exist as real headings in body in both modes.
+  show heading.where(level: slide-level): set heading(numbering: none)
+
   // Localization
   let sk-lang = if default-language.contains(lang) {lang} else {"en"}
 
@@ -80,8 +83,6 @@
 
     it
   }
-  // Level 2 headings are slides, defined with == Title
-  // show heading.where(level: 2): it => slide(it.body)[]
 
   // Paragraph styles
   set par(justify: true)

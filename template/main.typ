@@ -11,7 +11,7 @@
   date: "2024-06-01",
   institution: "Typst university",
   contact: "john.doe@univ.typst.fr",
-  // theme: metropolis,
+  theme: metropolis,
   // theme: fancy,
   // theme: simple,
   // theme: cambfurt,
@@ -299,6 +299,7 @@ Slide @s:root, slide @s:target
 = Another appendix
 
 == #lorem(2)
+
 #lorem(25)
 
 #title-slide

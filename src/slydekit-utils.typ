@@ -61,7 +61,6 @@
   } else {
     body
   }
-
 }
 
 // Hide new section slide

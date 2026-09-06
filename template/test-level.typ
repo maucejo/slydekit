@@ -37,7 +37,7 @@
   // handout: true
   section-numbering: true,
   // numbering-pattern: (section: "I.1.1.", appendix: "A.1.1."),
-  activate-parser: false,
+  // activate-parser: false,
 )
 
 #title-slide
@@ -54,9 +54,9 @@
 
 #lorem(10)
 
-==== Slide 2
+#slide("Example slide")[zefzefzef]
 
-#lorem(10)
+==== Slide 2
 
 // == Second section
 
