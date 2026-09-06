@@ -30,9 +30,7 @@
 
   // Heading styles
   show heading.where(level: slide-level - 1): it => {
-    // Reset both alignment axes explicitly before building this header: align(horizon, ...) below only overrides the vertical axis, so without this the horizontal axis stays whatever a previous slide's body last set (e.g. #set align(center)), leaking into this header's layout.
-    set align(start + top)
-
+    reset-align
     set strong(delta: 0)
     set page(header: none, footer: none, margin: default-margins)
 
@@ -55,7 +53,7 @@
   }
 
   let header = context {
-    set align(start + top)
+    reset-align
     set text(size: sk-states.fonts.get().size)
     if sk-states.navigation-style.get() == "topbar" {
       let header-title = [#h(1em)*#slide-subtitle()*]
@@ -73,7 +71,7 @@
   }
 
   let footer = context {
-    set align(start + top)
+    reset-align
     set text(size: sk-states.fonts.get().size)
     let current-page = if sk-states.appendix.get() {
       sk-states.app-slide-number.get().first()

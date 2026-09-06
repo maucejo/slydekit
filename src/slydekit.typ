@@ -135,5 +135,4 @@
     show heading.where(level: slide-level): it => slide(it.body)[]
     body
   }
-
 }

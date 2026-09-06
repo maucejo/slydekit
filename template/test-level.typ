@@ -52,6 +52,8 @@
 
 ==== Slide 1
 
+
+#set align(center)
 #lorem(10)
 
 ==== Slide 2
