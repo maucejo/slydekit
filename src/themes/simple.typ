@@ -49,6 +49,7 @@
   }
 
   let header = context {
+    // Reset both alignment axes explicitly: without this, a leaked #set align(...) from a slide's body would affect this header's layout (see the same fix on the structural-heading header above).
     reset-align
     set text(size: sk-states.fonts.get().size)
     if sk-states.navigation-style.get() == "topbar" {
@@ -67,6 +68,7 @@
   }
 
   let footer = context {
+    // Reset both alignment axes explicitly: same reasoning as the header above.
     reset-align
     set text(size: sk-states.fonts.get().size)
     let current-page = if sk-states.appendix.get() {
