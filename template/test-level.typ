@@ -53,8 +53,8 @@
 ==== Slide 1
 
 #[
-  #set align(center)
-  #lorem(10) #pause ererter
+  // #set align(center)
+  #lorem(10) #pause erer
 ]
 
 ==== Slide 2
