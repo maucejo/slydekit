@@ -25,7 +25,7 @@
   // theme: metropolis,
   // theme: fancy,
   // theme: simple,
-  // theme: cambfurt,
+  theme: cambfurt,
   // theme: chalkboard,
   // fonts: (body: "New Computer Modern"),
   // colors: chalkboard-colors-variant,
