@@ -1,6 +1,7 @@
 #import "slydekit-defaults.typ": *
 #import "slydekit-slide.typ": slide-parser
 
+// Reset both alignment axes explicitly before building the header/footer: align(horizon, ...) below only overrides the vertical axis, so without this the horizontal axis stays whatever a previous slide's body last set (e.g. #set align(center)), leaking into this header's/footer's layout.
 #let sealed-content(content) = context {
   set align(start + top)
   content
