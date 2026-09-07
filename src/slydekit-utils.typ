@@ -7,7 +7,6 @@
   content
 }
 
-
 #let formatted-number(at: none, force: false, level: none) = context {
   let resolve(item) = if at != none { item.at(at) } else { item.get() }
   let loc = if at != none { at } else { here() }
