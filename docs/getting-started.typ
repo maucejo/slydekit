@@ -43,6 +43,7 @@ After importing the template, you have to initialize the template by a show rule
   slide-level: 2,
   slide-align: horizon,
   extra-info: (:),
+  activate-parser: true,
   handout: false,
 )
 ```
@@ -185,6 +186,23 @@ User defined dictionary for extra information to be displayed in custom themes.
 
 #calepin.elements.callout[
   This dictionary is not used in the built-in themes.
+]
+]
+
+#argument-callout("activate-parser", [bool], default: [true])[
+Whether to activate the slide parser. If set to `true`, the slide parser will be used to process the document and create slides. If set to `false`, the document will be processed as a single block of text.
+
+#calepin.elements.callout[
+  The slide parser is responsible for interpreting the document structure and creating slides based on the specified `slide-level`.
+
+  The main interest of deactivating the parser is to:
+  - Improve compilation performance: The slide parser recursively traverses and destructures the entire document element tree to group content by slide. For very long or complex presentations, disabling the parser significantly speeds up rendering.
+
+  - Switch to strict manual control (`#slide(...)`): When the parser is active, Slydekit automatically transforms headings such as `== Title` into slides. Disabling the parser allows you to use only the explicit `#slide("Title")[...]` function without the engine attempting to split the content implicitly.
+
+  - Avoid complex nesting conflicts: If the document contains advanced structures (complex custom macros, functions that dynamically generate headings or styled elements), the automatic parser may misinterpret slide boundaries. Setting activate-parser to false provides predictable, unprocessed behavior.
+
+  - Preserve standard Typst behavior: In this mode, Slydekit applies a simple show rule to convert headings into slides without altering the sequence of the underlying content.
 ]
 ]
 

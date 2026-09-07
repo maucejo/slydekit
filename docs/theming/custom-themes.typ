@@ -178,7 +178,7 @@ To implement a custom theme, you have to define a function that includes the `sh
   // Header and footer of the slides
   let slide-header = { ... }
   let slide-footer = { ... }
-  set page(header: slide-header, footer: slide-footer)
+  set page(header: sealed-content(slide-header), footer: sealed-content(slide-footer))
 
   // Other show and set rules defining the style of the document (headings, footnotes, references, #sym.dots)
 
@@ -244,6 +244,10 @@ Once the theme is defined, you can use it in your presentation by specifying it 
   theme: my-theme,
 )
 ```
+
+#calepin.elements.callout(kind: "warning")[
+`slide-header` and `slide-footer` are encapsulated in `sealed-content` to prevent them from being affected by the `body` content. This ensures that the header and footer remain consistent across all slides, regardless of the content in the body of the presentation.
+]
 
 #calepin.elements.callout(kind: "note")[
   You can also explore the source code of the #link("https://github.com/maucejo/slydekit/tree/main/src/themes", "built-in themes") to see how they are defined and how they rely on shared states to manage colors, fonts, and other theming elements.

@@ -52,10 +52,9 @@
 
 ==== Slide 1
 
-
 #[
   #set align(center)
-  #lorem(10)
+  #lorem(10) #pause ererter
 ]
 
 ==== Slide 2
