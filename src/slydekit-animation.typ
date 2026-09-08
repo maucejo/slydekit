@@ -10,17 +10,15 @@
   let current-chunk = ()
 
   for child in body.children {
-    current-chunk.push(child)
-    // As soon as an element has the <sk-pause> label, we validate the current chunk
     if child.has("label") and child.label == <sk-pause> {
       chunks.push(current-chunk.join())
       current-chunk = ()
+    } else {
+      current-chunk.push(child)
     }
   }
 
-  if current-chunk.len() > 0 {
-    chunks.push(current-chunk.join())
-  }
+  chunks.push(current-chunk.join())
 
   // Always return at least one chunk, even if body ends up empty, so callers spreading chunks.len() values into calc.max(..) never receive a zero-length array
   if chunks.len() == 0 {
@@ -158,6 +156,59 @@
 #let meanwhile = [#metadata(none)<sk-meanwhile>]
 #let uncover = _reveal
 #let only = _reveal.with(reserved: false)
+
+// split-at-pause/split-at-meanwhile only ever look at the direct children of a sequence, so a <sk-pause>/<sk-meanwhile> hidden behind a layout wrapper - a #set scope (`#[#set align(center) a #pause b]`) or `#align(..)[a #pause b]` - is invisible to them and never animates. Naively splitting such a wrapper's content and re-instantiating the wrapper once per chunk would "fix" the visibility, but multiplies a block-level wrapper (e.g. #set align(center)) into one independent block per chunk, which is a different, worse bug (each chunk ends up on its own line). resolve-nested-pauses instead rewrites the pauses/meanwhiles into an uncover(from: ..) chain applied *inside* the wrapper, which is only ever instantiated once.
+//
+// Splits body into tracks at <sk-meanwhile>, each track into chunks at <sk-pause>, and flattens the result into a sequence of uncover(from: ..) calls, one per chunk, restarting the index at each new track - exactly mirroring how slide() renders tracks/chunks. `resolve` is applied to each chunk to recurse into further nested wrappers; taking it as a parameter (rather than calling resolve-nested-pauses by name) avoids a forward reference between the two functions below.
+#let _tracks-to-uncover-chain(body, resolve) = {
+  split-at-meanwhile(body).map(split-at-pause).map(chunks => {
+    chunks.enumerate().map(((idx, chunk)) => uncover(from: idx + 1, resolve(chunk))).join()
+  }).join()
+}
+
+// Only #set scopes and #align(..)[..] are handled: a #set scope is rebuilt generically via its own func()(body, styles), but arbitrary function calls (block, pad, box...) mix positional-only and named-only parameters in ways that can't be safely reconstructed from body.fields() alone (rebuilding purely by field position misassigns values whenever a field isn't actually positional), so only align - whose two fields are both positional - is special-cased.
+#let resolve-nested-pauses(body) = {
+  if type(body) != content {
+    return body
+  }
+
+  // Structural markers we must never rebuild, since is-slide-marker/heading detection in slide-parser relies on their exact identity.
+  if body.func() == metadata or body.func() == heading {
+    return body
+  }
+
+  if body.func() == [].func() {
+    return body.children.map(resolve-nested-pauses).join()
+  }
+
+  let wrapped = if body.has("child") and body.has("styles") {
+    body.child
+  } else if body.func() == align {
+    body.body
+  } else {
+    none
+  }
+
+  if wrapped == none {
+    return body
+  }
+
+  let tracks = split-at-meanwhile(wrapped).map(split-at-pause)
+  let new-body = if tracks.len() <= 1 and tracks.first().len() <= 1 {
+    resolve-nested-pauses(wrapped)
+  } else {
+    _tracks-to-uncover-chain(wrapped, resolve-nested-pauses)
+  }
+
+  if body.has("child") and body.has("styles") {
+    body.func()(new-body, body.styles)
+  } else {
+    align(body.alignment, new-body)
+  }
+}
+
+// Rebuilds body as an equivalent uncover(from: ..) chain (see _tracks-to-uncover-chain), resolving any further nested wrapper along the way. Used by style-body-with-pauses (slydekit-slide.typ) to fold a style wrapper's pauses/meanwhiles into that single wrapper instance instead of splitting it into several.
+#let pauses-to-uncover-chain(body) = _tracks-to-uncover-chain(body, resolve-nested-pauses)
 
 // label, so nothing can land on it and overwrite it.
 #let anim-label(lbl, step: 1) = context {

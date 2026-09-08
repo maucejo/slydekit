@@ -1,5 +1,5 @@
 #import "slydekit-defaults.typ": *
-#import "slydekit-animation.typ": split-at-pause, split-at-meanwhile, analyze-max-step
+#import "slydekit-animation.typ": split-at-pause, split-at-meanwhile, analyze-max-step, resolve-nested-pauses, pauses-to-uncover-chain
 
 // Slides
 #let slide(..args, steps: none, label: none) = {
@@ -29,6 +29,9 @@
       counter(heading).step(level: sk-states.slide-level.get())
     }
   }
+
+  // Resolve pauses/meanwhiles hidden behind a layout wrapper (#set align(center), #align(center)[..], etc.) into an internal uncover(from: ..) chain before any splitting below, so such a wrapper is only ever instantiated once (see resolve-nested-pauses in slydekit-animation.typ).
+  body = resolve-nested-pauses(body)
 
   // Split the body into parallel tracks at <sk-meanwhile> boundaries, then each track into chunks at <sk-pause> labels. With no <sk-meanwhile> at all, this is a single track equal to the previous flat chunk list, so existing slides are unaffected.
   let tracks = split-at-meanwhile(body).map(split-at-pause)
@@ -154,16 +157,15 @@
   }
 }
 
+// Wraps body with style-wrapper's style, splitting only at <sk-slide-parser-boundary> (each side belongs to a different slide and needs its own style instance). Pauses/meanwhiles within a segment are folded into a single uncover(from: ..) chain via pauses-to-uncover-chain instead of being split into as many separate style instances, since re-instantiating a block-level style (e.g. #set align(center)) once per chunk would turn each chunk into its own independent layout block.
 #let style-body-with-pauses(style-wrapper, body) = {
   let output = ()
   let current-body = ()
 
   for child in body {
-    if child.has("label") and (
-      child.label == <sk-pause> or child.label == <sk-slide-parser-boundary>
-    ) {
+    if child.has("label") and child.label == <sk-slide-parser-boundary> {
       if current-body.len() > 0 {
-        output.push(style-wrapper.func()(current-body.join(), style-wrapper.styles))
+        output.push(style-wrapper.func()(pauses-to-uncover-chain(current-body.join()), style-wrapper.styles))
       }
       output.push(child)
       current-body = ()
@@ -173,7 +175,7 @@
   }
 
   if current-body.len() > 0 {
-    output.push(style-wrapper.func()(current-body.join(), style-wrapper.styles))
+    output.push(style-wrapper.func()(pauses-to-uncover-chain(current-body.join()), style-wrapper.styles))
   }
 
   output.join()

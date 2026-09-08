@@ -54,7 +54,10 @@
 
 #[
   #set align(center)
-  #lorem(10) #pause erer
+
+Pause the animation at this point #pause and assign a label to the current sub-slide.
+
+#meanwhile ertertrete
 ]
 
 ==== Slide 2
