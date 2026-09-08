@@ -1,10 +1,8 @@
-// #import "@preview/slydekit:0.4.1": *
-#import "../src/slydekit.typ": *
+#import "@preview/slydekit:0.4.1": *
+// #import "../src/slydekit.typ": *
 #import "@preview/cetz:0.5.2"
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
 #import "@preview/lilaq:0.6.0" as lq
-
-
 
 #show: slydekit.with(
   title: "Slydekit",
@@ -14,7 +12,7 @@
   institution: "Typst university",
   contact: "john.doe@univ.typst.fr",
   // theme: metropolis,
-  theme: fancy,
+  // theme: fancy,
   // theme: simple,
   // theme: cambfurt,
   // theme: chalkboard,
