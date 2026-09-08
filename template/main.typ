@@ -4,6 +4,8 @@
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
 #import "@preview/lilaq:0.6.0" as lq
 
+
+
 #show: slydekit.with(
   title: "Slydekit",
   subtitle: "An example of a presentation template using Typst",
@@ -12,7 +14,7 @@
   institution: "Typst university",
   contact: "john.doe@univ.typst.fr",
   // theme: metropolis,
-  // theme: fancy,
+  theme: fancy,
   // theme: simple,
   // theme: cambfurt,
   // theme: chalkboard,
@@ -29,6 +31,8 @@
   // slide-align: horizon,
   // activate-parser: false,
 )
+
+#set table(inset: 0.5em)
 
 // #show: hide-new-section-slide
 

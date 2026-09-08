@@ -157,15 +157,15 @@
   }
 }
 
-// Wraps body with style-wrapper's style, splitting only at <sk-slide-parser-boundary> (each side belongs to a different slide and needs its own style instance). Pauses/meanwhiles within a segment are folded into a single uncover(from: ..) chain via pauses-to-uncover-chain instead of being split into as many separate style instances, since re-instantiating a block-level style (e.g. #set align(center)) once per chunk would turn each chunk into its own independent layout block.
-#let style-body-with-pauses(style-wrapper, body) = {
+// Wraps body with wrap's style, splitting only at <sk-slide-parser-boundary> (each side belongs to a different slide and needs its own style instance). Pauses/meanwhiles within a segment are folded into a single uncover(from: ..) chain via pauses-to-uncover-chain instead of being split into as many separate style instances, since re-instantiating a block-level style (e.g. #set align(center)) once per chunk would turn each chunk into its own independent layout block.
+#let style-body-with-pauses-fn(wrap, body) = {
   let output = ()
   let current-body = ()
 
   for child in body {
     if child.has("label") and child.label == <sk-slide-parser-boundary> {
       if current-body.len() > 0 {
-        output.push(style-wrapper.func()(pauses-to-uncover-chain(current-body.join()), style-wrapper.styles))
+        output.push(wrap(pauses-to-uncover-chain(current-body.join())))
       }
       output.push(child)
       current-body = ()
@@ -175,10 +175,38 @@
   }
 
   if current-body.len() > 0 {
-    output.push(style-wrapper.func()(pauses-to-uncover-chain(current-body.join()), style-wrapper.styles))
+    output.push(wrap(pauses-to-uncover-chain(current-body.join())))
   }
 
   output.join()
+}
+
+#let style-body-with-pauses(style-wrapper, body) = style-body-with-pauses-fn(
+  content => style-wrapper.func()(content, style-wrapper.styles),
+  body,
+)
+
+// Peels off a chain of directly-nested style wrappers -- produced when several
+// #set/#show rules appear one after another at the top of a block, each nesting
+// the rest as its own child instead of being a sibling in a sequence -- down to
+// the actual sequence they wrap, composing a single function that reapplies every
+// layer, in the right order, around replacement content. `seq` is none when child
+// isn't such a chain (e.g. its innermost body isn't a sequence at all).
+#let unwrap-style-chain(node) = {
+  if not (node.has("child") and node.has("styles")) {
+    return (seq: none, wrap: body => body)
+  }
+
+  if node.child.func() == [].func() {
+    (seq: node.child, wrap: body => node.func()(body, node.styles))
+  } else {
+    let inner = unwrap-style-chain(node.child)
+    if inner.seq == none {
+      (seq: none, wrap: body => body)
+    } else {
+      (seq: inner.seq, wrap: body => node.func()((inner.wrap)(body), node.styles))
+    }
+  }
 }
 
 #let expose-styled-headings(body, slide-level: 2) = {
@@ -196,9 +224,10 @@
       for nested in expose-styled-headings(child.children, slide-level: slide-level) {
         output.push(nested)
       }
-    } else if child.has("child") and child.has("styles") and child.child.func() == [].func() {
+    } else if child.has("child") and child.has("styles") and unwrap-style-chain(child).seq != none {
+      let chain = unwrap-style-chain(child)
       let current-body = ()
-      let nested-children = expose-styled-headings(child.child.children, slide-level: slide-level)
+      let nested-children = expose-styled-headings(chain.seq.children, slide-level: slide-level)
       for nested in nested-children {
         let is-heading = nested.func() == heading and nested.depth < slide-level
         let is-slide-boundary = nested.has("label") and (
@@ -206,10 +235,10 @@
         )
         if is-heading or is-slide-boundary {
           if current-body.len() > 0 {
-            output.push(style-body-with-pauses(child, current-body))
+            output.push(style-body-with-pauses-fn(chain.wrap, current-body))
           }
           if is-heading {
-            output.push(child.func()(nested, child.styles))
+            output.push((chain.wrap)(nested))
           } else {
             output.push(nested)
           }
@@ -219,7 +248,7 @@
         }
       }
       if current-body.len() > 0 {
-        output.push(style-body-with-pauses(child, current-body))
+        output.push(style-body-with-pauses-fn(chain.wrap, current-body))
       }
     } else {
       output.push(child)
@@ -294,14 +323,27 @@
 
 //   output.join()
 // }
+
+// True for nodes that only contribute whitespace between block-level elements (the empty paragraph Typst inserts for a blank line, or a stray space). Used to look past them when deciding whether the whole body is a single style wrapper.
+#let is-blank-node(node) = {
+  let f = node.func()
+  f == parbreak or f == [ ].func() or (node.has("text") and node.text.trim() == "")
+}
+
 #let slide-parser(body, slide-level: 2) = {
-  // Do not propagate a style wrapper around the result of slide-parser.
-  // The wrapper belongs to the content being parsed and must therefore
-  // remain inside the current slide/body so that pauses can split it.
-  let children = expose-styled-headings(
-    flatten-sequence(body),
-    slide-level: slide-level,
-  )
+  // Whole-document style wrapper: a top-level #set/#show rule placed right after `#show: slydekit.with(..)` makes Typst hand the entire remaining document to this function as a single styled element -- on its own when the rule sits on the line just below the show rule, or preceded by an empty paragraph when a blank line separates them. Recurse into the wrapper's child and re-wrap the parsed result so the rule applies globally, across every slide. This is safe precisely because the wrapper spans the whole body -- every slide boundary sits inside it, so re-wrapping the finished slide sequence keeps the structure intact. It is distinct from a style wrapper around a mid-slide chunk (handled by expose-styled-headings / resolve-nested-pauses), which must stay inside its slide so pauses can still split it.
+  let flat = flatten-sequence(body)
+  let lead = flat.filter(n => is-blank-node(n))
+  let rest = flat.filter(n => not is-blank-node(n))
+  if rest.len() == 1 and rest.at(0).has("child") and rest.at(0).has("styles") {
+    let wrapper = rest.at(0)
+    return lead.join() + wrapper.func()(
+      slide-parser(wrapper.child, slide-level: slide-level),
+      wrapper.styles,
+    )
+  }
+
+  let children = expose-styled-headings(flat, slide-level: slide-level)
 
   let current-heading = none
   let current-body = ()
