@@ -150,8 +150,12 @@
   ))<sk-reveal>#anim-content]
 }
 
-#let pause = <sk-pause>
-#let meanwhile = <sk-meanwhile>
+// #let pause = <sk-pause>
+// #let meanwhile = <sk-meanwhile>
+//
+// pause/meanwhile are wrapped in metadata(none) rather than used as bare labels: a bare label reference (e.g. #let pause = <sk-pause>) attaches to the preceding content element instead of becoming its own node in the sequence. That silently breaks split-at-pause/split-at-meanwhile whenever the preceding element sits inside a style wrapper (see style-body-with-pauses in slydekit-slide.typ), and silently drops a second #pause placed right after a first one, since a single element can only carry one label. Wrapping in metadata(none) makes each #pause/#meanwhile its own standalone node, exactly like <sk-slide-parser-boundary> and anim-label already do.
+#let pause = [#metadata(none)<sk-pause>]
+#let meanwhile = [#metadata(none)<sk-meanwhile>]
 #let uncover = _reveal
 #let only = _reveal.with(reserved: false)
 

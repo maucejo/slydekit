@@ -25,7 +25,7 @@
   // theme: metropolis,
   // theme: fancy,
   // theme: simple,
-  theme: cambfurt,
+  // theme: cambfurt,
   // theme: chalkboard,
   // fonts: (body: "New Computer Modern"),
   // colors: chalkboard-colors-variant,
@@ -53,7 +53,7 @@
 ==== Slide 1
 
 #[
-  // #set align(center)
+  #set align(center)
   #lorem(10) #pause erer
 ]
 
