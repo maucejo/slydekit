@@ -96,6 +96,25 @@ I am not as important as the previous point.
   ice cream.
 // ]
 
+// Pause/meanwhile nested inside a layout container (block/box/pad) or a
+// user-defined wrapper that produces one.
+== `#pause` inside a container
+  #block(inset: 6pt, fill: luma(94%))[
+    #set text(size: 1.1em)
+    First #pause second (block + set text)
+  ]
+
+  #let framed(body) = box(stroke: 0.5pt, inset: 4pt, body)
+  #framed[Third #pause fourth (custom wrapper)]
+
+  #pad(left: 1em)[
+    Fifth #pause sixth
+    #meanwhile
+    parallel #pause track (pad + meanwhile)
+  ]
+
+  #columns(2)[Seventh #pause eighth (columns)]
+
 // CeTZ integration
 #slide("CeTZ integration", steps: 3)[
   #let reveal-cetz = draw-reveal.with(hide-fn: cetz.draw.hide.with(bounds: true))

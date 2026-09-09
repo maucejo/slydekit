@@ -166,7 +166,10 @@
   }).join()
 }
 
-// Only #set scopes and #align(..)[..] are handled: a #set scope is rebuilt generically via its own func()(body, styles), but arbitrary function calls (block, pad, box...) mix positional-only and named-only parameters in ways that can't be safely reconstructed from body.fields() alone (rebuilding purely by field position misassigns values whenever a field isn't actually positional), so only align - whose two fields are both positional - is special-cased.
+// Single-body layout containers whose every field except `body` is named, so they round-trip as `func()(..other-fields, new-body)` - `body` dropped from the field dict and re-supplied positionally (passing it by name errors: `block(body: ..)` is rejected). Multi-child layout elements (grid, stack, table...) whose children can't be reconstructed this way, and inline markup elements (emph, strong, link...) where a #pause makes no sense, are deliberately left out.
+#let _pause-container-funcs = (block, box, pad)
+
+// #set scopes, and a handful of layout containers, are descended into and rebuilt so a <sk-pause>/<sk-meanwhile> buried inside one still animates. A #set scope is rebuilt via its own func()(body, styles); align and columns have a positional-only leading field and are rebuilt by hand; the _pause-container-funcs are rebuilt generically from their field dict. Any other function call still can't be reconstructed from body.fields() alone (a field that isn't actually positional would be misassigned), so a pause buried in anything else stays invisible to the splitter.
 #let resolve-nested-pauses(body) = {
   if type(body) != content {
     return body
@@ -181,9 +184,14 @@
     return body.children.map(resolve-nested-pauses).join()
   }
 
-  let wrapped = if body.has("child") and body.has("styles") {
+  let is-style = body.has("child") and body.has("styles")
+  let is-container = body.func() in _pause-container-funcs and body.has("body")
+  let is-align = body.func() == align
+  let is-columns = body.func() == columns and body.has("body")
+
+  let wrapped = if is-style {
     body.child
-  } else if body.func() == align {
+  } else if is-align or is-columns or is-container {
     body.body
   } else {
     none
@@ -200,10 +208,19 @@
     _tracks-to-uncover-chain(wrapped, resolve-nested-pauses)
   }
 
-  if body.has("child") and body.has("styles") {
+  if is-style {
     body.func()(new-body, body.styles)
-  } else {
+  } else if is-align {
     align(body.alignment, new-body)
+  } else if is-columns {
+    let fields = body.fields()
+    let count = fields.remove("count", default: 2)
+    let _ = fields.remove("body", default: none)
+    columns(count, ..fields, new-body)
+  } else {
+    let fields = body.fields()
+    let _ = fields.remove("body", default: none)
+    body.func()(..fields, new-body)
   }
 }
 
