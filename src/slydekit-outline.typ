@@ -305,6 +305,9 @@
   set text(size: sk-states.fonts.get().size)
   set text(size: entry-size)
 
+  // progressive-outline is invoked from inside a `show heading.where(level: slide-level - 1)` rule, so its whole output inherits the heading's `sticky: true`. A sticky block that overflows its region is pushed forward instead of being laid out in place, which makes `columns()` inside `adaptive-columns` leave the first column empty (or drop content entirely) for long outlines. Clearing stickiness restores normal column balancing.
+  set block(sticky: false)
+
   show linebreak: none
 
   let current-is-appendix = sk-states.appendix.at(it.location())
