@@ -106,7 +106,7 @@ Slydekit borrows or adapts some of the codes provided by Polylux and Touying for
 - `code-reveal(..)` progressively reveals and highlights lines of a code block. It supports the built-in `raw-renderer`, `codly-renderer`, and `zebraw-renderer`, as well as custom renderers
 - `uncover`/`only` also accept a `cover-fn` argument for the same purpose when the content being hidden isn't a boolean-gated diagram but ordinary content that a third-party package wants to mask its own way
 
-**Five built-in themes sharing one architecture.** `metropolis`, `simple`, `fancy`, `cambfurt`, and `chalkboard` (with a color variant) each define the same six-function contract: `theme`, `title`, `toc`, `focus-slide`, `link-box`, `boxeq`, `custom-box`. Because a theme is just a dictionary, any theme merges onto `metropolis` as a base, so a partial custom theme only needs to override the pieces it actually changes.
+**Five built-in themes sharing one architecture.** `metropolis`, `simple`, `fancy`, `cambfurt`, and `chalkboard` (with a color variant) each define the same six-function contract: `theme`, `title`, `toc`, `focus-slide`, `link-box`, `boxeq`, `custom-box`. Because a theme is just a dictionary, any theme merges onto `simple` as a base, so a partial custom theme only needs to override the pieces it actually changes.
 
 **Two navigation styles, computed automatically.** `"topbar"` shows the current slide title in a running header; `"minislide"` shows a live, per-section mini-outline (`mini-slides()`) with dots tracking the active slide, built entirely from heading and slide queries, no manual bookkeeping.
 
