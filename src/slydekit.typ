@@ -74,8 +74,7 @@
   sk-states.fonts.update(sk-fonts)
   show: sk-theme.theme
 
-  // Optionally drop the automatic section slide produced for a level (slide-level - 1) heading. Registered after the theme so it runs first and removes the heading's output before the theme's section-slide rule renders
-  // it; the heading element itself stays in the document, so outline / toc / mini-slides still see the section. Toggled by hide-new-section-slide.
+  // Optionally drop the automatic section slide produced for a level (slide-level - 1) heading. Registered after the theme so it runs first and removes the heading's output before the theme's section-slide rule renders  it; the heading element itself stays in the document, so outline / toc / mini-slides still see the section. Toggled by hide-new-section-slide.
   show heading.where(level: slide-level - 1): it => context if not sk-states.hide-section-slide.get() { it }
 
   // Frozen counters

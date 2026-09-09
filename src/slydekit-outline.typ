@@ -1,6 +1,48 @@
 #import "slydekit-defaults.typ": *
 #import "slydekit-utils.typ": *
 
+// Helpers common to the three outline views
+// A heading or <sk-slide> marker carrying the <hide-toc> label is excluded from every outline view (toc / mini-slides / progressive-outline).
+#let sk-is-hidden(h) = h.has("label") and h.label == <hide-toc>
+
+// Appendix-zone filter shared by the three outline views. Returns a predicate:
+//   auto  -> keep only headings in the same zone (main / appendix) as `ref-is-appendix`
+//   true  -> keep everything
+//   false -> keep only main (non-appendix) headings
+#let sk-zone-visible(display-appendix, ref-is-appendix) = h => {
+  let h-is-appendix = sk-states.appendix.at(h.location())
+  if display-appendix == auto {
+    h-is-appendix == ref-is-appendix
+  } else if display-appendix == true {
+    true
+  } else {
+    not h-is-appendix
+  }
+}
+
+// Restrict `sections` to those under the level-1 chapter containing `ref-page`. `top-level-sections` must already be zone-filtered. With section-level <= 1 there is no chapter grouping, so `sections` is returned unchanged. `keep-all-before: true` (toc / progressive-outline) leaves `sections` untouched when `ref-page` precedes the first chapter; the default (mini-slides) instead clips to the range before that first chapter.
+#let sk-scope-to-chapter(
+  sections,
+  top-level-sections,
+  ref-page,
+  section-level,
+  keep-all-before: false,
+) = {
+  if section-level <= 1 { return sections }
+
+  let idx = top-level-sections.filter(s => s.location().page() <= ref-page).len() - 1
+  if idx < 0 and keep-all-before { return sections }
+
+  let start-page = if idx >= 0 { top-level-sections.at(idx).location().page() } else { 0 }
+  let next-section = top-level-sections.at(idx + 1, default: none)
+  let end-page = if next-section != none { next-section.location().page() } else { calc.inf }
+
+  sections.filter(s => (
+    s.location().page() >= start-page
+    and s.location().page() < end-page
+  ))
+}
+
 #let adaptive-columns(
   gutter: 4%,
   max-count: 3,
@@ -12,15 +54,7 @@
   let end-content = if end != none { end } else { [] }
 
   let avail-height = size.height - measure(start-content).height - measure(end-content).height
-  if avail-height <= 0pt or avail-height == calc.inf {
-    return [
-      #start-content
-      #body
-      #end-content
-    ]
-  }
-
-  if max-count <= 1 {
+  if max-count <= 1 or avail-height <= 0pt or avail-height == calc.inf {
     return [
       #start-content
       #body
@@ -33,14 +67,13 @@
 
   let target-n = 1
   for cols in range(1, max-count + 1) {
+    target-n = cols
     let col-width = (size.width - (cols - 1) * gutter-length) / cols
     let measured-h = measure(block(width: col-width, body)).height
 
     if (measured-h / cols) <= avail-height {
-      target-n = cols
       break
     }
-    target-n = cols
   }
 
   start-content
@@ -55,48 +88,17 @@
 #let toc(fill: (:), display-appendix: auto, slide-level: 2) = context {
   let current-is-appendix = sk-states.appendix.at(here())
   let section-level = slide-level - 1
-
-  let is-section-hidden(s) = s.has("label") and s.label == <hide-toc>
-
-  let is-appendix-visible(s) = {
-    let s-is-appendix = sk-states.appendix.at(s.location())
-    if display-appendix == auto {
-      s-is-appendix == current-is-appendix
-    } else if display-appendix == true {
-      true
-    } else {
-      not s-is-appendix
-    }
-  }
+  let is-visible = sk-zone-visible(display-appendix, current-is-appendix)
 
   let sections = query(heading.where(level: section-level, outlined: true))
-    .filter(s => is-appendix-visible(s) and not is-section-hidden(s))
-  let current-page = here().page()
-  let top-level-sections = query(heading.where(level: 1))
-    .filter(is-appendix-visible)
-  let current-top-level-idx = top-level-sections
-    .filter(s => s.location().page() <= current-page)
-    .len() - 1
-  let sections = if section-level > 1 and current-top-level-idx >= 0 {
-    let next-top-level-section = if current-top-level-idx + 1 < top-level-sections.len() {
-      top-level-sections.at(current-top-level-idx + 1)
-    } else {
-      none
-    }
-    let current-top-level-page = top-level-sections.at(current-top-level-idx).location().page()
-    let next-top-level-page = if next-top-level-section != none {
-      next-top-level-section.location().page()
-    } else {
-      calc.inf
-    }
-
-    sections.filter(s => (
-      s.location().page() >= current-top-level-page
-      and s.location().page() < next-top-level-page
-    ))
-  } else {
-    sections
-  }
+    .filter(s => is-visible(s) and not sk-is-hidden(s))
+  let sections = sk-scope-to-chapter(
+    sections,
+    query(heading.where(level: 1)).filter(is-visible),
+    here().page(),
+    section-level,
+    keep-all-before: true,
+  )
 
   let entries = sections.map(s => {
     let num = formatted-number(at: s.location(), force: true)
@@ -139,62 +141,26 @@
 
     let section-level = slide-level - 1
     let current-is-appendix = sk-states.appendix.get()
-
-    let is-visible(h) = {
-      let is-heading-appendix = sk-states.appendix.at(h.location())
-
-      if display-appendix == auto {
-        is-heading-appendix == current-is-appendix
-      } else if display-appendix == true {
-        true
-      } else {
-        not is-heading-appendix
-      }
-    }
+    let is-visible = sk-zone-visible(display-appendix, current-is-appendix)
 
     // Pages to exclude : == Title <hide-toc> or #slide(..., label: <hide-toc>)[...]
     let hidden-pages = query(<hide-toc>).map(l => l.location().page())
 
-    let is-section-hidden(s) = s.has("label") and s.label == <hide-toc>
-
     let sections = query(heading.where(level: section-level))
       .filter(is-visible)
-      .filter(s => not is-section-hidden(s))
+      .filter(s => not sk-is-hidden(s))
 
     if sections.len() == 0 {
       return []
     }
 
     let current-page = here().page()
-    let sections = if section-level > 1 {
-      let top-level-sections = query(heading.where(level: 1))
-        .filter(is-visible)
-      let current-top-level-idx = top-level-sections
-        .filter(s => s.location().page() <= current-page)
-        .len() - 1
-      let next-top-level-section = if current-top-level-idx + 1 < top-level-sections.len() {
-        top-level-sections.at(current-top-level-idx + 1)
-      } else {
-        none
-      }
-      let current-top-level-page = if current-top-level-idx >= 0 {
-        top-level-sections.at(current-top-level-idx).location().page()
-      } else {
-        0
-      }
-      let next-top-level-page = if next-top-level-section != none {
-        next-top-level-section.location().page()
-      } else {
-        calc.inf
-      }
-
-      sections.filter(s => (
-        s.location().page() >= current-top-level-page
-        and s.location().page() < next-top-level-page
-      ))
-    } else {
-      sections
-    }
+    let sections = sk-scope-to-chapter(
+      sections,
+      query(heading.where(level: 1)).filter(is-visible),
+      current-page,
+      section-level,
+    )
 
     let all-slides = query(<sk-slide>)
       .filter(is-visible)
@@ -310,57 +276,25 @@
 
   let current-is-appendix = sk-states.appendix.at(it.location())
   let section-level = slide-level - 1
+  let is-visible = sk-zone-visible(display-appendix, current-is-appendix)
 
   // Pages to exclude: == Titre <hide-toc> or #slide(..., label: <hide-toc>)[...]
   let hidden-pages = query(<hide-toc>).map(l => l.location().page())
 
-  let is-hidden(h) = h.has("label") and h.label == <hide-toc>
-
   // If the current section contains <hide-toc> and is not an appendix (e.g., Bibliography), no table of contents is generated.
-  if is-hidden(it) and not current-is-appendix {
+  if sk-is-hidden(it) and not current-is-appendix {
     return []
   }
 
-  let all-sections = query(heading.where(level: section-level, outlined: true))
-
-  // Same toggle logic as mini-slides: auto -> shows only sections from the same zone (appendix/main) as 'it' true   -> merges everything into a single table of contents, main and appendix sections combined false  -> never displays appendices
-  let is-appendix-visible(s) = {
-    let s-is-appendix = sk-states.appendix.at(s.location())
-    if display-appendix == auto {
-      s-is-appendix == current-is-appendix
-    } else if display-appendix == true {
-      true
-    } else {
-      not s-is-appendix
-    }
-  }
-
-  let sections = all-sections.filter(s => is-appendix-visible(s) and not is-hidden(s))
-  let top-level-sections = query(heading.where(level: 1))
-    .filter(is-appendix-visible)
-  let current-top-level-idx = top-level-sections
-    .filter(s => s.location().page() <= it.location().page())
-    .len() - 1
-  let sections = if section-level > 1 and current-top-level-idx >= 0 {
-    let next-top-level-section = if current-top-level-idx + 1 < top-level-sections.len() {
-      top-level-sections.at(current-top-level-idx + 1)
-    } else {
-      none
-    }
-    let current-top-level-page = top-level-sections.at(current-top-level-idx).location().page()
-    let next-top-level-page = if next-top-level-section != none {
-      next-top-level-section.location().page()
-    } else {
-      calc.inf
-    }
-
-    sections.filter(s => (
-      s.location().page() >= current-top-level-page
-      and s.location().page() < next-top-level-page
-    ))
-  } else {
-    sections
-  }
+  let sections = query(heading.where(level: section-level, outlined: true))
+    .filter(s => is-visible(s) and not sk-is-hidden(s))
+  let sections = sk-scope-to-chapter(
+    sections,
+    query(heading.where(level: 1)).filter(is-visible),
+    it.location().page(),
+    section-level,
+    keep-all-before: true,
+  )
 
   if sections.len() == 0 {
     return []
@@ -406,7 +340,7 @@
         query(heading.where(level: sub-level)).filter(h => (
           h.location().page() >= sec-page
           and h.location().page() < next-page
-          and not is-hidden(h)
+          and not sk-is-hidden(h)
           and h.location().page() not in hidden-pages
         )).map(h => (loc: h.location(), title: h.body))
       }

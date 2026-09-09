@@ -47,8 +47,6 @@
   let total = calc.max(max-track-length, max-reveal-step)
   if steps != none {total = calc.max(total, steps)}
 
-  sk-states.subslide-total.update(total)
-
   pagebreak(weak: true)
 
   // Invisible marker, placed at each call, regardless of the title

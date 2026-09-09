@@ -237,7 +237,7 @@
   }
 }
 
-// Reveals each element of a list, enumeration, or terms on its own step. On the model of Polylux's item-by-item: we never reconstruct list(..)/enum(..)/terms(..), we simply filter the direct children of body that are list.item/enum.item/terms.item and reveal them one by one via one-by-one. Typst then visually groups these adjacent items, regardless of whether they are each wrapped in an uncover.
+// Reveals a sequence of already-separated elements, one per step: element i becomes visible from step `start + i` onwards and stays. `item-by-item` builds on this after pulling the .item children out of a list/enum/terms.
 #let one-by-one(start: 1, hide-color: none, hide-fn: none, ..children) = {
   for (idx, child) in children.pos().enumerate() {
     uncover(from: start + idx, hide-color: hide-color, hide-fn: hide-fn, child)

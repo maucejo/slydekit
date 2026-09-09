@@ -30,7 +30,7 @@
 
   // Heading styles
   show heading.where(level: slide-level - 1): it => {
-    // Reset both alignment axes explicitly before building this header: align(horizon, ...) below only overrides the vertical axis, so without this the horizontal axis stays whatever a previous slide's body last set (e.g. #set align(center)), leaking into this header's layout.
+    // The header's alignment axes are reset by sealed-content() when it is installed below; `set align(start + horizon)` does the same for this rule's body.
     let header-content = {
       let dy = if sk-states.navigation-style.get() == "topbar" { 0em } else { -0.2em }
       [#move(dx: 1em, dy: dy)[*#sk-states.localization.get().toc*]]
@@ -48,7 +48,7 @@
   }
 
   let header = context {
-    // Reset both alignment axes explicitly: without this, a leaked #set align(...) from a slide's body would affect this header's layout (see the same fix on the structural-heading header above).
+    // Alignment axes are reset by sealed-content() where this block is installed as the page header.
     set text(size: sk-states.fonts.get().size)
     if sk-states.navigation-style.get() == "topbar" {
       let header-title = [#h(1em)*#slide-subtitle()*]
@@ -66,7 +66,7 @@
   }
 
   let footer = context {
-    // Reset both alignment axes explicitly: same reasoning as the header above.
+    // Alignment axes are reset by sealed-content() where this block is installed as the page footer.
     set text(size: sk-states.fonts.get().size)
     let current-page = if sk-states.appendix.get() {
       sk-states.app-slide-number.get().first()

@@ -146,10 +146,6 @@ To enable theme composition and partial theme definitions, Slydekit uses a share
   The current step in a subslide. It is the current cursor actually consumed by the animation logic.
 ]
 
-#argument-callout(kind: "State", "subslide-total", [counter])[
-  Tracks the animation capacity in a slide. It is used to determine the total number of subslides in a slide.
-]
-
 #argument-callout(kind: "State", "theme", [dictionary])[
   Dictionary that contains the contract of the current theme. It is used to access the functions defined in the theme and apply them to the presentation (See #link("/theming/custom-themes.html#theming-system", "Theming System")).
 ]
