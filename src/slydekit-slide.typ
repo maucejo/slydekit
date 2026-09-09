@@ -33,6 +33,11 @@
   // Resolve pauses/meanwhiles hidden behind a layout wrapper (#set align(center), #align(center)[..], etc.) into an internal uncover(from: ..) chain before any splitting below, so such a wrapper is only ever instantiated once (see resolve-nested-pauses in slydekit-animation.typ).
   body = resolve-nested-pauses(body)
 
+  // A title-only slide has an empty body: `slide(it.body)[]` in non-parser mode, or a heading with no content in parser mode (chunks.join() is `none` for an empty array). resolve-nested-pauses also returns `none` when it recurses into an empty sequence. Normalize to `[]` so split-at-meanwhile / analyze-max-step below always get content.
+  if body == none {
+    body = []
+  }
+
   // Split the body into parallel tracks at <sk-meanwhile> boundaries, then each track into chunks at <sk-pause> labels. With no <sk-meanwhile> at all, this is a single track equal to the previous flat chunk list, so existing slides are unaffected.
   let tracks = split-at-meanwhile(body).map(split-at-pause)
 

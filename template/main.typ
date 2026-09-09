@@ -19,7 +19,7 @@
   // fonts: (body: "New Computer Modern"),
   // colors: chalkboard-colors-variant,
   lang: "en",
-  // navigation-style: "minislide",
+  navigation-style: "minislide",
   title-logo: (image("images/slydekit-full.svg", height: 2.5cm),),
   slide-logo: image("images/slydekit-mini.svg", height: 1.25cm),
   // handout: true
@@ -29,8 +29,6 @@
   // slide-align: horizon,
   // activate-parser: false,
 )
-
-#set table(inset: 0.5em)
 
 // #show: hide-new-section-slide
 

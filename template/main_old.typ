@@ -1,5 +1,5 @@
-#import "@preview/slydekit:0.4.1": *
-// #import "../src/slydekit.typ": *
+// #import "@preview/slydekit:0.4.1": *
+#import "../src/slydekit.typ": *
 #import "@preview/cetz:0.5.2"
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
 // #import "@preview/pinit:0.2.2": *
@@ -25,7 +25,10 @@
   // handout: true
   // section-numbering: true,
   // numbering-pattern: (section: "I.1.", appendix: "A.1."),
+  activate-parser: false,
 )
+
+// #show: hide-new-section-slide
 
 #title-slide
 

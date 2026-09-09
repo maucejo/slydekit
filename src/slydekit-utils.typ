@@ -4,6 +4,7 @@
 // Reset both alignment axes explicitly before building the header/footer: align(horizon, ...) below only overrides the vertical axis, so without this the horizontal axis stays whatever a previous slide's body last set (e.g. #set align(center)), leaking into this header's/footer's layout.
 #let sealed-content(content) = context {
   set align(start + top)
+  set par(leading: 0.65em)
   content
 }
 
@@ -70,8 +71,16 @@
 }
 
 // Hide new section slide
-#let hide-new-section-slide(body) = context{
-  show heading.where(level: sk-states.slide-level.get() - 1): none
+//
+// Implemented as a state flag, not a `show heading.where(..): none` wrapper.
+// Applied as `#show: hide-new-section-slide`, the function receives the whole
+// remaining document as a single opaque `context {}` node; slide-parser cannot
+// see through that node, so no `==` heading would be grouped into a slide and
+// the deck would stop being paginated entirely (labels emitted by anim-label,
+// which live inside slide()'s subslide loop, would then never exist either).
+// The matching show rule lives in slydekit(), where slide-level is known.
+#let hide-new-section-slide(body) = {
+  sk-states.hide-section-slide.update(true)
   body
 }
 

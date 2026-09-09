@@ -9,6 +9,7 @@
   fonts: state("fonts", (:)),
   frozen-counters: state("frozen-counters", ()),
   handout: state("handout", false),
+  hide-section-slide: state("sk-hide-section-slide", false),
   is-footcite: state("is-footcite", false),
   logo: state("logo"),
   localization: state("localization"),
