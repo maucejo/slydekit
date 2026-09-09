@@ -25,7 +25,7 @@
   // handout: true
   // section-numbering: true,
   // numbering-pattern: (section: "I.1.", appendix: "A.1."),
-  activate-parser: false,
+  // activate-parser: false,
 )
 
 // #show: hide-new-section-slide
