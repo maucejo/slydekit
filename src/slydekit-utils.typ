@@ -72,13 +72,7 @@
 
 // Hide new section slide
 //
-// Implemented as a state flag, not a `show heading.where(..): none` wrapper.
-// Applied as `#show: hide-new-section-slide`, the function receives the whole
-// remaining document as a single opaque `context {}` node; slide-parser cannot
-// see through that node, so no `==` heading would be grouped into a slide and
-// the deck would stop being paginated entirely (labels emitted by anim-label,
-// which live inside slide()'s subslide loop, would then never exist either).
-// The matching show rule lives in slydekit(), where slide-level is known.
+// Implemented as a state flag, not a `show heading.where(..): none` wrapper. Applied as `#show: hide-new-section-slide`, the function receives the whole remaining document as a single opaque `context {}` node; slide-parser cannot see through that node, so no `==` heading would be grouped into a slide and the deck would stop being paginated entirely (labels emitted by anim-label, which live inside slide()'s subslide loop, would then never exist either). The matching show rule lives in slydekit(), where slide-level is known.
 #let hide-new-section-slide(body) = {
   sk-states.hide-section-slide.update(true)
   body

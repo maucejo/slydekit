@@ -30,7 +30,7 @@
   // activate-parser: false,
 )
 
-// #show: hide-new-section-slide
+#show: hide-new-section-slide
 
 #title-slide
 
