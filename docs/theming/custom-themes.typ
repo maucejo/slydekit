@@ -130,10 +130,6 @@ To enable theme composition and partial theme definitions, Slydekit uses a share
   Dictionary that defines the numbering pattern for sections and slides. It is used to customize the numbering format of the presentation.
 ]
 
-#argument-callout(kind: "State", "pause-index", [counter])[
-  Tracks the index of the current pause in the presentation. It is used to manage the timing and sequencing of slides.
-]
-
 #argument-callout(kind: "State", "pres-info", [dictionary])[
   Dictionary that contains information about the presentation, such as title, subtitle, author, date, institution, contact, and title-logo. It is used to display the presentation information in the title slide and other relevant places.
 ]
@@ -147,11 +143,11 @@ To enable theme composition and partial theme definitions, Slydekit uses a share
 ]
 
 #argument-callout(kind: "State", "subslide-step", [counter])[
-  Tracks the animation capacity in a slide. It is used to determine the total number of subslides in a slide.
+  The current step in a subslide. It is the current cursor actually consumed by the animation logic.
 ]
 
 #argument-callout(kind: "State", "subslide-total", [counter])[
-  the current step in a subslide. It is the current cursor actually consumed by the animation logic.
+  Tracks the animation capacity in a slide. It is used to determine the total number of subslides in a slide.
 ]
 
 #argument-callout(kind: "State", "theme", [dictionary])[

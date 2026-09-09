@@ -56,8 +56,6 @@
   let current-is-appendix = sk-states.appendix.at(here())
   let section-level = slide-level - 1
 
-  let hidden-pages = query(<hide-toc>).map(l => l.location().page())
-
   let is-section-hidden(s) = s.has("label") and s.label == <hide-toc>
 
   let is-appendix-visible(s) = {

@@ -279,55 +279,6 @@
 }
 
 // Slide parser - This function aims to encapsulate the document's body into a sequence of slides to allow the user to write a document in a natural way, without having to explicitly call #slide(..) for every slide.
-// #let slide-parser(body, slide-level: 2) = {
-//   if body.has("child") and body.has("styles") {
-//     return body.func()(slide-parser(body.child, slide-level: slide-level), body.styles)
-//   }
-
-//   // Extract headings from style wrappers while retaining their styled bodies.
-//   let children = expose-styled-headings(flatten-sequence(body), slide-level: slide-level)
-
-//   let current-heading = none
-//   let current-body = ()
-//   let output = ()
-//   // True once an explicit #slide(..) marker has been seen since the last heading, meaning the rest of its already-resolved content must be passed through untouched rather than accumulated into current-body.
-//   let in-explicit-slide = false
-
-//   for child in children {
-//     if child.func() == heading and child.depth <= slide-level {
-//       let flushed = flush-slide(current-heading, current-body)
-//       if flushed != none { output.push(flushed) }
-//       current-body = ()
-//       in-explicit-slide = false
-
-//       if child.depth == slide-level {
-//         current-heading = child
-//       } else {
-//         current-heading = none
-//         output.push(child)
-//       }
-//     } else if is-slide-marker(child) {
-//       // Boundary of an explicit #slide(..) call: since the marker is now the very first thing slide() emits, nothing belonging to this call has been accumulated yet. Whatever was pending for the enclosing heading is complete as of right here, close it off. The marker itself is internal to slide-parser and is dropped here, not passed through — it carries no value and mini-slides/progressive-outline rely on <sk-slide> further down instead.
-//       let flushed = flush-slide(current-heading, current-body)
-//       if flushed != none { output.push(flushed) }
-//       current-body = ()
-//       current-heading = none
-//       in-explicit-slide = true
-//     } else if in-explicit-slide {
-//       // Remaining content of an already-resolved explicit #slide(..) call: pass through as-is, it must not be re-split by the enclosing heading.
-//       output.push(child)
-//     } else if child.has("child") and child.has("styles") and current-heading == none {
-//       output.push(child.func()(slide-parser(child.child, slide-level: slide-level), child.styles))
-//     } else {
-//       current-body.push(child)
-//     }
-//   }
-
-//   let flushed = flush-slide(current-heading, current-body)
-//   if flushed != none { output.push(flushed) }
-
-//   output.join()
-// }
 
 // True for nodes that only contribute whitespace between block-level elements (the empty paragraph Typst inserts for a blank line, or a stray space). Used to look past them when deciding whether the whole body is a single style wrapper.
 #let is-blank-node(node) = {

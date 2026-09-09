@@ -198,23 +198,6 @@
   progress-bar(ratio, active-color, inactive-color)
 }
 
-// #let section-progress-bar(active-color, inactive-color) = context {
-//   let section-level = sk-states.slide-level.get() - 1
-
-//   let current-sec = query(heading.where(level: section-level)
-//     .before(here()))
-//     .filter(h => not sk-states.appendix.at(h.location()))
-//     .len()
-
-//   let total-sec = query(heading.where(level: section-level))
-//     .filter(h => not sk-states.appendix.at(h.location()))
-//     .len()
-
-//   let ratio = if total-sec > 0 { current-sec / total-sec } else { 1 }
-
-//   progress-bar(ratio, active-color, inactive-color)
-// }
-
 #let slide-progress-bar(active-color, inactive-color, height: 2pt) = context {
   let current-page = sk-states.slide-number.get().first()
   let total-page = sk-states.slide-number.final().first()
@@ -267,7 +250,6 @@
 
 #let show-ref(slide-level: 2, it) = {
   let el = it.element
-  // if el == none { return it }
   if el == none { return footcite(it.target) }
 
   // Detect slides created via #slide(..., label: <...>)

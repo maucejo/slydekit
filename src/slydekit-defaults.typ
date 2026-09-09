@@ -5,7 +5,6 @@
   appendix: state("appendix", false),
   colors: state("colors", (:)),
   current-slide-title: state("current-slide-title", []),
-  extra: state("extra", (:)),
   fonts: state("fonts", (:)),
   frozen-counters: state("frozen-counters", ()),
   handout: state("handout", false),
@@ -46,19 +45,6 @@
     counter(figure.where(kind: image)),
     counter(figure.where(kind: table)),
     counter(math.equation),
-    // counter(footnote),
-)
-
-#let default-pres-info = (
-  title: "Title",
-  subtitle: "Subtitle",
-  short-title: "Short title",
-  author: "Author",
-  date: "Date",
-  institution: "Institution",
-  contact: "contact@example.com",
-  logo: none,
-  header-footer-logo: none
 )
 
 #let default-numbering-pattern = (
