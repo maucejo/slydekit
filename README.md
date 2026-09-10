@@ -1,6 +1,6 @@
 # Slydekit
 
-[![Generic badge](https://img.shields.io/badge/Version-0.4.1-cornflowerblue.svg)](https://github.com/maucejo/slydekit/releases/tag/v0.4.1)
+[![Generic badge](https://img.shields.io/badge/Version-0.5.0-cornflowerblue.svg)](https://github.com/maucejo/slydekit/releases/tag/v0.5.0)
 [![MIT License](https://img.shields.io/badge/License-MIT-forestgreen)](https://github.com/maucejo/slydekit/blob/main/LICENSE)
 [![Stable documentation](https://img.shields.io/badge/docs-stable-mediumpurple)](https://maucejo.github.io/slydekit/)
 
@@ -21,7 +21,7 @@ Presentations are built directly from document headings, with five predefined th
 Slydekit is used as a #show rule at the top of your document. Everything else in the file is written as ordinary Typst content: headings become sections and slides, and no #slide[...] wrapper is required.
 
 ```typ
-#import "@preview/slydekit:0.4.1": *
+#import "@preview/slydekit:0.5.0": *
 
 #show: slydekit.with(
   title: "Title",

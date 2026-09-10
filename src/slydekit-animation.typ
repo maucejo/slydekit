@@ -403,3 +403,64 @@
     renderer(active, new-body)
   }
 }
+
+// Reusable animations
+// An animated block written once as an ordinary value (with #pause, #meanwhile, #uncover, #only, ...) can be rendered wherever it is needed via render-animation, either in full or one window of steps at a time. The main use case is splitting an animation across *several* slides: it can be paused, other slides shown, and then resumed exactly where it left off. Every window re-shows the earlier steps in their fully-revealed state and animates only the steps inside its window.
+
+// Total number of animation steps in `body`, computed exactly like slide() computes its own `total`.
+#let animation-length(body) = {
+  body = resolve-nested-pauses(body)
+  if body == none { body = [] }
+  let tracks = split-at-meanwhile(body).map(split-at-pause)
+  let max-track-length = calc.max(..tracks.map(t => t.len()))
+  calc.max(max-track-length, analyze-max-step(body))
+}
+
+// Turns the same `int-or-range` / `from` / `to` selector `_reveal` accepts into an inclusive `(start, end)` window of global animation steps, clamped to `1..length`. A render window is contiguous by nature (you cannot resume steps 2 and 4 while skipping 3 on one slide), so an `int-or-range` list is taken as its span `min..max`.
+//   (no selector)          from: 1, to: none  -> (1, length)   whole animation
+//   3                      -> (3, 3)                            a single step
+//   2, 4                   -> (2, 4)                            span of the list
+//   from: 3                -> (3, length)                       step 3 to the end
+//   from: 2, to: 4         -> (2, 4)
+//   to: 2                  -> (1, 2)
+#let reveal-window(int-or-range, from, to, length) = {
+  let clamp(n) = calc.min(calc.max(n, 1), length)
+  let (lo, hi) = if int-or-range.len() > 0 {
+    (calc.min(..int-or-range), calc.max(..int-or-range))
+  } else {
+    (from, if to == none { length } else { to })
+  }
+  (clamp(lo), clamp(calc.max(hi, lo)))
+}
+
+// Renders a reusable animation, in full or one window at a time. Takes the same selector as `#uncover` / `#only`: positional step numbers (`int-or-range`) plus named `from:` / `to:`, with `body` as the last positional argument. No selector at all renders the whole animation (behaves like dropping `body` inline).
+//
+// The enclosing slide() gets exactly `end - start + 1` sub-steps, whatever absolute steps `body`'s own uncover/only calls happen to mention: the <sk-reveal> marker is emitted outside the `context` below, and slide()'s analyze-max-step does not recurse through `context` nodes, so the body's own eager markers stay invisible to it.
+//
+// Inside the context, this slide's *local* sub-step is mapped onto the global animation clock by temporarily setting the shared `subslide-step` counter, so every uncover/only/#pause in `body`, and any package that reads the counter, resolves against the right global step with no per-call rewriting. Steps before `start` are simply already visible (`uncover(from: k)` with `k < start` is shown), so earlier windows reappear fully revealed and static.
+#let render-animation(..args) = {
+  let pos = args.pos()
+  let body = pos.last()
+  let int-or-range = pos.slice(0, -1)
+  let from = args.named().at("from", default: 1)
+  let to = args.named().at("to", default: none)
+
+  let length = animation-length(body)
+  let (start, end) = reveal-window(int-or-range, from, to, length)
+  let window = end - start + 1
+
+  // Generate the metadata for the animation window.
+  [#metadata((int-or-range: (), from: 1, to: window))<sk-reveal>]
+
+  context {
+    let here = sk-states.subslide-step.get().first()
+    // Clamp so a slide that carries more sub-steps than this window (extra top-level #pause around the call, handout mode, an explicit `steps:` on the slide) never runs off either end of the animation.
+    let local = calc.min(calc.max(here, 1), window)
+    let global = calc.min(calc.max(start - 1 + local, 1), length)
+
+    sk-states.subslide-step.update(global)
+    pauses-to-uncover-chain(body)
+    // Restore the local clock for anything else living on this slide.
+    sk-states.subslide-step.update(here)
+  }
+}

@@ -1,4 +1,4 @@
-#import "slydekit-animation.typ": *
+#import "slydekit-animation.typ": pause, meanwhile, uncover, only, anim-label,alternatives, render-animation, one-by-one, item-by-item, track, draw-reveal, code-reveal, raw-renderer, codly-renderer, zebraw-renderer
 #import "slydekit-deps.typ": *
 #import "slydekit-defaults.typ": *
 #import "slydekit-outline.typ": *

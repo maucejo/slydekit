@@ -132,6 +132,24 @@
     "translations": {}
   },
   {
+    "excerpt": "Sometimes, you want to split an animation across several slides. In this case, you reveal the first steps, switch to another slide to explain or show something else, then come back and continue the same animation from where it stopped. Every window re-displays the earlier steps…",
+    "href": "animations/reusable.html",
+    "language": null,
+    "meta": {
+      "tags": [
+        "animations",
+        "reusable",
+        "render-animation",
+        "resume"
+      ]
+    },
+    "path": "animations/reusable.typ",
+    "pdf": null,
+    "title": "Reusable animations",
+    "translation_key": "animations/reusable",
+    "translations": {}
+  },
+  {
     "excerpt": "If you want to add additional content to your presentation, you can use the appendix function. This function allows you to create an appendix section in your presentation, which can be used to include supplementary information, references, or any other content that is not part of…",
     "href": "components/appendix.html",
     "language": null,

@@ -79,6 +79,9 @@ title = "Animations"
     target = "animations/alternatives.typ"
 
   [[sidebar.section.item]]
+    target = "animations/reusable.typ"
+
+  [[sidebar.section.item]]
     target = "animations/code-reveal.typ"
 
   [[sidebar.section.item]]

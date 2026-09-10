@@ -1,4 +1,4 @@
-// #import "@preview/slydekit:0.4.1": *
+// #import "@preview/slydekit:0.5.0": *
 #import "../src/slydekit.typ": *
 #import "@preview/cetz:0.5.2"
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
@@ -18,6 +18,7 @@
   // theme: chalkboard,
   // fonts: (body: "New Computer Modern"),
   // colors: chalkboard-colors-variant,
+  // colors: (background: white,),
   lang: "en",
   // navigation-style: "minislide",
   title-logo: (image("images/slydekit-full.svg", height: 2.5cm),),
@@ -104,6 +105,28 @@ Fourth
 likes
 #alternatives[chocolate][strawberry][vanilla]
 ice cream.
+
+== Reusable animations - Main animation
+
+#let derivation = [
+  We start from the identity.
+  #pause
+  Apply the substitution $u = x^2$.
+  #pause
+  Integrate term by term.
+  #pause
+  And simplify the result.
+]
+
+#render-animation(1, 2, derivation)
+
+== Reusable animations - A side note
+
+The chain rule states that $(f compose g)' = (f' compose g) dot g'$.
+
+== Reusable animations - Back to main animation
+
+#render-animation(from: 3, derivation)
 
 == Code animation
 

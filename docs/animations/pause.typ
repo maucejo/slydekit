@@ -44,7 +44,7 @@ These functions are simply two variants of the same internal function, `_reveal`
   hide-color: none,
   reserved: true,
   hide-fn: none,
-  int-or-range
+  int-or-range,
   body
 )
 
@@ -72,8 +72,8 @@ A boolean value that determines whether the space for the content is reserved wh
 A function that can be used to provide a custom masking for the content when it is not visible. If set to `none`, the default masking behavior will be used. The default value is `none`.
 ]
 
-#argument-callout("int-or-range", [int | list of int])[
-An array of subslide numbers on which the content will be visible. If this argument is provided, the `from` and `to` arguments will be ignored. The default value is an empty array, meaning that the content will be visible on all subslides.
+#argument-callout("int-or-range", [int | array])[
+An integer or an array of subslide numbers on which the content will be visible. If this argument is provided, the `from` and `to` arguments will be ignored. The default value is an empty array, meaning that the content will be visible on all subslides.
 
 Some examples:
 ```typ
