@@ -105,6 +105,7 @@ Slydekit borrows or adapts some of the codes provided by Polylux and Touying for
 - `draw-reveal(..)` exposes the same step logic as a plain boolean instead of content, so CeTZ drawings or Fletcher diagrams can conditionally show elements and still reserve their layout space via a `hide-fn` callback (`cetz.draw.hide(bounds: true)`, for instance). It replaces the former `reveal(..)` helper
 - `code-reveal(..)` progressively reveals and highlights lines of a code block. It supports the built-in `raw-renderer`, `codly-renderer`, and `zebraw-renderer`, as well as custom renderers
 - `uncover`/`only` also accept a `cover-fn` argument for the same purpose when the content being hidden isn't a boolean-gated diagram but ordinary content that a third-party package wants to mask its own way
+- `render-animation` creates a reusable animation sequence that can be rendered wherever you need it, either in full or one window of steps at a time.
 
 **Five built-in themes sharing one architecture.** `metropolis`, `simple`, `fancy`, `cambfurt`, and `chalkboard` (with a color variant) each define the same six-function contract: `theme`, `title`, `toc`, `focus-slide`, `link-box`, `boxeq`, `custom-box`. Because a theme is just a dictionary, any theme merges onto `simple` as a base, so a partial custom theme only needs to override the pieces it actually changes.
 
