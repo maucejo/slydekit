@@ -1,8 +1,8 @@
 {
-  "schema": 2,
-  "calepin_version": "0.0.57",
+  "schema": 3,
+  "calepin_version": "0.0.60",
   "input": "navigation/progress-bars.typ",
-  "generation": "ff7589e0eac4776c-1349cde127705c16",
+  "generation": "47fdd04814033e51-1349cde127705c16",
   "store": {},
   "chunks": {}
 }

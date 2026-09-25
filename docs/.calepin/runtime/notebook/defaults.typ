@@ -1,6 +1,9 @@
 #let _auto-label-index = state("calepin-auto-label-index", 1)
 #let _auto-inline-label-index = state("calepin-auto-inline-label-index", 1)
 
+// The option vocabulary is defined once, in Rust (`typst/option_table.rs`),
+// and generated into this dictionary by `build.rs`. Do not hand-edit; add or
+// remove options in `OPTION_TABLE` instead.
 #let _base-options = (
   script: true,
   echo: true,
@@ -10,7 +13,6 @@
   warning: true,
   message: true,
   error: false,
-  placeholder: auto,
   "fig-device-format": "svg",
   "fig-device-dpi": 150,
   "fig-device-width": 6,

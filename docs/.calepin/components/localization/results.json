@@ -1,8 +1,8 @@
 {
-  "schema": 2,
-  "calepin_version": "0.0.57",
+  "schema": 3,
+  "calepin_version": "0.0.60",
   "input": "components/localization.typ",
-  "generation": "adac88e72f315c09-1349cde127705c16",
+  "generation": "40f9b87df193f30d-1349cde127705c16",
   "store": {},
   "chunks": {
     "chunk-1": {
@@ -12,12 +12,10 @@
       "status": "unavailable",
       "options": {
         "echo": true,
-        "output": true,
         "results": "render",
         "results-location": "statement",
         "warning": true,
         "message": true,
-        "placeholder": true,
         "fig-width": "70%",
         "fig-height": null,
         "fig-align": "center",
