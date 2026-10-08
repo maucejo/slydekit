@@ -19,3 +19,11 @@ Hello
 == Second styled slide
 
 The automatic slide splitter must still detect this heading.
+== Text styling applies to math
+
+#set text(size: 40pt, fill: red)
+Text $a = b^2$
+
+$ x = integral f $
+
+#text(size: 10pt, fill: blue)[small $y = z$]

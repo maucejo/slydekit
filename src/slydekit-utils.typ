@@ -288,7 +288,7 @@
 
 #let set-text(lang: "en", fonts: (:), body) = {
   set text(font: fonts.at("body", default: default-fonts.body), size: fonts.at("size", default: default-fonts.size), lang: lang, region: lang)
-  show math.equation: set text(font: fonts.at("math", default: default-fonts.math), size: fonts.at("size", default: default-fonts.size))
+  show math.equation: set text(font: fonts.at("math", default: default-fonts.math))
   show raw: set text(font: fonts.at("raw", default: default-fonts.raw), size: fonts.at("size", default: default-fonts.size))
 
   body
