@@ -36,6 +36,9 @@
   set page(
     paper: "presentation-" + aspect-ratio,
     margin: default-margins,
+    // Header/footer areas fill the whole top/bottom margins (no gap with the body)
+    // header-ascent: 0%,
+    // footer-descent: 15%,
   )
 
   // Slide level: headings at this depth become slides, headings above it (depth < slide-level) are structure headings, and the heading at depth slide-level - 1 acts as the section.

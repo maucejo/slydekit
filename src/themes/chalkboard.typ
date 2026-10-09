@@ -35,7 +35,8 @@
   let chalkboard-margin = if sk-states.navigation-style.get() == "minislide" {
     (top: 3.25cm)
   }
-  set page(fill: sk-states.colors.get().background, margin: default-margins + chalkboard-margin)
+  // The footer only uses ~1.4cm: shrink the bottom margin so the body extends down to it, footer-descent keeps the footer at its original position
+  set page(fill: sk-states.colors.get().background, margin: default-margins + (bottom: 1.5cm) + chalkboard-margin, footer-descent: 0.1cm)
 
   let slide-level = sk-states.slide-level.get()
 
@@ -96,7 +97,7 @@
         #grid(
           columns: (1fr,)*2,
           align: (left + horizon, right),
-          [#place(dy: -1em, sk-states.logo.get())],
+          [#place(dy: -0.5em, sk-states.logo.get())],
           [#text(size: 0.9em, fill: sk-states.colors.get().footer)[*#prefix#current-page*]]
         )
       ]
