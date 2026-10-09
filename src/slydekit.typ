@@ -75,7 +75,11 @@
   show: sk-theme.theme
 
   // Optionally drop the automatic section slide produced for a level (slide-level - 1) heading. Registered after the theme so it runs first and removes the heading's output before the theme's section-slide rule renders  it; the heading element itself stays in the document, so outline / toc / mini-slides still see the section. Toggled by hide-new-section-slide.
-  show heading.where(level: slide-level - 1): it => context if not sk-states.hide-section-slide.get() { it }
+  // Also reset the slide title after each section heading, so an untitled slide heading directly following a section has no title instead of inheriting the last slide title of the previous section.
+  show heading.where(level: slide-level - 1): it => {
+    context if not sk-states.hide-section-slide.get() { it }
+    sk-states.current-slide-title.update(none)
+  }
 
   // Frozen counters
   sk-states.frozen-counters.update(default-frozen-counters + frozen-counters)

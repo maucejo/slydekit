@@ -26,3 +26,24 @@
 #my-focus-slide[
   *Heigh* #pause *ho!*
 ]
+
+// An untitled slide heading directly after a section has no title; an untitled one after a titled slide keeps that title.
+= Section A
+
+== Title A
+
+Content A
+
+= Section B
+
+==
+
+Untitled slide right after a section
+
+== Title B
+
+Content B
+
+==
+
+Continuation of Title B

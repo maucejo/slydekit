@@ -45,6 +45,9 @@
 #let slide-subtitle(fill-number: none) = context {
   let title = sk-states.current-slide-title.get()
 
+  // No title (untitled slide right after a section): don't show a lone section number either
+  if title == none { return none }
+
   let fill-num = if fill-number != none {
     text(fill: fill-number)[#formatted-number()]
   } else {

@@ -92,7 +92,7 @@
 
         place(dy: -0.25em, {
           grid(
-            columns: (1fr,)*3,
+            columns: (1fr, auto, 1fr),
             rows: img-height,
             align: (left + horizon, center + horizon, right + horizon),
             [
