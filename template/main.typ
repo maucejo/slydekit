@@ -42,10 +42,6 @@
 
 = Animations
 
-==
-
-#lorem(175)
-
 == Pause, uncover and only
 
 Introduction, #pause always visible.

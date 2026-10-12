@@ -86,6 +86,7 @@
 })
 
 #let toc(fill: (:), display-appendix: auto, slide-level: 2) = context {
+  show linebreak: none
   let current-is-appendix = sk-states.appendix.at(here())
   let section-level = slide-level - 1
   let is-visible = sk-zone-visible(display-appendix, current-is-appendix)
