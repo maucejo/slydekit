@@ -138,6 +138,13 @@
   // Fonts
   show: set-text.with(lang: sk-lang, fonts: sk-fonts)
 
+  // hide also the markers in lists and enums
+  show hide: it => {
+    set list(marker: none)
+    set enum(numbering: n => none)
+    it
+  }
+
   // slide-parser (defined in slydekit-utils.typ) groups each == heading with all content that follows it until the next heading, allowing #pause / #meanwhile to work without an explicit #slide[...].
   if sk-states.activate-parser.get() {
     slide-parser(slide-level: slide-level, body)
