@@ -101,7 +101,7 @@
   set align(slide-align)
 
   // Footnote style
-  set footnote.entry(separator: none, clearance: 0.25em)
+  set footnote.entry(separator: none, clearance: 0.25em, indent: 0em)
   show footnote.entry: it => context {
     set text(size: 0.75em)
     if sk-states.is-footcite.at(it.note.location()) {
