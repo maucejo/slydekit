@@ -1,0 +1,157 @@
+name: Bug report
+description: Report something that does not work as expected in Slydekit.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug!
+        Before submitting, please check the [documentation](https://maucejo.github.io/slydekit/) and search [existing issues](https://github.com/maucejo/slydekit/issues) to avoid duplicates.
+
+  - type: input
+    id: slydekit-version
+    attributes:
+      label: Slydekit version
+      description: The version you import, e.g. `@preview/slydekit:0.5.1`, or a commit hash if you use a local copy.
+      placeholder: "0.5.1"
+    validations:
+      required: true
+
+  - type: input
+    id: typst-version
+    attributes:
+      label: Typst version
+      description: Output of `typst --version`, or the web app if you use typst.app.
+      placeholder: "typst 0.14.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options:
+        - Typst CLI
+        - typst.app (web app)
+        - Tinymist / VS Code
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      description: Select all that apply.
+      multiple: true
+      options:
+        - Slide construction / headings
+        - Animations (pause, meanwhile, uncover, only, item-by-item, alternatives...)
+        - draw-reveal (CeTZ / Fletcher / lilaq)
+        - code-reveal
+        - render-animation
+        - Navigation (topbar, minislide, progress bar)
+        - Outline / table of contents
+        - Boxes (custom-box, boxeq, link-box, callouts)
+        - Bibliography / citations
+        - Theme
+        - Localization (i18n)
+        - Template (typst init)
+        - Other / not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: theme
+    attributes:
+      label: Theme
+      description: Which theme(s) show the problem?
+      multiple: true
+      options:
+        - metropolis
+        - simple
+        - fancy
+        - cambfurt
+        - chalkboard
+        - Custom theme
+        - Not theme-related
+
+  - type: dropdown
+    id: parser
+    attributes:
+      label: Slide parser
+      description: Are you using the automatic heading-based slide parser?
+      options:
+        - "Yes (default)"
+        - "No (no-parser mode / explicit slides)"
+        - Not sure
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug description
+      description: A clear and concise description of the problem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproducible example
+      description: |
+        The smallest Typst document that reproduces the problem. Please remove everything that is not needed.
+        This will be automatically formatted as Typst code, so no need for backticks.
+      render: typst
+      value: |
+        #import "@preview/slydekit:0.5.1": *
+
+        #show: slydekit.with(
+          title: "Bug report",
+        )
+
+        = Section
+
+        == Slide
+
+        Content #pause More content
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened instead? Include the full error message or warning if any.
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If relevant, add screenshots of the expected and/or actual output (you can drag and drop images here).
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Anything else that might help (other packages involved, workaround found, regression from a previous version...).
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues and this bug has not been reported yet.
+          required: true
+        - label: I have checked that the bug still occurs with the latest Slydekit version.
+          required: false

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://maucejo.github.io/slydekit/
+    about: Read the documentation for usage, themes and animation examples.
+   - name: Typst forum
+    url: https://forum.typst.app/
+    about: For general Typst questions not specific to slydekit.

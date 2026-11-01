@@ -1,0 +1,103 @@
+name: Feature request
+description: Suggest a new feature or an improvement to Slydekit.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an improvement!
+        Please check the [documentation](https://maucejo.github.io/slydekit/) first: the feature may already exist or be achievable with the current API.
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type of request
+      options:
+        - New feature
+        - Improvement of an existing feature
+        - New theme or theme option
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Related area
+      description: Select all that apply.
+      multiple: true
+      options:
+        - Slide construction / headings
+        - Animations (pause, meanwhile, uncover, only, item-by-item, alternatives...)
+        - draw-reveal (CeTZ / Fletcher / lilaq)
+        - code-reveal
+        - render-animation
+        - Navigation (topbar, minislide, progress bar)
+        - Outline / table of contents
+        - Boxes (custom-box, boxeq, link-box, callouts)
+        - Bibliography / citations
+        - Themes
+        - Localization (i18n)
+        - Template (typst init)
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or motivation
+      description: What problem are you trying to solve? What is currently difficult or impossible to do?
+      placeholder: "When I build ... I would like to ..., but currently ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Describe the feature or change you would like. If you have an API in mind, show how you would like to use it.
+    validations:
+      required: true
+
+  - type: textarea
+    id: usage
+    attributes:
+      label: Example usage
+      description: |
+        A Typst snippet showing how the feature could be used (optional).
+        This will be automatically formatted as Typst code, so no need for backticks.
+      render: typst
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives and current workarounds
+      description: Have you considered other solutions? How do you work around the problem today?
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Mockups, screenshots, or links to similar features in other tools (Beamer, Touying, Polylux, PowerPoint...).
+
+  - type: dropdown
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Would you be willing to help implement this feature?
+      options:
+        - "Yes, I can open a pull request"
+        - "Maybe, with some guidance"
+        - "No"
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues and this feature has not been requested yet.
+          required: true
