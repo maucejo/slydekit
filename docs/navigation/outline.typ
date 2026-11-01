@@ -11,7 +11,7 @@
 In Slydekit, you can create an outline using the `tableofcontents` command.
 
 ```typ
-#import "@preview/slydekit:0.5.1": *
+#import "@preview/slydekit:0.5.2": *
 
 #show: slydekit.with(...)
 
