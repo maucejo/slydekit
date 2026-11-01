@@ -3,9 +3,9 @@
 #import "@preview/cetz:0.5.2"
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
 #import "@preview/lilaq:0.6.0" as lq
-#import "@preview/marginalia:0.3.1"
+// #import "@preview/marginalia:0.3.1"
 
-#show: marginalia.show-frame
+// #show: marginalia.show-frame
 
 #show: slydekit.with(
   title: "Slydekit",
